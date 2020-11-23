@@ -1314,6 +1314,7 @@ line-height: 19px;
 
 .seccion-hv{
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .padre-textoshv{
@@ -1324,3 +1325,120 @@ line-height: 19px;
   padding: 50px 0;
 }
  
+/*** Footer ***/
+.contenedorFooter{
+    background-color: #E8ECF4;
+    position: relative;
+    padding-top: 50px;
+  }
+  
+  .logoFooter{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);  
+  }
+  .contenedorFooter .contacto2 .listaItemsFooter{
+    list-style-type:none;
+  } 
+  
+  .contenedorFooter .contacto2 .listaItemsFooter li{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;
+    padding: 10px 0;
+  }
+  
+  .contenedorFooter .contacto2 .listaItemsFooter li a{
+    color: #2C3394;
+  }
+  
+  .contenedorFooter .contacto3 h4{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;  
+    font-weight: 700;
+    padding-top: 10px;
+  }
+  .contenedorFooter .contacto3 p{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px; 
+  }
+
+  .contenedorFooter .contacto3 .sedeFooter a{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    line-height: 17.07px;
+  }
+
+  .contenedorFooter .contacto3 .redesFooter{
+    margin-top: 15px;
+  }
+  .contenedorFooter .contacto3 .redesFooter img{
+    padding: 0 5px;
+  }
+
+  .contenedorFooter .contacto4 .certificados img{
+    padding:0 5px;
+  }
+
+  .contenedorFooter .contacto4 .imagenes-abajo-certificados{
+    margin-top: 20px;
+  }
+
+  .contenedorFooter .contacto4 .imagenes-abajo-certificados #img-right{
+    padding-left: 10px;
+  }
+
+  .copy-footer{
+    background-color: black;
+  }
+  .copy-footer p{
+    color:#fff;
+  }
+
+  .copy-footer a{
+    color:#fff;
+  }
+
+  /****************/
+
+  /*****Página Neplan****/
+  .tabs-marcas .nav-pills .nav-item .nav-link h4{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 16px;
+    letter-spacing: 0.09px;
+    line-height: 19px;
+  }
+
+  .tabs-neplan-page .contenido-tabs .tab-pane p{
+    color: #343434;
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0.19px;
+    line-height: 20px;
+  }
+
+  .tabs-neplan-page .contenido-tabs .tab-pane ul li{
+    color: #343434;
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0.19px;
+    line-height: 20px;
+  }
+
+  .contenido-tabs{
+    padding: 25px 20px;
+  }
+ 
+  /******************/

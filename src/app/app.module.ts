@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './components/topbar-azul/topbar-azul.component';
@@ -19,6 +20,9 @@ import { SeccionAlcancePaisesComponent } from './components/seccion-alcance-pais
 import { SeccionNuestrosClientesComponent } from './components/seccion-nuestros-clientes/seccion-nuestros-clientes.component';
 import { SeccionDespuesDeNuestrosclientesComponent } from './components/seccion-despues-de-nuestrosclientes/seccion-despues-de-nuestrosclientes.component';
 import { SeccionHojadevidaComponent } from './components/seccion-hojadevida/seccion-hojadevida.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NeplanComponent } from './components/neplan/neplan.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   
@@ -39,13 +43,17 @@ import { SeccionHojadevidaComponent } from './components/seccion-hojadevida/secc
     SeccionAlcancePaisesComponent,
     SeccionNuestrosClientesComponent,
     SeccionDespuesDeNuestrosclientesComponent,
-    SeccionHojadevidaComponent
+    SeccionHojadevidaComponent,
+    FooterComponent,
+    NeplanComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    routing
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
