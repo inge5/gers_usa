@@ -1,0 +1,24 @@
+<div class="contenedor-padre">
+   <span class="flecha-izquierda " (click)="pasarIzquierda()" [class.disabled]="deshabilitarIzquierda()">
+    <i class="fa fa-arrow-left "></i></span>
+  <div class="container" id="contenedor-principal">
+    <div class="contenedor">
+      <div *ngFor="let data of listadoProductos; let i = index" class="div-repetir" [id]="'inde-detalle_'+i">
+        <div class="contenedor-productos">
+          <div class=" filtros-derecha">
+            <img [src]="data['img']">
+          </div>
+          <div class="contenedor-nombre">
+            <p class="nombre-producto m-0">{{data['name']}}</p>
+          </div>
+          <div class="contenedor-descripcion">
+            <span class="descripcion-producto">{{data['desc']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span (click)="pasarDerecha()" class="flecha-derecha" id="flechaDerecha" [class.disabled]="deshabilitarDerecha()">
+      <i class="fa fa-arrow-right "></i>
+     </span>
+</div>

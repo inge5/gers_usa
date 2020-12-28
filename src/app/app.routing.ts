@@ -9,6 +9,9 @@ import { DranetzComponent } from './colombia/representaciones/dranetz/dranetz.co
 import { NdbComponent } from './colombia/representaciones/ndb/ndb.component';
 import { ProyectosComponent } from './colombia/proyectos/proyectos.component';
 import { PruebasAutomatizacionControlComponent } from './colombia/servicios/pruebas-automatizacion-control/pruebas-automatizacion-control.component';
+import {DetalleProductoComponent} from "./colombia/productos/detalle-producto/detalle-producto.component";
+import {ProductoComponent} from "./colombia/productos/producto/producto.component";
+
 
 const APP_ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -19,6 +22,8 @@ const APP_ROUTES: Routes = [
     {path: 'dranetz', component: DranetzComponent},
     {path: 'ndb', component: NdbComponent},
     {path: 'proyectos', component: ProyectosComponent},
+    {path: 'productos', component: ProductoComponent},
+    {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
     {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
     {path: '**', pathMatch: 'full', redirectTo: ''}
 ];

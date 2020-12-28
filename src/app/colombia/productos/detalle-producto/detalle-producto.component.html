@@ -1,0 +1,215 @@
+<!--<div class="bannerInterna" style="background:url(assets/images/carousel-principal/banner_principal.jpg)">
+  <p class="text-center pt-5 pb-5">
+  </p>
+</div>-->
+<div class="container tabsCustom">
+
+    <div class="tabs-marcas tabs-neplan-page mt-5 mb-5">
+      <div class="container">
+
+
+        <div class="row contenedor-principal-row">
+
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="row contenedor-productos">
+              <div class="contenedor-imagen">
+                <div class="imagen-grande" routerLink="/detalle-productos">
+                  <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen1']: imagenDefecto">
+                </div>
+                <div class="container">
+                  <div class="row contenedor-nombre">
+                    <div class="col-3 col-md-3 col-lg-3 imagen-min">
+                      <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen1']: ''" (click)="pasarImagen(listadoProductosDetalle['producto_imagen1'])">
+                    </div>
+                    <div class="col-3 col-md-3 col-lg-3 imagen-min">
+                      <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen2']: ''"  (click)="pasarImagen(listadoProductosDetalle['producto_imagen2'])">
+                    </div>
+                    <div class="col-3 col-md-3 col-lg-3 imagen-min">
+                      <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen3']: ''"  (click)="pasarImagen(listadoProductosDetalle['producto_imagen3'])">
+                    </div>
+                    <div class="col-3 col-md-3 col-lg-3 imagen-min">
+                      <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen4']: ''"  (click)="pasarImagen(listadoProductosDetalle['producto_imagen4'])">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-7">
+            <div class="row contenedor-informacion-producto">
+              <div class="col-12 producto">
+                <span class="">
+                  {{listadoProductosDetalle?listadoProductosDetalle['producto_nombre']: ''}}
+                </span>
+              </div>
+              <div class="col-12 nuevo-producto">
+                <span class="">Nuevo producto</span>
+              </div>
+              <div class="col-12 descripcion-producto">
+                <span class="">
+                   {{listadoProductosDetalle?listadoProductosDetalle['producto_descripcion']: ''}}
+                </span>
+              </div>
+              <div class="col-12 agregar-carrito">
+                <span class="">
+                  Añadir al carrito para solicitar cotización formal
+                </span>
+              </div>
+              <div class="col-12 boton-agregar-carrito">
+                <button type="button" class="btn btn-blue" (click)="agregarCarrito()">
+                  Añadir al cotizador
+                </button>
+              </div>
+              <div class="col-12 agendar-demostracion">
+                <span class="">
+                  Agenda una demostración personalizada
+                </span>
+              </div>
+              <div class="col-12 boton-solicitar-demostracion">
+                <button type="button" class="btn btn-light ">
+                  Solicitar demostración
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-contenedor-informacion">
+          <div class="col-md-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link size13 pt-2 pb-2 active"
+                   id="descripcion-tab" data-toggle="tab"
+                   href="#descripcion" role="tab"
+                   aria-controls="descripcion"
+                   aria-selected="true">
+                  DESCRIPCIÓN</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link size13 pt-2 pb-2"
+                   id="caracteristicas-tab"
+                   data-toggle="tab" href="#caracteristicas"
+                   role="tab" aria-controls="caracteristicas"
+                   aria-selected="false">
+                  CARACTERISTICAS</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link size13 pt-2 pb-2"
+                   id="especializaciones-tab"
+                   data-toggle="tab" href="#especializaciones"
+                   role="tab" aria-controls="especializaciones"
+                   aria-selected="false">
+                  ESPECIALIZACIONES </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link size13 pt-2 pb-2"
+                   id="aplicaciones-tab"
+                   data-toggle="tab"
+                   href="#aplicaciones" role="tab"
+                   aria-controls="aplicaciones"
+                   aria-selected="false">
+                  APLICACIONES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link size13 pt-2 pb-2"
+                   id="opciones-accesorios-tab" data-toggle="tab"
+                   href="#opciones-accesorios" role="tab"
+                   aria-controls="opciones-accesorios"
+                   aria-selected="false">
+                  OPCIONES Y ACCESORIOS</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
+                <div class="textoDespuesPestanas">
+                  <ul>
+                    <li> Detects & records sags/dips, swells, interruptions, transients, harmonics, flicker, RVC and
+                      more – Meets & Exceeds Industry Standards
+                    </li>
+                    <li><strong> IEC 61000-4-30 Class A Edition 3 </strong> PQ compliant – Reliable Measurements from a
+                      Reputable Manufacturer
+                    </li>
+                    <li> Power Quality, demand & energy analysis – Complete Power Monitoring Surveys</li>
+                    <li> Measures, records and triggers on power parameters such as V, I, W, VA, VAR, PF, demand, energy
+                      & more
+                    </li>
+                    <li><strong> Powered by the Phase Being Measured! </strong></li>
+                    <li> IP65 enclosure</li>
+                    <li> Dran-View 7 Software – Powerful Data Analysis, Reporting & Remote Control</li>
+                    <li> Ethernet Communications for Remote Control & Data Downloading – Be Safe & Productive</li>
+                    <li> Tests 50/60Hz and 16/25Hz</li>
+                    <li> Also available as a true portable with a 7″ display – See the <a href="#">Dranetz HDPQ Visa
+                      Plus </a></li>
+                    <li> 3 year factory warranty</li>
+                    <li> Made in the USA in our <a href="#">ISO 9001:2015</a> certified factory</li>
+                  </ul>
+
+                  <p class="texto-anidado">
+                    The Dranetz HDPQ® Visa SP (IP65) power quality analyzer offers the best value in power quality,
+                    demand, and energy monitoring from Dranetz,
+                    or any other Power Quality analyzer manufacturer! No other product at this price point comes close
+                    to matching the benefits and features
+                    provided by the Dranetz HDPQ Visa! The Dranetz HDPQ Visa SP has the same measurement and
+                    communications capabilities as the HDPQ Visa Plus,
+                    but is housed in an IP65 enclosure without an LCD display, and can also be powered by the circuit
+                    being measured.
+                    The IP65 enclosure of the Dranetz HDPQ Visa SP greatly expands the applications of the Dranetz HDPQ
+                    Visa into outdoor and harsh environments,
+                    along with other applications where an LCD display is undesirable.
+                  </p>
+                  <p class="texto-anidado">
+                    The Dranetz HDPQ® Visa SP measures to all current industry standards, including IEC 61000-4-30 Class
+                    A Edition 31, IEC 61000-4-7, IEEE 1159,
+                    IEEE 519:2014 and more. It simultaneously captures and characterizes thousands of parameters by
+                    using a range of standard and customizable
+                    operating modes. The unique measurement capabilities include the capture of low and medium frequency
+                    transients through peak,
+                    waveshape, rms difference trigger methods. Applications include general purpose PQ, demand & energy
+                    monitoring, capacitor evaluations,
+                    harmonics & non-sinusoidal waveform troubleshooting and more
+                  </p>
+                  <p class="texto-anidado">
+                    The Dranetz HDPQ Visa SP enables users to review data and change settings remotely from virtually
+                    any smartphone, tablet and mobile device,
+                    as well as with traditional PC and MAC laptops and desktops. Just hook up the instrument, close the
+                    cabinets to the ‘safe’
+                    environment, and review data and control the instrument using either the VNC interface in our
+                    Dran-View 7
+                    software or a free VNC client on your Smartphone or Tablet from anywhere with connectivity to the
+                    instrument.
+                  </p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="caracteristicas" role="tabpanel" aria-labelledby="caracteristicas-tab">
+                ...
+              </div>
+              <div class="tab-pane fade" id="especializaciones" role="tabpanel" aria-labelledby="especializaciones-tab">
+                ...
+              </div>
+              <div class="tab-pane fade" id="aplicaciones" role="tabpanel" aria-labelledby="aplicaciones-tab">...</div>
+              <div class="tab-pane fade" id="opciones-accesorios" role="tabpanel"
+                   aria-labelledby="opciones-accesorios-tab">...
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row titulo-producto">
+          <div class="col-12">
+            <p>
+              Productos relacionados
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+   <app-slider-detalle></app-slider-detalle>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,122 @@
+
+<div class="contenedor-total-agregados">
+
+  <div class="row" [hidden]="!listadoCarrito">
+    <div class="col-12 cotizacion" (click)="solicitarCotizacionCarrito()">
+      <span class="flechita">
+          <i class="fa fa-arrow-left" (click)="solicitarCotizacionCarrito()"></i>
+      </span>
+     <span>COTIZACIÓN</span>
+    </div>
+  <div class="row fila-carrito " *ngFor="let data of carritoAnterior ; let indices = index " >
+    <div class="col-6 col-md-6  col-lg-4 ">
+      <img [src]="data.producto_imagen1" class="imagen-producto">
+    </div>
+    <div class="col-6 col-md-6  col-lg-4 ">
+      <div class="row ">
+        <div class="col-md-12">
+          <span class="nombre-producto">{{data.producto_nombre}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-6  col-lg-3 ">
+      <div class="row   filtro-cantidad-productos ">
+        <div class="col-12" (click)="cambiarUnidades(1, data, indices, true)">
+          <i class="fa fa-plus-circle icono-aumenta"></i>
+        </div>
+        <div class="col-12">
+                         <span class="mostrar-unidades">
+                           {{data.producto_cantidad}} Unidades
+                         </span>
+        </div>
+        <div class="col-12" (click)="cambiarUnidades(0, data, indices, false)">
+          <i class="fa fa-minus-circle iconos-reducir"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-6  col-lg-1 " (click)="quitarItem(data, indices)">
+      <i class="fas fa-trash eliminar-items" ></i>
+    </div>
+
+    <hr>
+  </div>
+
+    <div class="col-12">
+      <div class="row botones-funciones">
+        <div class="col-12  col-md-6 col-lg-6">
+          <button type="button" class="btn btn-blue" (click)="solicitarCotizacionCarrito()">
+            Solicitar cotización
+          </button>
+        </div>
+        <div class="col-12  col-md-6 col-lg-6">
+          <button type="button" class="btn btn-blue" (click)="borrarListado()">
+            Borrar listado
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row agrupar-inputs" [hidden]="!solicitarCotizacion">
+    <div class="col-12 cotizacion"  (click)="volverCarrito()">
+      <span class="flechita">
+           <i class="fa fa-arrow-left" (click)="volverCarrito()"></i>
+      </span>
+      <span>COTIZACIÓN</span>
+    </div>
+    <div class="form-group col-12">
+      <label for="nombre-completo">Nombre completo</label>
+      <input type="text" [(ngModel)]="filtros.nombre" class="form-control" id="nombre-completo" placeholder="Nombre completo">
+    </div>
+    <div class="form-group col-12">
+      <label for="empresa">Empresa</label>
+      <input  [(ngModel)]="filtros.empresa" type="text" class="form-control" id="empresa" placeholder="Empresa">
+    </div>
+    <div class="form-group col-12">
+      <label for="nit">Nit</label>
+      <input [(ngModel)]="filtros.nit" type="number" class="form-control" id="nit" placeholder="Nit">
+    </div>
+    <div class="form-group col-12">
+      <label for="correo-electronico">Correo electrónico</label>
+      <input [(ngModel)]="filtros.email" type="email" class="form-control" id="correo-electronico" placeholder="Correo electrónico">
+    </div>
+    <div class="form-group col-12">
+      <label for="celular">Celular</label>
+      <input [(ngModel)]="filtros.celular" type="number" class="form-control" id="celular" placeholder="Celular">
+    </div>
+
+
+    <div class="col-12">
+      <div class="row botones-funciones">
+        <div class="col-12  col-md-6 col-lg-6">
+          <button type="button" class="btn btn-blue"
+                  [disabled]="
+                  filtros.nombre === ''   ||
+                  filtros.nombre === null ||
+                  filtros.empresa === ''  ||
+                  filtros.empresa === null||
+                  filtros.nit === ''   ||
+                  filtros.nit === null ||
+                  filtros.email === ''   ||
+                  filtros.email === null ||
+                  filtros.celular === ''   ||
+                  filtros.celular === null
+                  " (click)="enviarCorreoCotizacion()">
+            Solicitar cotización
+          </button>
+        </div>
+        <div class="col-12  col-md-6 col-lg-6">
+          <button type="button" class="btn btn-blue" (click)="volverCarrito()">
+            Volver al listado
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>
+

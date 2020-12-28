@@ -18,6 +18,16 @@ import { DranetzComponent } from './colombia/representaciones/dranetz/dranetz.co
 import { NdbComponent } from './colombia/representaciones/ndb/ndb.component';
 import { ProyectosComponent } from './colombia/proyectos/proyectos.component';
 import { PruebasAutomatizacionControlComponent } from './colombia/servicios/pruebas-automatizacion-control/pruebas-automatizacion-control.component';
+import { DetalleProductoComponent } from './colombia/productos/detalle-producto/detalle-producto.component';
+import { ProductoComponent } from './colombia/productos/producto/producto.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr';
+import {HttpClientModule} from '@angular/common/http';
+import { CarritoComponent } from './colombia/carrito/carrito.component';
+import {FormsModule} from "@angular/forms";
+import { SliderDetalleComponent } from './colombia/slider-detalle/slider-detalle.component';
+import { AngularPaginatorModule } from 'angular-paginator';
 
 @NgModule({
   declarations: [
@@ -34,11 +44,20 @@ import { PruebasAutomatizacionControlComponent } from './colombia/servicios/prue
     DranetzComponent,
     NdbComponent,
     ProyectosComponent,
-    PruebasAutomatizacionControlComponent
+    PruebasAutomatizacionControlComponent,
+    DetalleProductoComponent,
+    ProductoComponent,
+    CarritoComponent,
+    SliderDetalleComponent,
   ],
   imports: [
     BrowserModule,
     IvyCarouselModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    AngularPaginatorModule,
+    FormsModule,
     APP_ROUTING
   ],
   providers: [],
