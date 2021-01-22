@@ -28,6 +28,20 @@ import { CarritoComponent } from './colombia/carrito/carrito.component';
 import {FormsModule} from "@angular/forms";
 import { SliderDetalleComponent } from './colombia/slider-detalle/slider-detalle.component';
 import { AngularPaginatorModule } from 'angular-paginator';
+import { DisenoIngenieriaComponent } from './colombia/servicios/diseno-ingenieria/diseno-ingenieria.component';
+import { SmartGridsComponent } from './colombia/servicios/smart-grids/smart-grids.component';
+import { EstudiosSistemasComponent } from './colombia/servicios/estudios-sistemas/estudios-sistemas.component';
+import { ServiciosEnergeticosComponent } from './colombia/servicios/servicios-energeticos/servicios-energeticos.component';
+import { InterventoriasAsesoriasComponent } from './colombia/servicios/interventorias-asesorias/interventorias-asesorias.component';
+import { PlaneacionProyectosComponent } from './colombia/servicios/planeacion-proyectos/planeacion-proyectos.component';
+import { ContactenosComponent } from './colombia/contactenos/contactenos.component';
+import { PensamientoCorporativoComponent } from './colombia/nosotros/pensamiento-corporativo/pensamiento-corporativo.component';
+import { PoliticaGestionIntegralComponent } from './colombia/nosotros/politica-gestion-integral/politica-gestion-integral.component';
+import { AcuerdosInternacionalesComponent } from './colombia/acuerdos-internacionales/acuerdos-internacionales.component';
+import { TrabajeConNosotrosComponent } from './colombia/trabaje-con-nosotros/trabaje-con-nosotros.component';
+import { EnviarCurriculumComponent } from './colombia/enviar-curriculum/enviar-curriculum.component';
+import { EnviarHojaComponent } from './enviar-hoja/enviar-hoja.component';
+import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-interna.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +63,20 @@ import { AngularPaginatorModule } from 'angular-paginator';
     ProductoComponent,
     CarritoComponent,
     SliderDetalleComponent,
+    DisenoIngenieriaComponent,
+    SmartGridsComponent,
+    EstudiosSistemasComponent,
+    ServiciosEnergeticosComponent,
+    InterventoriasAsesoriasComponent,
+    PlaneacionProyectosComponent,
+    ContactenosComponent,
+    PensamientoCorporativoComponent,
+    PoliticaGestionIntegralComponent,
+    AcuerdosInternacionalesComponent,
+    TrabajeConNosotrosComponent,
+    EnviarCurriculumComponent,
+    EnviarHojaComponent,
+    VacanteInternaComponent,
   ],
   imports: [
     BrowserModule,
