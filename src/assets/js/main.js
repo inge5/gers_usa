@@ -150,3 +150,52 @@ $(document).ready(function() {
         window.location.href = $(this).attr("href");
     });
 });
+
+
+/***** Cambio de botón para seleccionar hoja de vida en Formulario ******/
+$(document).ready(function() {
+    var file = document.querySelector('#file');
+
+    if(file){
+    file.addEventListener('change', function(e) {
+        var boxFile = document.querySelector('.boxFile');
+        boxFile.classList.remove('attached');
+        boxFile.innerHTML = boxFile.getAttribute("data-text");
+        if(this.value != '') {
+          var allowedExtensions = /(\.pdf|\.docx)$/i;
+          if(allowedExtensions.exec(this.value)) {
+            boxFile.innerHTML = e.target.files[0].name;
+            boxFile.classList.add('attached');
+          } else {
+            this.value = '';
+            alert('El archivo que intentas subir no está permitido.\nLos archivos permitidos son .pdf o .docx');
+            boxFile.classList.remove('attached');
+          }
+        }
+      });
+    }
+});
+
+$(document).ready(function() {
+        // Mostrar formulario lateral derecho para enviar curriculum
+        let btnAbrirCurri = $('.abrir-curriculum');
+        btnAbrirCurri.click((e) => {
+            $('.overviwe-curriculum').toggleClass('open-overviwe-curriculum');
+            $('#curriculum-sidebar').toggleClass('switch-curriculum');
+            e.preventDefault();
+        });
+
+        let overviweCurri = $('.overviwe-curriculum');
+        overviweCurri.click((e) => {
+            $('.overviwe-curriculum').removeClass('open-overviwe-curriculum');
+            $('#curriculum-sidebar').removeClass('switch-curriculum');
+            e.preventDefault();
+        });
+
+        let botonCerrarCurri = $('.cerrarModal-curriculum');
+        botonCerrarCurri.click((e) => {
+            $('.overviwe-curriculum').removeClass('open-overviwe-curriculum');
+            $('#curriculum-sidebar').removeClass('switch-curriculum');
+            e.preventDefault();
+        });
+});

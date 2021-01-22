@@ -19,6 +19,13 @@ small {
     font-family: 'Roboto', sans-serif;
 }
 
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .width10 {
     width: 10px !important;
 }
@@ -43,12 +50,56 @@ small {
     font-size: 18px;
 }
 
+.size19 {
+    font-size: 19px;
+}
+
+.size22 {
+    font-size: 22px;
+}
+
 .size25 {
     font-size: 25px;
 }
 
+.size26 {
+    font-size: 26px;
+}
+
+.size32 {
+    font-size: 32px;
+}
+
+.size56 {
+    font-size: 56px;
+}
+
+.letter-spacing-0-32{
+    letter-spacing: 0.32px;
+}
+.letter-spacing-2-28{
+    letter-spacing: 2.28px;
+}
+
+.font-weight-300{
+    font-weight: 300;
+}
+.font-weight-500{
+    font-weight: 500;
+}
+.font-weight-600{
+    font-weight: 600;
+}
+.font-weight-900{
+    font-weight: 900;
+}
+
 .text-blue1 {
     color: #2C3394;
+}
+
+.text-blue2{
+    color: #0030A8;
 }
 
 .text-blue3 {
@@ -57,6 +108,32 @@ small {
 
 .text-gray1 {
     color: #D0D1E7;
+}
+
+.text-gray-dark{
+    color:#8D8D8D;
+}
+
+.text-black{
+    color: #343434;
+}
+
+.text-white{
+    color:#fff;
+}
+
+.pl-100 {
+    padding-left: 100px;
+}
+.pr-100{
+    padding-right: 100px;
+}
+.mt-100{
+    margin-top: 100px;
+}
+
+.mbn-110 {
+    margin-bottom: 110px;
 }
 
 .bg-blue1 {
@@ -201,7 +278,6 @@ small {
 
 .imagenItemMenuNosotros {
     padding-left: 10px;
-    width: 40px;
     height: auto;
 }
 
@@ -482,7 +558,7 @@ li.item-menu-sedes {
 
 .menuPrincipal li a.nav-link {
     letter-spacing: 0.84px;
-    font-size: 13px;
+    font-size: 14px;
     padding: 25px 1rem;
     color: #2C3394;
 }
@@ -523,6 +599,52 @@ li.item-menu-sedes {
 
 
 /******/
+.overviwe-curriculum {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.curriculum-sidebar {
+    background: #fff;
+    overflow: scroll;
+    position: fixed;
+    width: 24%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /*padding: 3em;*/
+    z-index: 100;
+    height: 100vh;
+    min-height: 100vh;
+    transform: translateX(-100%);
+    transition: all .5s;
+}
+
+.switch-curriculum {
+    transform: translateX(0%) !important;
+}
+
+.open-overviwe-curriculum {
+    background: rgba(0, 0, 0, .5);
+    display: block;
+    z-index: 10;
+}
+
+.headerVertical-curriculum .cerrarModal-curriculum {
+    padding: 0;
+    margin: -1.3rem -1rem -1rem auto;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 55px;
+    cursor: pointer;
+    color: #2C3394;
+    font-weight: 200;
+}
 
 .overviwe {
     content: '';
@@ -742,6 +864,7 @@ li.item-menu-sedes {
     font-weight: 200;
 }
 
+
 .bodyVertical .solucionesVertical h3 {
     color: #2C3394;
     font-weight: 700;
@@ -798,6 +921,16 @@ li.item-menu-sedes {
     color: #0089FF;
 }
 
+.itemMenuCorporacionVertical:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    line-height: inherit;
+    vertical-align: baseline;
+    content: "\f30b";
+    margin-right: 5px;
+    color: #0089FF;
+}
+
 .con-submenu:after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
@@ -817,6 +950,19 @@ li.item-menu-sedes {
 
 .menuSoluciones li ul li {
     padding-left: 0;
+}
+
+.menuCorporacion li {
+    padding-left: 20px;
+}
+
+.menuCorporacion li ul li {
+    padding-left: 0;
+}
+
+.menuCorporacionItemNosotros{
+    list-style: none;
+    padding-left: 0px;
 }
 
 .menuSolucionesItemRepresentaciones {
@@ -874,9 +1020,22 @@ li.item-menu-sedes {
     padding-top: 12px;
 }
 
-.descubreVertical .menuDescubre {
+.menuDescubre{
     list-style: none;
-    padding-inline-start: 20px;
+    padding-inline-start: 0px;
+}
+
+.menuDescubreItemCapacita {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.menuDescubreItemCapacita li{
+    padding-inline-start: 0px;
+}
+
+.menuDescubre li{
+    padding-left: 20px;
 }
 
 .descubreVertical .menuDescubre li a {
@@ -893,9 +1052,19 @@ li.item-menu-sedes {
     color: #0056b3;
 }
 
+.itemMenuDescubreVertical:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    line-height: inherit;
+    vertical-align: baseline;
+    content: "\f30b";
+    margin-right: 5px;
+    color: #0089FF;
+}
+
 .corporacionVertical .menuCorporacion {
     list-style: none;
-    padding-inline-start: 20px;
+    padding-inline-start: 0px;
 }
 
 .corporacionVertical .menuCorporacion li a {
@@ -1559,3 +1728,155 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/***** Servicios - Estudios de Sistemas Eléctricos ****/
+.tabs-estudios-page .nav-tabs{
+    background-color: #FAFBFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tabs-estudios-page .nav-tabs .nav-item.show .nav-link, .tabs-estudios-page .nav-tabs .nav-link.active{
+    color: #fff;
+    background-color: #0089FF;
+    font-weight:500;
+}
+
+/***** Contáctenos ******/
+.col-formulario{
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    position: absolute;
+    box-shadow: 1px 1px 5px 1px hsla(0,0%,49%,.6);
+}
+
+.pt-150{
+    padding-top:150px;
+} 
+
+.pb-150{
+    padding-bottom: 150px;
+}
+
+.mt-150{
+    margin-top: 150px;
+}
+
+.info-paises ul{
+    list-style: none;
+}
+
+.info-paises .col-sm-3{
+    border-right:1px solid #D8D8D8;
+}
+.info-paises .col-sm-3:last-child{
+    border-right: none;
+}
+
+.form-control{
+    color: #0030A8 !important;
+    font-weight: 500;
+}
+
+form.contactenos [type=submit]{
+    background-color:#2C3394 !important;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #2C3394;
+}
+
+form.contactenos [type=submit]:hover{
+    background-color:#fff !important;
+    color: #2C3394;
+}
+
+form.contactenos .form-check-input{
+    color: #444444;
+}
+
+/******* Nosotros/Pensamiento Corporativo********/
+.valores-card{
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: -1px -1px 5px 0 rgba(255, 255, 255, 0.9), 1px 1px 5px 0 rgba(58, 153, 231, 0.7);  
+}
+
+.propuesta{
+    background-image: linear-gradient(37.3deg, #2C3394 0%, #5762C6 100%);
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pilares .col{
+    border-right:1px solid #D8D8D8;
+}
+
+.pilares .col:last-child{
+    border-right: none;
+}
+
+.shadow-blue-hard{
+    -webkit-box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
+-moz-box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
+box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
+}
+
+
+/******* Trabaje con Nosotros *******/
+.adjunta-hoja{
+    background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.invoiceBox{
+    width: 100%;
+}
+
+.invoiceBox > input {
+    display: none;
+  }
+  .invoiceBox label {
+      display: block;
+  }
+  .boxFile {
+      display: inline-block;
+    width: 100%;
+    border: 1px solid grey;
+    background: #fff;
+    color: grey;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .boxFile:hover {
+      cursor: pointer;
+      background: grey;
+      color: #fff;
+  }
+  .boxFile i {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 5px;
+  }
+  .attached,
+  .attached:hover,
+  .attached:focus {
+      background: green;
+    color: #fff;
+    border: 1px solid green;
+  }
+
+  .trabaje .nav-tabs{
+    background-color: #FAFBFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .trabaje .nav-tabs a{
+      color:#343434;
+}
+
+.card-job{
+    border-top: 2px solid #cecece;
+}
+

@@ -8,26 +8,26 @@
             <ul class="menuSoluciones">
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Servicios</a>
                     <ul class="menuSolucionesItemServicios">
-                        <li><a class="itemMenuSolucionesVertical" href="#">Pruebas, automatización y control</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">Diseño e ingeniería</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">Estudios de sistemas eléctricos</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">Servicios energéticos</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">Smart grids</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">Interventoría y asesorías</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">Planeación de proyectos</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['pruebas-automatizacion-y-control']">Pruebas, automatización y control</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['diseno-ingenieria']">Diseño e ingeniería</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['estudios-sistemas']">Estudios de sistemas eléctricos</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['servicios-energeticos']">Servicios energéticos</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['smart-grids']">Smart grids</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['interventorias-asesorias']">Interventoría y asesorías</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['planeacion-proyectos']">Planeación de proyectos</a></li>
                     </ul>
                 </li>
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Representaciones</a>
                     <ul class="menuSolucionesItemRepresentaciones">
-                        <li><a class="itemMenuSolucionesVertical" href="#">NEPLAN</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">DRANETZ</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">XGSLAB</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">BECKWITH ELECTRIC</a></li>
-                        <li><a class="itemMenuSolucionesVertical" href="#">NDB</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['neplan']">NEPLAN</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['dranetz']">DRANETZ</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['xgslab']">XGSLAB</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['beckwith-electronic']">BECKWITH ELECTRIC</a></li>
+                        <li><a class="itemMenuSolucionesVertical" [routerLink]="['ndb']">NDB</a></li>
                         <li><a class="itemMenuSolucionesVertical" href="#">GMC</a></li>
                     </ul>
                 </li>
-                <li><a class="itemMenuSolucionesPadre" href="#">Proyectos</a></li>
+                <li><a class="itemMenuSolucionesPadre" [routerLink]="['proyectos']">Proyectos</a></li>
             </ul>
         </div>
         <div class="compraEnLineaVertical">
@@ -39,8 +39,8 @@
         <div class="descubreVertical">
             <h3>Descubre</h3>
             <ul class="menuDescubre">
-                <li><a class="itemMenuDescubrePadre con-submenu" href="#">Capacitaciones</a>
-                    <ul class="menuDescubreItemCapacita">
+                <li><a class="itemMenuDescubrePadre" href="#">Capacitaciones</a>
+                    <!--<ul class="menuDescubreItemCapacita">
                         <li><a class="itemMenuDescubreVertical" href="#">Pruebas, automatización y control</a></li>
                         <li><a class="itemMenuDescubreVertical" href="#">Diseño e ingeniería</a></li>
                         <li><a class="itemMenuDescubreVertical" href="#">Estudios de sistemas eléctricos</a></li>
@@ -48,7 +48,7 @@
                         <li><a class="itemMenuDescubreVertical" href="#">Smart grids</a></li>
                         <li><a class="itemMenuDescubreVertical" href="#">Interventoría y asesorías</a></li>
                         <li><a class="itemMenuDescubreVertical" href="#">Planeación de proyectos</a></li>
-                    </ul>
+                    </ul>-->
                 </li>
                 <li><a class="itemMenuDescubrePadre" href="#">Publicaciones</a></li>
             </ul>
@@ -57,14 +57,13 @@
             <h3>Corporación</h3>
             <ul class="menuCorporacion">
                 <li><a class="itemMenuCorporacionPadre con-submenu" href="#">Nosotros</a>
-                    <ul class="menuCorporacionItemNosotros">
-                        <li><a class="itemMenuCorporacionVertical" href="#">Pensamiento Corporativo</a></li>
-                        <li><a class="itemMenuCorporacionVertical" href="#">Política de Gestión integral</a></li>
+                    <ul class="menuCorporacionItemNosotros pb-2">
+                        <li><a class="itemMenuCorporacionVertical" [routerLink]="['pensamiento-corporativo']">Pensamiento Corporativo</a></li>
+                        <li><a class="itemMenuCorporacionVertical" [routerLink]="['politica-gestion-integral']">Política de Gestión integral</a></li>
                     </ul>
                 </li>
-                <li><a class="itemMenuCorporacionPadre" href="#">Acuerdos Internacionales</a></li>
-                <li><a class="itemMenuCorporacionPadre" href="#">Fundación</a></li>
-                <li><a class="itemMenuCorporacionPadre" href="#">Trabaje con nosotros</a></li>
+                <li><a class="itemMenuCorporacionPadre" [routerLink]="['acuerdos-internacionales']">Acuerdos Internacionales</a></li>
+                <li><a class="itemMenuCorporacionPadre" [routerLink]="['trabaje-con-nosotros']">Trabaje con Nosotros</a></li>
                 <li><a class="itemMenuCorporacionPadre con-submenu" href="#">Sedes</a>
                     <ul class="menuCorporacionItemSedes">
                         <li><a class="itemMenuCorporacionVertical" href="#">Pruebas, automatización y control</a></li>

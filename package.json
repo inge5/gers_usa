@@ -24,7 +24,7 @@
         "@popperjs/core": "^2.4.4",
         "angular-paginator": "^6.0.0",
         "angular-responsive-carousel": "^1.5.11",
-        "axios": "^0.21.0",
+        "axios": "^0.21.1",
         "flickity": "^2.2.1",
         "jquery": "^3.5.1",
         "ngx-toastr": "^13.2.0",
