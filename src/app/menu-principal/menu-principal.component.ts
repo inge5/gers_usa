@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import {VariableGlobalService} from "../colombia/servicios/variable-global/variable-global.service";
 import {AlertasService} from "../colombia/servicios/alertas/alertas.service";
+import { MenusService } from '../services/menus.service';
 
 @Component({
   selector: 'app-menu-principal',
@@ -15,12 +16,13 @@ export class MenuPrincipalComponent implements OnInit {
   carritoAnterior: any;
   cantidadCarrito: number = 0;
 
-  constructor(private variableG: VariableGlobalService, private alertaS: AlertasService) { }
+  menuPrincipal_data:any[] = [];
+
+  constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService:MenusService) { }
 
   ngOnInit(): void {
-
     this.llamarDatoLocales();
-   // this.miCarritoCompraContador();
+    this.getMenuPrincipal();
   }
 
   ngAfterViewInit(){
@@ -35,14 +37,19 @@ export class MenuPrincipalComponent implements OnInit {
         this.sticky = false;
       }
     }
-
-
+  
+  getMenuPrincipal(){
+    this._menusService.getMenuPrincipal()
+    .subscribe((res:any) => {
+      this.menuPrincipal_data = res.items;
+    });  
+  }
 
   llamarDatoLocales() {
 
     this.variableG.currentMessage.subscribe(response => {
       this.carritoAnterior = response;
-      console.log(this.carritoAnterior);
+      // console.log(this.carritoAnterior);
       this.miCarritoCompraContador();
     });
 
@@ -51,7 +58,7 @@ export class MenuPrincipalComponent implements OnInit {
   miCarritoCompraContador() {
     if (this.carritoAnterior && this.carritoAnterior.length > 0) {
       this.cantidadCarrito = this.carritoAnterior.length;
-      console.log(this.cantidadCarrito);
+      // console.log(this.cantidadCarrito);
     }
 
 

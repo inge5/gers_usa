@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+
 import { APP_ROUTING } from './app.routing';
+
+// Services
+import { HomeService } from './services/home.service';
+import { MenusService } from './services/menus.service';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './topbar-azul/topbar-azul.component';
@@ -23,9 +28,9 @@ import { ProductoComponent } from './colombia/productos/producto/producto.compon
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { CarritoComponent } from './colombia/carrito/carrito.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SliderDetalleComponent } from './colombia/slider-detalle/slider-detalle.component';
 import { AngularPaginatorModule } from 'angular-paginator';
 import { DisenoIngenieriaComponent } from './colombia/servicios/diseno-ingenieria/diseno-ingenieria.component';
@@ -42,6 +47,7 @@ import { TrabajeConNosotrosComponent } from './colombia/trabaje-con-nosotros/tra
 import { EnviarCurriculumComponent } from './colombia/enviar-curriculum/enviar-curriculum.component';
 import { EnviarHojaComponent } from './enviar-hoja/enviar-hoja.component';
 import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-interna.component';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -86,9 +92,13 @@ import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-inte
     HttpClientModule,
     AngularPaginatorModule,
     FormsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    OwlModule
   ],
-  providers: [],
+  providers: [
+    HomeService,
+    MenusService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

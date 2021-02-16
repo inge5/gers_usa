@@ -1578,7 +1578,12 @@ p.textoItemMenu {
     margin-left: 0;
     padding-left: 0;
 }
-
+.list-h{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
 
 /* #imagenEquipo {
     margin-top: 45px;
@@ -1597,7 +1602,7 @@ p.textoItemMenu {
 .textoHojadeVida {
     color: #2C3394;
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 19px;
     letter-spacing: 0.33px;
     line-height: 26.82px;
     font-weight: 400;

@@ -1,148 +1,104 @@
 <!--Aquí Inicia el Banner Principal-->
 <section class="seccionColombia1 sliderprincipal">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="sliderGers" class="carousel slide" data-ride="carousel">
         <!--
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#sliderGers" data-slide-to="0" class="active"></li>
+            <li data-target="#sliderGers" data-slide-to="1"></li>
+            <li data-target="#sliderGers" data-slide-to="2"></li>
           </ol>
         -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <!-- <img class="d-block w-100" src="assets/images/carousel-principal/banner_principal.jpg" alt="First slide"> -->
-                <div style="background:url(assets/images/carousel-principal/banner_principal.jpg)">
-                    <div class="container pt-3 pb-3">
-                        <div class="row align-items-center">
-                            <div class="col-sm-8 pt-4 pb-4">
-                                <h1 class="text-white font-weight-bold">Estudios de sistemas eléctricos</h1>
-                                <h3 class="text-white m-0 font-weight-light">A lo largo de nuestra trayectoria hemos llevado a cabo más de 463 proyectos de estudios de Calidad de energía en lso sectores industriales, hidrocarburos, minero y procesamiento de datos en la nube</h3>
-                                <img src="assets/images/carousel-principal/neplan_logo_banner.jpg" alt="" class="img-fluid pt-2 pb-3">
-                                <p class="d-block">
-                                    <a class="btn btn-white btn-lg btn-blue font-weight-normal pt-2 pb-2 pr-3 pl-3 size18" href="#" role="button">Conozca más</a>
-                                </p>
+            <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst ">
+                <div class="carousel-item" *ngIf="home.imagen_de_fondo != undefined" [ngClass]="(isFirst) ? 'active' : ''">
+                    <div style="background:url('{{ home.imagen_de_fondo }}');height:445px">
+                        <div class="container pt-3 pb-3">
+                            <div class="row align-items-center">
+                                <div class="col-sm-8 pt-4 pb-4">
+                                    <h1 class="text-white font-weight-bold">{{ home.titulo }}</h1>
+                                    <h3 class="text-white m-0 font-weight-light">{{ home.descripcion }}</h3>
+                                    <img *ngIf="home.imagen_de_referencia" src="{{ home.imagen_de_referencia }}" alt="" class="img-fluid pt-2 pb-3">
+                                    <p class="d-block" *ngIf="home.url_del_boton">
+                                        <a class="btn btn-white btn-lg btn-blue font-weight-normal pt-2 pb-2 pr-3 pl-3 size18" href="{{ home.url_del_boton }}" role="button">{{ home.texto_boton }}</a>
+                                    </p>
+                                </div>
                             </div>
-                            <!-- <div class="col">
-                                <img src="./assets/home/BANNER-PRINCIPAL/concepto_bannerPNG.png" alt="" class="img-fluid">
-                            </div> -->
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- <div class="carousel-item">
-                <img class="d-block w-100" src="assets/images/carousel-principal/banner_principal.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="assets/images/carousel-principal/banner_principal.jpg" alt="Third slide">
-            </div> -->
+            </ng-container>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#sliderGers" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#sliderGers" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Siguiente</span>
         </a>
     </div>
 </section>
-<section class="seccionColombia2 bg-gray-light">
+<section class="seccionColombia2 bg-gray-light" *ngIf="generando_soluciones_data">
     <div class="container mtn-45">
         <div class="row">
-            <div class="col-xs-12 col-md-8 offset-md-2">
-                <img src="assets/images/carousel-principal/1981.png" alt="imagen Azul" width="100%">
+            <div class="col-xs-12 col-md-8 offset-md-2 bg-blue1 p-3" style="border-radius: 15px;box-shadow: 0px 0px 5px 4px rgba(125,125,125,.5)">
+                <p class="m-0 text-center text-white size18 letter-spacing-2-28 mb-1" style="line-height: 1.2;">{{ generando_soluciones_data.titulo }}</p>
+                <span class="size25 letter-spacing-2-28 font-weight-600 text-white d-flex justify-content-center align-items-center"><img src="assets/images/carousel-principal/desde-arrow-left.jpg">{{ generando_soluciones_data.desde }}<img src="assets/images/carousel-principal/desde-arrow-right.jpg"></span>
             </div>
         </div>
     </div>
 </section>
-<section class="seccionColombia3">
+<ng-container class="seccionColombia3" *ngIf="proyectos_realizados_data">
     <div class="bg-gray-light pt-5 pb-5">
         <div class="container">
             <div class="row ">
-                <div class="col d-flex align-items-stretch">
-                    <div class="card box-shadow-blue">
-                        <div class="card-body text-center pt-4 pb-4 p-3">
-                            <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">+6.800</h3>
-                            <p class="card-text line-height1 size14">+Proyectos en sistemas eléctricos de 34.5 kV, 115 kV, 220 kV, 500 kV.</p>
+                <ng-container *ngFor="let proyectos of proyectos_realizados_data">
+                    <div class="col d-flex align-items-stretch justify-content-center" *ngIf="proyectos.titulo != undefined">
+                        <div class="card box-shadow-blue">
+                            <div class="card-body text-center pt-4 pb-4 p-3">
+                                <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">{{ proyectos.titulo }}</h3>
+                                <p class="card-text line-height1 size14">{{ proyectos.descripcion }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card box-shadow-blue">
-                        <div class="card-body text-center pt-4 pb-4 p-3">
-                            <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">+13.560 MW</h3>
-                            <p class="card-text line-height1 size14">Diseñados en subestaciones eléctricas de 34.5 kV, 115 kV, 220 kV, 500 kV.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card box-shadow-blue">
-                        <div class="card-body text-center pt-4 pb-4 p-3">
-                            <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">+3.827</h3>
-                            <p class="card-text line-height1 size14">Proyectos en estudios eléctricos y pruebas de relés de protección en los sectores industriales e hidrocarburo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card box-shadow-blue">
-                        <div class="card-body text-center pt-4 pb-4 p-3">
-                            <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">+15.898 MVA</h3>
-                            <p class="card-text line-height1 size14">En más de 243 estudios de conexión realizados en Colombia y en el exterior.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card box-shadow-blue">
-                        <div class="card-body text-center pt-4 pb-4 p-3">
-                            <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">+130</h3>
-                            <p class="card-text line-height1 size14">Equipos de monitoreo de calidad de potencia instalados para el cumplimiento de Resolución CREG 024-2005.</p>
-                        </div>
-                    </div>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>
-</section>
-<section class="seccionColombia4">
+</ng-container>
+<section class="seccionColombia4" *ngIf="titulo_servicios_eficientes_data">
     <div class="container pt-5 pb-4">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="font-weight-bold text-blue1 text-center">Nuestro compromiso es ofrecerte servicios eficientes y <br>confiables que se ajusten a tus proyectos</h2>
+                <h2 class="font-weight-bold text-blue1 text-center">{{ titulo_servicios_eficientes_data }}</h2>
             </div>
         </div>
     </div>
 </section>
-
-<section class="seccionColombia5">
+<section class="seccionColombia5" *ngIf="servicios_eficientes_data">
     <div class="container pb-5 pt-5">
         <div class="row">
-            <div class="col-xs-12 col-md-4 text-center border-right">
-                <img src="assets/images/seccion3/pruebas@1x.png" alt="Item Pruebas" class="img-fluid pb-4">
-                <h3 class="text-blue1 size18 font-weight-bold">Pruebas, automatización y control</h3>
-                <p class="line-height1-2 size15">Ejecución de pruebas y puesta en servicio a equipos en sistemas de baja, media y alta tensión. También diseñamos, suministramos, y ponemos en servicio sistemas de control, medida y protección.</p>
-            </div>
-            <div class="col-xs-12 col-md-4 text-center border-right">
-                <img src="assets/images/seccion3/diseño@1x.png" alt="Item Ingenieria" class="img-fluid pb-4">
-                <h3 class="text-blue1 size18 font-weight-bold">Diseño e ingeniería</h3>
-                <p class="line-height1-2 size15">Diseños conceptuales, básicos y de detalle para subestaciones eléctricas, líneas de distribución y transmisión de energía eléctrica, sistemas industriales y comerciales, entre otros.</p>
-            </div>
-            <div class="col-xs-12 col-md-4 text-center">
-                <img src="assets/images/seccion3/estudios@1x.png" alt="Item Sistemas" class="img-fluid pb-4">
-                <h3 class="text-blue1 size18 font-weight-bold">Estudios de sistemas eléctricos</h3>
-                <p class="line-height1-2 size15">Estudios de sistemas eléctricos para electrificadoras, plantas industriales, mineras, centrales de generación y petroleras.</p>
-            </div>
+            <ng-container *ngFor="let servicio_eficiente of servicios_eficientes_data">
+                <div class="col text-center border-right" *ngIf="servicio_eficiente.titulo != undefined">
+                    <img src="{{ servicio_eficiente.imagen }}" alt="Item Pruebas" class="img-fluid pb-4">
+                    <h3 class="text-blue1 size18 font-weight-bold">{{ servicio_eficiente.titulo }}</h3>
+                    <p class="line-height1-2 size15">{{ servicio_eficiente.descripcion }}</p>
+                </div>
+            </ng-container>
         </div>
     </div>
 </section>
-<section class="seccionColombia6 pt-5">
+<section class="seccionColombia6 pt-5" *ngIf="ejecucion_de_monitoreo_data">
     <div class="img-seccionColombia6"></div>
     <div class="drop-shadow">
         <div class="clippath bg-blue1 col-md-8 pt-5 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-10 col-md-8 offset-md-3 pb-5 mb-3 pt-3">
-                        <p class="text-white font-weight-light letter-spacing0-5"><span class="font-weight-bold">Llevamos a cabo la ejecución de monitoreo de calidad de potencia y energía,</span><br> pruebas en equipos de subestaciones eléctricas, sistemas industriales y los más avanzados sistemas de protección,
-                            control y transferencia de sistemas de potencia.<br><br> Así como también ofrecemos soluciones para proyectos EPC (Engineering, Procurement and Construction) tanto de subestaciones eléctricas como de proyectos industriales.<br><br>                            ¡En GERS contarás con soluciones confiables y eficientes que se ajustan a tus proyectos! </p>
+                        <p class="text-white font-weight-light letter-spacing0-5 size18">
+                            <span class="font-weight-bold" [innerHTML]="ejecucion_de_monitoreo_data.titulo"></span>
+                            <span [innerHTML]="ejecucion_de_monitoreo_data.descripcion"></span>
+                        </p>
                     </div>
                     <p class="text-right pt-3 w-100 m-0 containerLogotrasparente">
                         <img src="assets/images/logo-gers-trasparente.png" alt="" class="img-fluid">
@@ -157,34 +113,27 @@
         <div class="row">
             <div class="col-md-4 mb-4 pr-0">
                 <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link rounded-0 p-3 border-left active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img src="assets/images/marcas/1neplan_marca.png" alt="logo neplan" width="98" height="auto"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link rounded-0 border-left p-3" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img src="assets/images/marcas/2dranetz_marca.png" alt="logo dranetz" width="150" height="auto"></a>
-                    </li>
+                    <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
+                        <li class="nav-item">
+                            <a class="nav-link rounded-0 p-3 border-left" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active' : ''" id="tab{{i}}-tab" data-toggle="tab" href="#tab{{i}}" role="tab" aria-controls="tab{{i}}">
+                                <img src="{{tab.logo_tab}}" alt="logo" width="98" height="auto">
+                            </a>
+                        </li>
+                    </ng-container>
                 </ul>
             </div>
             <div class="col-md-8 contenido-tabs">
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <p>
-                            <img src="assets/images/seccion7/img-seccion7.png" alt="" class="img-fluid">
-                        </p>
-                        <p class="m-0"><strong>Dranetz es la solución escalable de monitoreo inteligente para demanda eléctrica y calidad de energía.</strong></p>
-                        <p>Cuenta con equipos portátiles de análisis de calidad de energía hasta dispositivos permanentes de administración de energía con almacenamiento de datos y soluciones basadas en la web.</p>
-                        <p>¡Somos distribuidores oficiales en Colombia!</p>
-                        <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="#">Conoce todos los equipos aquí</a>
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <p>
-                            <img src="assets/images/seccion7/img-seccion7.png" alt="" class="img-fluid">
-                        </p>
-                        <p class="m-0"><strong>Dranetz es la solución escalable de monitoreo inteligente para demanda eléctrica y calidad de energía.</strong></p>
-                        <p>Cuenta con equipos portátiles de análisis de calidad de energía hasta dispositivos permanentes de administración de energía con almacenamiento de datos y soluciones basadas en la web.</p>
-                        <p>¡Somos distribuidores oficiales en Colombia!</p>
-                        <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="#">Conoce todos los equipos aquí</a>
-                    </div>
+                    <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
+                        <div class="tab-pane fade" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="tab{{i}}" role="tabpanel" aria-labelledby="tab{{i}}-tab">
+                            <p>
+                                <img src="{{tab.imagen}}" alt="" class="img-fluid">
+                            </p>
+                            <p class="m-0"><strong>{{tab.titulo}}</strong></p>
+                            <p [innerHTML]="tab.descripcion"></p>
+                            <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="{{tab.url_del_boton}}">{{tab.texto_del_boton}}</a>
+                        </div>
+                    </ng-container>
                 </div>
             </div>
         </div>
@@ -195,32 +144,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-2">
-                    <h5 class="font-weight-bold text-blue1 text-center">Somos representantes de marcas reconocidas internacionalmente por su calidad, <br>desempeño y excelente retorno de inversión
+                    <h5 class="font-weight-bold text-blue1 text-center">
+                        {{ titulo_marcas_data }}
                     </h5>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-md-12">
-                    <div class="marcas-slider mt-5">
-                        <div class="item text-center">
-                            <a href=""><img src="assets/images/marcas/1neplan_marca.png" alt=""></a>
+                    <owl-carousel
+                        [options]="{items: 4, dots: true, nav: false, loop: true, autoplay: true}"
+                        [items]="marcas_datas"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                        <div class="item d-flex justify-content-center align-content-center" *ngFor="let marcas of marcas_datas;let i = index">
+                            <div style="align-content: center">
+                                <img style="height: auto;width:100%;margin:0 auto"src={{marcas.logo}}/>
+                            </div>
                         </div>
-                        <div class="item text-center">
-                            <a href=""><img src="assets/images/marcas/2dranetz_marca.png" alt=""></a>
-                        </div>
-                        <div class="item text-center">
-                            <a href=""><img src="assets/images/marcas/3xgs_marca.png" alt=""></a>
-                        </div>
-                        <div class="item text-center">
-                            <a href=""><img src="assets/images/marcas/4beck_marca.png" alt=""></a>
-                        </div>
-                        <div class="item text-center">
-                            <a href=""><img src="assets/images/marcas/5Ndb_marca.png" alt=""></a>
-                        </div>
-                        <div class="item text-center">
-                            <a href=""><img src="assets/images/marcas/6GMC_marca.png" alt=""></a>
-                        </div>
-                    </div>
+                    </owl-carousel>
                 </div>
             </div>
         </div>
@@ -230,153 +170,98 @@
 <section class="seccionColombia9 mt-5">
     <div class="container-fluid">
         <div class="row mb-4">
-            <div class="col-md-12 mt-2">
-                <h3 class="font-weight-bold text-blue1 text-center">Creemos en el desarrolo y la innovación para alcanzar el<br> éxito de todos los proyectos que nos han confiado
+            <div class="col-xs-12 col-md-6 offset-md-3 mt-2">
+                <h3 class="font-weight-bold text-blue1 text-center">
+                    {{ tituloproyectos }}
                 </h3>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 tarjetaProyectos p-0">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">AWARALA</h3>
-                            <p class="size13">Panamá</p>
+            <ng-container *ngFor="let proyects of FeaturedProyects | slice:0:4 ; first as isFirst; index as i">
+                <div class="col-md-3 tarjetaProyectos p-0">
+                    <div class="tarjetaProyectosInterior">
+                        <div class="tituloTarjetaProyectos">
+                            <div class="titulosTarjetaBlanca">
+                                <h3 class="size16">{{ proyects.acf.titulo }}</h3>
+                                <p class="size13">{{ proyects.acf.extracto }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <!--Un comentario prueba-->
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_1.jpg" alt="proyecto 1" width="100%">
-                </div>
-            </div>
-            <div class="col-md-3 tarjetaProyectos p-0">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">Termovalle</h3>
-                            <p class="size13">Colombia</p>
+                        <!--Un comentario prueba-->
+                        <div class="textoTarjetaProyectos">
+                            <p class="size13" [innerHTML]="proyects.acf.descripcion"></p>
                         </div>
+                        <img src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
                     </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_2.jpg" alt="proyecto 2" width="100%">
                 </div>
-            </div>
-            <div class="col-md-3 tarjetaProyectos p-0">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">EMSA S.A. E.P.S</h3>
-                            <p class="size13">Chile</p>
-                        </div>
-                    </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_3.jpg" alt="proyecto 3" width="100%">
-                </div>
-            </div>
-            <div class="col-md-3 tarjetaProyectos p-0">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">Minera escondida</h3>
-                            <p class="size13">Chile</p>
-                        </div>
-                    </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_4.jpg" alt="proyecto 4" width="100%">
-                </div>
-            </div>
+            </ng-container>
         </div>
     </div>
 </section>
-<section class="seccionColombia10">
+<section class="seccionColombia10" *ngIf="tituloInternacional">
     <div class="seccionAlcanceLimites-full">
         <div class="container seccionAlcanceLimites">
             <div class="row">
-                <div class="col-md-5">
-                    <h2 class="tituloAlcanceLimites">Nuestro alcance no <br>tiene límites</h2>
-                    <p class="textoAlcanceLimite-col1">Desde nuestros inicios nos proyectamos <br>internacionalmente para ofrecerle al mundo <br>soluciones energéticas a la medida.
-                    </p>
+                <div class="col-md-4">
+                    <h2 class="tituloAlcanceLimites">{{ tituloInternacional.titulo }}</h2>
+                    <p class="textoAlcanceLimite-col1" [innerHTML]="tituloInternacional.descripcion"></p>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link size13 pt-2 pb-2 active" id="colombia-tab" data-toggle="tab" href="#colombia" role="tab" aria-controls="colombia" aria-selected="true"><img id="banderaColombiana" src="assets/images/banderas/colombia.png" alt="bandera">Colombia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link size13 pt-2 pb-2" id="estados-tab" data-toggle="tab" href="#estados" role="tab" aria-controls="estados" aria-selected="false"><img id="banderaAmericana" src="assets/images/banderas/usa.png" alt="bandera">EE.UU</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link size13 pt-2 pb-2" id="mexico-tab" data-toggle="tab" href="#mexico" role="tab" aria-controls="mexico" aria-selected="false"><img id="banderaMexicana" src="assets/images/banderas/mexico.png" alt="bandera">México</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link size13 pt-2 pb-2" id="chile-tab" data-toggle="tab" href="#chile" role="tab" aria-controls="chile" aria-selected="false"><img id="banderaChilena" src="assets/images/banderas/chile.png" alt="bandera">Chile</a>
-                        </li>
+                        <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
+                            <li class="nav-item">
+                                <a class="nav-link size13 pt-2 pb-2"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
+                                    <img id="banderaColombiana" src="{{ paises.bandera }}" alt="bandera">
+                                    {{ paises.pais }}
+                                </a>
+                            </li>
+                        </ng-container>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="colombia" role="tabpanel" aria-labelledby="colombia-tab">
-                            <div class="row textoDespuesPestanas">
-                                <div class="col-md-6">
-                                    <p class="tituloenColombia">Bogotá</p>
-                                    <p class="textoenColombia">Carrera 13A # 98-21. Oficina 501<br> +57 1-485 7100<br> gers@gers.com.co
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="tituloenColombia">Cali</p>
-                                    <p class="textoenColombia">Calle 3A # 65-118<br> +57 2-489 7000<br> gers@gers.com.co
-                                    </p>
+                        <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
+                            <div class="tab-pane fade" *ngIf="paises.pais != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="pais{{i}}" role="tabpanel" aria-labelledby="pais{{i}}-tab">
+                                <div class="row textoDespuesPestanas">
+                                    <ng-container *ngFor="let contacto of paises.contacto; first as isFirst; index as i">
+                                        <div class="col-md-4">
+                                            <h6 class="m-0">{{ contacto.titulo }}</h6>
+                                            <p class="textoenColombia" [innerHTML]="contacto.contacto"></p>
+                                        </div>
+                                    </ng-container>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="estados" role="tabpanel" aria-labelledby="estados-tab">...</div>
-                        <div class="tab-pane fade" id="mexico" role="tabpanel" aria-labelledby="mexico-tab">...</div>
-                        <div class="tab-pane fade" id="chile" role="tabpanel" aria-labelledby="chile-tab">...</div>
+                        </ng-container>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<ng-container *ngFor="let clientes of nuestrosClientes; first as isFirst; index as i">
 <section class="seccionColombia11">
     <div class="container">
         <div class="row">
             <div class="col mt-5 mb-4+">
-                <h2 class="tituloNuestrosClientes text-blue1 text-center font-weight-bold">Nuestros Clientes</h2>
+                <h2 class="tituloNuestrosClientes text-blue1 text-center font-weight-bold">{{ clientes.titulo }}</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col mb-5">
-                <div class="marcas-slider">
-                    <div class="item text-center">
-                        <a href=""><img src="assets/images/marcas/1neplan_marca.png" alt=""></a>
-                    </div>
-                    <div class="item text-center">
-                        <a href=""><img src="assets/images/marcas/2dranetz_marca.png" alt=""></a>
-                    </div>
-                    <div class="item text-center">
-                        <a href=""><img src="assets/images/marcas/3xgs_marca.png" alt=""></a>
-                    </div>
-                    <div class="item text-center">
-                        <a href=""><img src="assets/images/marcas/4beck_marca.png" alt=""></a>
-                    </div>
-                    <div class="item text-center">
-                        <a href=""><img src="assets/images/marcas/5Ndb_marca.png" alt=""></a>
-                    </div>
-                    <div class="item text-center">
-                        <a href=""><img src="assets/images/marcas/6GMC_marca.png" alt=""></a>
-                    </div>
-                </div>
+            <div class="col mb-5 mt-3">
+                <owl-carousel
+                        [options]="{items: 5, dots: true, nav: false, loop: true, autoplay: true}"
+                        [items]="clientes.imagenes"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                        <div class="item d-flex justify-content-center align-content-center" *ngFor="let logos of clientes.imagenes;let i = index">
+                            <div style="align-content: center">
+                                <a href={{logos.url}}><img style="height: auto;width:100%;margin:0 auto" src={{logos.imagen}}/></a>
+                            </div>
+                        </div>
+                </owl-carousel>
             </div>
         </div>
     </div>
 </section>
+</ng-container>
+
+<ng-container *ngFor="let equipo of equipoTrabajo; first as isFirst; index as i">
 <section class="seccionColombia12">
     <div class="full-afterClients mb-5">
         <div class="container-fluid">
@@ -384,28 +269,30 @@
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-4 offset-md-1 d-flex align-items-center" style="height: 400px">
-                    <p class="texto-franja-azul size25 font-weight-normal pt-5">Somos una organización proveedora de bienestar, donde velamos los derechos de todos nuestros colaboradores, coherente con los principios que nos rigen y comprometidos con nuestro papel dentro de la sociedad.
-                    </p>
+                    <p class="texto-franja-azul size25 font-weight-normal pt-5" [innerHTML]="equipo.descripcion"></p>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-img" style="margin-top: -400px;">
-        <img id="imagenEquipo" src="assets/images/equipo-de-trabajo/equipo-de-trabajo.jpg" alt="Equipo" class="img-fluid">
+        <img id="imagenEquipo" src={{equipo.imagen}} alt="Equipo" class="img-fluid">
     </div>
 </section>
+</ng-container>
+
+<ng-container *ngFor="let vacante_content of vacantes; first as isFirst; index as i">
 <section class="seccionColombia13 ">
     <div class="container seccion-hv mt-5">
         <div class="row">
-            <div class="col-md-7 padre-textoshv">
+            <div class="col-md-7">
                 <div class="full-textoshv">
-                    <p class="tituloHojadeVida m-0">¡Queremos que seas parte de nuestro equipo de trabajo!</p>
-                    <p class="textoHojadeVida">En GERS estamos en constante búsqueda de personal calificado para todas nuestras áreas de servicio.</p>
-                    <a class="linkHoja" href="">Registra tu Hoja de vida y conoce nuestras vacantes aquí <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
+                    <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
+                    <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
+                    <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                 </div>
             </div>
             <div class="col-md-5">
-                <img id="imagenHV" src="assets/images/hoja-de-vida/hojadevida.jpg" alt="HV" width=100%>
+                <img id="imagenHV" src="{{vacante_content.imagen}}" alt="HV" width=100%>
             </div>
         </div>
     </div>
