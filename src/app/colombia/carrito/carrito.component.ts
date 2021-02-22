@@ -86,20 +86,22 @@ export class CarritoComponent implements OnInit {
 
   }
 
-  cambiarUnidades(cantidad, data, identificador, tipo) {
-    console.log(cantidad, data, identificador, tipo);
+  cambiarUnidades(data, identificador, proceso) {
 
     this.aumentarDisminuir = JSON.parse(localStorage.getItem('carrito'));
-    let dataCarrito = this.aumentarDisminuir;
-    const itemAModificar = dataCarrito.find(item => item.producto_codigo === data['producto_codigo']);
 
-    if (cantidad === 1) {
-      itemAModificar['producto_cantidad'] += 1;
+    if (proceso === 1) {
+      this.aumentarDisminuir[identificador]['producto_cantidad'] += 1;
     } else {
-      itemAModificar['producto_cantidad'] -= 1;
+
+      if (this.aumentarDisminuir[identificador]['producto_cantidad'] >  0) {
+        this.aumentarDisminuir[identificador]['producto_cantidad'] -= 1;
+      } else {
+        let datos = 'Articulo agregado a la canasta no puede ser menor a 1 unidad';
+        this.alertaS.showToasterWarning(datos);
+      }
+
     }
-    localStorage.removeItem('carrito');
-    this.aumentarDisminuir.push(itemAModificar);
 
     localStorage.setItem('carrito', JSON.stringify(this.aumentarDisminuir));
     this.variableG.changeMessage();

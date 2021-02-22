@@ -21,7 +21,7 @@
     </div>
     <div class="col-6 col-md-6  col-lg-3 ">
       <div class="row   filtro-cantidad-productos ">
-        <div class="col-12" (click)="cambiarUnidades(1, data, indices, true)">
+        <div class="col-12" (click)="cambiarUnidades(data, indices, 1)">
           <i class="fa fa-plus-circle icono-aumenta"></i>
         </div>
         <div class="col-12">
@@ -29,7 +29,7 @@
                            {{data.producto_cantidad}} Unidades
                          </span>
         </div>
-        <div class="col-12" (click)="cambiarUnidades(0, data, indices, false)">
+        <div class="col-12" (click)="cambiarUnidades(data, indices, 0)">
           <i class="fa fa-minus-circle iconos-reducir"></i>
         </div>
       </div>

@@ -65,7 +65,7 @@
                     <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
                       <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
                     </li>
-                  
+
                 <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style4'">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -74,7 +74,7 @@
                   <div class="dropdown-menu menuproductos megamenu navbar-center">
                     <div class="row filaRepresentaciones">
 
-                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                   <!--   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
@@ -85,9 +85,9 @@
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-                      </div>
+                      </div>-->
 
-                      <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
                             <li class="nav-item">
                                 <a class="nav-link size13 pt-2 pb-2"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
@@ -96,8 +96,8 @@
                                 </a>
                             </li>
                         </ng-container>
-                      </ul> -->
-                      <!-- <div class="tab-content" id="myTabContent">
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
                           <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
                               <div class="tab-pane fade" *ngIf="paises.pais != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="pais{{i}}" role="tabpanel" aria-labelledby="pais{{i}}-tab">
                                   <div class="row textoDespuesPestanas">
@@ -110,14 +110,14 @@
                                   </div>
                               </div>
                           </ng-container>
-                      </div> -->
+                      </div>
                       <!-- <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
                       </div> -->
 
-                      <!-- <div class="col-md-4 representacionItem">
+                     <div class="col-md-4 representacionItem">
                         <a routerLink="/productos">
                           <img class="imagenMarcaMenu" src="assets/images/marcas/4beck_marca.png" alt="Logo Beck">
                         </a>
@@ -183,7 +183,7 @@
 
                           <p class="textoItemMarcaMenu"></p>
                         </a>
-                      </div> -->
+                      </div>
                     </div>
                   </div>
                 </li>
