@@ -7,6 +7,7 @@ import { APP_ROUTING } from './app.routing';
 // Services
 import { HomeService } from './services/home.service';
 import { MenusService } from './services/menus.service';
+import { PagesService } from './services/pages.service';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './topbar-azul/topbar-azul.component';
@@ -47,6 +48,10 @@ import { TrabajeConNosotrosComponent } from './colombia/trabaje-con-nosotros/tra
 import { EnviarCurriculumComponent } from './colombia/enviar-curriculum/enviar-curriculum.component';
 import { EnviarHojaComponent } from './enviar-hoja/enviar-hoja.component';
 import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-interna.component';
+import { PublicacionesComponent } from './colombia/publicaciones/publicaciones.component';
+import { PublicacionInternaComponent } from './colombia/publicaciones/publicacion-interna/publicacion-interna.component';
+
+
 import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
@@ -83,6 +88,8 @@ import { OwlModule } from 'ngx-owl-carousel';
     EnviarCurriculumComponent,
     EnviarHojaComponent,
     VacanteInternaComponent,
+    PublicacionesComponent,
+    PublicacionInternaComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +105,7 @@ import { OwlModule } from 'ngx-owl-carousel';
   providers: [
     HomeService,
     MenusService,
+    PagesService
   ],
   bootstrap: [AppComponent]
 })

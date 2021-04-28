@@ -30,6 +30,9 @@ small {
     width: 10px !important;
 }
 
+.size12 {
+    font-size: 12px;
+}
 .size13 {
     font-size: 13px;
 }
@@ -56,6 +59,10 @@ small {
 
 .size22 {
     font-size: 22px;
+}
+
+.size24 {
+    font-size: 24px;
 }
 
 .size25 {
@@ -445,22 +452,6 @@ li.item-menu-sedes {
     border-right: 1px solid #D8D8D8;
 }
 
-@media (max-width: 768px) {
-    .megamenu-full-with {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .megamenu-full-with>li {
-        margin-bottom: 30px;
-    }
-    .megamenu-full-with>li:last-child {
-        margin-bottom: 0;
-    }
-    .dropdown-header-ciudad {
-        padding: 3px 15px !important;
-    }
-}
-
 
 /*************************************/
 
@@ -768,7 +759,7 @@ li.item-menu-sedes {
     width: 100%;
     text-decoration: none;
     padding: 12px 10px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     border: 1px solid transparent;
 }
 
@@ -1441,8 +1432,13 @@ p.textoItemMenu {
     cursor: pointer;
 }
 
-.tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 110px;
+.homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+    bottom: 120px;
+    transition: 1s;
+    cursor: pointer;
+}
+.proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+    bottom: 90px;
     transition: 1s;
     cursor: pointer;
 }
@@ -1885,3 +1881,49 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     border-top: 2px solid #cecece;
 }
 
+/***** Publicaciones ******/
+.card-publication a:hover{
+    color: #44C0FE;
+}
+
+.card-publication a:hover h3{
+    color: #44C0FE;
+}
+
+.card-publication:hover{
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+    transition: .4s;
+}
+
+.main .img{
+    position:absolute;
+}
+
+/***** RESPONSIVE ******/
+
+@media (max-width: 767px) {
+    .megamenu-full-with {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .megamenu-full-with>li {
+        margin-bottom: 30px;
+    }
+    .megamenu-full-with>li:last-child {
+        margin-bottom: 0;
+    }
+    .dropdown-header-ciudad {
+        padding: 3px 15px;
+    }
+    .col-formulario{
+        position: relative;
+    }
+    .mt-150 {
+        margin-top: 50px;
+    }
+    .logoFooter{
+        position: relative;
+        display: block;
+        text-align: center;
+    }
+}

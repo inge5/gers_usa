@@ -2,14 +2,11 @@
     <div class="container">
         <div class="row pb-5" style="background-image: url(assets/images/nosotros/points.png);background-repeat: no-repeat;background-position: top right;">
             <div class="col-sm-6 pt-5">
-                <h4 class="mb-4 text-blue1 font-weight-bold size22">Política de<br>gestión integral</h4>
-                <p>GERS,empresa de consultoría en ingeniería que presta servicios de diseño, estudios, pruebas y puesta en servicio de sistemas eléctricos, comercialización de equipos y software especializados, se compromete a realizar sus actividades cumpliendo la legislación nacional, la internacional y los requisitos suscritos aplicables a sus proyectos.<br>
-                    <br>
-                    Sus acciones se orientan a la protección ambiental, la seguridad y salud de sus colaboradores y contratistas y se enfocan en la mejora continua de procesos y la satisfacción de sus clientes.
-                </p>
+                <h4 class="mb-4 text-blue1 font-weight-bold size22">{{ seccion_1_data.titulo }}</h4>
+                <p [innerHTML]="seccion_1_data.texto_general"></p>
             </div>
             <div class="col-sm-6 pt-5">
-                <img class="img-fluid mx-auto d-block mb-3 mt-2" src="assets/images/nosotros/politica.png" alt="Políticas">
+                <img *ngIf="seccion_1_data.imagen" class="img-fluid mx-auto d-block mb-3 mt-2" src="{{ seccion_1_data.imagen }}" alt="Políticas">
             </div>
         </div>
     </div>
@@ -17,15 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="mb-4 text-blue1 font-weight-bold size22">Hace parte de la política de GERS</h4>
-                    <ul class="roboto mb-5">
-                        <li>Prevenir accidentes y enfermedades identificando los peligros, evaluando y valorando los riesgos, determinando los controles y mejorando continuamente las condiciones de trabajo</li>
-                        <li>Prevenir la contaminación del medio ambiente, controlando sus impactos, haciendo uso eficiente de sus recursos y asegurando la disposición adecuada de los residuos generados</li>
-                        <li>Desarrollar programas de responsabilidad social dirigidos a población vulnerable</li>
-                        <li>Evitar daños a su propiedad y la de sus clientes</li>
-                        <li>Prestar sus servicios con oportunidad, confiabilidad y rentabilidad adecuada</li>
-                    </ul>
-                    <p class="text-blue1 font-weight-300">Para lograr estos compromisos, la empresa provee los recursos humanos, económicos y técnicos necesarios para el mejoramiento de sus servicios y el desarrollo integral de sus colaboradores.
+                    <h4 class="mb-4 text-blue1 font-weight-bold size22">{{ seccion_2_data.titulo }}</h4>
+                    <p [innerHTML]="seccion_2_data.texto_general"></p>
+                    <p *ngIf="seccion_2_data.texto_final" class="text-blue1 font-weight-300">{{seccion_2_data.texto_final}}
                     </p>
                 </div>
             </div>

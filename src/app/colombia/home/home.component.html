@@ -167,7 +167,7 @@
     </div>
 </section>
 
-<section class="seccionColombia9 mt-5">
+<section class="seccionColombia9 mt-5 homeProyects">
     <div class="container-fluid">
         <div class="row mb-4">
             <div class="col-xs-12 col-md-6 offset-md-3 mt-2">
@@ -188,7 +188,7 @@
                         </div>
                         <!--Un comentario prueba-->
                         <div class="textoTarjetaProyectos">
-                            <p class="size13" [innerHTML]="proyects.acf.descripcion"></p>
+                            <p class="size13">{{proyects.acf.descripcion}}</p>
                         </div>
                         <img src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
                     </div>
@@ -245,9 +245,11 @@
         </div>
         <div class="row">
             <div class="col mb-5 mt-3">
+                <!--[items]="clientes.imagenes"
+                -- Esto estaba al interior de las opciones de owl-carousel, debajo de opciones, pero generaba un error
+                -->
                 <owl-carousel
                         [options]="{items: 5, dots: true, nav: false, loop: true, autoplay: true}"
-                        [items]="clientes.imagenes"
                         [carouselClasses]="['owl-theme', 'row', 'sliding']">
                         <div class="item d-flex justify-content-center align-content-center" *ngFor="let logos of clientes.imagenes;let i = index">
                             <div style="align-content: center">

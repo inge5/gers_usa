@@ -1,16 +1,14 @@
+<!--Aquí Inicia el Menú Principal Grande-->
 <nav class="navbar navbar-expand-md menuPrincipal" #stickyMenu [class.sticky]="sticky">
     <div class="container">
-        <div class="navbar-header">
+        <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
             <a class="navbar-brand" href="#">
-                <img src="assets/images/carousel-principal/logo_1981png.png" width="190" height="auto" alt="Logo">
+                <img class="LogoPrincipal" src="assets/images/carousel-principal/logo_1981png.png" alt="Logo">
             </a>
             <a class="menuVerticalPrincipal solicitarMenuLateral" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
-        </div>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-	        <span class="navbar-toggler-icon"></span>
-	      </button>
-
-        <div class="collapse navbar-collapse " id="navbarCollapse">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <div class="navbar-nav ml-auto">
                 <ul class="list-h">
                   <ng-container *ngFor="let menu_parent of menuPrincipal_data; first as isFirst">

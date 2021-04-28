@@ -5,37 +5,34 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-sm-8">
                         <div class="media">
-                            <img class="align-self-center mr-3" src="assets/images/servicios/interventoriaPNG.png" alt="Interventoria">
+                            <img class="align-self-center mr-3" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Interventoria">
                             <div class="media-body">
-                                <h4 class="mb-0 text-blue1 font-weight-bold">Interventorías<br>y asesorías</h4>
+                                <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo }}</h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <a href="" class="btn btn-blue font-weight-light size13 pt-2 pb-2">SOLICITAR INFORMACIÓN</a>
+                        <a href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
                     </div>
                     <div class="col-sm-12">
-                        <p class="mt-2">Realizamos interventorías a diseños, montajes, obras industriales y comerciales.</p>
-                        <p>El amplio conocimiento en ingeniería de sistemas eléctricos, normas nacionales e internacionales y la trayectoria en el desarrollo de proyectos en las etapas de planeación, estudios, diseños, montaje, pruebas y puesta en servicio, <span class="font-weight-bold text-blue1">hacen de GERS un aliado estratégico para el control técnico y administrativo de proyectos.</span></p>
+                        <p class="mt-2" [innerHTML]="seccion_1_data.texto_principal"></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-5 pr-0">
-                <img src="assets/images/servicios/img-interventoria.png" alt="Interventoria" class="img-fluid mt-5">
+                <img src="{{ seccion_1_data.imagen_principal }}" alt="Interventoria" class="img-fluid mt-5">
             </div>
         </div>
     </div>
     <div class="bg-blue1 pt-4 pb-4" style="margin-top:-40px">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 col-md-3 col-lg-3 text-center">
-                    <img src="assets/images/servicios/001-igualadaPNG.png" alt="control tecnico" class="img-fluid">
-                    <p class="text-white m-0 size13">Control técnico y <br>administrativo de proyectos</p>
-                </div>
-                <div class="col-sm-3 col-md-3 col-lg-3 text-center">
-                    <img src="assets/images/servicios/002-consejoPNG.png" alt="interventoria" class="img-fluid">
-                    <p class="text-white m-0 size13">Interventorías y <br>asesorías</p>
-                </div>
+                <ng-container *ngFor="let item of seccion_iconos_data">
+                    <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+                        <img src="{{ item.icono }}" alt="control tecnico" class="img-fluid">
+                        <p class="text-white m-0 size13">{{ item.texto }}</p>
+                    </div>    
+                </ng-container>
             </div>
         </div>
     </div>

@@ -21,6 +21,8 @@ import { PoliticaGestionIntegralComponent } from './colombia/nosotros/politica-g
 import { AcuerdosInternacionalesComponent } from './colombia/acuerdos-internacionales/acuerdos-internacionales.component';
 import { TrabajeConNosotrosComponent } from './colombia/trabaje-con-nosotros/trabaje-con-nosotros.component';
 import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-interna.component';
+import { PublicacionesComponent } from './colombia/publicaciones/publicaciones.component';
+import { PublicacionInternaComponent } from './colombia/publicaciones/publicacion-interna/publicacion-interna.component';
 import {DetalleProductoComponent} from "./colombia/productos/detalle-producto/detalle-producto.component";
 import {ProductoComponent} from "./colombia/productos/producto/producto.component";
 
@@ -37,18 +39,20 @@ const APP_ROUTES: Routes = [
     {path: 'proyectos', component: ProyectosComponent},
     {path: 'productos', component: ProductoComponent},
     {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
-    {path: 'estudios-sistemas', component: EstudiosSistemasComponent},
+    {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasComponent},
     {path: 'smart-grids', component: SmartGridsComponent},
-    {path: 'diseno-ingenieria', component: DisenoIngenieriaComponent},
+    {path: 'diseno-e-ingenieria', component: DisenoIngenieriaComponent},
     {path: 'servicios-energeticos', component: ServiciosEnergeticosComponent},
-    {path: 'interventorias-asesorias', component: InterventoriasAsesoriasComponent},
-    {path: 'planeacion-proyectos', component: PlaneacionProyectosComponent},
+    {path: 'interventoria-y-asesoria', component: InterventoriasAsesoriasComponent},
+    {path: 'planeacion-de-proyectos', component: PlaneacionProyectosComponent},
     {path: 'contactenos', component: ContactenosComponent},
     {path: 'pensamiento-corporativo', component: PensamientoCorporativoComponent},
     {path: 'politica-gestion-integral', component: PoliticaGestionIntegralComponent},
     {path: 'acuerdos-internacionales', component: AcuerdosInternacionalesComponent},
     {path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent},
     {path: 'vacante-interna', component: VacanteInternaComponent},
+    {path: 'publicaciones', component: PublicacionesComponent},
+    {path: 'publicacion-interna', component: PublicacionInternaComponent},
     {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
     {path: '**', pathMatch: 'full', redirectTo: ''}
 ];

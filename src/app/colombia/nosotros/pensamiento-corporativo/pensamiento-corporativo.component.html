@@ -3,83 +3,50 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="media">
-                        <img class="align-self-center mr-3" src="assets/images/nosotros/mision.png" alt="Misión">
-                        <div class="media-body my-auto">
-                            <h4 class="mb-0 text-white font-weight-bold">Misión</h4>
+                    <ng-container *ngFor="let proposito of proposito_empresa_data">
+                        <div class="media mt-3">
+                            <img class="align-self-center mr-3" *ngIf="proposito.icono_proposito" src="{{ proposito.icono_proposito }}" alt="Proposito">
+                            <div class="media-body my-auto">
+                                <h4 class="mb-0 text-white font-weight-bold">{{ proposito.titulo_proposito }}</h4>
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-white">Generar soluciones integrales e innovadoras para el sector energético, acordes con las necesidades de nuestros clientes.
-                    </p>
-                    <div class="media mt-3">
-                        <img class="align-self-center mr-3" src="assets/images/nosotros/vision.png" alt="Visión">
-                        <div class="media-body my-auto">
-                            <h4 class="mb-0 text-white font-weight-bold">Visión</h4>
-                        </div>
-                    </div>
-                    <p class="text-white">Consolidar nuestra presencia en el mercado nacional e internacional y ser reconocidos por los excelentes resultados que nuestras soluciones ofrecen a nuestros clientes, colaboradores y accionistas.
-                    </p>
+                        <p class="text-white">{{ proposito.texto_proposito }}</p>
+                    </ng-container>
                 </div>
                 <div class="col-sm-6">
-                    <img src="assets/images/servicios/diseno-ingeneria.png" alt="servicio 2" class="mt-1 img-fluid d-block position-absolute">
+                    <img *ngIf="imagen_proposito_data" src="{{ imagen_proposito_data }}" alt="servicio 2" class="mt-1 img-fluid d-block position-absolute">
                 </div>
             </div>
         </div>
     </div>
     <div class="container mt-100 mb-5">
         <div class="row">
-            <div class="col-sm-12"><h4 class="text-blue1 font-weight-600 size32 d-block text-center mb-4">Valores corporativos</h4></div>
+            <div class="col-sm-12"><h4 class="text-blue1 font-weight-600 size32 d-block text-center mb-4">{{ titulo_valores_data }}</h4></div>
             <div class="col-sm-6">
-                <div class="valores-card p-4">
-                    <div class="media mb-3">
-                        <img class="align-self-center mr-3" src="assets/images/nosotros/003-integracionPNG.png" alt="Integridad">
-                        <div class="media-body my-auto">
-                            <h4 class="mb-0 text-blue3 font-weight-900 text-uppercase size26 letter-spacing-2-28 roboto">Integridad</h4>
+                <ng-container *ngFor="let valor of valor_corporativo_columna1_data">
+                    <div class="valores-card p-4 mb-4">
+                        <div class="media mb-3">
+                            <img class="align-self-center mr-3" src="{{ valor.imagen }}" alt="Valor">
+                            <div class="media-body my-auto">
+                                <h4 class="mb-0 text-blue3 font-weight-900 text-uppercase size26 letter-spacing-2-28 roboto">{{ valor.titulo }}</h4>
+                            </div>
                         </div>
+                        <p *ngIf="valor.texto_general" [innerHTML]="valor.texto_general"></p>
                     </div>
-                    <p>En GERS somos honestos, correctos y transparentes en todos nuestros acuerdos internos y externos. No ejecutamos ni cohonestamos prácticas corruptas en los negocios en los cuales participamos, cumplimos a cabalidad nuestros compromisos y obligaciones, no empleamos la coerción ni causamos daño de manera deliberada.<br>
-                        <br>
-                        En GERS actuamos de buena fe, no abusamos de nuestra posición y en nuestra actividad profesional procedemos con criterio independiente e imparcial.
-                        </p>
-                </div>
-                <div class="valores-card p-4 mt-4">
-                    <div class="media mb-3">
-                        <img class="align-self-center mr-3" src="assets/images/nosotros/006-tomados-de-la-manoPNG.png" alt="Solidaridad">
-                        <div class="media-body my-auto">
-                            <h4 class="mb-0 text-blue3 font-weight-900 text-uppercase size26 letter-spacing-2-28 roboto">Solidaridad</h4>
-                        </div>
-                    </div>
-                    <p>En GERS aportamos nuestro potencial empresarial como una contribución al desarrollo de nuestra gente, de la región y del país.<br>
-                        <br>
-                        Promovemos la colaboración, la unión y las acciones que brinden oportunidades para nuestros empleados, los grupos de interés con los cuales interactuamos, la comunidad en nuestra área de influencia y sectores de la sociedad en situación de vulnerabilidad
-                        </p>
-                </div>
+                </ng-container>
             </div>
             <div class="col-sm-6">
-                <div class="valores-card p-4">
-                    <div class="media mb-3">
-                        <img class="align-self-center mr-3 img-fluid" src="assets/images/nosotros/005-solidaridadPNG.png" alt="Responsabilidad">
-                        <div class="media-body my-auto">
-                            <h4 class="mb-0 text-blue3 font-weight-900 text-uppercase size26 letter-spacing-2-28 roboto">Responsabilidad</h4>
+                <ng-container *ngFor="let valor2 of valor_corporativo_columna2_data">
+                    <div class="valores-card p-4 mb-4">
+                        <div class="media mb-3">
+                            <img class="align-self-center mr-3" *ngIf="valor2.imagen" src="{{ valor2.imagen }}" alt="Valor">
+                            <div class="media-body my-auto">
+                                <h4 class="mb-0 text-blue3 font-weight-900 text-uppercase size26 letter-spacing-2-28 roboto">{{ valor2.titulo }}</h4>
+                            </div>
                         </div>
+                        <p *ngIf="valor2.texto_general" [innerHTML]="valor2.texto_general"></p>
                     </div>
-                    <p>En GERS tomamos decisiones de manera consciente, asumimos las consecuencias que se deriven de ellas y respondemos por nuestros actos en concordancia con el compromiso de obrar correctamente.
-                    </p>
-                </div>
-                <div class="valores-card p-4 mt-4">
-                    <div class="media mb-3">
-                        <img class="align-self-center mr-3 img-fluid" src="assets/images/nosotros/004-comercio-justoPNG.png" alt="Respeto">
-                        <div class="media-body my-auto">
-                            <h4 class="mb-0 text-blue3 font-weight-900 text-uppercase size26 letter-spacing-2-28 roboto">Respeto</h4>
-                        </div>
-                    </div>
-                    <p>En GERS brindamos y exigimos respeto hacia el ser humano sin distinción de sexo, raza, credo o posición social. Nuestras relaciones personales internas y externas se realizan de manera cordial, amable y con actitud de cooperación lo que nos permite afrontar las situaciones de conflicto con altura.<br>
-                        <br>
-                        Tenemos confianza en nuestra gente y en sus decisiones, favorecemos la libre expresión de las ideas y la discusión constructiva.<br>
-                        <br>
-                        Este valor está presente en las relaciones con nuestros clientes, proveedores, contratistas, asociados y la comunidad. En GERS respetamos en todas las situaciones la dignidad del ser humano.
-                        </p>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>
@@ -87,17 +54,11 @@
         <div class="container">
             <div class="row" style="background-image: url(assets/images/nosotros/points.png);background-repeat: no-repeat;background-position: top right;">
                 <div class="col-sm-6 my-auto pt-4 pb-4">
-                    <h4 class="text-blue1 font-weight-bold size22 text-uppercase">Compromisos</h4>
-                    <ul class="text-blue1 size22">
-                        <li>Aprender y compartir</li>
-                        <li>Crear lazos de confianza y trabajar en equipo</li>
-                        <li>Ser proactivos y diligentes</li>
-                        <li>Hacer siempre lo correcto</li>
-                        <li>Vivir nuestra cultura y valores</li>
-                    </ul>
+                    <h4 class="text-blue1 font-weight-bold size22 text-uppercase">{{seccion_compromisos_data.titulo}}</h4>
+                    <p *ngIf="seccion_compromisos_data.texto_general" [innerHTML]="seccion_compromisos_data.texto_general"></p>
                 </div>
                 <div class="col-sm-6 pt-4 pb-4">
-                    <img src="assets/images/nosotros/hoja-de-vida.jpg" alt="Compromiso" class="img-fluid">
+                    <img *ngIf="seccion_compromisos_data.imagen" src="{{seccion_compromisos_data.imagen}}" alt="Compromiso" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -106,8 +67,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h3 class="mb-3 text-center text-uppercase text-white roboto font-weight-900 size26 letter-spacing-2-28">Propuesta de Valor</h3>
-                    <p class="text-center text-white roboto size16">Comprender las necesidades de nuestros clientes, desarrollar y entregar soluciones a su <br>medida de forma confiable y rentable.</p>
+                    <h3 class="mb-3 text-center text-uppercase text-white roboto font-weight-900 size26 letter-spacing-2-28">{{seccion_propuesta_data.titulo}}</h3>
+                    <p class="text-center text-white roboto size16" [innerHTML]="seccion_propuesta_data.texto_general"></p>
                 </div>
             </div>
         </div>
@@ -116,29 +77,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="text-blue1 roboto size26 letter-spacing-2-28 text-center font-weight-900 mb-5">Pilares estratégicos</h4>
+                    <h4 class="text-blue1 roboto size26 letter-spacing-2-28 text-center font-weight-900 mb-5">{{ titulo_pilares_data }}</h4>
                 </div>
-                <div class="col align-items-stretch my-auto">
-                    <img class="align-self-center img-fluid mx-auto d-block mb-3" src="assets/images/nosotros/001-gestion-del-tiempoPNG.png" alt="Calidad">
-                    <p class="roboto text-center">Calidad y Eficiencia</p>
-                </div>
-                <div class="col align-items-stretch my-auto">
-                    <img class="align-self-center img-fluid mx-auto d-block mb-3" src="assets/images/nosotros/004-satisfaccionPNG.png" alt="Satisfacción">
-                    <p class="roboto text-center">satisfacción total<br>
-                        de nuestros clientes</p>
-                </div>
-                <div class="col align-items-stretch my-auto">
-                    <img class="align-self-center img-fluid mx-auto d-block mb-3" src="assets/images/nosotros/003-gestion-de-proyectosPNG.png" alt="Innovación">
-                    <p class="roboto text-center">Innovación y Adaptación</p>
-                </div>
-                <div class="col align-items-stretch my-auto">
-                    <img class="align-self-center img-fluid mx-auto d-block mb-3" src="assets/images/nosotros/002-crecimientoPNG.png" alt="Crecimiento">
-                    <p class="roboto text-center">Crecimiento sostenible</p>
-                </div>
-                <div class="col align-items-stretch my-auto">
-                    <img class="align-self-center img-fluid mx-auto d-block mb-3" src="assets/images/nosotros/005-trabajo-en-equipoPNG.png" alt="Alianzas">
-                    <p class="roboto text-center">Alianzas estratégicas</p>
-                </div>
+                <ng-container *ngFor="let pilar of pilar_data">
+                    <div class="col align-items-stretch my-auto">
+                        <img *ngIf="pilar.imagen" class="align-self-center img-fluid mx-auto d-block mb-3" src="{{pilar.imagen}}" alt="pilar">
+                        <p class="roboto text-center">{{ pilar.texto }}</p>
+                    </div>    
+                </ng-container>
             </div>
         </div>
     </div>
@@ -146,7 +92,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <img class="img-fluid mx-auto d-block mb-3 mt-5" src="assets/images/nosotros/mapa-procesos.png" alt="Mapa">
+                    <img *ngIf="mapa_procesos_data" class="img-fluid mx-auto d-block mb-3 mt-5" src="{{ mapa_procesos_data }}" alt="Mapa">
                 </div>
             </div>
         </div>

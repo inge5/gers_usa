@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../../services/home.service';
+import { PagesService } from '../../services/pages.service';
+
 
 @Component({
   selector: 'app-proyectos',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
+  FeaturedProyects:any[] = [];
+  titulo_pagina_data: any;
 
-  constructor() { }
+  constructor(private _proyectosService:HomeService,private _proyectosPageService:PagesService) { }
 
   ngOnInit(): void {
+    this._proyectosService.getProyects()
+      .subscribe((res:any) => {
+        this.FeaturedProyects = res;
+      });  
+      this._proyectosPageService.getProyectosPage()
+      .subscribe((res:any) => {
+        this.titulo_pagina_data = res.acf.titulo_pagina;
+      });  
   }
 
 }

@@ -1,101 +1,28 @@
-<section class="seccionColombia9 mt-5 mb-5">
+<section class="seccionProyectos mt-5 mb-5 proyectsPage">
     <div class="container">
         <div class="row mb-4">
             <div class="col-md-12 mt-2">
-                <h3 class="font-weight-bold text-blue1 text-center">Creemos en el desarrolo y la innovación para alcanzar el<br> éxito de todos los proyectos que nos han confiado
-                </h3>
+                <h3 class="font-weight-bold text-blue1 text-center">{{ titulo_pagina_data }}</h3>
             </div>
         </div>
         <div class="row mt-3 mb-5">
-            <div class="col-sm-6">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">AWARALA</h3>
-                            <p class="size13">Panamá</p>
+            <ng-container *ngFor="let proyects of FeaturedProyects | slice:0:4 ; first as isFirst; index as i">
+                <div class="col-md-6 tarjetaProyectos mb-4">
+                    <div class="tarjetaProyectosInterior">
+                        <div class="tituloTarjetaProyectos">
+                            <div class="titulosTarjetaBlanca">
+                                <h3 class="size16">{{ proyects.acf.titulo }}</h3>
+                                <p class="size13">{{ proyects.acf.extracto }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <!--Un comentario prueba-->
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_1.jpg" alt="proyecto 1" width="100%">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">Termovalle</h3>
-                            <p class="size13">Colombia</p>
+                        <!--Un comentario prueba-->
+                        <div class="textoTarjetaProyectos">
+                            <p class="size13">{{proyects.acf.descripcion}}</p>
                         </div>
+                        <img class="img-fluid" src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
                     </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_2.jpg" alt="proyecto 2" width="100%">
                 </div>
-            </div>
-        </div>
-        <div class="row mt-3 mb-5">
-            <div class="col-sm-6">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">EMSA S.A. E.P.S</h3>
-                            <p class="size13">Chile</p>
-                        </div>
-                    </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_3.jpg" alt="proyecto 3" width="100%">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">EMSA S.A. E.P.S</h3>
-                            <p class="size13">Chile</p>
-                        </div>
-                    </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_3.jpg" alt="proyecto 3" width="100%">
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3 mb-5">
-            <div class="col-sm-6">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">EMSA S.A. E.P.S</h3>
-                            <p class="size13">Chile</p>
-                        </div>
-                    </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_3.jpg" alt="proyecto 3" width="100%">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="tarjetaProyectosInterior">
-                    <div class="tituloTarjetaProyectos">
-                        <div class="titulosTarjetaBlanca">
-                            <h3 class="size16">EMSA S.A. E.P.S</h3>
-                            <p class="size13">Chile</p>
-                        </div>
-                    </div>
-                    <div class="textoTarjetaProyectos">
-                        <p class="size13">Ingeniería conceptual,básica y de detalle para la subestación y línea a 110 kV de la nueva central de generación AWARALA ECS-SOLAR con inducción mecánica</p>
-                    </div>
-                    <img src="assets/images/seccion5/proyecto_3.jpg" alt="proyecto 3" width="100%">
-                </div>
-            </div>
+            </ng-container>
         </div>
     </div>
 </section>
