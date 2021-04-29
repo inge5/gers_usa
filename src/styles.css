@@ -539,6 +539,10 @@ li.item-menu-sedes {
 
 
 /*******Menú Principal*******/
+.LogoPrincipal {
+    width: 190px;
+    height: auto;
+}
 
 .menuPrincipal {
     padding-top: 0 !important;
@@ -556,7 +560,7 @@ li.item-menu-sedes {
 
 .menuPrincipal li a.nav-link:hover {
     background-color: #0089FF;
-    color: #fff;
+    color: #fff!important;
 }
 
 .menuPrincipal li a.tienda:hover {
@@ -1107,7 +1111,6 @@ li.item-menu-sedes {
 /****************************************/
 
 .dropdown-menu.menuServicio {
-    min-width: 50rem !important;
     padding: 0px !important;
     top: 95% !important;
 }
@@ -1164,12 +1167,6 @@ p.textoItemMenu {
     border: none !important;
     padding: 0 !important;
     border-radius: 0 !important;
-}
-
-.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-43%);
 }
 
 .representacionItem {
@@ -1277,6 +1274,12 @@ p.textoItemMenu {
 
 
 /*******Banners*******/
+.descripcion-banner{
+    font-size: 1.75rem;
+    }
+.titulo-banner{
+    font-size: 2.5rem;
+}
 
 
 /*****************************************/
@@ -1475,7 +1478,8 @@ p.textoItemMenu {
 }
 
 .seccionAlcanceLimites {
-    padding: 60px 0px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .textoAlcanceLimite-col1 {
@@ -1721,7 +1725,7 @@ p.textoItemMenu {
 }
 
 .contenido-tabs {
-    padding: 25px 20px;
+    padding: 25px 10px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -1900,7 +1904,6 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 /***** RESPONSIVE ******/
-
 @media (max-width: 767px) {
     .megamenu-full-with {
         margin-left: 0;
@@ -1913,17 +1916,127 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         margin-bottom: 0;
     }
     .dropdown-header-ciudad {
-        padding: 3px 15px;
+        padding: 3px 15px !important;
     }
-    .col-formulario{
-        position: relative;
+    .mtn-130{
+        margin-top: 0;
+    }
+    .LogoPrincipal{
+        width:120px !important;
+    }
+    .topBarAzul .navbar-toggler{
+        margin-top: -4px;
+    }
+    #navbarTopBar .navbar-nav .dropdown-menu {
+        width: 100%;
+    }
+    .img-pensamiento-corporativo{
+        position:relative;
+    }
+    .size26 {
+        font-size: 20px;
+    }
+    .pilares .col{
+        min-width: 100%;
     }
     .mt-150 {
         margin-top: 50px;
     }
-    .logoFooter{
-        position: relative;
+    .logoFooter {
+        position: relative !important;
+        top: 0% !important;
         display: block;
         text-align: center;
+    }
+    .contenedorFooter .contacto2 .listaItemsFooter {
+        padding-inline-start: 0;
+    }
+    .contenedorFooter .contacto3 .redesFooter img {
+        width: 25%;
+    }
+    .contenedorFooter .contacto4 .certificados img {
+        width: 33%;
+    }
+    .menuNosotros .col-megamenu ul li.liMenuNosotros {
+        padding: 10px 10px;
+    }    
+    .bg-none{
+        background-image: none!important;
+    }
+    .col-formulario {
+        position: relative!important;
+    }
+    .info-paises .mt-150{
+        margin-top: 30px;
+    }
+    .contactenos .pb-150{
+        padding-bottom: 30px;
+    }
+    .contactenos .pt-150{
+        padding-top: 30px;
+    }
+    .liMenuIniciarSesion {
+        border-right: none !important;
+    }
+    .menuPrincipal #navbarSupportedContent{
+        width: 100%;
+    }
+    .menuRepresentaciones {
+        width: 100% !important;
+    }
+    .diseno-ingenieria .pl-100{
+        padding-left: 15px;
+    }
+    .img-diseno-ing{
+        position:relative;
+    }
+    .diseno-ingenieria .mbn-110 {
+        margin-bottom: 10px;
+    }
+    .servicios-energeticos .pr-100{
+        padding-right: 15px;
+    }
+    .servicios-energeticos .mbn-110{
+        margin-bottom: 10px;
+    }
+    .interventorias-asesorias .pl-100{
+        padding-left: 10px;
+    }
+    .interventorias-asesorias .bg-blue1.mtn-40{
+        margin-top:0px
+    }
+    .tabs-marcas.tabs-estudios-page .nav.nav-tabs li{
+        width: 100%;
+    }
+    .pagina-proyectos .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 120px !important;
+    }
+    .containerLogotrasparente {
+        position: relative;
+    }
+    .descripcion-banner{
+        font-size: 1.2rem;
+    }
+    .titulo-banner{
+        font-size: 1.7rem;
+    }
+    .seccionColombia3 .col{
+        flex-basis: auto;
+        display: block!important;
+    }
+    .seccionColombia5 .col{
+        flex-basis: auto;
+        display: block!important;
+    }
+}
+
+@media (min-width: 768px) {
+    .dropdown-menu.menuServicio {
+        min-width: 45rem !important;
+    }
+    .navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translatex(-43%);
     }
 }

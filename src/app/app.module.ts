@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 import { APP_ROUTING } from './app.routing';
 
 // Services
@@ -99,6 +101,7 @@ import { OwlModule } from 'ngx-owl-carousel';
     HttpClientModule,
     AngularPaginatorModule,
     FormsModule,
+    NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule
   ],

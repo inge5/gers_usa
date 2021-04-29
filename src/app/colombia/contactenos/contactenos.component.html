@@ -3,9 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 pt-150 pb-150">
-                    <h2 class="roboto size56 text-white letter-spacing-0-32">{{ seccion_1_data.titulo_1 }}<br>
+                    <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
+                    <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader"> 
+                        <h2 class="roboto size56 text-white letter-spacing-0-32">{{ seccion_1_data.titulo_1 }}<br>
                         <span class="font-weight-bold">{{ seccion_1_data.titulo_2 }}</span></h2>
                         <p class="size15 text-white">{{ seccion_1_data.texto_general }}</p>
+                    </div>
                 </div>
                 <div class="col-md-6 mt-4">
                     <div class="col-formulario pt-2 pl-5 pr-5 pb-2">

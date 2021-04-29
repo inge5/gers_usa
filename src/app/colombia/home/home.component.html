@@ -15,8 +15,8 @@
                         <div class="container pt-3 pb-3">
                             <div class="row align-items-center">
                                 <div class="col-sm-8 pt-4 pb-4">
-                                    <h1 class="text-white font-weight-bold">{{ home.titulo }}</h1>
-                                    <h3 class="text-white m-0 font-weight-light">{{ home.descripcion }}</h3>
+                                    <h1 class="text-white font-weight-bold titulo-banner">{{ home.titulo }}</h1>
+                                    <h3 class="text-white m-0 font-weight-light descripcion-banner">{{ home.descripcion }}</h3>
                                     <img *ngIf="home.imagen_de_referencia" src="{{ home.imagen_de_referencia }}" alt="" class="img-fluid pt-2 pb-3">
                                     <p class="d-block" *ngIf="home.url_del_boton">
                                         <a class="btn btn-white btn-lg btn-blue font-weight-normal pt-2 pb-2 pr-3 pl-3 size18" href="{{ home.url_del_boton }}" role="button">{{ home.texto_boton }}</a>
@@ -48,12 +48,12 @@
         </div>
     </div>
 </section>
-<ng-container class="seccionColombia3" *ngIf="proyectos_realizados_data">
-    <div class="bg-gray-light pt-5 pb-5">
+<ng-container *ngIf="proyectos_realizados_data">
+    <div class="seccionColombia3 bg-gray-light pt-5 pb-5">
         <div class="container">
             <div class="row ">
                 <ng-container *ngFor="let proyectos of proyectos_realizados_data">
-                    <div class="col d-flex align-items-stretch justify-content-center" *ngIf="proyectos.titulo != undefined">
+                    <div class="col d-flex align-items-stretch justify-content-center mt-2 mb-2" *ngIf="proyectos.titulo != undefined">
                         <div class="card box-shadow-blue">
                             <div class="card-body text-center pt-4 pb-4 p-3">
                                 <h3 class="card-title text-blue3 font-weight-bold size25 pb-3">{{ proyectos.titulo }}</h3>
@@ -79,7 +79,7 @@
     <div class="container pb-5 pt-5">
         <div class="row">
             <ng-container *ngFor="let servicio_eficiente of servicios_eficientes_data">
-                <div class="col text-center border-right" *ngIf="servicio_eficiente.titulo != undefined">
+                <div class="col text-center border-right mt-2 mb-2" *ngIf="servicio_eficiente.titulo != undefined">
                     <img src="{{ servicio_eficiente.imagen }}" alt="Item Pruebas" class="img-fluid pb-4">
                     <h3 class="text-blue1 size18 font-weight-bold">{{ servicio_eficiente.titulo }}</h3>
                     <p class="line-height1-2 size15">{{ servicio_eficiente.descripcion }}</p>

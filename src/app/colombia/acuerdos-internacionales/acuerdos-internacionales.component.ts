@@ -7,10 +7,12 @@ import { PagesService } from '../../services/pages.service';
   styleUrls: ['./acuerdos-internacionales.component.css']
 })
 export class AcuerdosInternacionalesComponent implements OnInit {
-  loader = true;
+  
   item_tab_data : any[] = [];
   imagen_columnas_data: any = {};
   public activePillIndex:number = 0;
+
+  loader = true;
 
   constructor(private _acuerdosinternacionales:PagesService) { }
 

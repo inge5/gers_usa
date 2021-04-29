@@ -1,5 +1,5 @@
 <!--Aquí Inicia el Menú Principal Grande-->
-<nav class="navbar navbar-expand-md menuPrincipal" #stickyMenu [class.sticky]="sticky">
+<nav class="navbar navbar-expand-md navbar-light menuPrincipal" #stickyMenu [class.sticky]="sticky">
     <div class="container">
         <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,8 +9,8 @@
             </a>
             <a class="menuVerticalPrincipal solicitarMenuLateral" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <div class="navbar-nav ml-auto">
-                <ul class="list-h">
+            <ul class="navbar-nav ml-auto">
+                
                   <ng-container *ngFor="let menu_parent of menuPrincipal_data; first as isFirst">
                     <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style1'">
                         <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -201,8 +201,8 @@
                   </div>-->
                 </li>
                 <!-- <li class="nav-item"><a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a></li> -->
-              </ul>
-            </div>
+              
+            </ul>
         </div>
     </div>
 </nav>

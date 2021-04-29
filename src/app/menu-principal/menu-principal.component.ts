@@ -31,7 +31,7 @@ export class MenuPrincipalComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
     handleScroll(){
       const windowScroll = window.pageYOffset;
-      if(windowScroll >= this.elementPosition){
+      if(windowScroll >= this.elementPosition && window.screen.width >= 768){
         this.sticky = true;
       } else {
         this.sticky = false;
