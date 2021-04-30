@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { VacantesService } from '../../services/vacantes.service';
 
 @Component({
   selector: 'app-vacante-interna',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vacante-interna.component.css']
 })
 export class VacanteInternaComponent implements OnInit {
+  vacante_data:any = {};
+  loader = true;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private _vacanteservice:VacantesService) { }
 
   ngOnInit(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this._vacanteservice.getVacante(slug)
+      .subscribe(res => {
+        this.loader = false;
+        this.vacante_data = res;
+        for(let vacante of res){
+          this.vacante_data = vacante;
+        }
+      })
   }
 
 }

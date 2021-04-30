@@ -131,3 +131,12 @@ $(document).ready(function() {
             e.preventDefault();
         });
 });
+
+$('.overlaytrabaja').on('click', function () {
+    // hide sidebar
+    //$('#sidebar').removeClass('active');
+    // hide overlay
+    $('.overlaytrabaja').removeClass('active');
+    $("#wrapper").toggleClass("toggled");
+});
+

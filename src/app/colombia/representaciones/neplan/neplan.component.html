@@ -1,14 +1,16 @@
-<div class="bannerInterna" *ngIf="banner_data.banner_principal" [ngStyle]="{ 'background-image': 'url(' + banner_data.banner_principal + ')'}">
-    <p class="text-center pt-5 pb-5">
-        <img *ngIf="banner_data.logo_imagen" src="{{ banner_data.logo_imagen }}" alt="" class="img-fluid">
-    </p>
+<ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'140px' }"></ngx-skeleton-loader>
+<div *ngIf="!loader">
+    <div class="bannerInterna" *ngIf="banner_data.banner_principal" [ngStyle]="{ 'background-image': 'url(' + banner_data.banner_principal + ')'}">
+        <p class="text-center pt-5 pb-5">
+            <img *ngIf="banner_data.logo_imagen" src="{{ banner_data.logo_imagen }}" alt="" class="img-fluid">
+        </p>
+    </div>
 </div>
-<div class="container tabsCustom">
-    <div class="row">
-        <div class="tabs-marcas tabs-neplan-page mt-5 mb-5">
-            <div class="row">
+<div class="container tabsCustom mt-5 mb-5">
+    <div class="row tabs-marcas tabs-neplan-page">
                 <div class="col-md-4 mb-4 pr-0">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <ngx-skeleton-loader count="4" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <ng-container *ngFor="let item of item_tab_data; let index = index">
                             <li class="nav-item">
                                 <a class="nav-link rounded-0 p-3 border-left" [attr.id]="'v-pills-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-pills-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">
@@ -19,7 +21,8 @@
                     </div>
                 </div>
                 <div class="col-md-8 contenido-tabs">
-                    <div class="tab-content" id="v-pills-tab">
+                    <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader" class="tab-content" id="v-pills-tab">
                         <ng-container *ngFor="let datos of item_tab_data; let index = index">
                             <div class="tab-pane fade show" [ngClass]="{'active': index === activePillIndex}" [attr.id]="'#'+'v-pills-'+index" role="tabpanel">
                                 <p [innerHTML]="datos.texto_1"></p>
@@ -48,7 +51,6 @@
                         </ng-container>
                     </div>
                 </div>
-            </div>
-        </div>
+            
     </div>
 </div>

@@ -51,6 +51,7 @@ const APP_ROUTES: Routes = [
     {path: 'acuerdos-internacionales', component: AcuerdosInternacionalesComponent},
     {path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent},
     {path: 'vacante-interna', component: VacanteInternaComponent},
+    {path: 'vacantes/:slug', component: VacanteInternaComponent},
     {path: 'publicaciones', component: PublicacionesComponent},
     {path: 'publicacion-interna', component: PublicacionInternaComponent},
     {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},

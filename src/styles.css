@@ -61,6 +61,10 @@ small {
     font-size: 22px;
 }
 
+.size23 {
+    font-size: 23px;
+}
+
 .size24 {
     font-size: 24px;
 }
@@ -169,6 +173,9 @@ small {
 
 .line-height2-5 {
     line-height: 2.5 !important;
+}
+.line-height18 {
+line-height: 18px;
 }
 
 .text-decoration:hover {
@@ -1903,6 +1910,115 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     position:absolute;
 }
 
+/**** Pruebas Vacantes General ****/
+#wrapper {
+    overflow-x: hidden;
+  }
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-right: -20rem;
+    right: 0;
+    width: 35rem;
+    top: 0;
+    position: fixed;
+    z-index: 999;
+    transition: 0.25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    position: sticky;
+    z-index: 9;
+    top: 0;
+    background-color: #f8f9fa;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    margin-right: 0rem;
+    width: 30rem;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: scroll;
+  }
+  #wrapper.toggled #sidebar-wrapper::-webkit-scrollbar-thumb {
+    background: #ffffff00;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #0684C5;
+    }
+  .overlaytrabaja {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlaytrabaja.active {
+    display: block;
+    opacity: 1;
+}
+#btnCerrarTrabajemos{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    color: #2c3394;
+}
+.bodyTrabajemos{
+    background-color: #fff;
+}
+.form-trabajemos .form-control:focus{
+    border-color: #0089FF;
+    outline: 0;
+    box-shadow: none;
+}
+.form-trabajemos .footFormTrabajemos{
+    position: sticky;
+    bottom: 0;
+    padding: 15px 20px;
+    background-color: #fff;
+}
+.footFormTrabajemos .enviar{
+    background-color: #2C3394;
+    color: #FFFFFF;
+    font-size: 17px;
+    width: 100%;
+    border: 1px solid #2C3394;
+    padding: 5px;
+  }
+  .footFormTrabajemos .cancelar{
+    border: 1px solid #2C3394!important;
+    width: 100%;
+    padding: 5px;
+  }
+  .footFormTrabajemos .cancelar:hover{
+      background-color: #2C3394!important;
+      color:#fff !important;
+      transition: .3s;
+  }
+
+  .card-job a:not([href]):not([tabindex]):focus, .card-job a:not([href]):not([tabindex]):hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+/***************************/
+
 /***** RESPONSIVE ******/
 @media (max-width: 767px) {
     .megamenu-full-with {
@@ -2039,4 +2155,20 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         left: 50%;
         transform: translatex(-43%);
     }
+    #sidebar-wrapper {
+        right: -15rem;
+      }
+    
+      #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+      }
+    
+      #wrapper.toggled #sidebar-wrapper {
+        right: 0rem;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        box-shadow: -3px -3px 3px rgb(0 0 0 / 20%);
+      }
 }

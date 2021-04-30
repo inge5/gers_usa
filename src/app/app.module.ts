@@ -10,6 +10,7 @@ import { APP_ROUTING } from './app.routing';
 import { HomeService } from './services/home.service';
 import { MenusService } from './services/menus.service';
 import { PagesService } from './services/pages.service';
+import { VacantesService } from './services/vacantes.service';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './topbar-azul/topbar-azul.component';
@@ -108,7 +109,8 @@ import { OwlModule } from 'ngx-owl-carousel';
   providers: [
     HomeService,
     MenusService,
-    PagesService
+    PagesService,
+    VacantesService
   ],
   bootstrap: [AppComponent]
 })
