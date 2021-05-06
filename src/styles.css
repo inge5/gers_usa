@@ -1753,6 +1753,16 @@ input[type="number"]::-webkit-inner-spin-button {
     font-weight:500;
 }
 
+/***** Servicios - Pruebas, automatización y control ****/
+.pruebas-automatiza .bg-blue1{
+    margin-top:-130px
+}
+
+/***** Servicios - Diseno Ingenieria ****/
+.diseno-ingenieria .img-principal{
+    position: absolute;
+}
+
 /***** Contáctenos ******/
 .col-formulario{
     background-color: #FFFFFF;
@@ -1806,6 +1816,9 @@ form.contactenos .form-check-input{
 }
 
 /******* Nosotros/Pensamiento Corporativo********/
+.pensamiento-corporativo .img-principal{
+    position: absolute;
+}
 .valores-card{
     background-color: #FFFFFF;
     border-radius: 3px;
@@ -1830,6 +1843,14 @@ form.contactenos .form-check-input{
 -moz-box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
+
+/******* Nosotros/Política gestión integral********/
+.politica-gestion .seccion-1{
+    background-image: url(assets/images/nosotros/points.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
 
 
 /******* Trabaje con Nosotros *******/
@@ -1994,6 +2015,10 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     padding: 15px 20px;
     background-color: #fff;
 }
+.form-trabajemos input[type="submit" i]:disabled{
+    background-color: #adadad;
+    cursor: default;
+}
 .footFormTrabajemos .enviar{
     background-color: #2C3394;
     color: #FFFFFF;
@@ -2001,6 +2026,11 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     width: 100%;
     border: 1px solid #2C3394;
     padding: 5px;
+    cursor: pointer;
+  }
+  .footFormTrabajemos .enviar:hover{
+    background-color: #fff;
+    color: #2C3394;
   }
   .footFormTrabajemos .cancelar{
     border: 1px solid #2C3394!important;
@@ -2017,10 +2047,105 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     text-decoration: underline;
     cursor: pointer;
   }
+
+  .file-field input[type="file"]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  .file-field {
+    position: relative;
+  }
+  .waves-effect {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+  .btn-cyan {
+    color: #fff;
+    background-color: #0089FF !important;
+}
+.file-field .file-path-wrapper {
+    height: 2.5rem;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
 /***************************/
 
 /***** RESPONSIVE ******/
+@media (max-width: 575px) {
+    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos{
+        bottom: 130px;
+    }
+}
+
 @media (max-width: 767px) {
+    #sidebar-wrapper {
+        width: 20rem;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 25rem;
+    }
+    .neplan .w-50{
+        width:100%!important;
+    }
+    .planeacion-proyectos .pl-100{
+        padding-left:15px;
+    }
+    .planeacion-proyectos .pr-0{
+        padding-right:15px!important;
+    }
+    .planeacion-proyectos .bg-blue1{
+        margin-top: 0px!important;
+    }
+    .diseno-ingenieria .img-principal{
+        position: relative;
+    }
+    .diseno-ingenieria .pr-0{
+        padding-right:15px!important;
+    }
+    .estudios-sistemas .pl-100{
+        padding-left:15px;
+    }
+    .estudios-sistemas .pr-0{
+        padding-right:15px!important;
+    }
+    .interventorias-asesorias .pr-0{
+        padding-right:15px!important;
+    }
+    .interventorias-asesorias .bg-blue1{
+        margin-top: 0px!important;
+    }
+    .smart-grid .pl-100{
+        padding-left:15px;
+    }
+    .smart-grid .pr-0{
+        padding-right:15px!important;
+    }
+    .smart-grid .pl-0{
+        padding-left:15px!important;
+    }
+    .pruebas-automatiza .bg-blue1{
+        margin-top:0px
+    }
+    .politica-gestion .seccion-1{
+        background-image: none;
+    }
     .megamenu-full-with {
         margin-left: 0;
         margin-right: 0;
@@ -2048,6 +2173,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     }
     .img-pensamiento-corporativo{
         position:relative;
+    }
+    .pensamiento-corporativo .img-principal{
+        position: relative;
     }
     .size26 {
         font-size: 20px;

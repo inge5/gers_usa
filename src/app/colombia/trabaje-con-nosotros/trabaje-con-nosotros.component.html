@@ -106,24 +106,42 @@
                                     Ingrese un teléfono válido.
                                 </small>
                             </div>
-                            <div class="form-row pt-2 pb-2">
+                            <div class="form-group pt-2 pb-2 mb-0">
                                 <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="ubicacion">Ubicación</label>
-                                <input type="text" class="form-control" id="ubicacion" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="usuario.ubicacion" required>
+                                <select class="form-control" id="ubicacion" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="usuario.ubicacion" required>
+                                    <option value="" disabled>Elija una opción</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Estados Unidos">Estados Unidos</option>
+                                    <option value="Alemania">Alemania</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                </select>
                                 <small style="color:#c30000;" *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
                                     Ubicacion es un campo requerido.
                                 </small>
                             </div>
                             <div class="form-group pt-2 pb-2">
-                                <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="categoria">Categoría de la vacante</label>
+                                <select class="form-control" id="categoria" name="categoria" #categoria="ngModel" [(ngModel)]="usuario.categoria" required>
+                                    <option value="" disabled>Elija una opción</option>
+                                    <option value="Ingeniería">Ingeniería</option>
+                                    <option value="Jardinería">Jardinería</option>
+                                    <option value="Cafetería">Cafetería</option>
                                 </select>
-                              </div>
-                            <div class="form-check">
+                                <small style="color:#c30000;" *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)">
+                                    Categoria es un campo requerido.
+                                </small>
+                            </div>
+                            <div class="file-field big-2">
+                                <div class="btn btn-cyan btn-lg float-left w-100">
+                                  <span><i class="fas fa-cloud-upload-alt"></i> Adjuntar hoja de vida</span>
+                                  <input type="file" required>
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text" placeholder="">
+                                </div>
+                                <label class="size15 text-gray-dark line-height18 text-justify">El archivo adjunto debe estar en formato <b>.PDF o .DOCX</b> y no debe pesar más de <b>1.5 mb</b></label>
+                            </div>
+                            <div class="form-check mt-5">
                                 <input type="checkbox" class="form-check-input" id="acepto" name="acepto" #acepto="ngModel" [(ngModel)]="usuario.acepto" required>
                                 <label class="form-check-label size15 text-gray-dark line-height18 text-justify" for="acepto">Autoriza a GERS para el tratamiento de los datos consignados en este formulario con fines únicamente de envío de información de nuestros productos y/o servicios.</label>
                                 <small style="color:#c30000;" *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)">
@@ -134,10 +152,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
-                                            <input type="submit" class="enviar d-block float-left" name="enviar" value="Enviar curriculum" [disabled]="formularioTrabajemos.invalid">
+                                            <input type="submit" class="enviar d-block float-left mt-2 mb-2" name="enviar" value="Enviar curriculum" [disabled]="formularioTrabajemos.invalid">
                                         </div>
                                         <div class="col-sm-12 col-md-6">
-                                            <button id="btnCerrarTrabajemos" class="cancelar d-block" (click)="cierraTrabajemos()">Cancelar</button>
+                                            <button id="btnCerrarTrabajemos" class="mt-2 mb-2 cancelar d-block" (click)="cierraTrabajemos()">Cancelar</button>
                                         </div>
                                     </div>
                                 </div>

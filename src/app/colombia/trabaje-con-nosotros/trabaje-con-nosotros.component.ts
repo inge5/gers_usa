@@ -25,6 +25,7 @@ export class TrabajeConNosotrosComponent implements OnInit {
       email: '',
       telefono:'',
       ubicacion:'',
+      categoria:'',
       acepto:''
     };
    }

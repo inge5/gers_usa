@@ -8,10 +8,21 @@ import { VacantesService } from '../../services/vacantes.service';
   styleUrls: ['./vacante-interna.component.css']
 })
 export class VacanteInternaComponent implements OnInit {
+  public interesado: any;
+
   vacante_data:any = {};
   loader = true;
 
-  constructor(private route: ActivatedRoute, private _vacanteservice:VacantesService) { }
+  constructor(private route: ActivatedRoute, private _vacanteservice:VacantesService) { 
+    this.interesado = {
+      nombres: '',
+      apellidos:'',
+      email: '',
+      telefono:'',
+      ubicacion:'',
+      acepto:''
+    };
+  }
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
