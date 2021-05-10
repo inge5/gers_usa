@@ -54,7 +54,7 @@ export class TrabajeConNosotrosComponent implements OnInit {
 
   formTrabajeNosotros(form){
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
       type: 'POST',
       data: JSON.stringify(this.usuario),
       dataType:"json",

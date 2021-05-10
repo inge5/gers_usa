@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VacantesService } from '../../services/vacantes.service';
 
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
+declare var $ : any; 
+
 @Component({
   selector: 'app-vacante-interna',
   templateUrl: './vacante-interna.component.html',
@@ -19,7 +23,7 @@ export class VacanteInternaComponent implements OnInit {
       apellidos:'',
       email: '',
       telefono:'',
-      ubicacion:'',
+      correo:'',
       acepto:''
     };
   }
@@ -34,6 +38,16 @@ export class VacanteInternaComponent implements OnInit {
           this.vacante_data = vacante;
         }
       })
+  }
+
+  postularme(){
+    $("#wrapperInterna").toggleClass("toggled");
+    $('.overlaytrabaja').addClass('active');
+  }
+
+  public cierraVacante() {
+    $('.overlaytrabaja').removeClass('active');
+    $("#wrapperInterna").toggleClass("toggled");
   }
 
 }
