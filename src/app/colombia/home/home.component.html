@@ -9,9 +9,10 @@
           </ol>
         -->
         <div class="carousel-inner">
+            <div><ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'430px','border-radius': '10px','padding':'15px' }"></ngx-skeleton-loader></div>
             <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst ">
                 <div class="carousel-item" *ngIf="home.imagen_de_fondo != undefined" [ngClass]="(isFirst) ? 'active' : ''">
-                    <div style="background:url('{{ home.imagen_de_fondo }}');height:445px">
+                    <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px">
                         <div class="container pt-3 pb-3">
                             <div class="row align-items-center">
                                 <div class="col-sm-8 pt-4 pb-4">
@@ -42,8 +43,12 @@
     <div class="container mtn-45">
         <div class="row">
             <div class="col-xs-12 col-md-8 offset-md-2 bg-blue1 p-3" style="border-radius: 15px;box-shadow: 0px 0px 5px 4px rgba(125,125,125,.5)">
-                <p class="m-0 text-center text-white size18 letter-spacing-2-28 mb-1" style="line-height: 1.2;">{{ generando_soluciones_data.titulo }}</p>
-                <span class="size25 letter-spacing-2-28 font-weight-600 text-white d-flex justify-content-center align-items-center"><img src="assets/images/carousel-principal/desde-arrow-left.jpg">{{ generando_soluciones_data.desde }}<img src="assets/images/carousel-principal/desde-arrow-right.jpg"></span>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'25px', width:'100px', display:'block', margin:'0 auto' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader">
+                    <p class="m-0 text-center text-white size18 letter-spacing-2-28 mb-1" style="line-height: 1.2;">{{ generando_soluciones_data.titulo }}</p>
+                    <span class="size25 letter-spacing-2-28 font-weight-600 text-white d-flex justify-content-center align-items-center"><img src="assets/images/carousel-principal/desde-arrow-left.jpg">{{ generando_soluciones_data.desde }}<img src="assets/images/carousel-principal/desde-arrow-right.jpg"></span>
+                </div>                
             </div>
         </div>
     </div>
@@ -51,7 +56,8 @@
 <ng-container *ngIf="proyectos_realizados_data">
     <div class="seccionColombia3 bg-gray-light pt-5 pb-5">
         <div class="container">
-            <div class="row ">
+            <ngx-skeleton-loader class="d-flex pt-5" count="5" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'200px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+            <div class="row" *ngIf="!loader">
                 <ng-container *ngFor="let proyectos of proyectos_realizados_data">
                     <div class="col d-flex align-items-stretch justify-content-center mt-2 mb-2" *ngIf="proyectos.titulo != undefined">
                         <div class="card box-shadow-blue">
@@ -70,14 +76,16 @@
     <div class="container pt-5 pb-4">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="font-weight-bold text-blue1 text-center">{{ titulo_servicios_eficientes_data }}</h2>
+                <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <h2 *ngIf="!loader" class="font-weight-bold text-blue1 text-center">{{ titulo_servicios_eficientes_data }}</h2>
             </div>
         </div>
     </div>
 </section>
 <section class="seccionColombia5" *ngIf="servicios_eficientes_data">
-    <div class="container pb-5 pt-5">
-        <div class="row">
+    <div class="container pb-5">
+        <ngx-skeleton-loader class="d-flex" count="3" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'250px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+        <div class="row pt-5" *ngIf="!loader">
             <ng-container *ngFor="let servicio_eficiente of servicios_eficientes_data">
                 <div class="col text-center border-right mt-2 mb-2" *ngIf="servicio_eficiente.titulo != undefined">
                     <img src="{{ servicio_eficiente.imagen }}" alt="Item Pruebas" class="img-fluid pb-4">
@@ -95,7 +103,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-10 col-md-8 offset-md-3 pb-5 mb-3 pt-3">
-                        <p class="text-white font-weight-light letter-spacing0-5 size18">
+                        <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                        <p *ngIf="!loader" class="text-white font-weight-light letter-spacing0-5 size18">
                             <span class="font-weight-bold" [innerHTML]="ejecucion_de_monitoreo_data.titulo"></span>
                             <span [innerHTML]="ejecucion_de_monitoreo_data.descripcion"></span>
                         </p>
@@ -112,7 +121,8 @@
     <div class="container tabsCustom mt-5">
         <div class="row">
             <div class="col-md-4 mb-4 pr-0">
-                <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                <ngx-skeleton-loader count="4" *ngIf="loader" animation="progress" [theme]="{height:'45px' }"></ngx-skeleton-loader>
+                <ul *ngIf="!loader" class="nav nav-pills flex-column" id="myTab" role="tablist">
                     <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
                         <li class="nav-item">
                             <a class="nav-link rounded-0 p-3 border-left" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active' : ''" id="tab{{i}}-tab" data-toggle="tab" href="#tab{{i}}" role="tab" aria-controls="tab{{i}}">
@@ -123,7 +133,8 @@
                 </ul>
             </div>
             <div class="col-md-8 contenido-tabs">
-                <div class="tab-content" id="myTabContent">
+                <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader" class="tab-content" id="myTabContent">
                     <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
                         <div class="tab-pane fade" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="tab{{i}}" role="tabpanel" aria-labelledby="tab{{i}}-tab">
                             <p>
@@ -144,14 +155,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-2">
-                    <h5 class="font-weight-bold text-blue1 text-center">
+                    <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                    <h5 *ngIf="!loader" class="font-weight-bold text-blue1 text-center">
                         {{ titulo_marcas_data }}
                     </h5>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <owl-carousel
+                    <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'80px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+                    <owl-carousel *ngIf="!loader"
                         [options]="{items: 4, dots: true, nav: false, loop: true, autoplay: true}"
                         [items]="marcas_datas"
                         [carouselClasses]="['owl-theme', 'row', 'sliding']">
@@ -171,12 +184,14 @@
     <div class="container-fluid">
         <div class="row mb-4">
             <div class="col-xs-12 col-md-6 offset-md-3 mt-2">
-                <h3 class="font-weight-bold text-blue1 text-center">
+                <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <h3 *ngIf="!loader" class="font-weight-bold text-blue1 text-center">
                     {{ tituloproyectos }}
                 </h3>
             </div>
         </div>
-        <div class="row">
+        <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'350px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+        <div class="row" *ngIf="!loader">
             <ng-container *ngFor="let proyects of FeaturedProyects | slice:0:4 ; first as isFirst; index as i">
                 <div class="col-md-3 tarjetaProyectos p-0">
                     <div class="tarjetaProyectosInterior">
@@ -202,11 +217,17 @@
         <div class="container seccionAlcanceLimites">
             <div class="row">
                 <div class="col-md-4">
-                    <h2 class="tituloAlcanceLimites">{{ tituloInternacional.titulo }}</h2>
-                    <p class="textoAlcanceLimite-col1" [innerHTML]="tituloInternacional.descripcion"></p>
+                    <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
+                    <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader">
+                        <h2 class="tituloAlcanceLimites">{{ tituloInternacional.titulo }}</h2>
+                        <p class="textoAlcanceLimite-col1" [innerHTML]="tituloInternacional.descripcion"></p>
+                    </div>
                 </div>
                 <div class="col-md-8">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
+                    <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'100px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+                    <ul *ngIf="!loader" class="nav nav-tabs" id="myTab" role="tablist">
                         <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
                             <li class="nav-item">
                                 <a class="nav-link size13 pt-2 pb-2"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
@@ -216,7 +237,7 @@
                             </li>
                         </ng-container>
                     </ul>
-                    <div class="tab-content" id="myTabContent">
+                    <div *ngIf="!loader" class="tab-content" id="myTabContent">
                         <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
                             <div class="tab-pane fade" *ngIf="paises.pais != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="pais{{i}}" role="tabpanel" aria-labelledby="pais{{i}}-tab">
                                 <div class="row textoDespuesPestanas">
@@ -239,16 +260,18 @@
 <section class="seccionColombia11">
     <div class="container">
         <div class="row">
-            <div class="col mt-5 mb-4+">
-                <h2 class="tituloNuestrosClientes text-blue1 text-center font-weight-bold">{{ clientes.titulo }}</h2>
+            <div class="col mt-5 mb-4">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
+                <h2 *ngIf="!loader" class="tituloNuestrosClientes text-blue1 text-center font-weight-bold">{{ clientes.titulo }}</h2>
             </div>
         </div>
         <div class="row">
             <div class="col mb-5 mt-3">
+                <ngx-skeleton-loader class="d-flex" count="5" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'100px','border-radius': '.25rem' }"></ngx-skeleton-loader>
                 <!--[items]="clientes.imagenes"
                 -- Esto estaba al interior de las opciones de owl-carousel, debajo de opciones, pero generaba un error
                 -->
-                <owl-carousel
+                <owl-carousel *ngIf="!loader"
                         [options]="{items: 5, dots: true, nav: false, loop: true, autoplay: true}"
                         [carouselClasses]="['owl-theme', 'row', 'sliding']">
                         <div class="item d-flex justify-content-center align-content-center" *ngFor="let logos of clientes.imagenes;let i = index">
@@ -263,8 +286,9 @@
 </section>
 </ng-container>
 
+<ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'350px' }"></ngx-skeleton-loader>
 <ng-container *ngFor="let equipo of equipoTrabajo; first as isFirst; index as i">
-<section class="seccionColombia12">
+<section *ngIf="!loader" class="seccionColombia12" >
     <div class="full-afterClients mb-5">
         <div class="container-fluid">
             <div class="row">
@@ -282,8 +306,9 @@
 </section>
 </ng-container>
 
+<ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'350px' }"></ngx-skeleton-loader>
 <ng-container *ngFor="let vacante_content of vacantes; first as isFirst; index as i">
-<section class="seccionColombia13 ">
+<section *ngIf="!loader" class="seccionColombia13 ">
     <div class="container seccion-hv mt-5">
         <div class="row">
             <div class="col-md-7">

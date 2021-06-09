@@ -50,4 +50,28 @@ export class VacanteInternaComponent implements OnInit {
     $("#wrapperInterna").toggleClass("toggled");
   }
 
+  formVacanteInterna(form){
+    $.ajax({
+      //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      type: 'POST',
+      data: JSON.stringify(this.interesado),
+      dataType:"json",
+      success: function(data) {
+        
+      }, error: function(error){
+        if(error.status === 200){
+          Swal.fire({
+            icon: 'success',
+            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+            showConfirmButton: true
+          }); 
+          //console.log(error);
+        form.reset();
+        } else {
+          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
+        }
+      }
+    });
+   }
+
 }

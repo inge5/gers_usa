@@ -1,6 +1,6 @@
 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'140px' }"></ngx-skeleton-loader>
 <div *ngIf="!loader">
-    <div class="bannerInterna" *ngIf="banner_data.banner_principal" [ngStyle]="{ 'background-image': 'url(' + banner_data.banner_principal + ')'}">
+    <div class="bannerInterna" *ngIf="banner_data.banner_principal" [ngStyle]="{ 'background-image': 'url(' + banner_data.banner_principal + ')'}" style="background-position: center;">
         <p class="text-center pt-5 pb-5">
             <img *ngIf="banner_data.logo_imagen" src="{{ banner_data.logo_imagen }}" alt="" class="img-fluid">
         </p>
@@ -12,7 +12,7 @@
         <div class="col-sm-3 align-items-center">
             <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'120px' }"></ngx-skeleton-loader>
             <div *ngIf="!loader">
-                <img *ngIf="seccion_1_data.logo" src="{{ seccion_1_data.logo }}" alt="" class="img-fluid box-shadow">
+                <img *ngIf="seccion_1_data.logo" src="{{ seccion_1_data.logo }}" alt="" class="img-fluid p-4 box-shadow">
             </div>
         </div>
         <div class="col-sm-9 align-items-center">

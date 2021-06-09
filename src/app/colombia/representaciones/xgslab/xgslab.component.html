@@ -7,14 +7,14 @@
     </div>    
 </div>
 <div class="container tabsCustom">
-    <div class="row align-items-center">
+    <div class="row align-items-center mt-5">
         <div class="col-sm-3 align-items-center">
             <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'120px' }"></ngx-skeleton-loader>
             <div *ngIf="!loader">
                 <img *ngIf="seccion_1_data.logo" src="{{ seccion_1_data.logo }}" alt="" class="img-fluid box-shadow">
             </div>
         </div>
-        <div class="col-sm-9 align-items-center">
+        <div class="col-sm-9 align-items-center my-auto">
             <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
             <div *ngIf="!loader">
                 <p class="m-0" [innerHTML]="seccion_1_data.texto_inicial"></p>

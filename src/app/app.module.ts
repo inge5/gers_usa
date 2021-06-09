@@ -11,6 +11,7 @@ import { HomeService } from './services/home.service';
 import { MenusService } from './services/menus.service';
 import { PagesService } from './services/pages.service';
 import { VacantesService } from './services/vacantes.service';
+import { PublicacionesService } from './services/publicaciones.service';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './topbar-azul/topbar-azul.component';
@@ -110,7 +111,8 @@ import { OwlModule } from 'ngx-owl-carousel';
     HomeService,
     MenusService,
     PagesService,
-    VacantesService
+    VacantesService,
+    PublicacionesService
   ],
   bootstrap: [AppComponent]
 })

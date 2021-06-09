@@ -11,7 +11,7 @@
         <div class="col-sm-12 col-md-4">
             <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'80px' }"></ngx-skeleton-loader>
             <div *ngIf="!loader">
-                <img *ngIf="seccion_1_data.logo" src="{{ seccion_1_data.logo }}" alt="Logo" class="img-fluid">
+                <img *ngIf="seccion_1_data.logo" src="{{ seccion_1_data.logo }}" alt="Logo" class="img-fluid p-3 box-shadow mx-auto d-block">
             </div>
         </div>
         <div class="col-sm-12 col-md-8">

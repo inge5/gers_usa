@@ -8,6 +8,8 @@ import { HomeService } from '../../services/home.service';
 })
 export class HomeComponent implements OnInit {
 
+  loader = true;
+
   sliderprincipal_data:any[] = [];
   generando_soluciones_data:any[] = [];
   proyectos_realizados_data:any[] = [];
@@ -32,6 +34,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._homeService.getHome()
       .subscribe((res:any) => {
+        this.loader = false;
         this.sliderprincipal_data = res.acf.slider_principal;
         this.generando_soluciones_data = res.acf.generando_soluciones;
         this.proyectos_realizados_data = res.acf.proyectos_realizados; 

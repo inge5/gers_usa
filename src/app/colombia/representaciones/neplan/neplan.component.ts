@@ -11,6 +11,7 @@ export class NeplanComponent implements OnInit {
   banner_data : any = {};
   item_tab_data: any[] = [];
   repetidor_botones_data: any[] = [];
+  info_data: any = {};
   public activePillIndex:number = 0;
 
 
@@ -23,6 +24,7 @@ export class NeplanComponent implements OnInit {
         this.banner_data = res.acf.banner;
         this.item_tab_data = res.acf.item_tab;
         this.repetidor_botones_data = res.acf.item_tab.repetidor_botones;
+        this.info_data = res.acf.informacion_general;
       });
   }
 
