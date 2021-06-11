@@ -14,10 +14,10 @@ import { VacantesService } from './services/vacantes.service';
 import { PublicacionesService } from './services/publicaciones.service';
 
 import { AppComponent } from './app.component';
-import { TopbarAzulComponent } from './topbar-azul/topbar-azul.component';
-import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
-import { MenuVerticalComponent } from './menu-vertical/menu-vertical.component';
-import { FooterComponent } from './footer/footer.component';
+import { TopbarAzulComponent } from './colombia/topbar-azul/topbar-azul.component';
+import { MenuPrincipalComponent } from './colombia/menu-principal/menu-principal.component';
+import { MenuVerticalComponent } from './colombia/menu-vertical/menu-vertical.component';
+import { FooterComponent } from './colombia/footer/footer.component';
 
 import { HomeComponent } from './colombia/home/home.component';
 import { ColombiaComponent } from './colombia/colombia.component';
@@ -50,13 +50,15 @@ import { PoliticaGestionIntegralComponent } from './colombia/nosotros/politica-g
 import { AcuerdosInternacionalesComponent } from './colombia/acuerdos-internacionales/acuerdos-internacionales.component';
 import { TrabajeConNosotrosComponent } from './colombia/trabaje-con-nosotros/trabaje-con-nosotros.component';
 import { EnviarCurriculumComponent } from './colombia/enviar-curriculum/enviar-curriculum.component';
-import { EnviarHojaComponent } from './enviar-hoja/enviar-hoja.component';
 import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-interna.component';
 import { PublicacionesComponent } from './colombia/publicaciones/publicaciones.component';
 import { PublicacionInternaComponent } from './colombia/publicaciones/publicacion-interna/publicacion-interna.component';
 
 
 import { OwlModule } from 'ngx-owl-carousel';
+import { ChileComponent } from './chile/chile/chile.component';
+import { MenuPrincipalChileComponent } from './chile/menu-principal-chile/menu-principal-chile.component';
+import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
 
 @NgModule({
   declarations: [
@@ -90,10 +92,12 @@ import { OwlModule } from 'ngx-owl-carousel';
     AcuerdosInternacionalesComponent,
     TrabajeConNosotrosComponent,
     EnviarCurriculumComponent,
-    EnviarHojaComponent,
     VacanteInternaComponent,
     PublicacionesComponent,
     PublicacionInternaComponent,
+    ChileComponent,
+    MenuPrincipalChileComponent,
+    NeplanClComponent,
   ],
   imports: [
     BrowserModule,

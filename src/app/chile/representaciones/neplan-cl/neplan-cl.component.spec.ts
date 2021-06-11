@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnviarHojaComponent } from './enviar-hoja.component';
+import { NeplanClComponent } from './neplan-cl.component';
 
-describe('EnviarHojaComponent', () => {
-  let component: EnviarHojaComponent;
-  let fixture: ComponentFixture<EnviarHojaComponent>;
+describe('NeplanClComponent', () => {
+  let component: NeplanClComponent;
+  let fixture: ComponentFixture<NeplanClComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EnviarHojaComponent ]
+      declarations: [ NeplanClComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EnviarHojaComponent);
+    fixture = TestBed.createComponent(NeplanClComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

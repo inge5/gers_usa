@@ -26,12 +26,17 @@ import { PublicacionInternaComponent } from './colombia/publicaciones/publicacio
 import {DetalleProductoComponent} from "./colombia/productos/detalle-producto/detalle-producto.component";
 import {ProductoComponent} from "./colombia/productos/producto/producto.component";
 
+/* Chile*/
+import { ChileComponent } from './chile/chile/chile.component';
+import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
 
 
 const APP_ROUTES: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
+    {path: 'chile', component: ChileComponent},
     {path: 'neplan', component: NeplanComponent},
+    {path: 'chile/neplan-cl', component: NeplanClComponent},
     {path: 'beckwith-electronic', component: BeckwithElectronicComponent},
     {path: 'xgslab', component: XgslabComponent},
     {path: 'dranetz', component: DranetzComponent},

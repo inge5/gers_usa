@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import {VariableGlobalService} from "../colombia/servicios/variable-global/variable-global.service";
-import {AlertasService} from "../colombia/servicios/alertas/alertas.service";
-import { MenusService } from '../services/menus.service';
+import {VariableGlobalService} from "../servicios/variable-global/variable-global.service";
+import {AlertasService} from "../servicios/alertas/alertas.service";
+import { MenusService } from '../../services/menus.service';
 
 @Component({
   selector: 'app-menu-principal',

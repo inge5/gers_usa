@@ -2380,6 +2380,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media (min-width: 768px) {
+    .carousel-control-next, .carousel-control-prev{
+        width:10%;
+    }
     .dropdown-menu.menuServicio {
         min-width: 45rem !important;
         transform: translatex(-45%);
