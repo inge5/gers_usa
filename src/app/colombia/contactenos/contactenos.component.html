@@ -1,3 +1,6 @@
+<app-menu-vertical></app-menu-vertical>
+<app-topbar-azul></app-topbar-azul>
+<app-menu-principal></app-menu-principal>
 <div class="contactenos">
     <div class="bk-contactenos" style="background-image: url(assets/images/contactenos/background-contact.jpg);">
         <div class="container">
@@ -6,15 +9,47 @@
                     <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
                     <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
                     <div *ngIf="!loader"> 
-                        <h2 class="roboto size56 text-white letter-spacing-0-32">{{ seccion_1_data.titulo_1 }}<br>
-                        <span class="font-weight-bold">{{ seccion_1_data.titulo_2 }}</span></h2>
-                        <p class="size15 text-white">{{ seccion_1_data.texto_general }}</p>
+                        <h3 class="text-center roboto size15 text-white letter-spacing-0-32">{{ seccion_1_data.texto_general }}</h3>
+                        <h2 class="roboto size35 text-center font-weight-700 text-white letter-spacing-0-32">{{ seccion_1_data.titulo_1 }}</h2>
+                        <div class="row mt-5">
+                            <div class="col-md-4">
+                                <div class="pais">
+                                    <img *ngIf="seccion_1_data.bandera" class="banderaPais" src="{{ seccion_1_data.bandera }}" alt="Colombia">
+                                    <h3 class="textoPais size13 text-white">{{ seccion_1_data.titulo_pais }}</h3>
+                                    <a class="linkPais text-white" href="{{ seccion_1_data.link_sitio_web }}">{{ seccion_1_data.texto_sitio_web }} <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                            <ng-container *ngFor="let ciudad of ciudad_principal_data">
+                                <div class="col-md-4">
+                                    <div class="recuadroCiudadTopHeader">
+                                        <p class="dropdown-header-ciudad text-white font-weight-700">{{ciudad.titulo_ciudad}}</p>
+                                        <p class="textoCiudad p-0 text-white" [innerHTML]="ciudad.texto_ciudad"></p>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 mt-4">
                     <div class="col-formulario pt-2 pl-5 pr-5 pb-2">
                         <h3 class="size19 text-blue2 font-weight-700 text-center pb-1">Contáctanos</h3>
                         <form  (ngSubmit)="enviarForm(formularioContacto)" #formularioContacto="ngForm" id="formulario-contact" class="contactenos pb-4">
+                            <div class="form-row form-group pt-2 pb-2 mb-0">
+                                <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="servicio">Servicio</label>
+                                <select class="form-control tipo-servicio" id="selectServicio" name="servicio" #servicio="ngModel" [(ngModel)]="user.servicio" required>
+                                <option value="" disabled>Elija una opción</option>
+                                <option>Pruebas, automatización y control</option>
+                                <option>Servicios energéticos</option>
+                                <option>Diseño e ingeniería</option>
+                                <option>Interventoría y asesoría</option>
+                                <option>Smart Grids</option>
+                                <option>Planeación de proyectos</option>
+                                <option>Estudios de sistemas eléctricos</option>
+                                </select>
+                                <small style="color:#c30000;" *ngIf="servicio.invalid && (servicio.dirty || servicio.touched)">
+                                    El Servicio es un campo requerido.
+                                </small>
+                            </div>
                             <div class="form-row pt-2 pb-2">
                                 <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="nombre">Nombre completo</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" required>
@@ -66,9 +101,9 @@
         </div>
     </div>
     <div class="container info-paises">
-        <div class="row mt-150 mb-5">
+        <div class="row mt-200 mb-5">
             <ng-container *ngFor="let pais of pais_info_data">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="pais">
                         <img *ngIf="pais.bandera" class="banderaPais" src="{{ pais.bandera }}" alt="Colombia">
                         <h3 class="textoPais">{{ pais.titulo_pais }}</h3>
@@ -88,3 +123,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

@@ -1,5 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HomeService } from '../../services/home.service';
+import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+
+@Pipe({ name: 'safeHtml'})
+export class SafeHtmlPipe implements PipeTransform  {
+  constructor(private sanitized: DomSanitizer) {}
+  public transform(value: any, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
+    // return this.sanitized.bypassSecurityTrustHtml(value);
+    switch (type) {
+      case 'html': return this.sanitized.bypassSecurityTrustHtml(value);
+      case 'style': return this.sanitized.bypassSecurityTrustStyle(value);
+      case 'script': return this.sanitized.bypassSecurityTrustScript(value);
+      case 'url': return this.sanitized.bypassSecurityTrustUrl(value);
+      case 'resourceUrl': return this.sanitized.bypassSecurityTrustResourceUrl(value);
+      default: throw new Error(`Invalid safe type specified: ${type}`);
+    }
+  }
+}
 
 @Component({
   selector: 'app-home',
@@ -10,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   loader = true;
 
-  sliderprincipal_data:any[] = [];
+  sliderprincipal_data:any = [];
   generando_soluciones_data:any[] = [];
   proyectos_realizados_data:any[] = [];
   titulo_servicios_eficientes_data:any[] = [];
@@ -28,14 +45,16 @@ export class HomeComponent implements OnInit {
   equipoTrabajo:any[] = [];
   vacantes:any[] = [];
 
-  constructor(private _homeService:HomeService) { 
+  constructor(private _sanitizer: DomSanitizer, private _homeService:HomeService) { 
   }
 
   ngOnInit(): void {
     this._homeService.getHome()
       .subscribe((res:any) => {
         this.loader = false;
-        this.sliderprincipal_data = res.acf.slider_principal;
+        this.sliderprincipal_data = this._sanitizer.bypassSecurityTrustHtml(res);
+        this.sliderprincipal_data = this.sliderprincipal_data.changingThisBreaksApplicationSecurity;
+
         this.generando_soluciones_data = res.acf.generando_soluciones;
         this.proyectos_realizados_data = res.acf.proyectos_realizados; 
         this.titulo_servicios_eficientes_data = res.acf.titulo_servicios_eficientes; 

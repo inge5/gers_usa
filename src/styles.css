@@ -18,6 +18,9 @@ select,
 small {
     font-family: 'Roboto', sans-serif;
 }
+p{
+    margin-bottom: 0;
+}
 
 .roboto{
     font-family: 'Roboto', sans-serif;
@@ -33,7 +36,7 @@ small {
     font-size: 12px;
 }
 .size13{
-    font-size: 13px;
+    font-size: 13px!important;
 }
 .size14{
     font-size: 14px;
@@ -43,6 +46,9 @@ small {
 }
 .size16{
     font-size: 16px;
+}
+.size17{
+    font-size: 17px;
 }
 .size18{
     font-size: 18px;
@@ -80,11 +86,26 @@ small {
 .letter-spacing-0-04{
     letter-spacing: 0.04px;
 }
+.letter-spacing-0-19{
+    letter-spacing: 0.19px;
+}
+.letter-spacing-0-25{
+    letter-spacing: 0.25px;
+}
 .letter-spacing-0-32{
     letter-spacing: 0.32px;
 }
+.letter-spacing-0-38{
+    letter-spacing: 0.38px;
+}
+.letter-spacing-0-47{
+    letter-spacing: 0.47px;
+}
 .letter-spacing0-5 {
     letter-spacing: 0.5px;
+}
+.letter-spacing0-57 {
+    letter-spacing: 0.57px;
 }
 .letter-spacing-1-09{
     letter-spacing: 1.09px;
@@ -106,6 +127,9 @@ small {
 }
 .font-weight-600{
     font-weight: 600;
+}
+.font-weight-700{
+    font-weight: 700;
 }
 .font-weight-900{
     font-weight: 900;
@@ -188,11 +212,26 @@ small {
 .line-height18{
     line-height: 18px;
 }
+.line-height20{
+    line-height: 20px;
+}
 .line-height22{
     line-height: 22px;
 }
+.line-height23{
+    line-height: 23px;
+}
+.line-height26{
+    line-height: 26px;
+}
+.line-height33{
+    line-height: 33px;
+}
 .line-height34{
     line-height: 34px;
+}
+.line-height40{
+    line-height: 40px;
 }
 /*============*/
 
@@ -271,10 +310,12 @@ small {
 .btn-white {
     background: #fff;
     color: #0189FF;
+    text-decoration: none!important;
 }
 .btn-white:hover {
     background: #0189FF;
     color: #fff;
+    transition: .3s;
 }
 
 
@@ -282,6 +323,7 @@ small {
 
 
 /*******Barra Azul antes del menú*******/
+/*======= COLOMBIA =======*/
 
 .topBarAzul {
     background-color: #2C3394;
@@ -1315,7 +1357,7 @@ p.textoItemMenu {
     font-size: 1.75rem;
     }
 .titulo-banner{
-    font-size: 2.5rem;
+    font-size: 35px;
 }
 
 
@@ -1473,14 +1515,14 @@ p.textoItemMenu {
 }
 
 .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 120px;
+    bottom: 75%;
     transition: 1s;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 90px;
+    bottom: 75%;
     transition: 1s;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .textoTarjetaProyectos {
@@ -1683,11 +1725,12 @@ p.textoItemMenu {
     transform: translateY(-50%);
 }
 
-.contenedorFooter .contacto2 .listaItemsFooter {
+.contenedorFooter .listaItemsFooter {
     list-style-type: none;
+    padding-inline-start: 0;
 }
 
-.contenedorFooter .contacto2 .listaItemsFooter li {
+.contenedorFooter .listaItemsFooter li {
     color: #2C3394;
     font-family: Montserrat;
     font-size: 14px;
@@ -1696,7 +1739,7 @@ p.textoItemMenu {
     padding: 10px 0;
 }
 
-.contenedorFooter .contacto2 .listaItemsFooter li a {
+.contenedorFooter .listaItemsFooter li a {
     color: #2C3394;
 }
 
@@ -1811,6 +1854,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .mt-150{
     margin-top: 150px;
+}
+
+.mt-200{
+    margin-top: 200px;
 }
 
 .info-paises ul{
@@ -2179,6 +2226,82 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 /***************************/
+/*
+======= CIERRA COLOMBIA =======
+=================================
+===============================
+*/
+
+/*======= USA =======*/
+/* Min Height */
+.min-height-40{
+    min-height: 40px;
+}
+
+/* Border Colors */
+.border-color-blue{
+    border:1px solid #0089FF;
+}
+
+/* Border Radius */
+.border-radius-12{
+    border-radius: 12px;
+}
+/* Menu Principal */
+.menuSoftware {
+    background-color: #E8ECF4 !important;
+    width: 20rem;
+    margin-top: 0px !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Topbar */
+.topBar-usa {
+    background-color: #ffffff;
+    height: 45px;
+}
+
+.topBar-usa .nav-item a.nav-link {
+    color: #2c3394;;
+    padding: .85rem 1rem;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;
+    font-size: 13px;
+}
+
+.topBar-usa .nav-item a.nav-link:hover {
+    background-color: #2c3394;;
+    color: #fff;
+}
+
+.topBar-usa .nav-item a.nav-link.inicioSesion {
+    background-color: #0089FF;
+}
+
+.topBar-usa .nav-item a.nav-link.inicioSesion:hover {
+    background-color: #12164E;
+}
+
+/* Home Page */
+.seccionUsa4{
+    background-attachment: fixed!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+}
+.img-absolute-neplan{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+/*
+======= CIERRA USA =======
+=================================
+===============================
+*/
 
 /***** RESPONSIVE ******/
 @media (max-width: 575px) {
@@ -2188,6 +2311,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media (max-width: 767px) {
+    .recuadroCiudadTopHeader{
+        text-align: center;
+    }
     .w-40{
         width:100%;
     }
@@ -2289,6 +2415,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         min-width: 100%;
     }
     .mt-150 {
+        margin-top: 50px;
+    }
+    .mt-200{
         margin-top: 50px;
     }
     .logoFooter {

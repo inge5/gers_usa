@@ -19,10 +19,12 @@ export class ContactenosComponent implements OnInit {
 
   seccion_1_data: any = {};
   pais_info_data : any [] = [];
+  ciudad_principal_data: any[] = [];
   info_ciudad_data: any[] = [];
   
   constructor(private _contactenos:PagesService) {
     this.user = {
+      servicio: '',
       nombre: '',
       telefono: '',
       ciudad: '',
@@ -38,6 +40,7 @@ export class ContactenosComponent implements OnInit {
         this.loader = false;
         this.seccion_1_data = res.acf.seccion_1;
         this.pais_info_data = res.acf.pais_info;
+        this.ciudad_principal_data = res.acf.ciudad_info;
         this.info_ciudad_data = res.acf.pais_info.info_ciudad_data;
       });
   }

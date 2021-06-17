@@ -8,6 +8,7 @@ import { APP_ROUTING } from './app.routing';
 
 // Services
 import { HomeService } from './services/home.service';
+import { HomeUsaService } from './services/home-usa.service';
 import { MenusService } from './services/menus.service';
 import { PagesService } from './services/pages.service';
 import { VacantesService } from './services/vacantes.service';
@@ -19,7 +20,7 @@ import { MenuPrincipalComponent } from './colombia/menu-principal/menu-principal
 import { MenuVerticalComponent } from './colombia/menu-vertical/menu-vertical.component';
 import { FooterComponent } from './colombia/footer/footer.component';
 
-import { HomeComponent } from './colombia/home/home.component';
+import { HomeComponent, SafeHtmlPipe } from './colombia/home/home.component';
 import { ColombiaComponent } from './colombia/colombia.component';
 import { NeplanComponent } from './colombia/representaciones/neplan/neplan.component';
 import { BeckwithElectronicComponent } from './colombia/representaciones/beckwith-electronic/beckwith-electronic.component';
@@ -59,10 +60,19 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { ChileComponent } from './chile/chile/chile.component';
 import { MenuPrincipalChileComponent } from './chile/menu-principal-chile/menu-principal-chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
+import { UsaComponent } from './usa/usa/usa.component';
+import { MenuPrincipalUsaComponent } from './usa/menu-principal-usa/menu-principal-usa.component';
+import { TopbarComponent } from './usa/topbar/topbar.component';
+import { HomeUsaComponent } from './usa/home-usa/home-usa.component';
+import { CorporateThinkingComponent } from './usa/corporate-thinking/corporate-thinking.component';
+import { FooterUsaComponent } from './usa/footer-usa/footer-usa.component';
+import { ContactComponent } from './usa/contact/contact.component';
+import { IntegralManagementPoliciesComponent } from './usa/integral-management-policies/integral-management-policies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SafeHtmlPipe,
     TopbarAzulComponent,
     MenuPrincipalComponent,
     MenuVerticalComponent,
@@ -98,6 +108,14 @@ import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.
     ChileComponent,
     MenuPrincipalChileComponent,
     NeplanClComponent,
+    UsaComponent,
+    MenuPrincipalUsaComponent,
+    TopbarComponent,
+    HomeUsaComponent,
+    CorporateThinkingComponent,
+    FooterUsaComponent,
+    ContactComponent,
+    IntegralManagementPoliciesComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,11 +130,14 @@ import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.
     OwlModule
   ],
   providers: [
+    //COLOMBIA
     HomeService,
     MenusService,
     PagesService,
     VacantesService,
-    PublicacionesService
+    PublicacionesService,
+    //ESTADOS UNIDOS
+    HomeUsaService
   ],
   bootstrap: [AppComponent]
 })
