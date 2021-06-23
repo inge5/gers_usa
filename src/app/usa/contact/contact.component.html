@@ -9,15 +9,15 @@
                         <h3 class="text-center roboto size15 text-white letter-spacing-0-32">{{ seccion_1_data.texto_general }}</h3>
                         <h2 class="roboto size35 text-center font-weight-700 text-white letter-spacing-0-32">{{ seccion_1_data.titulo_1 }}</h2>
                         <div class="row mt-5">
-                            <div class="col-md-4">
-                                <div class="pais">
+                            <div class="col-md-12 mb-3">
+                                <div class="pais d-table mx-auto">
                                     <img *ngIf="seccion_1_data.bandera" class="banderaPais" src="{{ seccion_1_data.bandera }}" alt="Colombia">
-                                    <h3 class="textoPais size13 text-white">{{ seccion_1_data.titulo_pais }}</h3>
+                                    <h3 class="textoPais size13 text-white">{{ seccion_1_data.titulo_pais }}</h3><br>
                                     <a class="linkPais text-white" href="{{ seccion_1_data.link_sitio_web }}">{{ seccion_1_data.texto_sitio_web }} <i class="fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
                             <ng-container *ngFor="let ciudad of ciudad_principal_data">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="recuadroCiudadTopHeader">
                                         <p class="dropdown-header-ciudad text-white font-weight-700">{{ciudad.titulo_ciudad}}</p>
                                         <p class="textoCiudad p-0 text-white" [innerHTML]="ciudad.texto_ciudad"></p>
@@ -106,7 +106,7 @@
                         <h3 class="textoPais">{{ pais.titulo_pais }}</h3>
                     </div>
                     <ul>
-                        <li><a class="linkPais" href="{{ pais.link_sitio_web.url }}">{{ pais.link_sitio_web.texto }}</a>
+                        <li><a class="linkPais" href="{{ pais.link_sitio_web.url }}">{{ pais.link_sitio_web.texto }} <i class="fas fa-long-arrow-alt-right"></i></a>
                         </li>
                         <ng-container *ngFor="let infocity of pais.info_ciudad">
                             <div class="recuadroCiudadTopHeader primeraCiudad">

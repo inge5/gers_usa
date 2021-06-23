@@ -37,6 +37,13 @@ import { HomeUsaComponent } from './usa/home-usa/home-usa.component';
 import { ContactComponent } from './usa/contact/contact.component';
 import { CorporateThinkingComponent } from './usa/corporate-thinking/corporate-thinking.component';
 import { IntegralManagementPoliciesComponent } from './usa/integral-management-policies/integral-management-policies.component';
+import { NeplanUsaComponent } from './usa/representaciones/neplan-usa/neplan-usa.component';
+import { PowerSystemStudiesComponent } from './usa/servicios/power-system-studies/power-system-studies.component';
+import { SmartGridsUsaComponent } from './usa/servicios/smart-grids-usa/smart-grids-usa.component';
+import { ProtectionAndControlComponent } from './usa/servicios/protection-and-control/protection-and-control.component';
+import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
+import { ProyectsComponent } from './usa/proyects/proyects.component';
+
 
 
 const APP_ROUTES: Routes = [
@@ -85,6 +92,12 @@ const APP_ROUTES: Routes = [
         { path: 'contact', component: ContactComponent },
         { path: 'corporate-thinking', component: CorporateThinkingComponent },
         { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
+        { path: 'neplan-usa', component: NeplanUsaComponent },
+        { path: 'power-system-studies', component: PowerSystemStudiesComponent },
+        { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
+        { path: 'protection-and-control', component: ProtectionAndControlComponent },
+        { path: 'field-services', component: FieldServicesComponent },
+        { path: 'proyects', component: ProyectsComponent },
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: ''}

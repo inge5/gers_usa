@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PagesService } from '../../services/pages.service';
+import { PagesUsaService } from '../../services/pages-usa.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
@@ -20,7 +21,7 @@ export class ContactComponent implements OnInit {
   ciudad_principal_data: any[] = [];
   info_ciudad_data: any[] = [];
 
-  constructor(private _contactenos:PagesService) { 
+  constructor(private _contactenos:PagesUsaService) { 
     this.user_usa = {
       servicio: '',
       nombre: '',
@@ -33,7 +34,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._contactenos.getContactenos()
+    this._contactenos.getContact()
       .subscribe((res:any) => {
         this.loader = false;
         this.seccion_1_data = res.acf.seccion_1;

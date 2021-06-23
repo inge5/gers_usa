@@ -104,6 +104,9 @@ p{
 .letter-spacing0-5 {
     letter-spacing: 0.5px;
 }
+.letter-spacing0-53 {
+    letter-spacing: 0.53px;
+}
 .letter-spacing0-57 {
     letter-spacing: 0.57px;
 }
@@ -1511,7 +1514,7 @@ p.textoItemMenu {
 
 .tarjetaProyectosInterior:hover .textoTarjetaProyectos {
     display: block;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
@@ -2297,6 +2300,96 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     right: 30px;
 }
 
+/* Our Company - Corporate Thinking */
+.img-our-company{
+    /*-webkit-box-shadow: 8px 18px 0px 8px #2c3394;
+    box-shadow: 8px 18px 0px 8px #2c3394;*/
+    position: absolute;
+    width:35%;
+    z-index: 9;
+}
+.pt-130{
+    padding-top: 130px;
+}
+.pb-70{
+    padding-bottom: 70px;
+}
+.mb-100{
+    margin-bottom: 100px;
+}
+.mb-200{
+    margin-bottom: 200px;
+}
+.mt-150n{
+    margin-top: -150px;
+}
+.mt-200n{
+    margin-top: -200px;
+}
+
+.img-our-company-two{
+    position: absolute;
+    right: 0;
+    width: 35%;
+}
+.img-our-company-three{
+    position: absolute;
+    left: 20px;
+    width: 25%;
+    -webkit-box-shadow: -25px 12px 0px -1px #2c3394;
+    box-shadow: -25px 12px 0px -1px #2c3394;
+}
+
+/* Proyects Usa */
+.tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa {
+    bottom: 30%;
+    transition: 1s;
+}
+.tituloTarjetaProyectosUsa {
+    background-color: #fff;
+    position: absolute;
+    bottom: 35px;
+    z-index: 2;
+}
+.tituloTarjetaProyectosUsa h3 {
+    color: #2C3394;
+    letter-spacing: 0.55px;
+    line-height: 21px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.tituloTarjetaProyectosUsa p {
+    color: #0089FF;
+    letter-spacing: 0.4px;
+    line-height: 15px;
+    margin-bottom: 0;
+}
+
+.tarjetaProyectosInterior:hover .textoTarjetaProyectosUsa {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /*cursor: pointer;*/
+}
+.textoTarjetaProyectosUsa {
+    background-color: #2C3394;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    min-height: 112px;
+}
+
+.textoTarjetaProyectosUsa p {
+    color: #FFFFFF;
+    letter-spacing: 0.49px;
+    line-height: 18.75px;
+    padding: 10px 45px 10px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
 /*
 ======= CIERRA USA =======
 =================================
@@ -2306,6 +2399,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 /***** RESPONSIVE ******/
 @media (max-width: 575px) {
     .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos{
+        bottom: 130px;
+    }
+    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa{
         bottom: 130px;
     }
 }
