@@ -20,6 +20,7 @@ export class CarritoComponent implements OnInit {
   nameProducto: any;
   filtros: any;
   imagen_grande: any;
+  indice: number = 0;
 
   constructor(
     private variableG: VariableGlobalService,
@@ -65,16 +66,13 @@ export class CarritoComponent implements OnInit {
 
 
   llamarDatoLocales() {
-
-    this.variableG.currentMessage.subscribe(response => {
-      this.carritoAnterior = response;
-      // for (const carrito of this.carritoAnterior) {
-      //   console.log(carrito);
-      //   this.imagen_grande = carrito.images[0].src;
-      // }
-        // console.log(this.carritoAnterior);
-      this.miCarritoCompraContador();
-    });
+    if(localStorage.getItem('carrito')){
+      this.variableG.currentMessage.subscribe(response => {
+        this.carritoAnterior = response;
+        this.miCarritoCompraContador();
+      });
+    }
+    
   }
 
   miCarritoCompraContador() {

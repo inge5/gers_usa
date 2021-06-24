@@ -1,3 +1,5 @@
+const mainFunction = () => {
+    
 $(document).ready(function() {
     // Mostrar formulario lateral
     let btnCot = $('.solicitarMenuLateral');
@@ -158,3 +160,7 @@ const file = document.querySelector('#archivo');
         });
     }
 });
+
+}
+
+mainFunction();

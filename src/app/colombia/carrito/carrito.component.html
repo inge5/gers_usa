@@ -3,7 +3,7 @@
 
   <div class="row ajustar-productos" [hidden]="!listadoCarrito">
     <div class="col-12 cotizacion">
-      <span class="flechita" *ngIf="carritoAnterior.length > 0" (click)="solicitarCotizacionCarrito()">
+      <span class="flechita" *ngIf="carritoAnterior && carritoAnterior.length > 0" (click)="solicitarCotizacionCarrito()">
           <i class="fa fa-arrow-left"></i>
       </span>
      <span>COTIZACIÓN</span>
