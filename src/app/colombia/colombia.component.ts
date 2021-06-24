@@ -12,6 +12,9 @@ export class ColombiaComponent implements OnInit {
 
   ngOnInit(): void {
     mainFunction();
+    if(!localStorage.getItem('carrito')){
+      localStorage.setItem('carrito', JSON.stringify([]));
+    }
   }
 
 }

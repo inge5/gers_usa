@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {productos} from '../../../../assets/data/json';
-import {PruebaProductosService} from "../../servicios/prueba-productos/prueba-productos.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { productos } from '../../../../assets/data/json';
+import { PruebaProductosService } from "../../servicios/prueba-productos/prueba-productos.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 declare var $: any;
 
@@ -35,8 +35,9 @@ export class ProductoComponent implements OnInit {
   filtro: any[] = [];
   listadoProductosTemp: any;
   per_page: number;
+  categoria: number;
 
-  constructor(private  productosS: PruebaProductosService, private ruta: Router) {
+  constructor(private productosS: PruebaProductosService, private ruta: Router) {
   }
 
   ngOnInit(): void {
@@ -49,6 +50,7 @@ export class ProductoComponent implements OnInit {
     //   ordenar: null,
     //   paginas: null
     // }
+    this.getCategoria();
     this.paginas();
     /*this.listarForma1();
     this.listarForma2();
@@ -57,7 +59,7 @@ export class ProductoComponent implements OnInit {
     this.forma1 = true;
   }
 
-  paginas(){
+  paginas() {
     this.productosS.getListarProductosWP().then(respuesta => {
       this.page_size = respuesta.headers['x-wp-total'];
       this.paginasTotal();
@@ -66,40 +68,58 @@ export class ProductoComponent implements OnInit {
     })
   }
 
+  getCategoria() {
+    this.categoria = this.productosS.getCategoria();
+  }
+
 
   listarProductos(cantidad: number = 5, ordenarProductos: boolean = true) {
-  this.per_page = cantidad;
-  if(!ordenarProductos){
-    this.filtradoProductos();
-  }else{
-  this.productosS.getListarProductosWP().then(respuesta => {
-  console.log(respuesta.data);
-  this.listadoProductos = respuesta.data;
-  // respuesta.headers['x-wp-totalpages']
-  
-  let colorMap = [];
-  this.listadoProductos.forEach(element1 => {
-    // element1.categories.filter((item, index) => {
-    //   return element1.categories.indexOf(item) === index;
-    // })
-    // console.log(element1.categories);
-    if(ordenarProductos){
-      element1.categories.forEach(element2 => {
-        this.filtro.push({...element2,
-          bandera: false});
-      });
-    }
-  });
-  colorMap = this.filtro.map(item => [item.id, item]);
+    this.per_page = cantidad;
+    if (!ordenarProductos) {
+      this.filtradoProductos();
+    } else {
+      this.productosS.getListarProductosWP().then(respuesta => {
+        console.log(respuesta.data);
+        this.listadoProductos = respuesta.data;
+        // respuesta.headers['x-wp-totalpages']
+
+        let colorMap = [];
+        this.listadoProductos.forEach(element1 => {
+          // element1.categories.filter((item, index) => {
+          //   return element1.categories.indexOf(item) === index;
+          // })
+          // console.log(element1.categories);
+          if (ordenarProductos) {
+            element1.categories.forEach(element2 => {
+              if (this.categoria === element2.id) {
+                this.filtro.push({
+                  ...element2,
+                  bandera: true
+                });
+              } else {
+                this.filtro.push({
+                  ...element2,
+                  bandera: false
+                });
+              }
+            });
+          }
+        });
+        colorMap = this.filtro.map(item => [item.id, item]);
         let colorMapArr = new Map(colorMap);
         let unicos = [...colorMapArr.values()];
         this.filtros = unicos
+        for (const filtro of this.filtros) {
+          if(filtro.bandera){
+            this.filtradoProductos();
+          }
+        }
         console.log(this.filtros);
 
-}).catch(error => {
-  console.log(error);
-});
-}
+      }).catch(error => {
+        console.log(error);
+      });
+    }
 
     // this.productosS.getListarProductos().then(respuesta => {
     //   console.log(respuesta);
@@ -110,33 +130,33 @@ export class ProductoComponent implements OnInit {
 
   }
 
-  paginasTotal(){
+  paginasTotal() {
     this.productosS.setPorPagina(this.page_size);
   }
 
   filtradoProductos() {
     this.filtrar = [];
-    if(!this.listadoProductosTemp || this.listadoProductosTemp === this.listadoProductos){
+    if (!this.listadoProductosTemp || this.listadoProductosTemp === this.listadoProductos) {
       this.listadoProductosTemp = this.listadoProductos;
     }
-      this.listadoProductosTemp.forEach(element1 => {
-        for (const filtro of this.filtros) {
-          element1.categories.filter(marca => {
-            if(filtro.bandera && filtro.id === marca.id){
-              this.filtrar.push(element1);
-            }
-          });
-        }
-      });
-      if(this.filtrar.length > 0){
-        console.log(this.filtrar);
-        this.listadoProductos = this.filtrar;
-        // this.calcularPaginas();
-      }else{
-        this.listadoProductos = this.listadoProductosTemp;
-        // this.calcularPaginas();
-        console.log(this.listadoProductos);
+    this.listadoProductosTemp.forEach(element1 => {
+      for (const filtro of this.filtros) {
+        element1.categories.filter(marca => {
+          if (filtro.bandera && filtro.id === marca.id) {
+            this.filtrar.push(element1);
+          }
+        });
       }
+    });
+    if (this.filtrar.length > 0) {
+      console.log(this.filtrar);
+      this.listadoProductos = this.filtrar;
+      // this.calcularPaginas();
+    } else {
+      this.listadoProductos = this.listadoProductosTemp;
+      // this.calcularPaginas();
+      console.log(this.listadoProductos);
+    }
     // if (this.filtros.gossen ||
     //   this.filtros.beckwith ||
     //   this.filtros.dranetz ||
@@ -201,9 +221,9 @@ export class ProductoComponent implements OnInit {
     let cant_pages = cantidad;
     console.log(cant_pages);
     this.pages = {
-      first_page : 1,
-      last_page : cant_pages,
-      max_pages : 20
+      first_page: 1,
+      last_page: cant_pages,
+      max_pages: 20
     }
     // this.pages = cant_pages;
   }
@@ -213,17 +233,17 @@ export class ProductoComponent implements OnInit {
       this.page_number = page;
       // ultimas 6 paginas restantes. Se le resta 5 porque no se cuenta el mismo.
       let ultimo_tramo = this.pages.last_page - 5;
-      let first_page : any;
+      let first_page: any;
       // Si la pagina a ver es mayor o igual al ultimo tramo de paginas restantes. Se planta en el ultimo tramo.
       if (this.page_number >= ultimo_tramo) {
         first_page = ultimo_tramo;
-      }else{
+      } else {
         first_page = this.page_number;
       }
       this.pages = {
-        first_page : first_page,
-        last_page : this.pages.last_page,
-        max_pages : this.pages.last_page > 5 ? 5 : this.pages.last_page
+        first_page: first_page,
+        last_page: this.pages.last_page,
+        max_pages: this.pages.last_page > 5 ? 5 : this.pages.last_page
       }
     }
 
@@ -233,18 +253,18 @@ export class ProductoComponent implements OnInit {
         this.page_number = this.page_number - 1;
         // ultimas 6 paginas restantes. Se le resta 5 porque no se cuenta el mismo.
         let ultimo_tramo = this.pages.last_page - 5;
-        let first_page : any;
+        let first_page: any;
         // Si la pagina a ver es mayor o igual al ultimo tramo de paginas restantes. Se planta en el ultimo tramo.
         if (this.page_number >= ultimo_tramo) {
           first_page = ultimo_tramo;
-        }else{
+        } else {
           first_page = this.page_number;
         }
 
         this.pages = {
-          first_page : first_page,
-          last_page : this.pages.last_page,
-          max_pages : this.pages.last_page > 5 ? 5 : this.pages.last_page
+          first_page: first_page,
+          last_page: this.pages.last_page,
+          max_pages: this.pages.last_page > 5 ? 5 : this.pages.last_page
         }
       }
     }
@@ -255,17 +275,17 @@ export class ProductoComponent implements OnInit {
         this.page_number = this.page_number + 1;
         // ultimas 6 paginas restantes. Se le resta 5 porque no se cuenta el mismo.
         let ultimo_tramo = this.pages.last_page - 5;
-        let first_page : any;
+        let first_page: any;
         // Si la pagina a ver es mayor o igual al ultimo tramo de paginas restantes. Se planta en el ultimo tramo.
         if (this.page_number >= ultimo_tramo) {
           first_page = ultimo_tramo;
-        }else{
+        } else {
           first_page = this.page_number;
         }
         this.pages = {
-          first_page : first_page,
-          last_page : this.pages.last_page,
-          max_pages : this.pages.last_page > 5 ? 5 : this.pages.last_page
+          first_page: first_page,
+          last_page: this.pages.last_page,
+          max_pages: this.pages.last_page > 5 ? 5 : this.pages.last_page
         }
 
       }

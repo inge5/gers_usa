@@ -12,7 +12,7 @@ declare var $: any;
   styleUrls: ['./detalle-producto.component.css']
 })
 export class DetalleProductoComponent implements OnInit {
-  imagenDefecto = 'assets/images/detalle-productos/1.jpg';
+  imagenDefecto = 'assets/images/logo-gers-trasparente.png';
   imagenSuperior: any;
   productoUrl: any;
   carritoAnterior = [];
@@ -26,38 +26,19 @@ export class DetalleProductoComponent implements OnInit {
               private ruta: Router, private activatedRoute: ActivatedRoute,
               private variableG: VariableGlobalService,
               private alertaS: AlertasService) {
+                this.activatedRoute.params.subscribe(resp => {
+                  // console.log(resp.codigo);
+                  this.productoUrl = resp.codigo;   
+                  if (this.productoUrl) {
+                    this.listarDetalleProductos(this.productoUrl);
+                }
+                })
+              // this.productoUrl = this.activatedRoute.snapshot.params.codigo;
 
-              this.productoUrl = this.activatedRoute.snapshot.params.codigo;
-
-              if (this.productoUrl) {
-                  this.listarDetalleProductos(this.productoUrl);
-              }
+              
 
   }
   ngOnInit(): void {
-
-    this.listadoProductosDetalle = {
-      producto_cantidad: 0,
-      producto_codigo: null,
-      producto_estado: true,
-      producto_imagen: null,
-      producto_nombre: '',
-      producto_precio: 0,
-      producto_prefijo: '',
-      producto_promocion: false,
-      categoria_codigo: null,
-      producto_imagen1: null,
-      producto_imagen2: null,
-      producto_imagen3: null,
-      producto_imagen4: null,
-      producto_talla: null,
-      producto_tipoenvio: null,
-      producto_descripcion: null,
-      producto_valorPromocional: null,
-      producto_cuidadoprenda: null,
-      producto_politicacambio: null,
-    };
-
   }
   pasarImagen(imagen :string) {
     this.imagen_grande = imagen;
@@ -66,7 +47,7 @@ export class DetalleProductoComponent implements OnInit {
   listarDetalleProductos(codigo: number) {
 
     this.productosS.getlistarProductoUnicoWP(codigo).then(respuesta => {
-      console.log(respuesta.data);
+      // console.log(respuesta.data);
       this.listadoProductosDetalle = respuesta.data;
       this.imagen_grande = this.listadoProductosDetalle['images'][0].src;
     }).catch(error => {
@@ -123,23 +104,5 @@ export class DetalleProductoComponent implements OnInit {
       console.log(this.carritoTemporal);
     }
     this.variableG.changeMessage();
-    // this.carritoAnterior = JSON.parse(localStorage.getItem('carrito'));
-    // console.log(this.carritoAnterior);
-
-    // console.log(this.addProductoCarrito);
-
-    // if (this.addProductoCarrito) {
-    //   if (this.carritoAnterior) {
-    //   } else {
-    //     this.carritoAnterior = [];
-    //   }
-    //   this.listadoProductosDetalle['producto_cantidad'] = 1;
-    //   this.carritoAnterior.push(this.listadoProductosDetalle);
-    //   localStorage.setItem('carrito', JSON.stringify(this.carritoAnterior));
-    //   const data = 'Articulo Agregado Correctamente al Carrito';
-    //   this.alertaS.showToasterFull(data);
-    //   this.variableG.changeMessage();
-
-    // }
   }
 }

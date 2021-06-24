@@ -21,7 +21,7 @@
                 </div>
                 <div class="container">
                   <div class="row contenedor-nombre">
-                    <div class="col-3 col-md-3 col-lg-3 imagen-min" *ngFor="let imagen of listadoProductosDetalle.images">
+                    <div class="col-3 col-md-3 col-lg-3 imagen-min" *ngFor="let imagen of listadoProductosDetalle?.images">
                       <img class="ajustar-img" [src]="listadoProductosDetalle?imagen.src: ''" (click)="pasarImagen(imagen.src)">
                     </div>
                     <!-- <div class="col-3 col-md-3 col-lg-3 imagen-min">
@@ -210,7 +210,9 @@
 
       </div>
 
-   <app-slider-detalle></app-slider-detalle>
+   <ng-container *ngIf="listadoProductosDetalle">
+    <app-slider-detalle [relacionados]="listadoProductosDetalle?listadoProductosDetalle.related_ids: ''"></app-slider-detalle>
+   </ng-container>
 
 
     </div>
