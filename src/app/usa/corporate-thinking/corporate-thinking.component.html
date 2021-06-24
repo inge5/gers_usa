@@ -1,38 +1,58 @@
 <div class="corporate-thinking-page">
-    <div class="seccion-1">
+    <div class="seccion-1 pt-5 pb-5 position-relative">
+        <img *ngIf="!loader" class="img-fluid img-our-company" src="{{ seccion1_data.imagen_principal }}" alt="Our Company">
         <div class="container">
             <div class="row">
-                <div class="col-md-5"></div>
+                <div class="col-md-5">
+                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'325px' }"></ngx-skeleton-loader>
+                </div>
                 <div class="col-md-7">
-                    <h3 class="font-weight-700 text-blue1 size32 line-height33 letter-spacing-0-38">Our <br>Company</h3>
-                    <p class="size17 line-height23 letter-spacing-0-57">GERS was founded in 1981 to provide comprehensive consulting services in electrical engineering and associated areas. Through the years the group has expanded to have presence in the United States, Mexico, Colombia, and Chile to attend to national and international markets. <br><br>
-                        The primary focuses of the company are power system studies, protection & control design, testing and commissioning of electrical projects and other field services, smart grids and training courses. Throughout these four decades, they have served utilities, oil and refinery complexes, and industrial facilities in over 45 countries.</p>
+                    <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader">
+                        <h3 class="font-weight-700 text-blue1 size32 line-height33 letter-spacing-0-38">{{seccion1_data.titulo}}</h3>
+                        <p class="size17 line-height23 letter-spacing-0-57" [innerHTML]="seccion1_data.texto_general | safeHtml: 'html'"></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="seccion-2">
+    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'250px' }"></ngx-skeleton-loader>
+    <div *ngIf="!loader" class="seccion-2 position-relative pt-130 pb-70" style="background-color: #e8ecf4;">
+        <img class="img-fluid img-our-company-two" src="{{ seccion2_data.imagen }}" alt="Our Company">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <p class="size17 line-height23 letter-spacing-0-57">With professionals working in different fields and having completed projects across five continents, GERS’ expertise allows for the most exceptional work to be completed no matter the location or scale. GERS projects exceed expectations not only due to their diligence in delivering projects on time, and on budget, but constantly utilizing new technologies to enhance the end project for our valued customers.
-                    </p>
+                    <p class="size17 line-height23 letter-spacing-0-57" [innerHTML]="seccion2_data.texto_general"></p>
                 </div>
-                <div class="col-md-5"></div>
+                <div class="col-md-5">
+                </div>
             </div>
         </div>
     </div>
-    <div class="seccion-3">
+    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'250px' }"></ngx-skeleton-loader>
+    <div *ngIf="!loader" class="seccion-3 mt-5 mb-200">
+        <img class="img-fluid img-our-company-three" src="{{ seccion3_data.imagen_general }}" alt="Our Company">
         <div class="container">
             <div class="row">
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                </div>
                 <div class="col-md-8">
-                    <h2 class="size17 text-blue1 font-weight-700 montserrat line-height20 letter-spacing-0-25">Our Founder & CEO</h2>
-                    <h3 class="size25 montserrat text-blue1 font-weight-700 montserrat line-height20 letter-spacing-0-25">Juan Manuel Gers</h3>
-                    <p class="roboto font-weight-300">PhD in Distribution Automation, University of Strathclyde, 1998<br>
-                        MSc in Power Systems, University of Salford, 1980<br>
-                        BSc in Electrical Engineering, Universidad del Valle, 1977</p>
+                    <h2 class="size17 text-blue1 font-weight-700 montserrat line-height20 letter-spacing-0-25">{{ seccion3_data.titulo_cargo }}</h2>
+                    <h3 class="size25 montserrat text-blue1 font-weight-700 montserrat line-height20 letter-spacing-0-25">{{ seccion3_data.titulo_nombre }}</h3><br>
+                    <p class="roboto font-weight-300">{{ seccion3_data.descripcion }}</p><br>
+                    <p class="size16 letter-spacing-0-53 line-height23 text-black" [innerHTML]="seccion3_data.texto_general"></p>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="seccion-4 mt-5" style="background-color: #2C3394;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <iframe class="align-middle mb-5 mt-150n" width="100%" height="315" [src]='urlSafe' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>

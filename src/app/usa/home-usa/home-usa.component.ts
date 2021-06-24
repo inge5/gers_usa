@@ -1,5 +1,7 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HomeUsaService } from '../../services/home-usa.service';
+import { PagesUsaService } from '../../services/pages-usa.service';
+
 
 
 @Component({
@@ -14,9 +16,17 @@ export class HomeUsaComponent implements OnInit {
   titulo_servicios_eficientes_data:any[] = [];
   lets_work_data: any = [];
   servicios_eficientes_data:any[] = [];
+  tituloproyectos:any[] = [];
+  tituloInternacional:any[] = [];
+  paisesInternacionales:any[] = [];
+  nuestrosClientes:any[] = [];
+  equipoTrabajo:any[] = [];
+  vacantes:any[] = [];
   loader = true;
 
-  constructor(private _homeUsaService:HomeUsaService) { }
+  FeaturedProyects:any[] = [];
+
+  constructor(private _homeUsaService:HomeUsaService, private _proyectosusa:PagesUsaService) { }
 
     ngOnInit(): void {
       this._homeUsaService.getHomeUsa()
@@ -28,6 +38,17 @@ export class HomeUsaComponent implements OnInit {
         this.titulo_servicios_eficientes_data = res.acf.titulo_servicios_eficientes; 
         this.lets_work_data = res.acf.lets_work;
         this.servicios_eficientes_data = res.acf.servicios_eficientes;
+        this.tituloproyectos = res.acf.titulo_proyectos;
+        this.tituloInternacional = res.acf.titulo_contactos_internacionales;
+        this.paisesInternacionales = res.acf.paises_internacionales;
+        this.nuestrosClientes = res.acf.clientes;
+        this.equipoTrabajo = res.acf.equipo_de_trabajo;
+        this.vacantes = res.acf.vacantes;
+    });
+
+    this._proyectosusa.getProyectsUsa()
+    .subscribe((res:any) => {
+      this.FeaturedProyects = res;
     });
   }
 }

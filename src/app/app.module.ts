@@ -6,13 +6,16 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { APP_ROUTING } from './app.routing';
 
-// Services
+// Services Colombia
 import { HomeService } from './services/home.service';
-import { HomeUsaService } from './services/home-usa.service';
 import { MenusService } from './services/menus.service';
 import { PagesService } from './services/pages.service';
 import { VacantesService } from './services/vacantes.service';
 import { PublicacionesService } from './services/publicaciones.service';
+
+//Services USA
+import { HomeUsaService } from './services/home-usa.service';
+import { PagesUsaService } from './services/pages-usa.service';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './colombia/topbar-azul/topbar-azul.component';
@@ -61,6 +64,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ChileComponent } from './chile/chile/chile.component';
 import { MenuPrincipalChileComponent } from './chile/menu-principal-chile/menu-principal-chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
+
+//USA COMPONENTS
 import { UsaComponent } from './usa/usa/usa.component';
 import { MenuPrincipalUsaComponent } from './usa/menu-principal-usa/menu-principal-usa.component';
 import { TopbarComponent } from './usa/topbar/topbar.component';
@@ -69,6 +74,12 @@ import { CorporateThinkingComponent } from './usa/corporate-thinking/corporate-t
 import { FooterUsaComponent } from './usa/footer-usa/footer-usa.component';
 import { ContactComponent } from './usa/contact/contact.component';
 import { IntegralManagementPoliciesComponent } from './usa/integral-management-policies/integral-management-policies.component';
+import { NeplanUsaComponent } from './usa/representaciones/neplan-usa/neplan-usa.component';
+import { PowerSystemStudiesComponent } from './usa/servicios/power-system-studies/power-system-studies.component';
+import { SmartGridsUsaComponent } from './usa/servicios/smart-grids-usa/smart-grids-usa.component';
+import { ProtectionAndControlComponent } from './usa/servicios/protection-and-control/protection-and-control.component';
+import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
+import { ProyectsComponent } from './usa/proyects/proyects.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +127,13 @@ import { IntegralManagementPoliciesComponent } from './usa/integral-management-p
     CorporateThinkingComponent,
     FooterUsaComponent,
     ContactComponent,
-    IntegralManagementPoliciesComponent
+    IntegralManagementPoliciesComponent,
+    NeplanUsaComponent,
+    PowerSystemStudiesComponent,
+    SmartGridsUsaComponent,
+    ProtectionAndControlComponent,
+    FieldServicesComponent,
+    ProyectsComponent,
   ],
   imports: [
     BrowserModule,
@@ -139,7 +156,8 @@ import { IntegralManagementPoliciesComponent } from './usa/integral-management-p
     VacantesService,
     PublicacionesService,
     //ESTADOS UNIDOS
-    HomeUsaService
+    HomeUsaService,
+    PagesUsaService
   ],
   bootstrap: [AppComponent]
 })
