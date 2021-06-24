@@ -14,7 +14,7 @@
 			        				<div class="col-megamenu">
 			        					<ul class="list-unstyled">
 			        						<li class="liMenuNosotros">
-				        						<a class="itemPadreMenuNosotros" href="/#/usa/corporate-thinking/">
+				        						<a class="itemPadreMenuNosotros" [routerLink]="['corporate-thinking']">
 					        						<div class="row">
 					        							<div class="col-md-2">
 					        								<img class="imagenItemMenuNosotros"src="assets/images/nosotros/pensamiento_corporativoPNG.png" alt="Pensamiento corporativo">
@@ -27,7 +27,7 @@
 				        						</a>
 			        						</li>
 			        						<li class="liMenuNosotros">
-				        						<a class="itemPadreMenuNosotros" href="/#/usa/integral-management-policies">
+				        						<a class="itemPadreMenuNosotros" [routerLink]="['integral-management-policies']">
 					        						<div class="row">
 					        							<div class="col-md-2">
 					        								<img class="imagenItemMenuNosotros img-fluid"src="assets/images/nosotros/gestion_integralPNG.png" alt="Gestión integral">
@@ -56,7 +56,7 @@
 	                            		<h3 class="textoPais">Colombia</h3>
 	                            	</div>
 	                                <ul>
-	                                    <li><a class="linkPais" href="/#/colombia">Visitar sitio web</a>
+	                                    <li><a class="linkPais" href="/N-1076/#/colombia">Visitar sitio web</a>
 	                                    </li>
 	                                    <div class="recuadroCiudadTopHeader primeraCiudad">
 	                                    <li class="dropdown-header-ciudad">Cali</li>
@@ -74,7 +74,7 @@
 	                            		<h3 class="textoPais">Estados Unidos</h3>
 	                            	</div>
 	                                <ul>
-	                                    <li><a class="linkPais" href="#">Visitar sitio web</a>
+	                                    <li><a class="linkPais" href="/N-1076/#/usa">Visitar sitio web</a>
 	                                    </li>
 	                                    <div class="recuadroCiudadTopHeader primeraCiudad">
 	                                    <li class="dropdown-header-ciudad">Weston</li>
@@ -120,7 +120,7 @@
 
 
 
-					<li class="nav-item"><a class="nav-link" href="/#/usa/contact/">Contact us</a></li>
+					<li class="nav-item"><a class="nav-link" [routerLink]="['contact']">Contact us</a></li>
 					<!--
 					<li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle inicioSesion" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -43,6 +43,7 @@ import { SmartGridsUsaComponent } from './usa/servicios/smart-grids-usa/smart-gr
 import { ProtectionAndControlComponent } from './usa/servicios/protection-and-control/protection-and-control.component';
 import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
 import { ProyectsComponent } from './usa/proyects/proyects.component';
+import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
 
 
 
@@ -98,6 +99,7 @@ const APP_ROUTES: Routes = [
         { path: 'protection-and-control', component: ProtectionAndControlComponent },
         { path: 'field-services', component: FieldServicesComponent },
         { path: 'proyects', component: ProyectsComponent },
+        { path: 'work-with-us', component: WorkWithUsComponent },
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
