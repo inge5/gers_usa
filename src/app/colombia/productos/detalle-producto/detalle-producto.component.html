@@ -17,12 +17,12 @@
             <div class="row contenedor-productos">
               <div class="contenedor-imagen">
                 <div class="imagen-grande" routerLink="/detalle-productos">
-                  <img [src]="listadoProductosDetalle?imagen_grande: imagenDefecto">
+                  <img class="ajustar-img" [src]="listadoProductosDetalle?imagen_grande: imagenDefecto">
                 </div>
                 <div class="container">
                   <div class="row contenedor-nombre">
                     <div class="col-3 col-md-3 col-lg-3 imagen-min" *ngFor="let imagen of listadoProductosDetalle.images">
-                      <img [src]="listadoProductosDetalle?imagen.src: ''" (click)="pasarImagen(imagen.src)">
+                      <img class="ajustar-img" [src]="listadoProductosDetalle?imagen.src: ''" (click)="pasarImagen(imagen.src)">
                     </div>
                     <!-- <div class="col-3 col-md-3 col-lg-3 imagen-min">
                       <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen2']: ''"  (click)="pasarImagen(listadoProductosDetalle['producto_imagen2'])">

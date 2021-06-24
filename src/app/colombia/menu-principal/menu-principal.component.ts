@@ -3,6 +3,8 @@ import {VariableGlobalService} from "../servicios/variable-global/variable-globa
 import {AlertasService} from "../servicios/alertas/alertas.service";
 import { MenusService } from '../../services/menus.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-menu-principal',
   templateUrl: './menu-principal.component.html',
@@ -68,11 +70,17 @@ export class MenuPrincipalComponent implements OnInit {
 
    mostrarProductos(dato) {
 
-    if (dato === 1) {
-      document.getElementById('mySidenav').style.width = '40%';
-    } else {
-      document.getElementById('mySidenav').style.width = '0';
+    if(dato === 1){
+      $('#mySidenav').addClass('open');
+    }else{
+      $('#mySidenav').removeClass('open');
     }
+
+    // if (dato === 1) {
+    //   document.getElementById('mySidenav').style.width = '40%';
+    // } else {
+    //   document.getElementById('mySidenav').style.width = '0';
+    // }
 
   }
 

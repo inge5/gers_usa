@@ -12,6 +12,10 @@
   padding: 1% 5%;
 }
 
+.imagen-producto{
+  height: auto !important;
+}
+
 .menuproductos {
   background-color: #E8ECF4 !important;
   width: 60rem;
@@ -40,6 +44,7 @@
 .fila-carrito {
   margin-right: 1px !important;
   margin-left: 1px !important;
+  align-items: center;
   cursor: pointer;
 }
 

@@ -21,6 +21,9 @@
   width: 100%;
 }
 
+.ajustar-img{
+  height: auto !important;
+}
 
 .contenedor-nombre img {
   width: 50px;
