@@ -57,6 +57,7 @@ import { PublicacionInternaComponent } from './colombia/publicaciones/publicacio
 
 
 import { OwlModule } from 'ngx-owl-carousel';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ChileComponent } from './chile/chile/chile.component';
 import { MenuPrincipalChileComponent } from './chile/menu-principal-chile/menu-principal-chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
@@ -115,7 +116,7 @@ import { IntegralManagementPoliciesComponent } from './usa/integral-management-p
     CorporateThinkingComponent,
     FooterUsaComponent,
     ContactComponent,
-    IntegralManagementPoliciesComponent,
+    IntegralManagementPoliciesComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +128,8 @@ import { IntegralManagementPoliciesComponent } from './usa/integral-management-p
     FormsModule,
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
-    OwlModule
+    OwlModule,
+    NgxPaginationModule
   ],
   providers: [
     //COLOMBIA

@@ -19,6 +19,7 @@ export class CarritoComponent implements OnInit {
   listadoCarrito: boolean;
   nameProducto: any;
   filtros: any;
+  imagen_grande: any;
 
   constructor(
     private variableG: VariableGlobalService,
@@ -67,7 +68,11 @@ export class CarritoComponent implements OnInit {
 
     this.variableG.currentMessage.subscribe(response => {
       this.carritoAnterior = response;
-      //   console.log(this.carritoAnterior);
+      // for (const carrito of this.carritoAnterior) {
+      //   console.log(carrito);
+      //   this.imagen_grande = carrito.images[0].src;
+      // }
+        // console.log(this.carritoAnterior);
       this.miCarritoCompraContador();
     });
   }
@@ -94,13 +99,12 @@ export class CarritoComponent implements OnInit {
       this.aumentarDisminuir[identificador]['producto_cantidad'] += 1;
     } else {
 
-      if (this.aumentarDisminuir[identificador]['producto_cantidad'] >  0) {
+      if (this.aumentarDisminuir[identificador]['producto_cantidad'] > 1) {
         this.aumentarDisminuir[identificador]['producto_cantidad'] -= 1;
       } else {
         let datos = 'Articulo agregado a la canasta no puede ser menor a 1 unidad';
         this.alertaS.showToasterWarning(datos);
       }
-
     }
 
     localStorage.setItem('carrito', JSON.stringify(this.aumentarDisminuir));
@@ -109,7 +113,7 @@ export class CarritoComponent implements OnInit {
 
 
   borrarListado() {
-    localStorage.removeItem('carrito');
+    localStorage.setItem('carrito', JSON.stringify([]));
     this.alertaS.showToasterFull('Articulos removidos exitosamente');
     this.variableG.changeMessage();
     this.llamarDatoLocales();

@@ -56,9 +56,9 @@ export class MenuPrincipalComponent implements OnInit {
   }
 
   miCarritoCompraContador() {
-    if (this.carritoAnterior && this.carritoAnterior.length > 0) {
+    if (this.carritoAnterior) {
       this.cantidadCarrito = this.carritoAnterior.length;
-      // console.log(this.cantidadCarrito);
+      console.log(this.cantidadCarrito);
     }
 
 
@@ -69,7 +69,7 @@ export class MenuPrincipalComponent implements OnInit {
    mostrarProductos(dato) {
 
     if (dato === 1) {
-      document.getElementById('mySidenav').style.width = '39vw';
+      document.getElementById('mySidenav').style.width = '40%';
     } else {
       document.getElementById('mySidenav').style.width = '0';
     }

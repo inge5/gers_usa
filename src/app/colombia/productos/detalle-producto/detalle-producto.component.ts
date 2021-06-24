@@ -12,13 +12,15 @@ declare var $: any;
   styleUrls: ['./detalle-producto.component.css']
 })
 export class DetalleProductoComponent implements OnInit {
-  listadoProductos = productos;
   imagenDefecto = 'assets/images/detalle-productos/1.jpg';
   imagenSuperior: any;
   productoUrl: any;
   carritoAnterior = [];
-  listadoProductosDetalle: Productos;
+  listadoProductosDetalle: any;
   addProductoCarrito = [];
+  imagen_grande: any;
+  carritoTemporal = [];
+  bandera: boolean;
 
   constructor(private  productosS: PruebaProductosService,
               private ruta: Router, private activatedRoute: ActivatedRoute,
@@ -34,7 +36,6 @@ export class DetalleProductoComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    console.log('cambio')
     this.listadoProductosDetalle = {
       producto_cantidad: 0,
       producto_codigo: null,
@@ -58,61 +59,87 @@ export class DetalleProductoComponent implements OnInit {
     };
 
   }
-
-
-  ngAfterContentInit() {
-    console.log('ngAfterContentInit')
-  }
-
-  ngAfterContentChecked() {
-    console.log('ngAfterContentChecked')
-  }
-  ngAfterViewInit() {
-    console.log('ngAfterViewInit')
-  }
-
-  ngAfterViewChecked() {
-
-  }
   pasarImagen(imagen :string) {
-    this.listadoProductosDetalle['producto_imagen1'] = imagen;
+    this.imagen_grande = imagen;
   }
 
-  listarDetalleProductos(codigo) {
+  listarDetalleProductos(codigo: number) {
 
-    this.productosS.getlistarProductoUnico(codigo).then(respuesta => {
-      console.log(respuesta);
-      this.listadoProductosDetalle = respuesta['productos'][0];
-      console.log(this.listadoProductosDetalle);
+    this.productosS.getlistarProductoUnicoWP(codigo).then(respuesta => {
+      console.log(respuesta.data);
+      this.listadoProductosDetalle = respuesta.data;
+      this.imagen_grande = this.listadoProductosDetalle['images'][0].src;
     }).catch(error => {
       console.log(error);
     })
 
+    // this.productosS.getlistarProductoUnico(218).then(respuesta => {
+    //   console.log(respuesta);
+      // this.listadoProductosDetalle = respuesta['productos'][0];
+      // console.log(this.listadoProductosDetalle);
+    // }).catch(error => {
+    //   console.log(error);
+    // })
+
   }
 
-  agregarCarrito() {
+  agregarCarrito(id: number) {
 
-    this.carritoAnterior = JSON.parse(localStorage.getItem('carrito'));
-    console.log(this.carritoAnterior);
+    if(localStorage.getItem('carrito')){
+      this.carritoTemporal = JSON.parse(localStorage.getItem('carrito'));
 
-    //this.addProductoCarrito.push(this.listadoProductosDetalle);
-    console.log(this.addProductoCarrito);
-
-    if (this.addProductoCarrito) {
-      if (this.carritoAnterior) {
-      } else {
-        this.carritoAnterior = [];
+      if(this.carritoTemporal.length > 0){
+        this.carritoTemporal.forEach(element => {
+          if(id === element.id){
+            console.log("Existe");
+            element.producto_cantidad += 1;
+            this.bandera = true;
+          }else{
+            if(!this.bandera){
+              console.log("No existe");
+              this.listadoProductosDetalle['producto_cantidad'] = 1;
+              this.bandera = false;
+            }
+          }
+        })
+        if(!this.bandera){
+          this.carritoTemporal.push(this.listadoProductosDetalle);
+        }
+        this.bandera = false;
+      }else{
+        this.listadoProductosDetalle['producto_cantidad'] = 1;
+        this.carritoTemporal.push(this.listadoProductosDetalle);
       }
-      this.listadoProductosDetalle['producto_cantidad'] = 1;
-      this.carritoAnterior.push(this.listadoProductosDetalle);
-
-      localStorage.setItem('carrito', JSON.stringify(this.carritoAnterior));
+      localStorage.setItem('carrito', JSON.stringify(this.carritoTemporal));
       const data = 'Articulo Agregado Correctamente al Carrito';
       this.alertaS.showToasterFull(data);
-      this.variableG.changeMessage();
-
+      console.log(this.carritoTemporal);
+    }else{
+      this.listadoProductosDetalle['producto_cantidad'] = 1;
+      this.carritoTemporal.push(this.listadoProductosDetalle);
+      localStorage.setItem('carrito', JSON.stringify(this.carritoTemporal));
+      const data = 'Articulo Agregado Correctamente al Carrito';
+      this.alertaS.showToasterFull(data);
+      console.log(this.carritoTemporal);
     }
+    this.variableG.changeMessage();
+    // this.carritoAnterior = JSON.parse(localStorage.getItem('carrito'));
+    // console.log(this.carritoAnterior);
+
+    // console.log(this.addProductoCarrito);
+
+    // if (this.addProductoCarrito) {
+    //   if (this.carritoAnterior) {
+    //   } else {
+    //     this.carritoAnterior = [];
+    //   }
+    //   this.listadoProductosDetalle['producto_cantidad'] = 1;
+    //   this.carritoAnterior.push(this.listadoProductosDetalle);
+    //   localStorage.setItem('carrito', JSON.stringify(this.carritoAnterior));
+    //   const data = 'Articulo Agregado Correctamente al Carrito';
+    //   this.alertaS.showToasterFull(data);
+    //   this.variableG.changeMessage();
+
+    // }
   }
-
-
 }

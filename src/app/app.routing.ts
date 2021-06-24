@@ -40,8 +40,8 @@ import { IntegralManagementPoliciesComponent } from './usa/integral-management-p
 
 
 const APP_ROUTES: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'home', component: HomeComponent},
+    // {path: '', component: ColombiaComponent},
+    // {path: 'home', component: HomeComponent},
     {path: 'colombia', component: ColombiaComponent,
     children: [
         {path: '', component: HomeComponent},
@@ -78,7 +78,7 @@ const APP_ROUTES: Routes = [
     {path: 'chile/neplan-cl', component: NeplanClComponent},
 
     //Rutas de USA
-    {path: 'home-usa', component: HomeUsaComponent},
+    // {path: 'home-usa', component: HomeUsaComponent},
     {path: 'usa', component: UsaComponent,
     children: [
         { path: '', component: HomeUsaComponent },
@@ -87,7 +87,7 @@ const APP_ROUTES: Routes = [
         { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
     ]},
     
-    {path: '**', pathMatch: 'full', redirectTo: ''}
+    {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
     
 ];
 

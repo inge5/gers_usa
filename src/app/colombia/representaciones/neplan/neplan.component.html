@@ -1,6 +1,6 @@
-<app-menu-vertical></app-menu-vertical>
+<!-- <app-menu-vertical></app-menu-vertical>
 <app-topbar-azul></app-topbar-azul>
-<app-menu-principal></app-menu-principal>
+<app-menu-principal></app-menu-principal> -->
 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'140px' }"></ngx-skeleton-loader>
 <div *ngIf="!loader">
     <div class="bannerInterna" *ngIf="banner_data.banner_principal" [ngStyle]="{ 'background-image': 'url(' + banner_data.banner_principal + ')'}">
@@ -73,4 +73,4 @@
         </div>
     </div>
 </div> 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

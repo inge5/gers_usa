@@ -133,7 +133,46 @@
   transition: margin-left .5s;
   padding: 20px;
 }
-
+@media (max-width: 1244px){
+  #mySidenav{
+    width: 50% !important;
+  }
+}
+@media (max-width: 995px){
+  #mySidenav{
+    width: 57% !important;
+  }
+}
+@media (max-width: 873px){
+  #mySidenav{
+    width: 64% !important;
+  }
+}
+@media (max-width: 767px){
+  #mySidenav{
+    width: 68% !important;
+  }
+}
+@media (max-width: 731px){
+  #mySidenav{
+    width: 75% !important;
+  }
+}
+@media (max-width: 663px){
+  #mySidenav{
+    width: 80% !important;
+  }
+}
+@media (max-width: 622px){
+  #mySidenav{
+    width: 87% !important;
+  }
+}
+@media (max-width: 575px){
+  #mySidenav{
+    width: 81% !important;
+  }
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}

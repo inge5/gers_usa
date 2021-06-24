@@ -5,6 +5,12 @@
   z-index: 10;
   width: 100%;
 }
+.ajustar-productos{
+  flex-flow: column wrap;
+  width: 100%;
+  margin: 0;
+  padding: 1% 5%;
+}
 
 .menuproductos {
   background-color: #E8ECF4 !important;

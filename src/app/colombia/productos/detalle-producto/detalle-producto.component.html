@@ -1,3 +1,6 @@
+<!-- <app-menu-vertical></app-menu-vertical>
+<app-topbar-azul></app-topbar-azul>
+<app-menu-principal></app-menu-principal> -->
 <!--<div class="bannerInterna" style="background:url(assets/images/carousel-principal/banner_principal.jpg)">
   <p class="text-center pt-5 pb-5">
   </p>
@@ -14,14 +17,14 @@
             <div class="row contenedor-productos">
               <div class="contenedor-imagen">
                 <div class="imagen-grande" routerLink="/detalle-productos">
-                  <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen1']: imagenDefecto">
+                  <img [src]="listadoProductosDetalle?imagen_grande: imagenDefecto">
                 </div>
                 <div class="container">
                   <div class="row contenedor-nombre">
-                    <div class="col-3 col-md-3 col-lg-3 imagen-min">
-                      <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen1']: ''" (click)="pasarImagen(listadoProductosDetalle['producto_imagen1'])">
+                    <div class="col-3 col-md-3 col-lg-3 imagen-min" *ngFor="let imagen of listadoProductosDetalle.images">
+                      <img [src]="listadoProductosDetalle?imagen.src: ''" (click)="pasarImagen(imagen.src)">
                     </div>
-                    <div class="col-3 col-md-3 col-lg-3 imagen-min">
+                    <!-- <div class="col-3 col-md-3 col-lg-3 imagen-min">
                       <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen2']: ''"  (click)="pasarImagen(listadoProductosDetalle['producto_imagen2'])">
                     </div>
                     <div class="col-3 col-md-3 col-lg-3 imagen-min">
@@ -29,7 +32,7 @@
                     </div>
                     <div class="col-3 col-md-3 col-lg-3 imagen-min">
                       <img [src]="listadoProductosDetalle?listadoProductosDetalle['producto_imagen4']: ''"  (click)="pasarImagen(listadoProductosDetalle['producto_imagen4'])">
-                    </div>
+                    </div> -->
                   </div>
                 </div>
 
@@ -40,15 +43,14 @@
             <div class="row contenedor-informacion-producto">
               <div class="col-12 producto">
                 <span class="">
-                  {{listadoProductosDetalle?listadoProductosDetalle['producto_nombre']: ''}}
+                  {{listadoProductosDetalle?listadoProductosDetalle.name: ''}}
                 </span>
               </div>
               <div class="col-12 nuevo-producto">
                 <span class="">Nuevo producto</span>
               </div>
               <div class="col-12 descripcion-producto">
-                <span class="">
-                   {{listadoProductosDetalle?listadoProductosDetalle['producto_descripcion']: ''}}
+                <span class="" [innerHTML]="listadoProductosDetalle?listadoProductosDetalle.short_description: ''">
                 </span>
               </div>
               <div class="col-12 agregar-carrito">
@@ -57,7 +59,7 @@
                 </span>
               </div>
               <div class="col-12 boton-agregar-carrito">
-                <button type="button" class="btn btn-blue" (click)="agregarCarrito()">
+                <button type="button" class="btn btn-blue" (click)="agregarCarrito(listadoProductosDetalle.id)">
                   Añadir al cotizador
                 </button>
               </div>
@@ -125,7 +127,8 @@
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
                 <div class="textoDespuesPestanas">
-                  <ul>
+                  <span class="texto-anidado" [innerHTML]="listadoProductosDetalle?listadoProductosDetalle.description: ''"></span>
+                  <!-- <ul>
                     <li> Detects & records sags/dips, swells, interruptions, transients, harmonics, flicker, RVC and
                       more – Meets & Exceeds Industry Standards
                     </li>
@@ -145,9 +148,9 @@
                       Plus </a></li>
                     <li> 3 year factory warranty</li>
                     <li> Made in the USA in our <a href="#">ISO 9001:2015</a> certified factory</li>
-                  </ul>
+                  </ul> -->
 
-                  <p class="texto-anidado">
+                  <!-- <p class="texto-anidado">
                     The Dranetz HDPQ® Visa SP (IP65) power quality analyzer offers the best value in power quality,
                     demand, and energy monitoring from Dranetz,
                     or any other Power Quality analyzer manufacturer! No other product at this price point comes close
@@ -180,7 +183,7 @@
                     Dran-View 7
                     software or a free VNC client on your Smartphone or Tablet from anywhere with connectivity to the
                     instrument.
-                  </p>
+                  </p> -->
                 </div>
               </div>
               <div class="tab-pane fade" id="caracteristicas" role="tabpanel" aria-labelledby="caracteristicas-tab">
@@ -213,3 +216,4 @@
     </div>
 
 </div>
+<!-- <app-footer></app-footer> -->

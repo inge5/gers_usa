@@ -1,5 +1,16 @@
 /* BASE */
-
+.ngx-pagination{
+    display: flex;
+    padding: 0;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0 !important;
+    margin-left: -9% !important;
+}
+.current{
+    background-color: #2C3394 !important;
+}
 h1,
 h2,
 h3,
@@ -28,7 +39,7 @@ p{
 .montserrat{
     font-family: 'Montserrat', sans-serif;
 }
-
+.mrg-right-5{ margin-right: 5px !important; }
 
 
 /* Size Letters */

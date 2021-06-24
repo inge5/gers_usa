@@ -1,0 +1,676 @@
+{
+	"info": {
+		"_postman_id": "f6e1f5d1-427b-43e7-ac7d-a832d8c11b83",
+		"name": "Gers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/jwt-auth/v1/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"jwt-auth",
+						"v1",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2dlcnNXb3JkcHJlc3MiLCJpYXQiOjE2MTEyNzE2MDIsIm5iZiI6MTYxMTI3MTYwMiwiZXhwIjoxNjExODc2NDAyLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.m5i8upFTMDk8fY63Js-CskMhUWdpREsO9MFRD2hf6Dw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "danny",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "danny",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "inge3neuromedia@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "roles",
+							"value": "administrator",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/wp/v2/users/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"wp",
+						"v2",
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/wp/v2/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"wp",
+						"v2",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2dlcnNXb3JkcHJlc3MiLCJpYXQiOjE2MTEzMzA1ODcsIm5iZiI6MTYxMTMzMDU4NywiZXhwIjoxNjExOTM1Mzg3LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.nUU6HOza65sIQXmCHv0ebGpFB7wLB0gUTlbAPtMf_-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "prueba5",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "prueba5@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "prueba5",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "administrator",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/wp/v2/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"wp",
+						"v2",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2dlcnNXb3JkcHJlc3MiLCJpYXQiOjE2MTEzMzA1ODcsIm5iZiI6MTYxMTMzMDU4NywiZXhwIjoxNjExOTM1Mzg3LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.nUU6HOza65sIQXmCHv0ebGpFB7wLB0gUTlbAPtMf_-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "name_prueba7",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "name_prueba7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/wp/v2/users/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"wp",
+						"v2",
+						"users",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPageHome",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/acf/v3/pages/2",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1003backWordpress",
+						"wp-json",
+						"acf",
+						"v3",
+						"pages",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMediaID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2dlcnNXb3JkcHJlc3MiLCJpYXQiOjE2MTE1ODk3MzUsIm5iZiI6MTYxMTU4OTczNSwiZXhwIjoxNjEyMTk0NTM1LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.zpnDNZdk9kp5tce7kZdPIkxjGqHrGvespQ2R3QVZwJk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/wp/v2/media/28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"wp",
+						"v2",
+						"media",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomsPostType",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2dlcnNXb3JkcHJlc3MiLCJpYXQiOjE2MTIxOTY1OTIsIm5iZiI6MTYxMjE5NjU5MiwiZXhwIjoxNjEyODAxMzkyLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.EnoxtpMYY67drRm9GRpu24AL5-aeyaVmbrqM_p5CBFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/gersWordpress/wp-json/wp/v2/proyectos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"gersWordpress",
+						"wp-json",
+						"wp",
+						"v2",
+						"proyectos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1057backgane/wp-json/acf/v3/pages/2/",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1057backgane",
+						"wp-json",
+						"acf",
+						"v3",
+						"pages",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProducts",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "cs_0ce13e2e0258658a91c83022ff35b029df5bf22f",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ck_235432cde60974e317bfc4a90c958d258699e923",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1003backWordpress",
+						"wp-json",
+						"wc",
+						"v3",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductsVariations",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "cs_0ce13e2e0258658a91c83022ff35b029df5bf22f",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ck_235432cde60974e317bfc4a90c958d258699e923",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/11/variations",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1003backWordpress",
+						"wp-json",
+						"wc",
+						"v3",
+						"products",
+						"11",
+						"variations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductsAttributes",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "cs_0ce13e2e0258658a91c83022ff35b029df5bf22f",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ck_235432cde60974e317bfc4a90c958d258699e923",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/attributes",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1003backWordpress",
+						"wp-json",
+						"wc",
+						"v3",
+						"products",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductsCategories",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "cs_0ce13e2e0258658a91c83022ff35b029df5bf22f",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ck_235432cde60974e317bfc4a90c958d258699e923",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/categories",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1003backWordpress",
+						"wp-json",
+						"wc",
+						"v3",
+						"products",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductsTags",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerSecret",
+							"value": "cs_0ce13e2e0258658a91c83022ff35b029df5bf22f",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "ck_235432cde60974e317bfc4a90c958d258699e923",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/tags",
+					"protocol": "https",
+					"host": [
+						"pruebasneuro",
+						"co"
+					],
+					"path": [
+						"N-1003backWordpress",
+						"wp-json",
+						"wc",
+						"v3",
+						"products",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
