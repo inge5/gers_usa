@@ -2,9 +2,9 @@
 <div class="contenedor-total-agregados">
 
   <div class="row ajustar-productos" [hidden]="!listadoCarrito">
-    <div class="col-12 cotizacion" (click)="solicitarCotizacionCarrito()">
-      <span class="flechita" *ngIf="carritoAnterior.length > 0">
-          <i class="fa fa-arrow-left" (click)="solicitarCotizacionCarrito()"></i>
+    <div class="col-12 cotizacion">
+      <span class="flechita" *ngIf="carritoAnterior.length > 0" (click)="solicitarCotizacionCarrito()">
+          <i class="fa fa-arrow-left"></i>
       </span>
      <span>COTIZACIÓN</span>
     </div>
@@ -59,9 +59,9 @@
 
 
   <div class="row agrupar-inputs" [hidden]="!solicitarCotizacion">
-    <div class="col-12 cotizacion"  (click)="volverCarrito()">
-      <span class="flechita">
-           <i class="fa fa-arrow-left" (click)="volverCarrito()"></i>
+    <div class="col-12 cotizacion">
+      <span class="flechita" (click)="volverCarrito()">
+           <i class="fa fa-arrow-right"></i>
       </span>
       <span>COTIZACIÓN</span>
     </div>

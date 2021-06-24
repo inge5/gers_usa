@@ -4,7 +4,9 @@
     z-index: 10;
     width: 100%;
 }
-
+.cerrarModal{
+  cursor: pointer;
+}
 .menuproductos {
   background-color: #E8ECF4 !important;
   /*width: 60rem;*/
@@ -80,6 +82,13 @@
   width: 780px !important;
 }
 
+#mySidenav{
+  width: 0;
+}
+
+.open{
+  width: 40% !important;
+}
 
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -134,42 +143,42 @@
   padding: 20px;
 }
 @media (max-width: 1244px){
-  #mySidenav{
+  .open{
     width: 50% !important;
   }
 }
 @media (max-width: 995px){
-  #mySidenav{
+  .open{
     width: 57% !important;
   }
 }
 @media (max-width: 873px){
-  #mySidenav{
+  .open{
     width: 64% !important;
   }
 }
 @media (max-width: 767px){
-  #mySidenav{
+  .open{
     width: 68% !important;
   }
 }
 @media (max-width: 731px){
-  #mySidenav{
+  .open{
     width: 75% !important;
   }
 }
 @media (max-width: 663px){
-  #mySidenav{
+  .open{
     width: 80% !important;
   }
 }
 @media (max-width: 622px){
-  #mySidenav{
+  .open{
     width: 87% !important;
   }
 }
 @media (max-width: 575px){
-  #mySidenav{
+  .open{
     width: 81% !important;
   }
 }
