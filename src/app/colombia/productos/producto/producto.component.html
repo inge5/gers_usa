@@ -21,11 +21,11 @@
               <label>Ordenar por</label>
             </div>
             <div class="col-12 col-md-6 col-lg-2">
-              <select class="custom-select mr-sm-2" [(ngModel)]="filtros.ordenar" (change)="filtradoProductos()">
-                <option [value]="null">Ordenar por</option>
-                <option value="1">Nombre del producto</option>
-                <option value="2">Fecha de creacion</option>
-                <option value="3">Mas recientes</option>
+              <select class="custom-select mr-sm-2" [ngModel]="ordenarPor" (ngModelChange)="filtradoOrdenar($event)">
+                <option [value]="0">Ordenar por</option>
+                <option [value]="1">Nombre del producto</option>
+                <option [value]="2">Fecha de creacion</option>
+                <option [value]="3">Mas recientes</option>
               </select>
             </div>
             <div class="col-12 col-md-6 col-lg-2">

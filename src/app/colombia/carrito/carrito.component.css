@@ -96,15 +96,13 @@
 }
 
 .botones-funciones {
-  margin-bottom: 30px;
+  margin: 3%;
 }
 
 .botones-funciones {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -1px;
-  margin-left: -1px;
 }
 .botones-funciones button {
   width: 100%;
