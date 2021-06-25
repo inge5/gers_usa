@@ -52,7 +52,7 @@ export class MenuPrincipalComponent implements OnInit {
   }
 
   productosCategoria(categoria: number){
-    this.productoS.setCategoria(categoria);
+    this.variableG.setCategoria(categoria);
     this.ruta.navigateByUrl('/colombia/productos');
   }
 

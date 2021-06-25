@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { productos } from '../../../../assets/data/json';
 import { PruebaProductosService } from "../../servicios/prueba-productos/prueba-productos.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { VariableGlobalService } from '../../servicios/variable-global/variable-global.service';
 
 declare var $: any;
 
@@ -39,7 +40,7 @@ export class ProductoComponent implements OnInit {
   ordenarPor: number = 0;
   ordenarProductosTemp: any;
 
-  constructor(private productosS: PruebaProductosService, private ruta: Router) {
+  constructor(private productosS: PruebaProductosService, private ruta: Router, private variableG: VariableGlobalService) {
   }
 
   ngOnInit(): void {
@@ -71,7 +72,11 @@ export class ProductoComponent implements OnInit {
   }
 
   getCategoria() {
-    this.categoria = this.productosS.getCategoria();
+    this.variableG.currentCategory.subscribe(resp => {
+      this.categoria = resp;
+      // console.log(this.categoria);
+      this.paginas();
+    })
   }
 
 
