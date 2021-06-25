@@ -31,7 +31,7 @@ export class PruebaProductosService {
 
   setPorPagina(cantidad: number = 5){
     this.por_page = cantidad;
-    console.log(this.por_page);
+    // console.log(this.por_page);
   }
 
   getCategoriesWP(){
