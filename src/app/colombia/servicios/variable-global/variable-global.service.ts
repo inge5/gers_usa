@@ -23,6 +23,7 @@ export class VariableGlobalService {
 
   setCategoria(categoria){
     this.cate.next(categoria);
+    console.log(this.cate);
   }
 
   consultarDatosLocales() {

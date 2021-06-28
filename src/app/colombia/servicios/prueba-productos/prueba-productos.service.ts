@@ -18,7 +18,7 @@ export class PruebaProductosService {
   };
   api: any;
   por_page: number;
-  categoria: number;
+  categoria: any[] = [];
   // pages: number;
 
   constructor(private httpC: HttpClient) {
@@ -29,7 +29,7 @@ export class PruebaProductosService {
     this.setPorPagina();
   }
 
-  setPorPagina(cantidad: number = 5){
+  setPorPagina(cantidad: number = 20){
     this.por_page = cantidad;
     // console.log(this.por_page);
   }
@@ -45,7 +45,7 @@ export class PruebaProductosService {
     return WooCommerce.get(`products/categories`);
   }
 
-  setCategoria(categoria: number){
+  setCategoria(categoria: any[]){
     this.categoria = categoria;
   }
 

@@ -74,7 +74,7 @@ export class ProductoComponent implements OnInit {
   getCategoria() {
     this.variableG.currentCategory.subscribe(resp => {
       this.categoria = resp;
-      // console.log(this.categoria);
+      console.log(this.categoria);
       this.paginas();
     })
   }
@@ -88,40 +88,65 @@ export class ProductoComponent implements OnInit {
       this.productosS.getListarProductosWP().then(respuesta => {
         // console.log(respuesta.data);
         this.listadoProductos = respuesta.data;
-        // respuesta.headers['x-wp-totalpages']
-
-        let colorMap = [];
-        this.listadoProductos.forEach(element1 => {
-          // element1.categories.filter((item, index) => {
-          //   return element1.categories.indexOf(item) === index;
-          // })
-          // console.log(element1.categories);
-          if (ordenarProductos) {
-            element1.categories.forEach(element2 => {
-              if (this.categoria === element2.id) {
-                this.filtro.push({
-                  ...element2,
-                  bandera: true
-                });
-              } else {
-                this.filtro.push({
-                  ...element2,
-                  bandera: false
-                });
-              }
-            });
+        let categorias = [];
+        let subCategorias = [];
+        this.productosS.getCategoria().forEach(element1 => {
+          if(this.categoria === element1.id){
+            categorias.push({
+              ...element1,
+              bandera: true
+            })
+          }else{
+            // element1.subCategorias.forEach(element2 => {
+            //   if(this.categoria === element2.id){
+            //     element1.subCategorias.push({
+            //       ...element2,
+            //       bandera: true
+            //     })
+            //   }else{
+            //     element1.subCategorias.push({
+            //       ...element2,
+            //       bandera: false
+            //     })
+            //   }
+            // });
+            categorias.push({
+              ...element1,
+              bandera: false
+            })
           }
-        });
-        colorMap = this.filtro.map(item => [item.id, item]);
-        let colorMapArr = new Map(colorMap);
-        let unicos = [...colorMapArr.values()];
-        this.filtros = unicos
+        })
+        this.filtros = categorias;
+        // console.log(categorias);
+        // let colorMap = [];
+        // this.listadoProductos.forEach(element1 => {
+          
+        //   if (ordenarProductos) {
+        //     element1.categories.forEach(element2 => {
+        //       if (this.categoria === element2.id) {
+        //         this.filtro.push({
+        //           ...element2,
+        //           bandera: true
+        //         });
+        //       } else {
+        //         this.filtro.push({
+        //           ...element2,
+        //           bandera: false
+        //         });
+        //       }
+        //     });
+        //   }
+        // });
+        // colorMap = this.filtro.map(item => [item.id, item]);
+        // let colorMapArr = new Map(colorMap);
+        // let unicos = [...colorMapArr.values()];
+        // this.filtros = unicos
         for (const filtro of this.filtros) {
           if(filtro.bandera){
             this.filtradoProductos();
           }
         }
-        // console.log(this.filtros);
+        console.log(this.filtros);
 
       }).catch(error => {
         console.log(error);
