@@ -17,6 +17,8 @@ import { PublicacionesService } from './services/publicaciones.service';
 import { HomeUsaService } from './services/home-usa.service';
 import { PagesUsaService } from './services/pages-usa.service';
 import { VacantesUsaService } from './services/vacantes-usa.service';
+import { PublicacionesUsaService } from './services/publicaciones-usa.service';
+
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './colombia/topbar-azul/topbar-azul.component';
@@ -82,6 +84,10 @@ import { ProtectionAndControlComponent } from './usa/servicios/protection-and-co
 import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
 import { ProyectsComponent } from './usa/proyects/proyects.component';
 import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
+import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacancy.component';
+import { InsightsComponent } from './usa/insights/insights.component';
+import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
+import { MenuVerticalUsaComponent } from './usa/menu-vertical-usa/menu-vertical-usa.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +143,10 @@ import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
     FieldServicesComponent,
     ProyectsComponent,
     WorkWithUsComponent,
+    InternalVacancyComponent,
+    InsightsComponent,
+    InsightsInsideComponent,
+    MenuVerticalUsaComponent,
   ],
   imports: [
     BrowserModule,
@@ -161,7 +171,10 @@ import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
     //ESTADOS UNIDOS
     HomeUsaService,
     PagesUsaService,
-    VacantesUsaService
+    VacantesUsaService,
+    InternalVacancyComponent,
+    PublicacionesUsaService,
+    InsightsInsideComponent
   ],
   bootstrap: [AppComponent]
 })

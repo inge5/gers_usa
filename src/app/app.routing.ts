@@ -44,6 +44,9 @@ import { ProtectionAndControlComponent } from './usa/servicios/protection-and-co
 import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
 import { ProyectsComponent } from './usa/proyects/proyects.component';
 import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
+import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacancy.component';
+import { InsightsComponent } from './usa/insights/insights.component';
+import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
 
 
 
@@ -100,6 +103,9 @@ const APP_ROUTES: Routes = [
         { path: 'field-services', component: FieldServicesComponent },
         { path: 'proyects', component: ProyectsComponent },
         { path: 'work-with-us', component: WorkWithUsComponent },
+        { path: 'vacancies/:slug', component: InternalVacancyComponent},
+        { path: 'insights', component: InsightsComponent },
+        { path: 'insights/:slug', component: InsightsInsideComponent }
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
