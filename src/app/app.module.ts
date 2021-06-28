@@ -16,6 +16,7 @@ import { PublicacionesService } from './services/publicaciones.service';
 //Services USA
 import { HomeUsaService } from './services/home-usa.service';
 import { PagesUsaService } from './services/pages-usa.service';
+import { VacantesUsaService } from './services/vacantes-usa.service';
 
 import { AppComponent } from './app.component';
 import { TopbarAzulComponent } from './colombia/topbar-azul/topbar-azul.component';
@@ -80,6 +81,7 @@ import { SmartGridsUsaComponent } from './usa/servicios/smart-grids-usa/smart-gr
 import { ProtectionAndControlComponent } from './usa/servicios/protection-and-control/protection-and-control.component';
 import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
 import { ProyectsComponent } from './usa/proyects/proyects.component';
+import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +136,7 @@ import { ProyectsComponent } from './usa/proyects/proyects.component';
     ProtectionAndControlComponent,
     FieldServicesComponent,
     ProyectsComponent,
+    WorkWithUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -157,7 +160,8 @@ import { ProyectsComponent } from './usa/proyects/proyects.component';
     PublicacionesService,
     //ESTADOS UNIDOS
     HomeUsaService,
-    PagesUsaService
+    PagesUsaService,
+    VacantesUsaService
   ],
   bootstrap: [AppComponent]
 })
