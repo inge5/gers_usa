@@ -1,62 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { VacantesService } from '../../services/vacantes.service';
-import { Router } from '@angular/router'; 
+import { ActivatedRoute } from '@angular/router';
+import { VacantesUsaService } from '../../services/vacantes-usa.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 declare var $ : any; 
 
+
 @Component({
-  selector: 'app-trabaje-con-nosotros',
-  templateUrl: './trabaje-con-nosotros.component.html',
-  styleUrls: ['./trabaje-con-nosotros.component.css']
+  selector: 'app-internal-vacancy',
+  templateUrl: './internal-vacancy.component.html',
+  styleUrls: ['./internal-vacancy.component.css']
 })
-export class TrabajeConNosotrosComponent implements OnInit {
-  public usuario: any;
+export class InternalVacancyComponent implements OnInit {
+  public interesado: any;
 
+  vacante_data:any = {};
   loader = true;
-  vacantes_data:any[] = [];
 
-  constructor(private _router:Router, private _vacantesservice:VacantesService) {
-    this.usuario = {
+  constructor(private route: ActivatedRoute, private _vacantesusaervice:VacantesUsaService) { 
+    this.interesado = {
       nombres: '',
       apellidos:'',
       email: '',
       telefono:'',
-      ubicacion:'',
-      categoria:'',
+      correo:'',
       acepto:''
     };
-   }
-
-  ngOnInit(): void {
-    this._vacantesservice.getVacantes()
-    .subscribe((res:any) => {
-      this.loader = false;
-      this.vacantes_data = res;
-    });
   }
 
-  enviaCurriculum(){
-    $("#wrapper").toggleClass("toggled");
+  ngOnInit(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this._vacantesusaervice.getVacancy(slug)
+      .subscribe(res => {
+        this.loader = false;
+        this.vacante_data = res;
+        for(let vacancy of res){
+          this.vacante_data = vacancy;
+        }
+      })
+  }
+
+  postularme(){
+    $("#wrapperInterna").toggleClass("toggled");
     $('.overlaytrabaja').addClass('active');
   }
 
-  public cierraTrabajemos() {
+  public cierraVacante() {
     $('.overlaytrabaja').removeClass('active');
-    $("#wrapper").toggleClass("toggled");
+    $("#wrapperInterna").toggleClass("toggled");
   }
 
-  verVacantes(slug:string){
-    this._router.navigate(['/colombia/vacantes', slug]);
-  }
-
-  formTrabajeNosotros(form){
+  formVacanteInterna(form){
     $.ajax({
       //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
       type: 'POST',
-      data: JSON.stringify(this.usuario),
+      data: JSON.stringify(this.interesado),
       dataType:"json",
       success: function(data) {
         

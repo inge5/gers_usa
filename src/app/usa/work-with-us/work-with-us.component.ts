@@ -48,7 +48,7 @@ export class WorkWithUsComponent implements OnInit {
   }
 
   verVacantes(slug:string){
-    this._router.navigate(['/vacantes', slug]);
+    this._router.navigate(['/usa/vacancies', slug]);
   }
 
   formTrabajeNosotrosUsa(form){
