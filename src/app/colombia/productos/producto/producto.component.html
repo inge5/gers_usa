@@ -101,7 +101,7 @@
                     </div>
                   </div>
                   <div class="col-2 col-lg-2 col-md-2">
-                    <button class="btn btn-link" (click)="openCloseSubCategorias(filtro.id)"><i class="fas fa-sort-down"></i></button>
+                    <button class="btn btn-link" (click)="openCloseSubCategorias(filtro.id)"><i [id]="'flecha'+filtro.id" class="fas fa-sort-down"></i></button>
                   </div>
                 </ng-container>
                   <!-- <div class="col-6 col-lg-6">

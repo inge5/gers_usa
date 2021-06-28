@@ -196,16 +196,16 @@ export class ProductoComponent implements OnInit {
 
   openCloseSubCategorias(id: number){
     $(`#${id}`).toggleClass('subCategorias');
-    // let claseExiste = $(`#${id}`).hasClass('fa-sort-up');
-    // if(claseExiste){
-    //   console.log("existe");
-    //   $(`#${id}`).removeClass('fa-sort-up')
-    //   $(`#${id}`).addClass('fa-sort-down')
-    // }else{
-    //   console.log("no existe");
-    //   $(`#${id}`).removeClass('fa-sort-down')
-    //   $(`#${id}`).addClass('fa-sort-up')
-    // }
+    let claseExiste = $(`#flecha${id}`).hasClass('fa-sort-up');
+    if(claseExiste){
+      console.log("existe");
+      $(`#flecha${id}`).removeClass('fa-sort-up')
+      $(`#flecha${id}`).addClass('fa-sort-down')
+    }else{
+      console.log("no existe");
+      $(`#flecha${id}`).removeClass('fa-sort-down')
+      $(`#flecha${id}`).addClass('fa-sort-up')
+    }
   }
 
   filtradoProductos() {
