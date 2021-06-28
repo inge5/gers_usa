@@ -118,11 +118,12 @@
                 <ng-container *ngFor="let categoria of categorias">
                   <div class="row filaRepresentaciones">
                     <div class="col-md-6 representacionItem" *ngIf="categoria.count > 0"
-                      (click)="productosCategoria(categoria.id)">
+                      (click)="productosCategoria(categoria.id)"
+                      (mouseenter)="desplegarSubCategorias(categoria.id)">
                       <p class="textoItemMarcaMenu">{{categoria.name}}</p>
                       <!-- <img class="imagenMarcaMenu img-fluid" [src]="categoria.image?categoria.image:'assets/images/marcas/2dranetz_marca.png'" [title]="categoria.name" [alt]="categoria.name"> -->
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 subCategorias" [ngClass]="'pp'+categoria.id">
                     <ng-container *ngFor="let subCategoria of categoria.subCategorias">
                         <div class="row">
                           <div class="col-md-12 representacionItem" *ngIf="subCategoria.count > 0" (click)="productosCategoria(subCategoria.id)">

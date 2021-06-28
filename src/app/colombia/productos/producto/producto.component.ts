@@ -3,6 +3,7 @@ import { productos } from '../../../../assets/data/json';
 import { PruebaProductosService } from "../../servicios/prueba-productos/prueba-productos.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { VariableGlobalService } from '../../servicios/variable-global/variable-global.service';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -85,9 +86,12 @@ export class ProductoComponent implements OnInit {
     if (!ordenarProductos) {
       this.filtradoProductos();
     } else {
+      Swal.fire('Cargando productos','Espere un momento','info');
+      Swal.showLoading();
       this.productosS.getListarProductosWP().then(respuesta => {
         // console.log(respuesta.data);
         this.listadoProductos = respuesta.data;
+        Swal.close();
         let categorias = [];
         let subCategorias = [];
         this.productosS.getCategoria().forEach(element1 => {

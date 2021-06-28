@@ -4,6 +4,7 @@ import { AlertasService } from "../servicios/alertas/alertas.service";
 import { MenusService } from '../../services/menus.service';
 import { PruebaProductosService } from '../servicios/prueba-productos/prueba-productos.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -80,7 +81,17 @@ export class MenuPrincipalComponent implements OnInit {
 
   productosCategoria(categoria: number) {
     this.variableG.setCategoria(categoria);
+    $('.subCategorias').removeClass("abrir-subCategorias")
     this.ruta.navigateByUrl('/colombia/productos');
+  }
+
+  desplegarSubCategorias(id: number){
+    let subCategorias = $('.subCategorias').hasClass('abrir-subCategorias');
+    if(subCategorias){
+      $('.subCategorias').removeClass("abrir-subCategorias")
+    }
+    $(`.pp${id}`).addClass("abrir-subCategorias")
+    // $(`.pp${id}`).on( "mouseenter mouseleave", "abrir-subCategorias" );
   }
 
   getMenuPrincipal() {
