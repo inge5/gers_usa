@@ -85,12 +85,25 @@
                   <h3 class="font-weight-600">Marca</h3>
                 </div>
                 <div class="row row-check">
-                  <div class="col-6 col-lg-6" *ngFor="let filtro of filtros">
+                  <ng-container *ngFor="let filtro of filtros">
+                  <div class="col-10 col-lg-10 col-md-10">
                     <div class="form-check">
                       <input type="checkbox" (change)="filtradoProductos()" [(ngModel)]="filtro.bandera" class="form-check-input" id="gossen">
                       <label class="form-check-label" for="gossen">{{ filtro.name }}</label>
                     </div>
+                    <div class="row subCategorias" [id]="filtro.id">
+                      <div class="col-6 col-lg-6 col-md-6" *ngFor="let subFiltro of filtro.subCategorias">
+                        <div class="form-check">
+                          <input type="checkbox" (change)="filtradoProductos()" [(ngModel)]="subFiltro.bandera" class="form-check-input" id="gossen">
+                          <label class="form-check-label" for="gossen">{{ subFiltro.name }}</label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <div class="col-2 col-lg-2 col-md-2">
+                    <button class="btn btn-link" (click)="openCloseSubCategorias(filtro.id)"><i class="fas fa-sort-down"></i></button>
+                  </div>
+                </ng-container>
                   <!-- <div class="col-6 col-lg-6">
                     <div class="form-check">
                       <input  (change)="filtradoProductos()" [(ngModel)]="filtros.dranetz"  type="checkbox" class="form-check-input" id="dranetz">

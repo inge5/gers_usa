@@ -97,19 +97,28 @@ export class ProductoComponent implements OnInit {
               bandera: true
             })
           }else{
-            // element1.subCategorias.forEach(element2 => {
-            //   if(this.categoria === element2.id){
-            //     element1.subCategorias.push({
-            //       ...element2,
-            //       bandera: true
-            //     })
-            //   }else{
-            //     element1.subCategorias.push({
-            //       ...element2,
-            //       bandera: false
-            //     })
-            //   }
-            // });
+            element1.subCategorias.forEach((element2, index) => {
+              if(this.categoria === element2.id){
+                subCategorias.push({
+                  ...element2,
+                  bandera: true
+                })
+                if(element1.id === element2.parent){
+                  element1.subCategorias = subCategorias;
+                }
+                console.log("Entró");
+              }else{
+                console.log("Entró false");
+                subCategorias.push({
+                  ...element2,
+                  bandera: false
+                })
+                if(element1.id === element2.parent){
+                  element1.subCategorias = subCategorias;
+                }
+              }
+            });
+            subCategorias = [];
             categorias.push({
               ...element1,
               bandera: false
@@ -117,34 +126,15 @@ export class ProductoComponent implements OnInit {
           }
         })
         this.filtros = categorias;
-        // console.log(categorias);
-        // let colorMap = [];
-        // this.listadoProductos.forEach(element1 => {
-          
-        //   if (ordenarProductos) {
-        //     element1.categories.forEach(element2 => {
-        //       if (this.categoria === element2.id) {
-        //         this.filtro.push({
-        //           ...element2,
-        //           bandera: true
-        //         });
-        //       } else {
-        //         this.filtro.push({
-        //           ...element2,
-        //           bandera: false
-        //         });
-        //       }
-        //     });
-        //   }
-        // });
-        // colorMap = this.filtro.map(item => [item.id, item]);
-        // let colorMapArr = new Map(colorMap);
-        // let unicos = [...colorMapArr.values()];
-        // this.filtros = unicos
         for (const filtro of this.filtros) {
           if(filtro.bandera){
             this.filtradoProductos();
           }
+          filtro.subCategorias.forEach(element => {
+            if(element.bandera){
+              this.filtradoProductos();
+            }
+          });
         }
         console.log(this.filtros);
 
@@ -204,19 +194,42 @@ export class ProductoComponent implements OnInit {
     }
   }
 
+  openCloseSubCategorias(id: number){
+    $(`#${id}`).toggleClass('subCategorias');
+    // let claseExiste = $(`#${id}`).hasClass('fa-sort-up');
+    // if(claseExiste){
+    //   console.log("existe");
+    //   $(`#${id}`).removeClass('fa-sort-up')
+    //   $(`#${id}`).addClass('fa-sort-down')
+    // }else{
+    //   console.log("no existe");
+    //   $(`#${id}`).removeClass('fa-sort-down')
+    //   $(`#${id}`).addClass('fa-sort-up')
+    // }
+  }
+
   filtradoProductos() {
     this.filtrar = [];
     if (!this.listadoProductosTemp || this.listadoProductosTemp === this.listadoProductos) {
       this.listadoProductosTemp = this.listadoProductos;
     }
     this.listadoProductosTemp.forEach(element1 => {
-      for (const filtro of this.filtros) {
+      // console.log(this.filtros);
+      this.filtros.forEach(filtro => {
         element1.categories.filter(marca => {
           if (filtro.bandera && filtro.id === marca.id) {
             this.filtrar.push(element1);
           }
         });
-      }
+        filtro.subCategorias.forEach(subFiltro => {
+          element1.categories.filter(marca => {
+            if(subFiltro.bandera && subFiltro.id === marca.id){
+              console.log(subFiltro);
+              this.filtrar.push(element1);
+            }
+          })
+        });
+      });
     });
     if (this.filtrar.length > 0) {
       console.log(this.filtrar);
