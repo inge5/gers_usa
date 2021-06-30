@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-lg-7 col-12 col-sm-12 mt-5 mt-sm-5 mt-md-5 mt-lg-5 mb-md-5 mb-lg-5">
+            <!-- <button class="btn btn-primary" (click)="changeView('timeGridWeek')">Hora</button>
+            <button class="btn btn-danger" (click)="changeView('dayGridMonth')">Mes</button> -->
+            <full-calendar #calendar id="calendar" defaultView="dayGridMonth" [options]="calendarOptions">
+            </full-calendar>
+        </div>
+
+        <div class="col-md-5 col-lg-5 col-12 col-sm-12 mt-5 mt-md-5 mt-lg-5 mb-sm-5 mb-5 scroll-card">
+            <ng-container *ngFor="let capacitacion of capacitacionesFiltro">
+                <div class="container border-shadow mb-2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4 p-2 p-sm-2 p-md-2 p-lg-2">
+                                    <img class="img-fluid" [src]="capacitacion.acf.imagen_vista_previa" alt="">
+                                </div>
+                                <div class="col-md-8 p-2 p-sm-2 p-md-2 p-lg-2">
+                                    <h6>{{capacitacion.title.rendered}}</h6>
+                                    <p class="text-muted fecha-card"><i class="far fa-clock reloj-card"></i> {{ capacitacion.fecha }}</p>
+                                    <ng-container *ngFor="let categoria of capacitacion.categorias">
+                                        <span class="badge mt-1 mb-1" [ngClass]="{'bg-vigente':categoria === 'Vigente',
+                                                                                  'bg-terminados': categoria === 'Terminado'}">{{categoria}}</span>
+                                    </ng-container>
+                                    <span class="badge ml-2"
+                                        [ngClass]="{'bg-webinar':capacitacion.acf.tipo_de_evento==='Webinar',
+                                                                             'bg-charla':capacitacion.acf.tipo_de_evento==='Charlas',
+                                                                             'bg-cursos':capacitacion.acf.tipo_de_evento==='Cursos',
+                                                                             'bg-seminarios':capacitacion.acf.tipo_de_evento==='Seminarios'}">{{capacitacion.acf.tipo_de_evento
+                                        | char}}</span>
+                                    <p class="text-card">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Temporibus</p>
+                                    <button class="btn btn-link link-card" (click)="enviarInterna(capacitacion)">Ver más acerca de este evento <i
+                                            class="fas fa-long-arrow-alt-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

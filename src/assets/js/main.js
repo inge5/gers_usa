@@ -164,5 +164,3 @@ const file = document.querySelector('#archivo');
 });
 
 }
-
-mainFunction();

@@ -8,6 +8,9 @@
     margin-bottom: 0 !important;
     margin-left: -9% !important;
 }
+.fc-daygrid-event{
+    cursor: pointer;
+}
 .current{
     background-color: #2C3394 !important;
 }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -88,6 +88,25 @@ import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacanc
 import { InsightsComponent } from './usa/insights/insights.component';
 import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
 import { MenuVerticalUsaComponent } from './usa/menu-vertical-usa/menu-vertical-usa.component';
+import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import { registerLocaleData } from '@angular/common';
+import localEs from '@angular/common/locales/es';
+
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import timeGridPlugin from '@fullcalendar/timegrid';// a plugin!
+import listPlugin from '@fullcalendar/list';
+import { CharPipe } from './pipes/char.pipe';
+import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
+registerLocaleData(localEs, 'es');
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+  timeGridPlugin,
+  listPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -147,6 +166,9 @@ import { MenuVerticalUsaComponent } from './usa/menu-vertical-usa/menu-vertical-
     InsightsComponent,
     InsightsInsideComponent,
     MenuVerticalUsaComponent,
+    CapacitacionComponent,
+    CharPipe,
+    InternaCapacitacionComponent
   ],
   imports: [
     BrowserModule,
@@ -159,9 +181,11 @@ import { MenuVerticalUsaComponent } from './usa/menu-vertical-usa/menu-vertical-
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FullCalendarModule
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
     //COLOMBIA
     HomeService,
     MenusService,

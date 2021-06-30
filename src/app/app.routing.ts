@@ -47,6 +47,8 @@ import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
 import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacancy.component';
 import { InsightsComponent } from './usa/insights/insights.component';
 import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
+import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
+import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
 
 
 
@@ -61,6 +63,8 @@ const APP_ROUTES: Routes = [
         {path: 'xgslab', component: XgslabComponent},
         {path: 'dranetz', component: DranetzComponent},
         {path: 'ndb', component: NdbComponent},
+        {path: 'capacitaciones', component: CapacitacionComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionComponent},
         {path: 'proyectos', component: ProyectosComponent},
         {path: 'productos', component: ProductoComponent},
         {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
