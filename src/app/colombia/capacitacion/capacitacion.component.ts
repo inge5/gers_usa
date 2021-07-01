@@ -218,6 +218,7 @@ export class CapacitacionComponent implements OnInit {
 
   detalleReunion(arg) {
     let capacitacion = this.capacitaciones.filter(filtro => filtro.id === arg.event._def.extendedProps.id)
+    this.capacitacionesFiltro = capacitacion;
     // console.log(capacitacion);
     // console.log(arg.event._def.extendedProps);
   }

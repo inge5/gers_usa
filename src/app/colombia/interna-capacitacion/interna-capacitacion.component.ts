@@ -18,7 +18,7 @@ export class InternaCapacitacionComponent implements OnInit {
   constructor(private activedRouter: ActivatedRoute, private capacitacionesS: CapacitacionesService) { 
     this.id = this.activedRouter.snapshot.paramMap.get('id');
     this.usuario = {
-      nombres: '',
+      nombre: '',
       apellidos:'',
       email: '',
       telefono:'',

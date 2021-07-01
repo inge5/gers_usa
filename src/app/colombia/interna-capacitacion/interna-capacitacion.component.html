@@ -53,7 +53,7 @@
                         <form  (ngSubmit)="formTrabajeNosotros(formularioTrabajemos)" #formularioTrabajemos="ngForm" id="formTrabajemos" class="form-trabajemos p-3 w-100">
                             <div class="form-row pt-2 pb-2">
                                 <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-400" for="nombres">Nombres</label>
-                                <input type="text" class="form-control" id="nombres" name="nombres" #nombres="ngModel" [(ngModel)]="usuario.nombres" required>
+                                <input type="text" class="form-control" id="nombres" name="nombres" #nombres="ngModel" [(ngModel)]="usuario.nombre" required>
                                 <small style="color:#c30000;" *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)">
                                     Nombres es un campo requerido.
                                 </small>
