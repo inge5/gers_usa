@@ -69,3 +69,24 @@
     max-height: 480px;
     overflow-y: auto;
 }
+.bg-gray-filtro{
+    background-color: #E8ECF4;
+}
+.bg-gray-filtro .nav-link{
+    color: #2C3394 !important;
+    font-weight: 600;
+}
+.icono-flecha{
+    transform: translateY(10%);
+}
+.caja-filtro{
+    background-color: white;
+    width: 100%;
+    border-top: 2px solid #2C3394;
+}
+.text-azul{
+    color: #2C3394 ;
+}
+.border-btn{
+    border: 1px solid lightgray;
+}

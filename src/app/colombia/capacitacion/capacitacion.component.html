@@ -1,3 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 bg-gray-filtro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <nav class="navbar navbar-expand-sm navbar-light bg-gray-filtro">
+                            <button class="navbar-toggler d-lg-none border-btn" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de evento <i class="fas fa-angle-down icono-flecha"></i></a>
+                                        <div class="dropdown-menu caja-filtro" aria-labelledby="dropdownId">
+                                            <ng-container *ngFor="let categoria of categorias">
+                                                <div class="form-check form-check">
+                                                    <label class="form-check-label ml-2 ml-sm-2 ml-md-2 ml-lg-2">
+                                                        <input class="form-check-input" type="checkbox" name="" (change)="categoriasFiltro()"  [(ngModel)]="categoria.bandera"> <span class="text-azul">{{categoria.name}}</span>
+                                                    </label>
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Año <i class="fas fa-angle-down icono-flecha"></i></a>
+                                        <div class="dropdown-menu caja-filtro" aria-labelledby="dropdownId">
+                                            <a class="dropdown-item" href="">2021</a>
+                                            <a class="dropdown-item" href="">2020</a>
+                                            <a class="dropdown-item" href="">2019</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mes <i class="fas fa-angle-down icono-flecha"></i></a>
+                                        <div class="dropdown-menu caja-filtro" aria-labelledby="dropdownId">
+                                            <a class="dropdown-item" href="">Enero</a>
+                                            <a class="dropdown-item" href="">Febrero</a>
+                                            <a class="dropdown-item" href="">Marzo</a>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-7 col-lg-7 col-12 col-sm-12 mt-5 mt-sm-5 mt-md-5 mt-lg-5 mb-md-5 mb-lg-5">
