@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { VacantesService } from '../../services/vacantes.service';
+import { VacantesUsaService } from '../../services/vacantes-usa.service';
 import { Router } from '@angular/router'; 
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -8,18 +7,18 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 declare var $ : any; 
 
 @Component({
-  selector: 'app-trabaje-con-nosotros',
-  templateUrl: './trabaje-con-nosotros.component.html',
-  styleUrls: ['./trabaje-con-nosotros.component.css']
+  selector: 'app-work-with-us',
+  templateUrl: './work-with-us.component.html',
+  styleUrls: ['./work-with-us.component.css']
 })
-export class TrabajeConNosotrosComponent implements OnInit {
-  public usuario: any;
+export class WorkWithUsComponent implements OnInit {
+  public usuarioUsa: any;
 
   loader = true;
   vacantes_data:any[] = [];
 
-  constructor(private _router:Router, private _vacantesservice:VacantesService) {
-    this.usuario = {
+  constructor(private _router:Router, private _vacantesusaservice:VacantesUsaService) { 
+    this.usuarioUsa = {
       nombres: '',
       apellidos:'',
       email: '',
@@ -28,10 +27,10 @@ export class TrabajeConNosotrosComponent implements OnInit {
       categoria:'',
       acepto:''
     };
-   }
+  }
 
   ngOnInit(): void {
-    this._vacantesservice.getVacantes()
+    this._vacantesusaservice.getVacancies()
     .subscribe((res:any) => {
       this.loader = false;
       this.vacantes_data = res;
@@ -49,14 +48,14 @@ export class TrabajeConNosotrosComponent implements OnInit {
   }
 
   verVacantes(slug:string){
-    this._router.navigate(['/colombia/vacantes', slug]);
+    this._router.navigate(['/usa/vacancies', slug]);
   }
 
-  formTrabajeNosotros(form){
+  formTrabajeNosotrosUsa(form){
     $.ajax({
       //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
       type: 'POST',
-      data: JSON.stringify(this.usuario),
+      data: JSON.stringify(this.usuarioUsa),
       dataType:"json",
       success: function(data) {
         

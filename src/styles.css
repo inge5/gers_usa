@@ -8,6 +8,9 @@
     margin-bottom: 0 !important;
     margin-left: -9% !important;
 }
+.fc-daygrid-event{
+    cursor: pointer;
+}
 .current{
     background-color: #2C3394 !important;
 }
@@ -2659,4 +2662,25 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         z-index: 999;
         box-shadow: -3px -3px 3px rgb(0 0 0 / 20%);
       }
+}
+
+@media (min-width: 1920px) {
+    .img-our-company{
+        width: 23%;
+        left: 20%;
+    }
+    .img-our-company-two {
+        width: 30%;
+        right: 12%;
+    }
+    .corporate-thinking-page .seccion-3{
+        margin-top:100px!important;
+    }
+    .img-our-company-three {
+        left: 15%;
+        width: 20%;
+    }
+    .corporate-thinking-page .seccion-4 .mt-150n {
+        margin-top: -100px;
+    }
 }

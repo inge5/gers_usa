@@ -43,6 +43,12 @@ import { SmartGridsUsaComponent } from './usa/servicios/smart-grids-usa/smart-gr
 import { ProtectionAndControlComponent } from './usa/servicios/protection-and-control/protection-and-control.component';
 import { FieldServicesComponent } from './usa/servicios/field-services/field-services.component';
 import { ProyectsComponent } from './usa/proyects/proyects.component';
+import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
+import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacancy.component';
+import { InsightsComponent } from './usa/insights/insights.component';
+import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
+import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
+import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
 
 
 
@@ -57,6 +63,8 @@ const APP_ROUTES: Routes = [
         {path: 'xgslab', component: XgslabComponent},
         {path: 'dranetz', component: DranetzComponent},
         {path: 'ndb', component: NdbComponent},
+        {path: 'capacitaciones', component: CapacitacionComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionComponent},
         {path: 'proyectos', component: ProyectosComponent},
         {path: 'productos', component: ProductoComponent},
         {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
@@ -98,6 +106,10 @@ const APP_ROUTES: Routes = [
         { path: 'protection-and-control', component: ProtectionAndControlComponent },
         { path: 'field-services', component: FieldServicesComponent },
         { path: 'proyects', component: ProyectsComponent },
+        { path: 'work-with-us', component: WorkWithUsComponent },
+        { path: 'vacancies/:slug', component: InternalVacancyComponent},
+        { path: 'insights', component: InsightsComponent },
+        { path: 'insights/:slug', component: InsightsInsideComponent }
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}

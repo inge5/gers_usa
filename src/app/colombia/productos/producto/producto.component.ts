@@ -3,6 +3,7 @@ import { productos } from '../../../../assets/data/json';
 import { PruebaProductosService } from "../../servicios/prueba-productos/prueba-productos.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { VariableGlobalService } from '../../servicios/variable-global/variable-global.service';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -74,7 +75,7 @@ export class ProductoComponent implements OnInit {
   getCategoria() {
     this.variableG.currentCategory.subscribe(resp => {
       this.categoria = resp;
-      // console.log(this.categoria);
+      console.log(this.categoria);
       this.paginas();
     })
   }
@@ -85,43 +86,61 @@ export class ProductoComponent implements OnInit {
     if (!ordenarProductos) {
       this.filtradoProductos();
     } else {
+      Swal.fire('Cargando productos','Espere un momento','info');
+      Swal.showLoading();
       this.productosS.getListarProductosWP().then(respuesta => {
         // console.log(respuesta.data);
         this.listadoProductos = respuesta.data;
-        // respuesta.headers['x-wp-totalpages']
-
-        let colorMap = [];
-        this.listadoProductos.forEach(element1 => {
-          // element1.categories.filter((item, index) => {
-          //   return element1.categories.indexOf(item) === index;
-          // })
-          // console.log(element1.categories);
-          if (ordenarProductos) {
-            element1.categories.forEach(element2 => {
-              if (this.categoria === element2.id) {
-                this.filtro.push({
+        Swal.close();
+        let categorias = [];
+        let subCategorias = [];
+        this.productosS.getCategoria().forEach(element1 => {
+          if(this.categoria === element1.id){
+            categorias.push({
+              ...element1,
+              bandera: true
+            })
+          }else{
+            element1.subCategorias.forEach((element2, index) => {
+              if(this.categoria === element2.id){
+                subCategorias.push({
                   ...element2,
                   bandera: true
-                });
-              } else {
-                this.filtro.push({
+                })
+                if(element1.id === element2.parent){
+                  element1.subCategorias = subCategorias;
+                }
+                console.log("Entró");
+              }else{
+                console.log("Entró false");
+                subCategorias.push({
                   ...element2,
                   bandera: false
-                });
+                })
+                if(element1.id === element2.parent){
+                  element1.subCategorias = subCategorias;
+                }
               }
             });
+            subCategorias = [];
+            categorias.push({
+              ...element1,
+              bandera: false
+            })
           }
-        });
-        colorMap = this.filtro.map(item => [item.id, item]);
-        let colorMapArr = new Map(colorMap);
-        let unicos = [...colorMapArr.values()];
-        this.filtros = unicos
+        })
+        this.filtros = categorias;
         for (const filtro of this.filtros) {
           if(filtro.bandera){
             this.filtradoProductos();
           }
+          filtro.subCategorias.forEach(element => {
+            if(element.bandera){
+              this.filtradoProductos();
+            }
+          });
         }
-        // console.log(this.filtros);
+        console.log(this.filtros);
 
       }).catch(error => {
         console.log(error);
@@ -179,19 +198,42 @@ export class ProductoComponent implements OnInit {
     }
   }
 
+  openCloseSubCategorias(id: number){
+    $(`#${id}`).toggleClass('subCategorias');
+    let claseExiste = $(`#flecha${id}`).hasClass('fa-sort-up');
+    if(claseExiste){
+      console.log("existe");
+      $(`#flecha${id}`).removeClass('fa-sort-up')
+      $(`#flecha${id}`).addClass('fa-sort-down')
+    }else{
+      console.log("no existe");
+      $(`#flecha${id}`).removeClass('fa-sort-down')
+      $(`#flecha${id}`).addClass('fa-sort-up')
+    }
+  }
+
   filtradoProductos() {
     this.filtrar = [];
     if (!this.listadoProductosTemp || this.listadoProductosTemp === this.listadoProductos) {
       this.listadoProductosTemp = this.listadoProductos;
     }
     this.listadoProductosTemp.forEach(element1 => {
-      for (const filtro of this.filtros) {
+      // console.log(this.filtros);
+      this.filtros.forEach(filtro => {
         element1.categories.filter(marca => {
           if (filtro.bandera && filtro.id === marca.id) {
             this.filtrar.push(element1);
           }
         });
-      }
+        filtro.subCategorias.forEach(subFiltro => {
+          element1.categories.filter(marca => {
+            if(subFiltro.bandera && subFiltro.id === marca.id){
+              console.log(subFiltro);
+              this.filtrar.push(element1);
+            }
+          })
+        });
+      });
     });
     if (this.filtrar.length > 0) {
       console.log(this.filtrar);

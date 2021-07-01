@@ -4,6 +4,7 @@ import { AlertasService } from "../servicios/alertas/alertas.service";
 import { MenusService } from '../../services/menus.service';
 import { PruebaProductosService } from '../servicios/prueba-productos/prueba-productos.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -20,6 +21,9 @@ export class MenuPrincipalComponent implements OnInit {
   carritoAnterior: any;
   cantidadCarrito: number = 0;
   categorias: any[] = [];
+  categoriasTemp: any[] = [];
+  subCategorias: any[] = [];
+  subCategoriasTemp: any[] = [];
   menuPrincipal_data: any[] = [];
 
   constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService: MenusService,
@@ -28,13 +32,37 @@ export class MenuPrincipalComponent implements OnInit {
   ngOnInit(): void {
     this.llamarDatoLocales();
     this.getMenuPrincipal();
+    this.getCategorias();
+    
+  }
+
+  getCategorias(){
     this.productoS.getCategoriesWP().then(resp => {
+      // console.log(resp.data);
       for (const r of resp.data) {
-        if (r.count > 0) {
-          this.categorias.push(r);
+        if (r.count > 0 && r.parent === 0) {
+          this.categoriasTemp.push(r);
+        }
+        if (r.parent > 0) {
+          this.subCategoriasTemp.push(r);
         }
       }
-      console.log(this.categorias);
+      this.categoriasTemp.forEach(element1 => {
+        this.subCategoriasTemp.forEach((element2, index) => {
+          if (element1.id === element2.parent) {
+            // console.log(element1);
+            this.subCategorias.push(element2)
+          }
+          if(this.subCategoriasTemp.length === (index+1)){
+            this.categorias.push({
+              ...element1,
+              subCategorias: this.subCategorias
+            })
+            this.subCategorias = [];
+          }
+        })
+      })
+      this.productoS.setCategoria(this.categorias);
     })
   }
 
@@ -51,9 +79,19 @@ export class MenuPrincipalComponent implements OnInit {
     }
   }
 
-  productosCategoria(categoria: number){
+  productosCategoria(categoria: number) {
     this.variableG.setCategoria(categoria);
+    $('.subCategorias').removeClass("abrir-subCategorias")
     this.ruta.navigateByUrl('/colombia/productos');
+  }
+
+  desplegarSubCategorias(id: number){
+    let subCategorias = $('.subCategorias').hasClass('abrir-subCategorias');
+    if(subCategorias){
+      $('.subCategorias').removeClass("abrir-subCategorias")
+    }
+    $(`.pp${id}`).addClass("abrir-subCategorias")
+    // $(`.pp${id}`).on( "mouseenter mouseleave", "abrir-subCategorias" );
   }
 
   getMenuPrincipal() {

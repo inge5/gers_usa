@@ -4,7 +4,7 @@
         <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/N-1076/#/usa">
                 <img class="LogoPrincipal" src="assets/images/carousel-principal/logo_1981png.png" alt="Logo">
             </a>
             <a class="menuVerticalPrincipal solicitarMenuLateral" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
@@ -20,7 +20,7 @@
                                     <div class="col-megamenu">
                                         <ul class="list-unstyled">
                                             <li>
-                                                <a href="/#/usa/power-system-studies">
+                                                <a [routerLink]="['power-system-studies']">
                                                     <div class="row">
                                                         <div class="col-md-2 my-auto">
                                                             <img class="img-fluid" src="assets/images/usa/electrician.png" alt="imagen1">
@@ -33,7 +33,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="/#/usa/smart-grids-usa">
+                                                <a [routerLink]="['smart-grids-usa']">
                                                     <div class="row">
                                                         <div class="col-md-2 my-auto">
                                                             <img class="img-fluid" src="assets/images/usa/smart-grids.png" alt="imagen1">
@@ -65,7 +65,7 @@
                                     <div class="col-megamenu">
                                         <ul class="list-unstyled">
                                             <li>
-                                                <a href="/#/usa/protection-and-control">
+                                                <a [routerLink]="['protection-and-control']">
                                                     <div class="row">
                                                         <div class="col-md-2 my-auto">
                                                             <img class="img-fluid" src="assets/images/usa/electrician.png" alt="imagen1">
@@ -78,7 +78,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="/#/usa/field-services">
+                                                <a [routerLink]="['field-services']">
                                                     <div class="row">
                                                         <div class="col-md-2 my-auto">
                                                             <img class="img-fluid" src="assets/images/usa/field-services.png" alt="imagen1">
@@ -103,7 +103,7 @@
                         <div class="dropdown-menu menuSoftware megamenu navbar-center">
                             <div class="row filaRepresentaciones">
                                 <div class="col-md-12 representacionItem">
-                                    <a href="/#/usa/neplan-usa">
+                                    <a [routerLink]="['neplan-usa']">
                                         <img class="imagenMarcaMenu" src="assets/images/usa/neplan.png" alt="Logo Neplan">
                                         <p class="tituloItemMarcaMenu">Neplan</p>
                                         <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
@@ -113,7 +113,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                      <a href="/#/usa/proyects" class="nav-item nav-link">Proyects</a>
+                      <a [routerLink]="['proyects']" class="nav-item nav-link">Proyects</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-item nav-link">Training</a>
