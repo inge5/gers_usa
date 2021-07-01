@@ -1,5 +1,13 @@
-<div class="container border-shadow mt-5 mt-sm-5 mt-md-5 mt-lg-5" id="wrapper" *ngIf="capacitacion">
-    <div class="row mb-5 mb-sm-5 mb-md-5 mb-lg-5">
+<div class="container mt-4 mt-sm-4 mt-md-4 mt-lg-4 mb-4 mb-sm-4 mb-md-4 mb-lg-4" *ngIf="capacitacion">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <button (click)="returnCapacitaciones()" class="quitar-border"><i class="fas fa-arrow-left back-arrow"></i> Volver</button>
+            <!-- <button class="btn btn-link"></button> -->
+        </div>
+    </div>
+</div>
+<div class="container border-shadow mb-4 mb-sm-4 mb-md-4 mb-lg-4" id="wrapper" *ngIf="capacitacion">
+    <div class="row">
         <div class="col-12 col-sm-12 col-md-8 col-lg-8 p-0 p-sm-0 p-md-0 p-lg-0">
             <img class="img-fluid" [src]="capacitacion?capacitacion.acf.imagen_interna:''" alt="">
         </div>
@@ -39,7 +47,7 @@
             </div>
             <div class="row mt-4 mt-sm-4 mt-md-4 mt-lg-4 mb-3 mb-sm-3 mb-md-3 mb-lg-3">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                    <button class="btn btn-outline-info sin-border-radius" (click)="enviarInscripcion()">Inscribirme en este curso <i class="fas fa-check size-2"></i></button>
+                    <button class="btn btn-outline-azul sin-border-radius" (click)="enviarInscripcion()">Inscribirme en este curso <i class="fas fa-check size-2"></i></button>
                 </div>
             </div>
         </div>
@@ -78,6 +86,9 @@
                                 <small style="color:#c30000;" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
                                     Ingrese un teléfono válido.
                                 </small>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" [(ngModel)]="capacitacion.title.rendered" name="capacitacion" hidden>
                             </div>
                             <!-- <div class="form-group pt-2 pb-2 mb-0">
                                 <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="ubicacion">Ubicación</label>
@@ -141,7 +152,7 @@
 <div class="container">
     <div class="row mb-5 mb-sm-5 mb-md-5 mb-lg-5">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-            <span [innerHTML]="capacitacion.acf.descripcion_larga"></span>
+            <span [innerHTML]="capacitacion?capacitacion.acf.descripcion_larga:''"></span>
         </div>
     </div>
 </div>

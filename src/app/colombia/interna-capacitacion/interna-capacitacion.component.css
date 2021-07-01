@@ -76,3 +76,22 @@
     font-size: 10px;
     transform: translate(-26%, -13%);
 }
+.btn-outline-azul{
+    background-color: #fff;
+    color: #0089FF;
+    border: 1px solid #0089FF;
+}
+.btn-outline-azul:hover{
+    background-color: #0089FF;
+    color: #fff;
+}
+.back-arrow{
+     font-size: 27px;
+}
+.quitar-border{
+    cursor: pointer;
+    border: 0;
+    color: #0089FF;
+    font-size: 21px;
+    background-color: #fff;
+}
