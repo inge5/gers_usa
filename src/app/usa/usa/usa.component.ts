@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 declare function mainFunction();
+
 @Component({
   selector: 'app-usa',
   templateUrl: './usa.component.html',

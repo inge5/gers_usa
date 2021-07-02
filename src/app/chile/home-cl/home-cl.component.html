@@ -10,8 +10,8 @@
         <div class="w-100">
             <div><ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'430px','border-radius': '10px','padding':'15px', 'margin':'0' }"></ngx-skeleton-loader></div>
         </div>
-        <div class="carousel-inner" *ngIf="sliderprincipal_data">            
-            <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst ">
+        <div class="carousel-inner" *ngIf="sliderprincipal_data.acf">            
+            <ng-container *ngFor="let home of sliderprincipal_data.acf.slider_principal; first as isFirst ">
                 <div class="carousel-item" *ngIf="home.imagen_de_fondo" [ngClass]="(isFirst) ? 'active' : ''">
                     <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px">
                         <div class="container pt-3 pb-3 h-100">
@@ -54,10 +54,11 @@
         </div>
     </section>
 </div> 
+
 <ng-container *ngIf="proyectos_realizados_data">
     <div class="seccionColombia3 bg-gray-light pt-5 pb-5">
         <div class="container">
-            <ngx-skeleton-loader class="d-flex pt-5" count="3" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'200px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+            <ngx-skeleton-loader class="d-flex pt-5" count="5" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'200px','border-radius': '.25rem' }"></ngx-skeleton-loader>
             <div class="row" *ngIf="!loader">
                 <ng-container *ngFor="let proyectos of proyectos_realizados_data">
                     <div class="col d-flex align-items-stretch justify-content-center mt-2 mb-2" *ngIf="proyectos.titulo != undefined">
@@ -73,19 +74,6 @@
         </div>
     </div>
 </ng-container>
-<section class="seccionUsa4" style="background:url('{{ lets_work_data.imagen_fondo }}');">
-    <div class="container pt-5 pb-5">
-        <div class="row">
-            <div class="col-md-12">
-                <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
-                <p *ngIf="!loader" class="font-weight-bold text-white text-center montserrat size22 line-height26 letter-spacing-0-47" [innerHTML]="lets_work_data.texto_general"></p>
-                <div class="text-center">
-                    <a class="text-blue1 font-weight-600 size19 line-height23 letter-spacing-0-47 btn-white mt-2 rounded p-3 d-inline-block mx-auto" href="{{ lets_work_data.boton_url }}">{{ lets_work_data.boton_texto }}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="seccionColombia4" *ngIf="titulo_servicios_eficientes_data">
     <div class="container pt-5 pb-4">
         <div class="row">
@@ -103,38 +91,107 @@
             <ng-container *ngFor="let servicio_eficiente of servicios_eficientes_data">
                 <div class="col text-center border-right mt-2 mb-2" *ngIf="servicio_eficiente.titulo != undefined">
                     <img src="{{ servicio_eficiente.imagen }}" alt="Item Pruebas" class="img-fluid pb-4">
-                    <h3 class="min-height-40 text-blue1 size18 font-weight-bold">{{ servicio_eficiente.titulo }}</h3>
+                    <h3 class="text-blue1 size18 font-weight-bold">{{ servicio_eficiente.titulo }}</h3>
                     <p class="line-height1-2 size15">{{ servicio_eficiente.descripcion }}</p>
                 </div>
             </ng-container>
         </div>
     </div>
 </section>
-<section class="seccionUsa7 mt-3 mb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box-shadow border-radius-12 pt-4 pr-5 pl-5 pb-4">
-                    <img class="img-fluid mx-auto d-block" src="./assets/images/usa/neplan_home.jpg" alt="Neplan">
-                    <img class="img-fluid img-absolute-neplan" src="./assets/images/usa/neplan_logo_grande.png" alt="Logo Neplan">
-                    <p class="roboto text-black mt-4 mb-4 size16 line-height20 letter-spacing-0-19">NEPLAN 360 is the first fully browser-based power system analysis toll on the market using a client-server architecture that can be used on a network, or locally. NEPLAN is a multiplatform application that does not require installation and offers all the advantages of cloud computing. </p>
-                    <a class="rounded btn-white border-color-blue p-2" href="#">Acquire your software here</a>
+<section class="seccionColombia6 pt-5" *ngIf="ejecucion_de_monitoreo_data">
+    <div class="img-seccionColombia6"></div>
+    <div class="drop-shadow">
+        <div class="clippath bg-blue1 col-md-8 pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-10 col-md-8 offset-md-3 pb-5 mb-3 pt-3">
+                        <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                        <p *ngIf="!loader" class="text-white font-weight-light letter-spacing0-5 size18">
+                            <span class="font-weight-bold" [innerHTML]="ejecucion_de_monitoreo_data.titulo"></span>
+                            <span [innerHTML]="ejecucion_de_monitoreo_data.descripcion"></span>
+                        </p>
+                    </div>
+                    <p class="text-right pt-3 w-100 m-0 containerLogotrasparente">
+                        <img src="assets/images/logo-gers-trasparente.png" alt="" class="img-fluid">
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="seccionUsa8 mt-5 homeProyectsUsa">
+<section class="seccionColombia7 pt-4 mt-5">
+    <div class="container tabsCustom mt-5">
+        <div class="row">
+            <div class="col-md-4 mb-4 pr-0">
+                <ngx-skeleton-loader count="4" *ngIf="loader" animation="progress" [theme]="{height:'45px' }"></ngx-skeleton-loader>
+                <ul *ngIf="!loader" class="nav nav-pills flex-column" id="myTab" role="tablist">
+                    <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
+                        <li class="nav-item">
+                            <a class="nav-link rounded-0 p-3 border-left" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active' : ''" id="tab{{i}}-tab" data-toggle="tab" href="#tab{{i}}" role="tab" aria-controls="tab{{i}}">
+                                <img src="{{tab.logo_tab}}" alt="logo" width="98" height="auto">
+                            </a>
+                        </li>
+                    </ng-container>
+                </ul>
+            </div>
+            <div class="col-md-8 contenido-tabs">
+                <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                <div *ngIf="!loader" class="tab-content" id="myTabContent">
+                    <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
+                        <div class="tab-pane fade" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="tab{{i}}" role="tabpanel" aria-labelledby="tab{{i}}-tab">
+                            <p>
+                                <img src="{{tab.imagen}}" alt="" class="img-fluid">
+                            </p>
+                            <p class="m-0"><strong>{{tab.titulo}}</strong></p>
+                            <p [innerHTML]="tab.descripcion"></p>
+                            <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="{{tab.url_del_boton}}">{{tab.texto_del_boton}}</a>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="seccionColombia8 mt-5">
+    <div class="bg-gray-light pt-4 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-2">
+                    <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                    <h5 *ngIf="!loader" class="font-weight-bold text-blue1 text-center">
+                        {{ titulo_marcas_data }}
+                    </h5>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'80px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+                    <owl-carousel 
+                        [options]="{items: 4, dots: true, nav: false, loop: true, autoplay: true}"
+                        [items]="marcas_datas"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                        <div class="item d-flex justify-content-center align-content-center" *ngFor="let marcas of marcas_datas;let i = index">
+                            <div *ngIf="!loader" style="align-content: center">
+                                <img style="height: auto;width:100%;margin:0 auto"src={{marcas.logo}}/>
+                            </div>
+                        </div>
+                    </owl-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="seccionColombia9 mt-5 homeProyects">
     <div class="container-fluid">
         <div class="row mb-4">
-            <div class="col-sm-12 col-md-8 offset-md-2 mt-2">
+            <div class="col-xs-12 col-md-6 offset-md-3 mt-2">
                 <ngx-skeleton-loader count="3" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
                 <h3 *ngIf="!loader" class="font-weight-bold text-blue1 text-center">
                     {{ tituloproyectos }}
                 </h3>
             </div>
         </div>
-        <!--
         <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'350px','border-radius': '.25rem' }"></ngx-skeleton-loader>
         <div class="row" *ngIf="!loader">
             <ng-container *ngFor="let proyects of FeaturedProyects | slice:0:4 ; first as isFirst; index as i">
@@ -146,34 +203,20 @@
                                 <p class="size13">{{ proyects.acf.extracto }}</p>
                             </div>
                         </div>
-                        <img src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
-                    </div>
-                </div>
-            </ng-container>
-        </div>
-        -->
-        <ngx-skeleton-loader class="d-flex" count="4" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'350px','border-radius': '.25rem' }"></ngx-skeleton-loader>
-        <div class="row" *ngIf="!loader">
-            <ng-container *ngFor="let proyects of FeaturedProyects | slice:0:4; first as isFirst; index as i">
-                <div class="col-md-3 tarjetaProyectos p-0">
-                    <div class="tarjetaProyectosInterior">
-                        <div class="tituloTarjetaProyectosUsa">
-                            <div class="titulosTarjetaBlanca">
-                                <h3 class="size23 text-uppercase">{{ proyects.acf.pais }}</h3>
-                                <p class="size13">{{ proyects.acf.extracto }}</p>
-                            </div>
-                        </div>
-                        <div class="textoTarjetaProyectosUsa">
+                        <!--Un comentario prueba-->
+                        <!--
+                           <div class="textoTarjetaProyectos">
                             <p class="size13">{{proyects.acf.descripcion}}</p>
-                        </div>
-                        <img class="img-fluid" src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
+                        </div> 
+                        -->
+                        <img src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
                     </div>
                 </div>
             </ng-container>
         </div>
     </div>
 </section>
-<section class="seccionUsa9" *ngIf="tituloInternacional">
+<section class="seccionColombia10" *ngIf="tituloInternacional">
     <div class="seccionAlcanceLimites-full">
         <div class="container seccionAlcanceLimites">
             <div class="row">
@@ -218,70 +261,70 @@
     </div>
 </section>
 <ng-container *ngFor="let clientes of nuestrosClientes; first as isFirst; index as i">
-    <section class="seccionUsa10">
-        <div class="container">
-            <div class="row">
-                <div class="col mt-5 mb-4">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
-                    <h2 *ngIf="!loader" class="tituloNuestrosClientes text-blue1 text-center font-weight-bold">{{ clientes.titulo }}</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col mb-5 mt-3">
-                    <ngx-skeleton-loader class="d-flex" count="5" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'100px','border-radius': '.25rem' }"></ngx-skeleton-loader>
-                    <!--[items]="clientes.imagenes"
-                    -- Esto estaba al interior de las opciones de owl-carousel, debajo de opciones, pero generaba un error
-                    -->
-                    <owl-carousel *ngIf="!loader"
-                            [options]="{items: 5, dots: true, nav: false, loop: true, autoplay: true}"
-                            [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                            <div class="item d-flex justify-content-center align-content-center" *ngFor="let logos of clientes.imagenes;let i = index">
-                                <div style="align-content: center">
-                                    <a href={{logos.url}}><img style="height: auto;width:100%;margin:0 auto" src={{logos.imagen}}/></a>
-                                </div>
-                            </div>
-                    </owl-carousel>
-                </div>
+<section class="seccionColombia11">
+    <div class="container">
+        <div class="row">
+            <div class="col mt-5 mb-4">
+                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
+                <h2 *ngIf="!loader" class="tituloNuestrosClientes text-blue1 text-center font-weight-bold">{{ clientes.titulo }}</h2>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col mb-5 mt-3">
+                <ngx-skeleton-loader class="d-flex" count="5" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'100px','border-radius': '.25rem' }"></ngx-skeleton-loader>
+                <!--[items]="clientes.imagenes"
+                -- Esto estaba al interior de las opciones de owl-carousel, debajo de opciones, pero generaba un error
+                -->
+                <owl-carousel *ngIf="!loader"
+                        [options]="{items: 5, dots: true, nav: false, loop: true, autoplay: true}"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                        <div class="item d-flex justify-content-center align-content-center" *ngFor="let logos of clientes.imagenes;let i = index">
+                            <div style="align-content: center">
+                                <a href={{logos.url}}><img style="height: auto;width:100%;margin:0 auto" src={{logos.imagen}}/></a>
+                            </div>
+                        </div>
+                </owl-carousel>
+            </div>
+        </div>
+    </div>
+</section>
 </ng-container>
 
 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'350px' }"></ngx-skeleton-loader>
 <ng-container *ngFor="let equipo of equipoTrabajo; first as isFirst; index as i">
-    <section *ngIf="!loader" class="seccionUsa11" >
-        <div class="full-afterClients mb-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                    </div>
-                    <div class="col-md-4 offset-md-1 d-flex align-items-center" style="height: 400px">
-                        <p class="texto-franja-azul size25 font-weight-normal pt-5" [innerHTML]="equipo.descripcion"></p>
-                    </div>
+<section *ngIf="!loader" class="seccionColombia12" >
+    <div class="full-afterClients mb-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-4 offset-md-1 d-flex align-items-center" style="height: 400px">
+                    <p class="texto-franja-azul size25 font-weight-normal pt-5" [innerHTML]="equipo.descripcion"></p>
                 </div>
             </div>
         </div>
-        <div class="container-img" style="margin-top: -400px;">
-            <img id="imagenEquipo" src={{equipo.imagen}} alt="Equipo" class="img-fluid">
-        </div>
-    </section>
+    </div>
+    <div class="container-img" style="margin-top: -400px;">
+        <img id="imagenEquipo" src={{equipo.imagen}} alt="Equipo" class="img-fluid">
+    </div>
+</section>
 </ng-container>
+
 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'350px' }"></ngx-skeleton-loader>
 <ng-container *ngFor="let vacante_content of vacantes; first as isFirst; index as i">
-    <section *ngIf="!loader" class="seccionColombia13 ">
-        <div class="container seccion-hv mt-5">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="full-textoshv">
-                        <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
-                        <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
-                        <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <img id="imagenHV" src="{{vacante_content.imagen}}" alt="HV" width=100%>
+<section *ngIf="!loader" class="seccionColombia13 ">
+    <div class="container seccion-hv mt-5">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="full-textoshv">
+                    <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
+                    <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
+                    <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                 </div>
             </div>
+            <div class="col-md-5">
+                <img id="imagenHV" src="{{vacante_content.imagen}}" alt="HV" width=100%>
+            </div>
         </div>
-    </section>
-</ng-container>
+    </div>
+</section>
