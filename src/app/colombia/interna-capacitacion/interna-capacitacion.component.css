@@ -86,12 +86,12 @@
     color: #fff;
 }
 .back-arrow{
-     font-size: 27px;
+     font-size: 15px;
 }
 .quitar-border{
     cursor: pointer;
     border: 0;
     color: #0089FF;
-    font-size: 21px;
+    font-size: 15px;
     background-color: #fff;
 }
