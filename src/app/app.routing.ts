@@ -30,6 +30,8 @@ import { ProductoComponent } from "./colombia/productos/producto/producto.compon
 /* Chile*/
 import { ChileComponent } from './chile/chile/chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
+import { HomeClComponent } from './chile/home-cl/home-cl.component';
+import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -85,12 +87,14 @@ const APP_ROUTES: Routes = [
         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
       ]},
-    
-    
 
     //Rutas de Chile
-    {path: 'chile', component: ChileComponent},
-    {path: 'chile/neplan-cl', component: NeplanClComponent},
+    {path: 'chile', component: ChileComponent,
+    children: [
+        { path: '', component: HomeClComponent },
+        { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
+        { path: 'chile/neplan-cl', component: NeplanClComponent },
+        ]},
 
     //Rutas de USA
     // {path: 'home-usa', component: HomeUsaComponent},

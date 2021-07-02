@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import {RouterModule} from '@angular/router';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -13,11 +14,15 @@ import { PagesService } from './services/pages.service';
 import { VacantesService } from './services/vacantes.service';
 import { PublicacionesService } from './services/publicaciones.service';
 
-//Services USA
+//Services Estados Unidos
 import { HomeUsaService } from './services/home-usa.service';
 import { PagesUsaService } from './services/pages-usa.service';
 import { VacantesUsaService } from './services/vacantes-usa.service';
 import { PublicacionesUsaService } from './services/publicaciones-usa.service';
+
+//Services Chile
+import { HomeClService } from './services/home-cl.service';
+import { PagesClService } from './services/pages-cl.service';
 
 
 import { AppComponent } from './app.component';
@@ -64,9 +69,6 @@ import { PublicacionInternaComponent } from './colombia/publicaciones/publicacio
 
 import { OwlModule } from 'ngx-owl-carousel';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { ChileComponent } from './chile/chile/chile.component';
-import { MenuPrincipalChileComponent } from './chile/menu-principal-chile/menu-principal-chile.component';
-import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
 
 //USA COMPONENTS
 import { UsaComponent } from './usa/usa/usa.component';
@@ -90,8 +92,6 @@ import { InsightsInsideComponent } from './usa/insights/insights-inside/insights
 import { MenuVerticalUsaComponent } from './usa/menu-vertical-usa/menu-vertical-usa.component';
 import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
 import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
-import { registerLocaleData } from '@angular/common';
-import localEs from '@angular/common/locales/es';
 
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
@@ -99,7 +99,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';// a plugin!
 import listPlugin from '@fullcalendar/list';
 import { CharPipe } from './pipes/char.pipe';
 import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
-registerLocaleData(localEs, 'es');
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -108,8 +107,22 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   listPlugin
 ]);
 
+// Componentes Chile
+
+import { ChileComponent } from './chile/chile/chile.component';
+import { MenuPrincipalChileComponent } from './chile/menu-principal-chile/menu-principal-chile.component';
+import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
+import { HomeClComponent } from './chile/home-cl/home-cl.component';
+import { FooterChileComponent } from './chile/footer-chile/footer-chile.component';
+import { TopbarChileComponent } from './chile/topbar-chile/topbar-chile.component';
+import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
+import { TrainingsComponent } from './usa/trainings/trainings.component';
+import { InternalTrainingsComponent } from './usa/internal-trainings/internal-trainings.component';
+
 @NgModule({
   declarations: [
+    CapacitacionComponent,
+    InternaCapacitacionComponent,
     AppComponent,
     SafeHtmlPipe,
     TopbarAzulComponent,
@@ -166,11 +179,16 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     InsightsComponent,
     InsightsInsideComponent,
     MenuVerticalUsaComponent,
-    CapacitacionComponent,
+    HomeClComponent,
+    FooterChileComponent,
+    TopbarChileComponent,
+    PensamientoCorporativoClComponent,
     CharPipe,
-    InternaCapacitacionComponent
+    TrainingsComponent,
+    InternalTrainingsComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     IvyCarouselModule,
     BrowserAnimationsModule,
@@ -192,13 +210,17 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PagesService,
     VacantesService,
     PublicacionesService,
+
     //ESTADOS UNIDOS
     HomeUsaService,
     PagesUsaService,
     VacantesUsaService,
-    InternalVacancyComponent,
     PublicacionesUsaService,
-    InsightsInsideComponent
+
+    //CHILE
+    HomeClService,
+    PagesClService
+    
   ],
   bootstrap: [AppComponent]
 })

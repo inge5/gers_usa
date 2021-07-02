@@ -779,63 +779,10 @@ li.item-menu-sedes {
     transition: all .5s;
 }
 
-.menuvertical label {
-    color: #565656 !important;
-    font-size: 14px !important;
-}
-
-.menuvertical .title-cotizacion,
-.menuvertical .parrafo-cotizacion {
-    text-align: left !important;
-}
-
-.menuvertical .title-cotizacion {
-    color: #4986CF;
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.menuvertical form .panel-default>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #F3F3F3 !important;
-}
-
-.menuvertical form .panel-default>.panel-heading {
-    background: white;
-}
-
-.menuvertical form .panel-default>.panel-heading p {
-    text-align: left;
-}
-
-.menuvertical form .panel-default>.panel-heading p+p {
-    display: none;
-}
-
-.menuvertical form .panel-default>.panel-heading p a {
-    font-size: .9em;
-    display: block;
-    color: #4295dc;
-}
-
-.menuvertical .btn-send-footer {
-    border: none;
-    padding: .6em;
-}
 
 .menuvertical h2,
 .menuvertical p {
     text-align: left;
-}
-
-.menuvertical .col-md-4 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menuvertical .col-md-12 .panel-group .row {
-    margin: .6em 0em;
 }
 
 .footerVertical {
@@ -1195,12 +1142,6 @@ li.item-menu-sedes {
     border-top: 1px solid #D8D8D8;
     border-bottom: 1px solid #D8D8D8;
     padding-top: 12px;
-}
-
-@media screen and (max-width: 900px) {
-    .menuvertical {
-        width: 90%;
-    }
 }
 
 
@@ -2404,6 +2345,45 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     margin-bottom: 0;
 }
 
+
+/** Menú Vertical USA **/
+.menuVerticalPrincipalUsa {
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;
+    font-weight: 500;
+    outline: none;
+    text-decoration: none;
+}
+
+.menuVerticalPrincipalUsa:hover {
+    text-decoration: none;
+}
+
+.menuVerticalPrincipalUsa span.lineasMenu {
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+}
+
+.menuverticalUsa {
+    background: #fff;
+    overflow: scroll;
+    position: fixed;
+    width: 24%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /*padding: 3em;*/
+    z-index: 100;
+    height: 100vh;
+    min-height: 100vh;
+    transform: translateX(-100%);
+    transition: all .5s;
+}
 /*
 ======= CIERRA USA =======
 =================================
@@ -2421,9 +2401,48 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media (max-width: 767px) {
+    .smart-grid-usa-page .mt-200n {
+        margin-top: 20px;
+    }
+    .corporate-thinking-page .img-our-company {
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .corporate-thinking-page .img-our-company-two {
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .corporate-thinking-page .img-our-company-three {
+        position: relative;
+        width: 90%;
+        margin-bottom: 30px;
+    }
+    .corporate-thinking-page .seccion-2.pt-130{
+        padding-top: 50px;
+    }
+    .seccionAlcanceLimites .nav-item .size13 {
+        font-size: 9px!important;
+    }
+    .seccionAlcanceLimites .nav-item #banderaColombiana {
+        width: 50%;
+    }
+    .seccionAlcanceLimites .textoDespuesPestanas {
+        text-align: center;
+    }
+    .contenedorFooter {
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .seccionUsa11 .container-img{
+        margin-top: -65px!important;
+    }
+    /*
     .recuadroCiudadTopHeader{
         text-align: center;
     }
+    */
     .w-40{
         width:100%;
     }
@@ -2618,6 +2637,18 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     }
 }
 
+
+@media screen and (max-width: 900px) {
+    .menuvertical {
+        width: 90%;
+    }
+
+    .menuverticalUsa {
+        width: 90%;
+    }
+}
+
+
 @media (min-width: 768px) {
     .carousel-control-next, .carousel-control-prev{
         width:10%;
@@ -2662,6 +2693,12 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         z-index: 999;
         box-shadow: -3px -3px 3px rgb(0 0 0 / 20%);
       }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 768px){
+    .smart-grid-usa-page .mt-200n {
+        margin-top: 0;
+    }
 }
 
 @media (min-width: 1920px) {

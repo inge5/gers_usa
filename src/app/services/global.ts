@@ -15,6 +15,10 @@ export var GLOBAL = {
   //URL's USA
   baseUsa: 'https://pruebasneuro.co/N-1003backWordpress/usa/wp-json/acf/v3',
   urlUsa:  'https://pruebasneuro.co/N-1003backWordpress/usa/wp-json/wp/v2',
-  menuUsa: 'https://pruebasneuro.co/N-1003backWordpress/usa/wp-json/menus/v1'
+  menuUsa: 'https://pruebasneuro.co/N-1003backWordpress/usa/wp-json/menus/v1',
 
+  //URL's CHILE
+  baseChile: 'https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/acf/v3',
+  urlChile:  'https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/wp/v2',
+  menuChile: 'https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/menus/v1'
 };

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var mainFunction: any;
+declare function mainFunction();
 
 @Component({
   selector: 'app-colombia',
