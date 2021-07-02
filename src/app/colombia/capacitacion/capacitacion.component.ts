@@ -22,6 +22,7 @@ export class CapacitacionComponent implements OnInit {
   capacitacionesTemp: any[];
   bandera: boolean = false;
   eventosFiltro: any[];
+  capacitacionesFiltroTemp: any[];
 
 
 
@@ -91,6 +92,9 @@ export class CapacitacionComponent implements OnInit {
       return 0;
     })
     this.capacitacionesFiltro = capacitacion;
+    if(!this.capacitacionesFiltroTemp || this.capacitacionesFiltroTemp === this.capacitacionesFiltro){
+      this.capacitacionesFiltroTemp = this.capacitacionesFiltro;
+    }
     // console.log(this.capacitacionesFiltro);
   }
 
@@ -190,6 +194,10 @@ export class CapacitacionComponent implements OnInit {
   enviarInterna(capacitacion) {
     this.router.navigateByUrl(`/colombia/capacitaciones/${capacitacion.id}`);
     // console.log(capacitacion);
+  }
+
+  resetCardCapacitacion(){
+    this.capacitacionesFiltro = this.capacitacionesFiltroTemp;
   }
 
   getReuniones(date: string) {

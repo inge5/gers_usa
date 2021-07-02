@@ -87,6 +87,19 @@
 .text-azul{
     color: #2C3394 ;
 }
+.negrita-700{
+    font-weight: 700;
+}
 .border-btn{
     border: 1px solid lightgray;
+}
+.btn-outline-darkblue{
+    background-color: transparent;
+    color: #2C3394;
+    border: 1px solid #2C3394;
+    border-radius: 0;
+}
+.btn-outline-darkblue:hover{
+    background-color: #2C3394;
+    color: #fff;
 }

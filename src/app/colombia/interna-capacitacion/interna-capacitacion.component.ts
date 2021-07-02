@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
 import Swal from 'sweetalert2';
@@ -15,14 +15,15 @@ export class InternaCapacitacionComponent implements OnInit {
   usuario: any;
   id: string;
   capacitacion: any;
-  constructor(private activedRouter: ActivatedRoute, private capacitacionesS: CapacitacionesService) { 
+  constructor(private activedRouter: ActivatedRoute, private router: Router, private capacitacionesS: CapacitacionesService) { 
     this.id = this.activedRouter.snapshot.paramMap.get('id');
     this.usuario = {
       nombre: '',
       apellidos:'',
       email: '',
       telefono:'',
-      acepto:''
+      acepto:'',
+      capacitacion: ''
     };
   }
 
@@ -40,6 +41,9 @@ export class InternaCapacitacionComponent implements OnInit {
       });
     })
   }
+  returnCapacitaciones(){
+    this.router.navigateByUrl('colombia/capacitaciones')
+  }
   enviarInscripcion(){
     $("#wrapper").toggleClass("toggled");
     $('.overlaytrabaja').addClass('active');
@@ -50,6 +54,7 @@ export class InternaCapacitacionComponent implements OnInit {
     $("#wrapper").toggleClass("toggled");
   }
   formTrabajeNosotros(form){
+    this.usuario.capacitacion = this.capacitacion.title.rendered;
     $.ajax({
       url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/inscripcion.php',
       type: 'POST',
