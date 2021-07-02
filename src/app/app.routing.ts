@@ -51,6 +51,8 @@ import { InsightsComponent } from './usa/insights/insights.component';
 import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
 import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
 import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
+import { TrainingsComponent } from './usa/trainings/trainings.component';
+import { InternalTrainingsComponent } from './usa/internal-trainings/internal-trainings.component';
 
 
 
@@ -103,6 +105,8 @@ const APP_ROUTES: Routes = [
         { path: '', component: HomeUsaComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'corporate-thinking', component: CorporateThinkingComponent },
+        {path: 'trainings' , component: TrainingsComponent},
+        {path: 'trainings/:id' , component: InternalTrainingsComponent},
         { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
         { path: 'neplan-usa', component: NeplanUsaComponent },
         { path: 'power-system-studies', component: PowerSystemStudiesComponent },

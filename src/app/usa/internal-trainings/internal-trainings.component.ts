@@ -6,16 +6,17 @@ import Swal from 'sweetalert2';
 declare var $: any;
 
 @Component({
-  selector: 'app-interna-capacitacion',
-  templateUrl: './interna-capacitacion.component.html',
-  styleUrls: ['./interna-capacitacion.component.css']
+  selector: 'app-internal-trainings',
+  templateUrl: './internal-trainings.component.html',
+  styleUrls: ['./internal-trainings.component.css']
 })
-export class InternaCapacitacionComponent implements OnInit {
+export class InternalTrainingsComponent implements OnInit {
 
   usuario: any;
   id: string;
   capacitacion: any;
-  constructor(private activedRouter: ActivatedRoute, private router: Router, private capacitacionesS: CapacitacionesService) { 
+
+  constructor(private activedRouter: ActivatedRoute, private router: Router, private capacitacionesS: CapacitacionesService) {
     this.id = this.activedRouter.snapshot.paramMap.get('id');
     this.usuario = {
       nombre: '',
@@ -25,17 +26,17 @@ export class InternaCapacitacionComponent implements OnInit {
       acepto:'',
       capacitacion: ''
     };
-  }
+   }
 
-  ngOnInit(): void {
-    moment.locale('es');
-    this.capacitacionesS.getCapacitacionesId(parseInt(this.id)).subscribe((resp: any) => {
+   ngOnInit(): void {
+    moment.locale('en');
+    this.capacitacionesS.getCapacitacionesIdUsa(parseInt(this.id)).subscribe((resp: any) => {
       console.log(resp);
       this.capacitacion = resp;
       this.capacitacion.fecha = moment(resp.acf.fecha_inicio+' '+resp.acf.hora_inicio).format('DD MMMM YYYY hh:mm:ss a');
       let categorias = [];
       resp.categorias_capacitaciones.forEach(element => {
-        this.capacitacionesS.getCategoriaCapacitacionesId(element).subscribe((respCate: any) => {
+        this.capacitacionesS.getCategoriaCapacitacionesIdUsa(element).subscribe((respCate: any) => {
           categorias.push(respCate.name);
           this.capacitacion.categorias = categorias;
         })  
@@ -68,15 +69,16 @@ export class InternaCapacitacionComponent implements OnInit {
         if(error.status === 200){
           Swal.fire({
             icon: 'success',
-            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+            title: 'Thank you for giving us your data. We will communicate with you.',
             showConfirmButton: true
           }); 
           //console.log(error);
         form.reset();
         } else {
-          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
+          Swal.fire('Oops...', 'Something happened. Correct the errors, please!', 'error')
         }
       }
     });
    }
+
 }

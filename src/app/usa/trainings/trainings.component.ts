@@ -1,17 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
-import LocalEs from '@fullcalendar/core/locales/es';
-import { CapacitacionesService } from '../../services/capacitaciones.service';
-import * as moment from 'moment';
 import { Router } from '@angular/router';
-declare var $: any;
+import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
+import * as moment from 'moment';
+import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
 
 @Component({
-  selector: 'app-capacitacion',
-  templateUrl: './capacitacion.component.html',
-  styleUrls: ['./capacitacion.component.css']
+  selector: 'app-trainings',
+  templateUrl: './trainings.component.html',
+  styleUrls: ['./trainings.component.css']
 })
-export class CapacitacionComponent implements OnInit {
+export class TrainingsComponent implements OnInit {
   @ViewChild('calendar') calendarComponent: FullCalendarComponent;
   calendarOptions: CalendarOptions;
   eventos: any[] = [];
@@ -24,18 +22,15 @@ export class CapacitacionComponent implements OnInit {
   eventosFiltro: any[];
   capacitacionesFiltroTemp: any[];
 
-
-
   constructor(private capacitacionesS: CapacitacionesService, private router: Router) { }
 
   ngOnInit(): void {
     this.asignarEventos();
     this.getCategoriasFiltro();
-    moment.locale('es');
+    moment.locale('en');
   }
-
   asignarEventos() {
-    this.capacitacionesS.getCapacitaciones().subscribe((resp: any[]) => {
+    this.capacitacionesS.getCapacitacionesUsa().subscribe((resp: any[]) => {
       this.capacitaciones = resp;
       console.log(this.capacitaciones);
       this.capacitaciones.forEach(element => {
@@ -61,7 +56,6 @@ export class CapacitacionComponent implements OnInit {
 
   crearCronograma() {
     this.calendarOptions = {
-      locale: LocalEs,
       events: this.eventos,
       dateClick: this.reunionesDelDia.bind(this),
       eventClick: this.detalleReunion.bind(this)
@@ -74,7 +68,7 @@ export class CapacitacionComponent implements OnInit {
         filtro.fecha = fechaCapacitacion
         let categorias = [];
         filtro.categorias_capacitaciones.forEach(element => {
-          this.capacitacionesS.getCategoriaCapacitacionesId(element).subscribe((resp: any) => {
+          this.capacitacionesS.getCategoriaCapacitacionesIdUsa(element).subscribe((resp: any) => {
             categorias.push(resp.name)
             filtro.categorias = categorias;
           })
@@ -99,7 +93,7 @@ export class CapacitacionComponent implements OnInit {
   }
 
   getCategoriasFiltro() {
-    this.capacitacionesS.getCategoriaCapacitaciones().subscribe((resp : any) => {
+    this.capacitacionesS.getCategoriaCapacitacionesUsa().subscribe((resp : any) => {
       // console.log(resp);
       resp.forEach(element => {
         element.bandera = false
@@ -133,7 +127,8 @@ export class CapacitacionComponent implements OnInit {
                 extendedProps: {
                   id: element.id,
                   fecha_Inicio: element.acf.fecha_inicio,
-                  fecha_FIn: element.acf.fecha_fin
+                  fecha_FIn: element.acf.fecha_fin,
+                  bandera: filtro.bandera
                 }
               })
             }
@@ -162,7 +157,6 @@ export class CapacitacionComponent implements OnInit {
       this.getCapacitaciones();
       // console.log(this.capacitaciones);
     }
-
   }
 
   changeEvent(id: number){
@@ -170,7 +164,6 @@ export class CapacitacionComponent implements OnInit {
       console.log("1");
       this.calendarOptions = {
         events: this.eventosFiltro,
-        locale: LocalEs,
         dateClick: this.reunionesDelDia.bind(this),
         eventClick: this.detalleReunion.bind(this)
       };
@@ -181,7 +174,6 @@ export class CapacitacionComponent implements OnInit {
       console.log("2");
       this.calendarOptions = {
         events: [],
-        locale: LocalEs,
         dateClick: this.reunionesDelDia.bind(this),
         eventClick: this.detalleReunion.bind(this)
       };
@@ -189,7 +181,6 @@ export class CapacitacionComponent implements OnInit {
       console.log("3");
       this.calendarOptions = {
         events: this.eventos,
-        locale: LocalEs,
         dateClick: this.reunionesDelDia.bind(this),
         eventClick: this.detalleReunion.bind(this)
       };
@@ -206,7 +197,7 @@ export class CapacitacionComponent implements OnInit {
   }
 
   enviarInterna(capacitacion) {
-    this.router.navigateByUrl(`/colombia/capacitaciones/${capacitacion.id}`);
+    this.router.navigateByUrl(`/usa/trainings/${capacitacion.id}`);
     // console.log(capacitacion);
   }
 
@@ -225,7 +216,7 @@ export class CapacitacionComponent implements OnInit {
         filtro.fecha = fechaCapacitacion
         let categorias = [];
         filtro.categorias_capacitaciones.forEach(element => {
-          this.capacitacionesS.getCategoriaCapacitacionesId(element).subscribe((resp: any) => {
+          this.capacitacionesS.getCategoriaCapacitacionesIdUsa(element).subscribe((resp: any) => {
             categorias.push(resp.name)
             filtro.categorias = categorias;
           })
@@ -244,5 +235,6 @@ export class CapacitacionComponent implements OnInit {
     // console.log(capacitacion);
     // console.log(arg.event._def.extendedProps);
   }
+
 
 }
