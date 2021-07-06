@@ -32,6 +32,11 @@ import { ChileComponent } from './chile/chile/chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
 import { HomeClComponent } from './chile/home-cl/home-cl.component';
 import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
+import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-gestion-integral-cl/politica-gestion-integral-cl.component';
+import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
+import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
+import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
+
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -49,6 +54,8 @@ import { WorkWithUsComponent } from './usa/work-with-us/work-with-us.component';
 import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacancy.component';
 import { InsightsComponent } from './usa/insights/insights.component';
 import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
+import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
+import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
 
 
 
@@ -63,6 +70,8 @@ const APP_ROUTES: Routes = [
         {path: 'xgslab', component: XgslabComponent},
         {path: 'dranetz', component: DranetzComponent},
         {path: 'ndb', component: NdbComponent},
+        {path: 'capacitaciones', component: CapacitacionComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionComponent},
         {path: 'proyectos', component: ProyectosComponent},
         {path: 'productos', component: ProductoComponent},
         {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
@@ -89,7 +98,11 @@ const APP_ROUTES: Routes = [
     children: [
         { path: '', component: HomeClComponent },
         { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
-        { path: 'chile/neplan-cl', component: NeplanClComponent },
+        { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
+        { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
+        { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
+        { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
+        { path: 'neplan-cl', component: NeplanClComponent }
         ]},
 
     //Rutas de USA

@@ -30,7 +30,7 @@
   opacity: 0.7;
   transition: 0.3s;
   right: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
   top: calc(50% - 12px);
   color: #2C3394;
   font-size: 20px;
@@ -45,7 +45,7 @@
   opacity: 0.7;
   transition: 0.3s;
   left: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
   top: calc(50% - 12px);
   color: #2C3394;
   font-size: 20px;

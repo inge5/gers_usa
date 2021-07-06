@@ -1,78 +1,81 @@
 <!--Aquí Inicia el Menú Principal Grande-->
 <nav class="navbar navbar-expand-md navbar-light menuPrincipal" #stickyMenu [class.sticky]="sticky">
-    <div class="container">
-        <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            <a class="navbar-brand" href="#">
-                <img class="LogoPrincipal" src="assets/images/carousel-principal/logo_1981png.png" alt="Logo">
+  <div class="container">
+    <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img class="LogoPrincipal" src="assets/images/carousel-principal/logo_1981png.png" alt="Logo">
+    </a>
+    <a class="menuVerticalPrincipal solicitarMenuLateral" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <ng-container *ngFor="let menu_parent of menuPrincipal_data; first as isFirst">
+          <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style1'">
+            <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              {{ menu_parent.title }}
             </a>
-            <a class="menuVerticalPrincipal solicitarMenuLateral" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                
-                  <ng-container *ngFor="let menu_parent of menuPrincipal_data; first as isFirst">
-                    <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style1'">
-                        <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          {{ menu_parent.title }}
-                        </a>
-                        <div class="dropdown-menu menuServicio megamenu ">
+            <div class="dropdown-menu menuServicio megamenu ">
+              <div class="row">
+                <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
+                  <div class="col-md-6">
+                    <div class="col-megamenu">
+                      <ul class="list-unstyled">
+                        <li>
+                          <a [routerLink]="[ menu_child.slug ]">
                             <div class="row">
-                              <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                                <div class="col-md-6">
-                                    <div class="col-megamenu">
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <a [routerLink]="[ menu_child.slug ]">
-                                                    <div class="row">
-                                                        <div class="col-md-2 my-auto">
-                                                            <img class="img-fluid" src="{{ menu_child.thumbnail_src }}" alt="imagen1">
-                                                        </div>
-                                                        <div class="col-md-10">
-                                                            <h3 class="tituloItemMenu">{{ menu_child.title }}</h3>
-                                                            <p class="textoItemMenu">{{ menu_child.description }}</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                  </ng-container>
+                              <div class="col-md-2 my-auto">
+                                <img class="img-fluid" src="{{ menu_child.thumbnail_src }}" alt="imagen1">
+                              </div>
+                              <div class="col-md-10">
+                                <h3 class="tituloItemMenu">{{ menu_child.title }}</h3>
+                                <p class="textoItemMenu">{{ menu_child.description }}</p>
+                              </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style2'">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          {{ menu_parent.title }}
-                        </a>
-                        <div class="dropdown-menu menuRepresentaciones megamenu navbar-center">
-                            <div class="row filaRepresentaciones">
-                              <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                                <div class="col-md-4 representacionItem">
-                                    <a [routerLink]="[ menu_child.slug ]">
-                                        <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo Neplan">
-                                        <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>
-                                        <p class="textoItemMarcaMenu">{{ menu_child.description }}</p>
-                                    </a>
-                                </div>
-                              </ng-container>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
-                      <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
-                    </li>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style2'">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              {{ menu_parent.title }}
+            </a>
+            <div class="dropdown-menu menuRepresentaciones megamenu navbar-center">
+              <div class="row filaRepresentaciones">
+                <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
+                  <div class="col-md-4 representacionItem">
+                    <a [routerLink]="[ menu_child.slug ]">
+                      <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo Neplan">
+                      <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>
+                      <p class="textoItemMarcaMenu">{{ menu_child.description }}</p>
+                    </a>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
+            <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
+          </li>
 
-                <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style4'">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Productos
-                  </a>
-                  <div class="dropdown-menu menuproductos megamenu navbar-center">
-                    <div class="row filaRepresentaciones">
-
-                   <!--   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Productos
+            </a>
+            <div class="dropdown-menu menuproductos megamenu navbar-center">
+              <div class="row filaRepresentaciones"
+                style="flex-flow: column wrap; align-items:stretch; padding-bottom:3%;">
+                <!--   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
@@ -85,43 +88,54 @@
                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                       </div>-->
 
-                      <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
-                            <li class="nav-item">
-                                <a class="nav-link size13 pt-2 pb-2"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
-                                    <img id="banderaColombiana" src="{{ paises.bandera }}" alt="bandera">
-                                    {{ paises.pais }}
-                                </a>
-                            </li>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
+                    <li class="nav-item">
+                      <a class="nav-link size13 pt-2 pb-2" [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab"
+                        data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
+                        <img id="banderaColombiana" src="{{ paises.bandera }}" alt="bandera">
+                        {{ paises.pais }}
+                      </a>
+                    </li>
+                  </ng-container>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
+                    <div class="tab-pane fade" *ngIf="paises.pais != undefined"
+                      [ngClass]="(isFirst) ? 'active show' : ''" id="pais{{i}}" role="tabpanel"
+                      aria-labelledby="pais{{i}}-tab">
+                      <div class="row textoDespuesPestanas">
+                        <ng-container *ngFor="let contacto of paises.contacto; first as isFirst; index as i">
+                          <div class="col-md-4">
+                            <h6 class="m-0">{{ contacto.titulo }}</h6>
+                            <p class="textoenColombia" [innerHTML]="contacto.contacto"></p>
+                          </div>
                         </ng-container>
-                      </ul>
-                      <div class="tab-content" id="myTabContent">
-                          <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
-                              <div class="tab-pane fade" *ngIf="paises.pais != undefined" [ngClass]="(isFirst) ? 'active show' : ''" id="pais{{i}}" role="tabpanel" aria-labelledby="pais{{i}}-tab">
-                                  <div class="row textoDespuesPestanas">
-                                      <ng-container *ngFor="let contacto of paises.contacto; first as isFirst; index as i">
-                                          <div class="col-md-4">
-                                              <h6 class="m-0">{{ contacto.titulo }}</h6>
-                                              <p class="textoenColombia" [innerHTML]="contacto.contacto"></p>
-                                          </div>
-                                      </ng-container>
-                                  </div>
-                              </div>
-                          </ng-container>
-                      </div>
-
-                      <div class="col-md-6 representacionItem">
-                          <a routerLink="/productos">
-                            <img class="imagenMarcaMenu img-fluid" src="assets/images/marcas/4beck_marca.png" alt="Logo Beck">
-                          </a>
-                      </div>
-                      <div class="col-md-6 representacionItem">
-                        <a [routerLink]="['beckwith-electronic']">
-                          <p class="textoItemMarcaMenu">Analizadores de Calidad de Energía</p>
-                        </a>
                       </div>
                     </div>
-                    <div class="row filaRepresentaciones">
+                  </ng-container>
+                </div>
+                <ng-container *ngFor="let categoria of categorias">
+                  <div class="row filaRepresentaciones">
+                    <div class="col-md-6 col-12 col-lg-6 col-sm-12 representacionItem" *ngIf="categoria.count > 0"
+                      (click)="productosCategoria(categoria.id)"
+                      (mouseenter)="desplegarSubCategorias(categoria.id)">
+                      <p class="textoItemMarcaMenu">{{categoria.name}}</p>
+                      <!-- <img class="imagenMarcaMenu img-fluid" [src]="categoria.image?categoria.image:'assets/images/marcas/2dranetz_marca.png'" [title]="categoria.name" [alt]="categoria.name"> -->
+                    </div>
+                    <div class="col-md-6 col-12 col-lg-6 col-sm-12 subCategorias" [ngClass]="'pp'+categoria.id">
+                    <ng-container *ngFor="let subCategoria of categoria.subCategorias">
+                        <div class="row">
+                          <div class="col-md-12 representacionItem" *ngIf="subCategoria.count > 0" (click)="productosCategoria(subCategoria.id)">
+                            <p class="textoItemMarcaMenu">{{subCategoria.name}}</p>
+                          </div>
+                        </div>
+                    </ng-container>
+                  </div>
+                  </div>
+                </ng-container>
+              </div>
+              <!-- <div class="row filaRepresentaciones">
                       <div class="col-md-6 representacionItem">
                         <a [routerLink]="['dranetz']">
                           <img class="imagenMarcaMenu img-fluid" src="assets/images/marcas/2dranetz_marca.png" alt="Logo Dranetz">
@@ -132,8 +146,8 @@
                           <p class="textoItemMarcaMenu">Medidores de Energía</p>
                         </a>
                       </div>
-                    </div>
-                    <div class="row filaRepresentaciones">
+                    </div> -->
+              <!-- <div class="row filaRepresentaciones">
                       <div class="col-md-6 representacionItem">
                         <a [routerLink]="['dranetz']">
                           <img class="imagenMarcaMenu img-fluid" src="assets/images/marcas/5Ndb_marca.png" alt="Logo NDB">
@@ -144,8 +158,8 @@
                           <p class="textoItemMarcaMenu">Registradores de datos</p>
                         </a>
                       </div>
-                    </div>
-                    <div class="row filaRepresentaciones">
+                    </div> -->
+              <!-- <div class="row filaRepresentaciones">
                       <div class="col-md-6 representacionItem">
                         <a [routerLink]="['dranetz']">
                           <img class="imagenMarcaMenu img-fluid" src="assets/images/marcas/6GMC_marca.png" alt="Logo 6GMC">
@@ -156,37 +170,37 @@
                           <p class="textoItemMarcaMenu">Software de Gestión </p>
                         </a>
                       </div>
-                    </div>
-                  </div>
-                </li>
-              </ng-container>
-              <!-- <li class="nav-item">{{cantidadCarrito? cantidadCarrito: 0}}<a href="#" class="nav-item nav-link" (click)="openNav()">
+                    </div> -->
+            </div>
+          </li>
+        </ng-container>
+        <!-- <li class="nav-item">{{cantidadCarrito? cantidadCarrito: 0}}<a href="#" class="nav-item nav-link" (click)="openNav()">
                   <img src="assets/images/carousel-principal/Shopping-cartpng.png"  alt="Icono Tienda" width="23"
                       height="auto">
                 </a></li>-->
-                <li class="nav-item dropdown has-megamenu animate fade-up"  >
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" (click)="mostrarProductos(1)"  role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span class="cantidad-producto">{{cantidadCarrito? cantidadCarrito: 0}}</span>
-                    <img src="assets/images/carousel-principal/Shopping-cartpng.png"  alt="Icono Tienda" width="23"
-                        height="auto">
-                  </a>
-                  <!--<div class="dropdown-menu contenedor-carrito megamenu navbar-center animate fade-up">
+        <li class="nav-item dropdown has-megamenu animate fade-up">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" (click)="mostrarProductos(1)" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="cantidad-producto">{{cantidadCarrito? cantidadCarrito: 0}}</span>
+            <img src="assets/images/carousel-principal/Shopping-cartpng.png" alt="Icono Tienda" width="23"
+              height="auto">
+          </a>
+          <!--<div class="dropdown-menu contenedor-carrito megamenu navbar-center animate fade-up">
                   </div>-->
-                </li>
-                <!-- <li class="nav-item"><a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a></li> -->
-              
-            </ul>
-        </div>
+        </li>
+        <!-- <li class="nav-item"><a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a></li> -->
+
+      </ul>
     </div>
+  </div>
 </nav>
 <!--Aquí termina el Menú Principal Grande-->
 
 <div id="mySidenav" class="sidenav">
-<div class="row">
-  <a href="javascript:void(0)" (click)="mostrarProductos(2)"  class="closebtn">
-    <input type="button" class="cerrarModal" value="×" (click)="mostrarProductos(2)">
-  </a>
-</div>
+  <div class="row">
+    <a href="javascript:void(0)" (click)="mostrarProductos(2)" class="closebtn">
+      <input type="button" class="cerrarModal" value="×" (click)="mostrarProductos(2)">
+    </a>
+  </div>
   <app-carrito></app-carrito>
 </div>

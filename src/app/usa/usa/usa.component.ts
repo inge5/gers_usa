@@ -12,6 +12,9 @@ export class UsaComponent implements OnInit {
 
   ngOnInit(): void {
     mainFunction();
+    if(!localStorage.getItem('carrito')){
+      localStorage.setItem('carrito', JSON.stringify([]));
+    }
   }
 
 }

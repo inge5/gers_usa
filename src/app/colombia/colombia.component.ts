@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare function mainFunction();
+declare var mainFunction: any;
 
 @Component({
   selector: 'app-colombia',
@@ -12,6 +12,9 @@ export class ColombiaComponent implements OnInit {
 
   ngOnInit(): void {
     mainFunction();
+    if(!localStorage.getItem('carrito')){
+      localStorage.setItem('carrito', JSON.stringify([]));
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import {RouterModule} from '@angular/router';
 
@@ -90,6 +90,25 @@ import { InternalVacancyComponent } from './usa/internal-vacancy/internal-vacanc
 import { InsightsComponent } from './usa/insights/insights.component';
 import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
 import { MenuVerticalUsaComponent } from './usa/menu-vertical-usa/menu-vertical-usa.component';
+import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import { registerLocaleData } from '@angular/common';
+import localEs from '@angular/common/locales/es';
+
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import timeGridPlugin from '@fullcalendar/timegrid';// a plugin!
+import listPlugin from '@fullcalendar/list';
+import { CharPipe } from './pipes/char.pipe';
+import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
+registerLocaleData(localEs, 'es');
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+  timeGridPlugin,
+  listPlugin
+]);
 
 // Componentes Chile
 
@@ -100,6 +119,10 @@ import { HomeClComponent } from './chile/home-cl/home-cl.component';
 import { FooterChileComponent } from './chile/footer-chile/footer-chile.component';
 import { TopbarChileComponent } from './chile/topbar-chile/topbar-chile.component';
 import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
+import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-gestion-integral-cl/politica-gestion-integral-cl.component';
+import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
+import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
+import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
 
 @NgModule({
   declarations: [
@@ -159,10 +182,17 @@ import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-
     InsightsComponent,
     InsightsInsideComponent,
     MenuVerticalUsaComponent,
+    CapacitacionComponent,
+    CharPipe,
+    InternaCapacitacionComponent,
     HomeClComponent,
     FooterChileComponent,
     TopbarChileComponent,
     PensamientoCorporativoClComponent,
+    PoliticaGestionIntegralClComponent,
+    EstudiosSistemasElectricosClComponent,
+    DisenoEIngenieriaClComponent,
+    PruebasAutomatizacionControlClComponent
   ],
   imports: [
     RouterModule,
@@ -176,9 +206,11 @@ import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FullCalendarModule
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
     //COLOMBIA
     HomeService,
     MenusService,

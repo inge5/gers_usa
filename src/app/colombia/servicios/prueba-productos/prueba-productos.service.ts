@@ -18,6 +18,7 @@ export class PruebaProductosService {
   };
   api: any;
   por_page: number;
+  categoria: any[] = [];
   // pages: number;
 
   constructor(private httpC: HttpClient) {
@@ -28,9 +29,28 @@ export class PruebaProductosService {
     this.setPorPagina();
   }
 
-  setPorPagina(cantidad: number = 5){
+  setPorPagina(cantidad: number = 20){
     this.por_page = cantidad;
-    console.log(this.por_page);
+    // console.log(this.por_page);
+  }
+
+  getCategoriesWP(){
+    let WooCommerce = new this.api({
+      url: `${this.url}`,
+      consumerKey: 'ck_235432cde60974e317bfc4a90c958d258699e923',
+      consumerSecret: 'cs_0ce13e2e0258658a91c83022ff35b029df5bf22f',
+      wpAPI: true,
+      version: 'wc/v3'
+    });
+    return WooCommerce.get(`products/categories`);
+  }
+
+  setCategoria(categoria: any[]){
+    this.categoria = categoria;
+  }
+
+  getCategoria(){
+    return this.categoria;
   }
 
   getListarProductosWP(){

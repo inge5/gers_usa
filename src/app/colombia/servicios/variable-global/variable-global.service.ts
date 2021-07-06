@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 export class VariableGlobalService {
 
   private data = new BehaviorSubject(null);
+  private cate = new BehaviorSubject(null);
+  currentCategory = this.cate.asObservable();
   currentMessage = this.data.asObservable();
   //data: any;
 
@@ -15,10 +17,15 @@ export class VariableGlobalService {
     this.consultarDatosLocales();
   }
 
-
   constructor() {
     this.consultarDatosLocales();
   }
+
+  setCategoria(categoria){
+    this.cate.next(categoria);
+    console.log(this.cate);
+  }
+
   consultarDatosLocales() {
     this.data.next(JSON.parse(localStorage.getItem('carrito'))) ;
     console.log(this.data);

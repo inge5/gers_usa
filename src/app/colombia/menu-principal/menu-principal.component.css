@@ -17,6 +17,14 @@
   left: -90% !important;
 
 }
+.subCategorias{
+  display: none;
+}
+
+.abrir-subCategorias{
+  display: block;
+}
+
 .menuproductos .navbar-center {
   position: absolute !important;
   left: -18% !important;
