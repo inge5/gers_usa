@@ -123,6 +123,10 @@ import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-ge
 import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
 import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
 import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
+import { ContactenosClComponent } from './chile/contactenos-cl/contactenos-cl.component';
+import { ProyectosClComponent } from './chile/proyectos-cl/proyectos-cl.component';
+import { PublicacionesClComponent } from './chile/publicaciones-cl/publicaciones-cl.component';
+import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicacion-interna-cl/publicacion-interna-cl.component';
 
 @NgModule({
   declarations: [
@@ -192,7 +196,11 @@ import { PruebasAutomatizacionControlClComponent } from './chile/servicios/prueb
     PoliticaGestionIntegralClComponent,
     EstudiosSistemasElectricosClComponent,
     DisenoEIngenieriaClComponent,
-    PruebasAutomatizacionControlClComponent
+    PruebasAutomatizacionControlClComponent,
+    ContactenosClComponent,
+    ProyectosClComponent,
+    PublicacionesClComponent,
+    PublicacionInternaClComponent
   ],
   imports: [
     RouterModule,
@@ -203,6 +211,7 @@ import { PruebasAutomatizacionControlClComponent } from './chile/servicios/prueb
     HttpClientModule,
     AngularPaginatorModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,

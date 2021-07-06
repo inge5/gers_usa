@@ -36,7 +36,10 @@ import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-ge
 import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
 import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
 import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
-
+import { ContactenosClComponent } from './chile/contactenos-cl/contactenos-cl.component';
+import { ProyectosClComponent } from './chile/proyectos-cl/proyectos-cl.component';
+import { PublicacionesClComponent } from './chile/publicaciones-cl/publicaciones-cl.component';
+import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicacion-interna-cl/publicacion-interna-cl.component';
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -102,7 +105,11 @@ const APP_ROUTES: Routes = [
         { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
         { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
         { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
-        { path: 'neplan-cl', component: NeplanClComponent }
+        { path: 'neplan-cl', component: NeplanClComponent },
+        { path: 'contactenos-cl', component: ContactenosClComponent },
+        { path: 'proyectos-cl', component: ProyectosClComponent },
+        { path: 'publicaciones-cl', component: PublicacionesClComponent},
+        { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent},
         ]},
 
     //Rutas de USA

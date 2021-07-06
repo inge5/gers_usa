@@ -28,10 +28,24 @@ export class PagesClService {
   getPruebasAutomatizacionControl(): Observable<any>{
     return this._http.get(`${this.url}/pages/206/`)
   }
+  getContactenos(): Observable<any>{
+    return this._http.get(`${this.url}/pages/265/`)
+  }
 
   // REPRESENTACIONES
   getNeplan(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/238/`)
   }
+
+  //PROYECTOS
+  getProyectos(): Observable<any>{
+    return this._http.get(`${this.url}/proyectos/`);
+  }
+
+  /**** Página Proyectos *****/
+  getProyectosPagina(): Observable<any>{
+    return this._http.get(`${this.url}/pages/298`)
+  }
+
 }
 

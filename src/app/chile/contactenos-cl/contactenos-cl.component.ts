@@ -2,20 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
-import { PagesService } from '../../services/pages.service';
+import { PagesClService } from '../../services/pages-cl.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
-
 declare var $ : any; 
 
+
 @Component({
-  selector: 'app-contactenos',
-  templateUrl: './contactenos.component.html',
-  styleUrls: ['./contactenos.component.css']
+  selector: 'app-contactenos-cl',
+  templateUrl: './contactenos-cl.component.html',
+  styleUrls: ['./contactenos-cl.component.css']
 })
-export class ContactenosComponent implements OnInit {
+export class ContactenosClComponent implements OnInit {
   public user: any;
   loader = true;
 
@@ -23,8 +22,8 @@ export class ContactenosComponent implements OnInit {
   pais_info_data : any [] = [];
   ciudad_principal_data: any[] = [];
   info_ciudad_data: any[] = [];
-  
-  constructor(private _contactenos:PagesService) {
+
+  constructor(private _contactenos:PagesClService) { 
     this.user = {
       servicio: '',
       nombre: '',
@@ -34,7 +33,7 @@ export class ContactenosComponent implements OnInit {
       asunto: '',
       acepto: ''
     };
-   }
+  }
 
   ngOnInit(): void {
     this._contactenos.getContactenos()

@@ -2400,6 +2400,10 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     padding: 0 !important;
     border-radius: 0 !important;
 }
+.tarjetaProyectosInterior.chile-proyecto:hover{
+    transform: scale(1.03);
+    transition: .3s;
+}
 
 /*
 ======= CIERRA CHILE =======
