@@ -32,6 +32,11 @@ import { ChileComponent } from './chile/chile/chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
 import { HomeClComponent } from './chile/home-cl/home-cl.component';
 import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
+import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-gestion-integral-cl/politica-gestion-integral-cl.component';
+import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
+import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
+import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
+
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -53,6 +58,11 @@ import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.comp
 import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
 import { TrainingsComponent } from './usa/trainings/trainings.component';
 import { InternalTrainingsComponent } from './usa/internal-trainings/internal-trainings.component';
+import { CapacitacionChileComponent } from './chile/capacitacion-chile/capacitacion-chile.component';
+import { InternaCapacitacionChileComponent } from './chile/interna-capacitacion-chile/interna-capacitacion-chile.component';
+import { MexicoComponent } from './mexico/mexico/mexico.component';
+import { CapacitacionMexicoComponent } from './mexico/capacitacion-mexico/capacitacion-mexico.component';
+import { InternaCapacitacionMexicoComponent } from './mexico/interna-capacitacion-mexico/interna-capacitacion-mexico.component';
 
 
 
@@ -95,7 +105,13 @@ const APP_ROUTES: Routes = [
     children: [
         { path: '', component: HomeClComponent },
         { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
-        { path: 'chile/neplan-cl', component: NeplanClComponent },
+        {path: 'capacitaciones', component: CapacitacionChileComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
+        { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
+        { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
+        { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
+        { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
+        { path: 'neplan-cl', component: NeplanClComponent }
         ]},
 
     //Rutas de USA
@@ -118,6 +134,10 @@ const APP_ROUTES: Routes = [
         { path: 'vacancies/:slug', component: InternalVacancyComponent},
         { path: 'insights', component: InsightsComponent },
         { path: 'insights/:slug', component: InsightsInsideComponent }
+    ]},
+    {path: 'mexico', component: MexicoComponent, children: [
+        {path: 'capacitaciones', component: CapacitacionMexicoComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent}
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}

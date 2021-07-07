@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
 import Swal from 'sweetalert2';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 declare var $: any;
 
 @Component({
@@ -15,7 +16,10 @@ export class InternaCapacitacionComponent implements OnInit {
   usuario: any;
   id: string;
   capacitacion: any;
-  constructor(private activedRouter: ActivatedRoute, private router: Router, private capacitacionesS: CapacitacionesService) { 
+  siteKey: string;
+  formulario: FormGroup;
+  constructor(private activedRouter: ActivatedRoute, private router: Router, private capacitacionesS: CapacitacionesService, private fb: FormBuilder) { 
+    this.siteKey = "6LcBAH0bAAAAAEF2iIZPrJupF-K2cdrDgonjUn2s";
     this.id = this.activedRouter.snapshot.paramMap.get('id');
     this.usuario = {
       nombre: '',
@@ -23,7 +27,9 @@ export class InternaCapacitacionComponent implements OnInit {
       email: '',
       telefono:'',
       acepto:'',
-      capacitacion: ''
+      capacitacion: '',
+      pais: 'Colombia',
+      recaptcha: ''
     };
   }
 

@@ -2390,6 +2390,24 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 ===============================
 */
 
+/*======= CHILE =======*/
+/* Menu Principal */
+.menuSoftwareChile {
+    background-color: #E8ECF4 !important;
+    width: 35rem;
+    margin-top: 0px !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/*
+======= CIERRA CHILE =======
+=================================
+===============================
+*/
+
+
 /***** RESPONSIVE ******/
 @media (max-width: 575px) {
     .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos{

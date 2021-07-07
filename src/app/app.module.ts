@@ -118,6 +118,12 @@ import { TopbarChileComponent } from './chile/topbar-chile/topbar-chile.componen
 import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
 import { TrainingsComponent } from './usa/trainings/trainings.component';
 import { InternalTrainingsComponent } from './usa/internal-trainings/internal-trainings.component';
+import { CapacitacionChileComponent } from './chile/capacitacion-chile/capacitacion-chile.component';
+import { InternaCapacitacionChileComponent } from './chile/interna-capacitacion-chile/interna-capacitacion-chile.component';
+import { CapacitacionMexicoComponent } from './mexico/capacitacion-mexico/capacitacion-mexico.component';
+import { InternaCapacitacionMexicoComponent } from './mexico/interna-capacitacion-mexico/interna-capacitacion-mexico.component';
+import { MexicoComponent } from './mexico/mexico/mexico.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -179,6 +185,9 @@ import { InternalTrainingsComponent } from './usa/internal-trainings/internal-tr
     InsightsComponent,
     InsightsInsideComponent,
     MenuVerticalUsaComponent,
+    CapacitacionComponent,
+    CharPipe,
+    InternaCapacitacionComponent,
     HomeClComponent,
     FooterChileComponent,
     TopbarChileComponent,
@@ -186,6 +195,11 @@ import { InternalTrainingsComponent } from './usa/internal-trainings/internal-tr
     CharPipe,
     TrainingsComponent,
     InternalTrainingsComponent,
+    CapacitacionChileComponent,
+    InternaCapacitacionChileComponent,
+    CapacitacionMexicoComponent,
+    InternaCapacitacionMexicoComponent,
+    MexicoComponent,
   ],
   imports: [
     RouterModule,
@@ -196,11 +210,13 @@ import { InternalTrainingsComponent } from './usa/internal-trainings/internal-tr
     HttpClientModule,
     AngularPaginatorModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,
     NgxPaginationModule,
-    FullCalendarModule
+    FullCalendarModule,
+    NgxCaptchaModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
