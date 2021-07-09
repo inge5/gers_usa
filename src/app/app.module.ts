@@ -156,6 +156,10 @@ import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/t
 import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
 import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-cl.component';
 
+import es from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(es);
+
 @NgModule({
   declarations: [
     CapacitacionComponent,

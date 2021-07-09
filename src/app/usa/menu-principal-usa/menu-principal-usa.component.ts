@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-menu-principal-usa',
@@ -15,17 +15,17 @@ export class MenuPrincipalUsaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
   @HostListener('window:scroll', ['$event'])
-    handleScroll(){
-      const windowScroll = window.pageYOffset;
-      if(windowScroll >= this.elementPosition && window.screen.width >= 768){
-        this.sticky = true;
-      } else {
-        this.sticky = false;
-      }
+  handleScroll() {
+    const windowScroll = window.pageYOffset;
+    if (windowScroll >= this.elementPosition && window.screen.width >= 768) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
     }
+  }
 
 }
