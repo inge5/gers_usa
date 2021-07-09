@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { GLOBAL } from './global';
 import { map, catchError } from 'rxjs/operators';
@@ -8,19 +8,21 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class VacantesService {
+export class PublicacionesClService {
 
   public url: string;
 
-  constructor(private _http: HttpClient, private _router:Router) {
-    this.url = GLOBAL.url;
-   }
 
-  getVacantes(): Observable<any>{
-    return this._http.get(`${this.url}/vacantes`);
+  constructor(private _http: HttpClient, private _router:Router) { 
+    this.url = GLOBAL.urlChile;
   }
-  getVacante(slug: string): Observable<any>{
-    return this._http.get(`${this.url}/vacantes/?slug=${slug}/`, {
+
+  getPublicaciones(): Observable<any>{
+    return this._http.get(`${this.url}/publicaciones`);
+  }
+
+  getPublicacion(slug: string): Observable<any>{
+    return this._http.get(`${this.url}/publicaciones/?slug=${slug}/`, {
     }).pipe(
         map(res => res),
         catchError(err =>{

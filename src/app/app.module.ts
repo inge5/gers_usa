@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -143,6 +143,18 @@ import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwit
 import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
 import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.component';
 import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicaciones-mx.component';
+import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-gestion-integral-cl/politica-gestion-integral-cl.component';
+import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
+import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
+import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
+import { ContactenosClComponent } from './chile/contactenos-cl/contactenos-cl.component';
+import { ProyectosClComponent } from './chile/proyectos-cl/proyectos-cl.component';
+import { PublicacionesClComponent } from './chile/publicaciones-cl/publicaciones-cl.component';
+import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicacion-interna-cl/publicacion-interna-cl.component';
+import { XgslabClComponent } from './chile/representaciones/xgslab-cl/xgslab-cl.component';
+import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/trabaje-con-nosotros-cl.component';
+import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
+import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-cl.component';
 
 @NgModule({
   declarations: [
@@ -237,7 +249,19 @@ import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicacione
     BeckwithElectronicMxComponent,
     XgslabMxComponent,
     ProyectosMxComponent,
-    PublicacionesMxComponent
+    PublicacionesMxComponent,
+    PoliticaGestionIntegralClComponent,
+    EstudiosSistemasElectricosClComponent,
+    DisenoEIngenieriaClComponent,
+    PruebasAutomatizacionControlClComponent,
+    ContactenosClComponent,
+    ProyectosClComponent,
+    PublicacionesClComponent,
+    PublicacionInternaClComponent,
+    XgslabClComponent,
+    TrabajeConNosotrosClComponent,
+    VacanteInternaClComponent,
+    MenuVerticalClComponent
   ],
   imports: [
     RouterModule,
@@ -256,6 +280,7 @@ import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicacione
     FullCalendarModule,
     NgxCaptchaModule
   ],
+  exports: [RouterModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
     //COLOMBIA

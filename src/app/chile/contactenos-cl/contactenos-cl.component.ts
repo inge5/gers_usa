@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
-import { PagesService } from '../../services/pages.service';
-import { PagesUsaService } from '../../services/pages-usa.service';
+import { PagesClService } from '../../services/pages-cl.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 declare var $ : any; 
 
+
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-contactenos-cl',
+  templateUrl: './contactenos-cl.component.html',
+  styleUrls: ['./contactenos-cl.component.css']
 })
-export class ContactComponent implements OnInit {
-  public user_usa: any;
+export class ContactenosClComponent implements OnInit {
+  public user: any;
   loader = true;
 
   seccion_1_data: any = {};
@@ -21,21 +23,21 @@ export class ContactComponent implements OnInit {
   ciudad_principal_data: any[] = [];
   info_ciudad_data: any[] = [];
 
-  constructor(private _contactenos:PagesUsaService) { 
-    this.user_usa = {
+  constructor(private _contactenos:PagesClService) { 
+    this.user = {
       servicio: '',
       nombre: '',
       telefono: '',
       ciudad: '',
       empresa: '',
-      pais:'Estados Unidos',
+      pais:'Chile',
       asunto: '',
       acepto: ''
     };
   }
 
   ngOnInit(): void {
-    this._contactenos.getContact()
+    this._contactenos.getContactenos()
       .subscribe((res:any) => {
         this.loader = false;
         this.seccion_1_data = res.acf.seccion_1;
@@ -45,12 +47,11 @@ export class ContactComponent implements OnInit {
       });
   }
 
-  
-  enviarForm_usa(form) {
+  enviarForm(form) {
     $.ajax({
       url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-contacto/form-contactenos.php',
       type: 'POST',
-      data: JSON.stringify(this.user_usa),
+      data: JSON.stringify(this.user),
       dataType:"json",
       success: function(data) {
        
