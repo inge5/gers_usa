@@ -76,6 +76,7 @@ import { DisenoIngenieriaMxComponent } from './mexico/servicios/diseno-ingenieri
 import { NeplanMxComponent } from './mexico/representaciones/neplan-mx/neplan-mx.component';
 import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwith-electronic-mx/beckwith-electronic-mx.component';
 import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
+import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.component';
 
 
 
@@ -165,6 +166,8 @@ const APP_ROUTES: Routes = [
         {path: 'neplan', component: NeplanMxComponent},
         {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
         {path: 'xgslab', component: XgslabMxComponent},
+        {path: 'proyectos', component: ProyectosMxComponent},
+        {path: 'publicaciones', component: PublicacionesComponent},
 
         
     ]},

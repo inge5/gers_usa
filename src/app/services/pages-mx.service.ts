@@ -53,5 +53,14 @@ export class PagesMxService {
   getXGSLab(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/307`)
   }
+  /***************************/
+  /**** Página Proyectos *****/
+  getProyectosPage(): Observable<any>{
+    return this._http.get(`${this.url}/pages/334`)
+  }
+  /*************************/
+  getAcuerdosInternacionales(): Observable<any>{
+    return this._http.get(`${this.url}/pages/619`)
+  }
 }
 
