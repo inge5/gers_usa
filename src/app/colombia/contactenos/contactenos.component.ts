@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { PagesService } from '../../services/pages.service';
 
@@ -29,8 +31,9 @@ export class ContactenosComponent implements OnInit {
       telefono: '',
       ciudad: '',
       empresa: '',
-      asunto: '',
-      acepto: ''
+      pais:'Colombia',
+      acepto: '',
+      asunto: ''
     };
    }
 
@@ -47,7 +50,7 @@ export class ContactenosComponent implements OnInit {
 
   enviarForm(form) {
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/form-contactenos.php',
+      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-contacto/form-contactenos.php',
       type: 'POST',
       data: JSON.stringify(this.user),
       dataType:"json",

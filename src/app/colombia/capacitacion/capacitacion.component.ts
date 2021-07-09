@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Calendar, CalendarOptions, EventInput, FullCalendarComponent } from '@fullcalendar/angular';
+import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
 import LocalEs from '@fullcalendar/core/locales/es';
 import { CapacitacionesService } from '../../services/capacitaciones.service';
 import * as moment from 'moment';
@@ -109,7 +109,7 @@ export class CapacitacionComponent implements OnInit {
     })
   }
 
-  categoriasFiltro(){
+  categoriasFiltro(categoriaSelec: any = null){
     this.filtrar = [];
     this.eventosFiltro = [];
     if(!this.capacitacionesTemp || this.capacitacionesTemp === this.capacitaciones){
@@ -141,7 +141,7 @@ export class CapacitacionComponent implements OnInit {
       })
       
     })
-    if (this.filtrar.length > 0) {
+    if (this.filtrar.length > 0 && categoriaSelec.bandera) {
       // console.log(this.filtrar);
       this.capacitaciones = this.filtrar;
       
@@ -149,11 +149,15 @@ export class CapacitacionComponent implements OnInit {
       this.changeEvent(1);
       
       this.getCapacitaciones();
-    } else {
+    } else if(this.filtrar.length === 0 && categoriaSelec.bandera) {
+      this.capacitaciones = [];
+      this.changeEvent(2);      
+      this.getCapacitaciones();
+    }else{
       this.capacitaciones = this.capacitacionesTemp;
       // this.calendarComponent.getApi().removeAllEvents();
       console.log(this.eventos);
-      this.changeEvent(2);
+      this.changeEvent(3);
       // this.calendarComponent.getApi().addEvent(this.eventos);
       this.getCapacitaciones();
       // console.log(this.capacitaciones);
@@ -163,19 +167,29 @@ export class CapacitacionComponent implements OnInit {
 
   changeEvent(id: number){
     if(id === 1){
+      console.log("1");
       this.calendarOptions = {
-        locale: LocalEs,
         events: this.eventosFiltro,
+        locale: LocalEs,
         dateClick: this.reunionesDelDia.bind(this),
         eventClick: this.detalleReunion.bind(this)
       };
       // this.calendarComponent.getApi().removeAllEvents();
       // this.calendarComponent.getApi().addEvent(this.eventosFiltro);
       // this.calendarComponent.getApi().refetchEvents();
-    }else{
+    }else if(id === 2){
+      console.log("2");
       this.calendarOptions = {
+        events: [],
         locale: LocalEs,
+        dateClick: this.reunionesDelDia.bind(this),
+        eventClick: this.detalleReunion.bind(this)
+      };
+    }else{
+      console.log("3");
+      this.calendarOptions = {
         events: this.eventos,
+        locale: LocalEs,
         dateClick: this.reunionesDelDia.bind(this),
         eventClick: this.detalleReunion.bind(this)
       };

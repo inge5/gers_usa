@@ -30,6 +30,19 @@ import { ProductoComponent } from "./colombia/productos/producto/producto.compon
 /* Chile*/
 import { ChileComponent } from './chile/chile/chile.component';
 import { NeplanClComponent } from './chile/representaciones/neplan-cl/neplan-cl.component';
+import { HomeClComponent } from './chile/home-cl/home-cl.component';
+import { PensamientoCorporativoClComponent } from './chile/nosotros/pensamiento-corporativo-cl/pensamiento-corporativo-cl.component';
+import { PoliticaGestionIntegralClComponent } from './chile/nosotros/politica-gestion-integral-cl/politica-gestion-integral-cl.component';
+import { EstudiosSistemasElectricosClComponent } from './chile/servicios/estudios-sistemas-electricos-cl/estudios-sistemas-electricos-cl.component';
+import { DisenoEIngenieriaClComponent } from './chile/servicios/diseno-e-ingenieria-cl/diseno-e-ingenieria-cl.component';
+import { PruebasAutomatizacionControlClComponent } from './chile/servicios/pruebas-automatizacion-control-cl/pruebas-automatizacion-control-cl.component';
+import { ContactenosClComponent } from './chile/contactenos-cl/contactenos-cl.component';
+import { ProyectosClComponent } from './chile/proyectos-cl/proyectos-cl.component';
+import { PublicacionesClComponent } from './chile/publicaciones-cl/publicaciones-cl.component';
+import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicacion-interna-cl/publicacion-interna-cl.component';
+import { XgslabClComponent } from './chile/representaciones/xgslab-cl/xgslab-cl.component';
+import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/trabaje-con-nosotros-cl.component';
+import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -49,6 +62,28 @@ import { InsightsComponent } from './usa/insights/insights.component';
 import { InsightsInsideComponent } from './usa/insights/insights-inside/insights-inside.component';
 import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
 import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
+import { TrainingsComponent } from './usa/trainings/trainings.component';
+import { InternalTrainingsComponent } from './usa/internal-trainings/internal-trainings.component';
+import { CapacitacionChileComponent } from './chile/capacitacion-chile/capacitacion-chile.component';
+import { InternaCapacitacionChileComponent } from './chile/interna-capacitacion-chile/interna-capacitacion-chile.component';
+import { MexicoComponent } from './mexico/mexico/mexico.component';
+import { CapacitacionMexicoComponent } from './mexico/capacitacion-mexico/capacitacion-mexico.component';
+import { InternaCapacitacionMexicoComponent } from './mexico/interna-capacitacion-mexico/interna-capacitacion-mexico.component';
+import { ContactenosMxComponent } from './mexico/contactenos-mx/contactenos-mx.component';
+import { PensamientoCorporativoMxComponent } from './mexico/nosotros/pensamiento-corporativo-mx/pensamiento-corporativo-mx.component';
+import { PoliticaGestionIntegralMxComponent } from './mexico/nosotros/politica-gestion-integral-mx/politica-gestion-integral-mx.component';
+import { PruebasAutomatizacionControlMxComponent } from './mexico/servicios/pruebas-automatizacion-control-mx/pruebas-automatizacion-control-mx.component';
+import { SmartGridsMxComponent } from './mexico/servicios/smart-grids-mx/smart-grids-mx.component'
+import { AnalisisCalidadEnergiaMxComponent } from './mexico/servicios/analisis-calidad-energia-mx/analisis-calidad-energia-mx.component';
+import { PlaneacionProyectosMxComponent } from './mexico/servicios/planeacion-proyectos-mx/planeacion-proyectos-mx.component';
+import { EstudiosSistemasMxComponent } from './mexico/servicios/estudios-sistemas-mx/estudios-sistemas-mx.component';
+import { HomeMxComponent } from './mexico/home-mx/home-mx.component';
+import { DisenoIngenieriaMxComponent } from './mexico/servicios/diseno-ingenieria-mx/diseno-ingenieria-mx.component';
+import { NeplanMxComponent } from './mexico/representaciones/neplan-mx/neplan-mx.component';
+import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwith-electronic-mx/beckwith-electronic-mx.component';
+import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
+import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.component';
+import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicaciones-mx.component';
 
 
 
@@ -85,12 +120,27 @@ const APP_ROUTES: Routes = [
         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
       ]},
-    
-    
 
     //Rutas de Chile
-    {path: 'chile', component: ChileComponent},
-    {path: 'chile/neplan-cl', component: NeplanClComponent},
+    {path: 'chile', component: ChileComponent,
+    children: [
+        { path: '', component: HomeClComponent },
+        { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
+        {path: 'capacitaciones', component: CapacitacionChileComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
+        { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
+        { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
+        { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
+        { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
+        { path: 'neplan-cl', component: NeplanClComponent },
+        { path: 'contactenos-cl', component: ContactenosClComponent },
+        { path: 'proyectos-cl', component: ProyectosClComponent },
+        { path: 'publicaciones-cl', component: PublicacionesClComponent},
+        { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent},
+        { path: 'xgslab-cl', component: XgslabClComponent },
+        { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
+        { path: 'vacantes/:slug', component: VacanteInternaClComponent },
+        ]},
 
     //Rutas de USA
     // {path: 'home-usa', component: HomeUsaComponent},
@@ -99,6 +149,8 @@ const APP_ROUTES: Routes = [
         { path: '', component: HomeUsaComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'corporate-thinking', component: CorporateThinkingComponent },
+        {path: 'trainings' , component: TrainingsComponent},
+        {path: 'trainings/:id' , component: InternalTrainingsComponent},
         { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
         { path: 'neplan-usa', component: NeplanUsaComponent },
         { path: 'power-system-studies', component: PowerSystemStudiesComponent },
@@ -110,6 +162,28 @@ const APP_ROUTES: Routes = [
         { path: 'vacancies/:slug', component: InternalVacancyComponent},
         { path: 'insights', component: InsightsComponent },
         { path: 'insights/:slug', component: InsightsInsideComponent }
+    ]},
+    {path: 'mexico', component: MexicoComponent, children: [
+        {path: '', component: HomeMxComponent},
+        {path: 'capacitaciones', component: CapacitacionMexicoComponent},
+        {path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent},
+        {path: 'contactenos', component: ContactenosMxComponent},
+        {path: 'pensamiento-corporativo', component: PensamientoCorporativoMxComponent},
+        {path: 'politica-gestion-integral', component: PoliticaGestionIntegralMxComponent},
+        {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlMxComponent},
+        {path: 'smart-grids', component: SmartGridsMxComponent},
+        {path: 'analisis-calidad-energia', component: AnalisisCalidadEnergiaMxComponent},
+        {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
+        {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
+        {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
+        {path: 'tercerias-y-asesorias', component: InterventoriasAsesoriasComponent},
+        {path: 'neplan', component: NeplanMxComponent},
+        {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
+        {path: 'xgslab', component: XgslabMxComponent},
+        {path: 'proyectos', component: ProyectosMxComponent},
+        {path: 'publicaciones', component: PublicacionesMxComponent},
+
+        
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}

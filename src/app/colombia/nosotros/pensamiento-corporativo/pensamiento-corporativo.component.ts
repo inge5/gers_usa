@@ -40,7 +40,7 @@ export class PensamientoCorporativoComponent implements OnInit {
         this.titulo_pilares_data= res.acf.titulo_pilares;
         this.pilar_data = res.acf.pilar;
         this.mapa_procesos_data = res.acf.mapa_procesos;
-        
+        // console.log(res);
       });
   }
 

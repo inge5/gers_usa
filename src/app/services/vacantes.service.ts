@@ -16,7 +16,7 @@ export class VacantesService {
     this.url = GLOBAL.url;
    }
 
-   getVacantes(): Observable<any>{
+  getVacantes(): Observable<any>{
     return this._http.get(`${this.url}/vacantes`);
   }
   getVacante(slug: string): Observable<any>{
