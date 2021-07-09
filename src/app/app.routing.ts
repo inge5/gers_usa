@@ -63,6 +63,15 @@ import { InternaCapacitacionChileComponent } from './chile/interna-capacitacion-
 import { MexicoComponent } from './mexico/mexico/mexico.component';
 import { CapacitacionMexicoComponent } from './mexico/capacitacion-mexico/capacitacion-mexico.component';
 import { InternaCapacitacionMexicoComponent } from './mexico/interna-capacitacion-mexico/interna-capacitacion-mexico.component';
+import { ContactenosMxComponent } from './mexico/contactenos-mx/contactenos-mx.component';
+import { PensamientoCorporativoMxComponent } from './mexico/nosotros/pensamiento-corporativo-mx/pensamiento-corporativo-mx.component';
+import { PoliticaGestionIntegralMxComponent } from './mexico/nosotros/politica-gestion-integral-mx/politica-gestion-integral-mx.component';
+import { PruebasAutomatizacionControlMxComponent } from './mexico/servicios/pruebas-automatizacion-control-mx/pruebas-automatizacion-control-mx.component';
+import { SmartGridsMxComponent } from './mexico/servicios/smart-grids-mx/smart-grids-mx.component'
+import { AnalisisCalidadEnergiaMxComponent } from './mexico/servicios/analisis-calidad-energia-mx/analisis-calidad-energia-mx.component';
+import { PlaneacionProyectosMxComponent } from './mexico/servicios/planeacion-proyectos-mx/planeacion-proyectos-mx.component';
+import { EstudiosSistemasMxComponent } from './mexico/servicios/estudios-sistemas-mx/estudios-sistemas-mx.component';
+import { HomeMxComponent } from './mexico/home-mx/home-mx.component';
 
 
 
@@ -136,8 +145,17 @@ const APP_ROUTES: Routes = [
         { path: 'insights/:slug', component: InsightsInsideComponent }
     ]},
     {path: 'mexico', component: MexicoComponent, children: [
+        {path: '', component: HomeMxComponent},
         {path: 'capacitaciones', component: CapacitacionMexicoComponent},
-        {path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent}
+        {path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent},
+        {path: 'contactenos', component: ContactenosMxComponent},
+        {path: 'pensamiento-corporativo', component: PensamientoCorporativoMxComponent},
+        {path: 'politica-gestion-integral', component: PoliticaGestionIntegralMxComponent},
+        {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlMxComponent},
+        {path: 'smart-grids', component: SmartGridsMxComponent},
+        {path: 'analisis-calidad-energia', component: AnalisisCalidadEnergiaMxComponent},
+        {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
+        {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}

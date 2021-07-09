@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PagesService } from '../../../services/pages.service';
-
+import { Component, OnInit } from '@angular/core';
+import { PagesMxService } from 'src/app/services/pages-mx.service';
 
 @Component({
-  selector: 'app-pensamiento-corporativo',
-  templateUrl: './pensamiento-corporativo.component.html',
-  styleUrls: ['./pensamiento-corporativo.component.css']
+  selector: 'app-pensamiento-corporativo-mx',
+  templateUrl: './pensamiento-corporativo-mx.component.html',
+  styleUrls: ['./pensamiento-corporativo-mx.component.css']
 })
-export class PensamientoCorporativoComponent implements OnInit {
+export class PensamientoCorporativoMxComponent implements OnInit {
 
   proposito_empresa_data: any[] = [];
   valor_corporativo_columna1_data: any[] = [];
@@ -24,7 +23,7 @@ export class PensamientoCorporativoComponent implements OnInit {
 
   loader = true;
 
-  constructor(private httpClient:HttpClient, private _pensamientocorporativo:PagesService) { }
+  constructor(private httpClient:HttpClient, private _pensamientocorporativo:PagesMxService) { }
 
   ngOnInit(): void {
     this._pensamientocorporativo.getPensamientoCorporativo()
@@ -39,9 +38,10 @@ export class PensamientoCorporativoComponent implements OnInit {
         this.seccion_propuesta_data= res.acf.seccion_propuesta;
         this.titulo_pilares_data= res.acf.titulo_pilares;
         this.pilar_data = res.acf.pilar;
-        this.mapa_procesos_data = res.acf.mapa_procesos;
+        this.mapa_procesos_data = res.acf.mapa_procesos;        
         // console.log(res);
       });
+      
   }
 
 }

@@ -2677,7 +2677,8 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     }
     .navbar-center {
         position: absolute;
-        left: 50%;
+        left: 0;
+        width: 79vw;
         transform: translatex(-43%);
     }
     .dropdown-menu.menuRepresentaciones{

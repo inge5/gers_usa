@@ -124,6 +124,18 @@ import { CapacitacionMexicoComponent } from './mexico/capacitacion-mexico/capaci
 import { InternaCapacitacionMexicoComponent } from './mexico/interna-capacitacion-mexico/interna-capacitacion-mexico.component';
 import { MexicoComponent } from './mexico/mexico/mexico.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { ContactenosMxComponent } from './mexico/contactenos-mx/contactenos-mx.component';
+import { PensamientoCorporativoMxComponent } from './mexico/nosotros/pensamiento-corporativo-mx/pensamiento-corporativo-mx.component';
+import { TopbarMxComponent } from './mexico/topbar-mx/topbar-mx.component';
+import { MenuPrincipalMxComponent } from './mexico/menu-principal-mx/menu-principal-mx.component';
+import { PoliticaGestionIntegralMxComponent } from './mexico/nosotros/politica-gestion-integral-mx/politica-gestion-integral-mx.component';
+import { PruebasAutomatizacionControlMxComponent } from './mexico/servicios/pruebas-automatizacion-control-mx/pruebas-automatizacion-control-mx.component';
+import { SmartGridsMxComponent } from './mexico/servicios/smart-grids-mx/smart-grids-mx.component';
+import { AnalisisCalidadEnergiaMxComponent } from './mexico/servicios/analisis-calidad-energia-mx/analisis-calidad-energia-mx.component';
+import { PlaneacionProyectosMxComponent } from './mexico/servicios/planeacion-proyectos-mx/planeacion-proyectos-mx.component';
+import { EstudiosSistemasMxComponent } from './mexico/servicios/estudios-sistemas-mx/estudios-sistemas-mx.component';
+import { HomeMxComponent } from './mexico/home-mx/home-mx.component';
+import { FooterMxComponent } from './mexico/footer-mx/footer-mx.component';
 
 @NgModule({
   declarations: [
@@ -200,6 +212,18 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     CapacitacionMexicoComponent,
     InternaCapacitacionMexicoComponent,
     MexicoComponent,
+    ContactenosMxComponent,
+    PensamientoCorporativoMxComponent,
+    TopbarMxComponent,
+    MenuPrincipalMxComponent,
+    PoliticaGestionIntegralMxComponent,
+    PruebasAutomatizacionControlMxComponent,
+    SmartGridsMxComponent,
+    AnalisisCalidadEnergiaMxComponent,
+    PlaneacionProyectosMxComponent,
+    EstudiosSistemasMxComponent,
+    HomeMxComponent,
+    FooterMxComponent
   ],
   imports: [
     RouterModule,
