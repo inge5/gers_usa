@@ -74,6 +74,8 @@ import { EstudiosSistemasMxComponent } from './mexico/servicios/estudios-sistema
 import { HomeMxComponent } from './mexico/home-mx/home-mx.component';
 import { DisenoIngenieriaMxComponent } from './mexico/servicios/diseno-ingenieria-mx/diseno-ingenieria-mx.component';
 import { NeplanMxComponent } from './mexico/representaciones/neplan-mx/neplan-mx.component';
+import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwith-electronic-mx/beckwith-electronic-mx.component';
+import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
 
 
 
@@ -161,6 +163,8 @@ const APP_ROUTES: Routes = [
         {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
         {path: 'tercerias-y-asesorias', component: InterventoriasAsesoriasComponent},
         {path: 'neplan', component: NeplanMxComponent},
+        {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
+        {path: 'xgslab', component: XgslabMxComponent},
 
         
     ]},

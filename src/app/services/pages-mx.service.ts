@@ -47,5 +47,11 @@ export class PagesMxService {
   getNeplan(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/266`)
   }
+  getBeckwithElectronic(): Observable<any>{
+    return this._http.get(`${this.url}/representaciones/296`)
+  }
+  getXGSLab(): Observable<any>{
+    return this._http.get(`${this.url}/representaciones/307`)
+  }
 }
 

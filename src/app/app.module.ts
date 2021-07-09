@@ -140,6 +140,7 @@ import { DisenoIngenieriaMxComponent } from './mexico/servicios/diseno-ingenieri
 import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-asesorias-mx/tercerias-asesorias-mx.component';
 import { NeplanMxComponent } from './mexico/representaciones/neplan-mx/neplan-mx.component';
 import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwith-electronic-mx/beckwith-electronic-mx.component';
+import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
 
 @NgModule({
   declarations: [
@@ -231,7 +232,8 @@ import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwit
     DisenoIngenieriaMxComponent,
     TerceriasAsesoriasMxComponent,
     NeplanMxComponent,
-    BeckwithElectronicMxComponent
+    BeckwithElectronicMxComponent,
+    XgslabMxComponent
   ],
   imports: [
     RouterModule,
