@@ -142,6 +142,7 @@ import { NeplanMxComponent } from './mexico/representaciones/neplan-mx/neplan-mx
 import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwith-electronic-mx/beckwith-electronic-mx.component';
 import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
 import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.component';
+import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicaciones-mx.component';
 
 @NgModule({
   declarations: [
@@ -235,7 +236,8 @@ import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.compone
     NeplanMxComponent,
     BeckwithElectronicMxComponent,
     XgslabMxComponent,
-    ProyectosMxComponent
+    ProyectosMxComponent,
+    PublicacionesMxComponent
   ],
   imports: [
     RouterModule,
