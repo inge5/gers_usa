@@ -36,6 +36,9 @@ export class PagesClService {
   getNeplan(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/238/`)
   }
+  getXgslab(): Observable<any>{
+    return this._http.get(`${this.url}/representaciones/319/`)
+  }
 
   //PROYECTOS
   getProyectos(): Observable<any>{

@@ -40,6 +40,9 @@ import { ContactenosClComponent } from './chile/contactenos-cl/contactenos-cl.co
 import { ProyectosClComponent } from './chile/proyectos-cl/proyectos-cl.component';
 import { PublicacionesClComponent } from './chile/publicaciones-cl/publicaciones-cl.component';
 import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicacion-interna-cl/publicacion-interna-cl.component';
+import { XgslabClComponent } from './chile/representaciones/xgslab-cl/xgslab-cl.component';
+import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/trabaje-con-nosotros-cl.component';
+import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -110,6 +113,9 @@ const APP_ROUTES: Routes = [
         { path: 'proyectos-cl', component: ProyectosClComponent },
         { path: 'publicaciones-cl', component: PublicacionesClComponent},
         { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent},
+        { path: 'xgslab-cl', component: XgslabClComponent },
+        { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
+        { path: 'vacantes/:slug', component: VacanteInternaClComponent },
         ]},
 
     //Rutas de USA

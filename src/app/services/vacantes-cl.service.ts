@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class VacantesService {
+export class VacantesClService {
 
   public url: string;
 
-  constructor(private _http: HttpClient, private _router:Router) {
-    this.url = GLOBAL.url;
-   }
+  constructor(private _http: HttpClient, private _router:Router) { 
+    this.url = GLOBAL.urlChile;
+  }
 
   getVacantes(): Observable<any>{
     return this._http.get(`${this.url}/vacantes`);

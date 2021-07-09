@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -127,6 +127,10 @@ import { ContactenosClComponent } from './chile/contactenos-cl/contactenos-cl.co
 import { ProyectosClComponent } from './chile/proyectos-cl/proyectos-cl.component';
 import { PublicacionesClComponent } from './chile/publicaciones-cl/publicaciones-cl.component';
 import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicacion-interna-cl/publicacion-interna-cl.component';
+import { XgslabClComponent } from './chile/representaciones/xgslab-cl/xgslab-cl.component';
+import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/trabaje-con-nosotros-cl.component';
+import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
+import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-cl.component';
 
 @NgModule({
   declarations: [
@@ -200,7 +204,11 @@ import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicac
     ContactenosClComponent,
     ProyectosClComponent,
     PublicacionesClComponent,
-    PublicacionInternaClComponent
+    PublicacionInternaClComponent,
+    XgslabClComponent,
+    TrabajeConNosotrosClComponent,
+    VacanteInternaClComponent,
+    MenuVerticalClComponent
   ],
   imports: [
     RouterModule,
@@ -218,6 +226,7 @@ import { PublicacionInternaClComponent } from './chile/publicaciones-cl/publicac
     NgxPaginationModule,
     FullCalendarModule
   ],
+  exports: [RouterModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
     //COLOMBIA

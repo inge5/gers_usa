@@ -30,6 +30,7 @@ export class ContactenosClComponent implements OnInit {
       telefono: '',
       ciudad: '',
       empresa: '',
+      pais:'Chile',
       asunto: '',
       acepto: ''
     };
@@ -48,7 +49,7 @@ export class ContactenosClComponent implements OnInit {
 
   enviarForm(form) {
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/form-contactenos.php',
+      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-contacto/form-contactenos.php',
       type: 'POST',
       data: JSON.stringify(this.user),
       dataType:"json",
