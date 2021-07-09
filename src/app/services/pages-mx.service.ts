@@ -37,5 +37,15 @@ export class PagesMxService {
   getEstudioSistemasElectricos(): Observable<any>{
     return this._http.get(`${this.url}/pages/193/`)
   }
+  getDisenoIngenieria(): Observable<any>{
+    return this._http.get(`${this.url}/pages/220/`)
+  }
+  getInterventoriaAsesoria(): Observable<any>{
+    return this._http.get(`${this.url}/pages/246/`)
+  }
+  /**** Representaciones ****/ 
+  getNeplan(): Observable<any>{
+    return this._http.get(`${this.url}/representaciones/266`)
+  }
 }
 

@@ -72,6 +72,8 @@ import { AnalisisCalidadEnergiaMxComponent } from './mexico/servicios/analisis-c
 import { PlaneacionProyectosMxComponent } from './mexico/servicios/planeacion-proyectos-mx/planeacion-proyectos-mx.component';
 import { EstudiosSistemasMxComponent } from './mexico/servicios/estudios-sistemas-mx/estudios-sistemas-mx.component';
 import { HomeMxComponent } from './mexico/home-mx/home-mx.component';
+import { DisenoIngenieriaMxComponent } from './mexico/servicios/diseno-ingenieria-mx/diseno-ingenieria-mx.component';
+import { NeplanMxComponent } from './mexico/representaciones/neplan-mx/neplan-mx.component';
 
 
 
@@ -156,6 +158,11 @@ const APP_ROUTES: Routes = [
         {path: 'analisis-calidad-energia', component: AnalisisCalidadEnergiaMxComponent},
         {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
         {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
+        {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
+        {path: 'tercerias-y-asesorias', component: InterventoriasAsesoriasComponent},
+        {path: 'neplan', component: NeplanMxComponent},
+
+        
     ]},
     
     {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
