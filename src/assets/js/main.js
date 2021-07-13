@@ -139,6 +139,32 @@ const mainFunction = () => {
     });
     /**** CIERRA MENÚ VERTICAL CHILE *****/
 
+    /* MENÚ VERTICAL MÉXICO */
+    $(document).ready(function() {
+        // Mostrar formulario lateral
+        let btnCot = $('.solicitarMenuLateralMexico');
+        btnCot.click((e) => {
+            $('.overviwe').toggleClass('open-overviwe');
+            $('#menuverticalMexico').toggleClass('switch-cotizador');
+            e.preventDefault();
+        });
+
+        let overviwe = $('.overviwe');
+        overviwe.click((e) => {
+            $('.overviwe').removeClass('open-overviwe');
+            $('#menuverticalMexico').removeClass('switch-cotizador');
+            e.preventDefault();
+        });
+
+        let botonCerrar = $('.cerrarModal');
+        botonCerrar.click((e) => {
+            $('.overviwe').removeClass('open-overviwe');
+            $('#menuverticalMexico').removeClass('switch-cotizador');
+            e.preventDefault();
+        });
+    });
+    /**** CIERRA MENÚ VERTICAL MÉXICO *****/
+
 
 /***** Cambio de botón para seleccionar hoja de vida en Formulario ******/
 $(document).ready(function() {

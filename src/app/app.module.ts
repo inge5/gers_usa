@@ -155,6 +155,9 @@ import { XgslabClComponent } from './chile/representaciones/xgslab-cl/xgslab-cl.
 import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/trabaje-con-nosotros-cl.component';
 import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
 import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-cl.component';
+import { MenuVerticalMxComponent } from './mexico/menu-vertical-mx/menu-vertical-mx.component';
+import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
+import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
 
 @NgModule({
   declarations: [
@@ -261,7 +264,10 @@ import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-
     XgslabClComponent,
     TrabajeConNosotrosClComponent,
     VacanteInternaClComponent,
-    MenuVerticalClComponent
+    MenuVerticalClComponent,
+    MenuVerticalMxComponent,
+    TrabajeConNosotrosMxComponent,
+    VacanteInternaMxComponent
   ],
   imports: [
     RouterModule,

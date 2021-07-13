@@ -2449,6 +2449,66 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 ===============================
 */
 
+/*======= MEXICO =======*/
+/* Menu Principal */
+.menuSoftwareMexico {
+    background-color: #E8ECF4 !important;
+    width: 35rem;
+    margin-top: 0px !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+.tarjetaProyectosInterior.mexico-proyecto:hover{
+    transform: scale(1.03);
+    transition: .3s;
+}
+
+.menuVerticalPrincipalMexico {
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;
+    font-weight: 500;
+    outline: none;
+    text-decoration: none;
+}
+
+.menuVerticalPrincipalMexico:hover {
+    text-decoration: none;
+}
+
+.menuVerticalPrincipalMexico span.lineasMenu {
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+}
+
+.menuverticalMexico {
+    background: #fff;
+    overflow: scroll;
+    position: fixed;
+    width: 24%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /*padding: 3em;*/
+    z-index: 100;
+    height: 100vh;
+    min-height: 100vh;
+    transform: translateX(-100%);
+    transition: all .5s;
+}
+
+/*
+======= CIERRA MEXICO =======
+=================================
+===============================
+*/
+
+
 
 /***** RESPONSIVE ******/
 @media (max-width: 575px) {
@@ -2708,6 +2768,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     }
 
     .menuverticalChile {
+        width: 90%;
+    }
+    .menuverticalMexico {
         width: 90%;
     }
 }

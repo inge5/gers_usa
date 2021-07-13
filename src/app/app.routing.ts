@@ -84,6 +84,8 @@ import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwit
 import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
 import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.component';
 import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicaciones-mx.component';
+import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
+import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
 
 
 
@@ -182,7 +184,8 @@ const APP_ROUTES: Routes = [
         {path: 'xgslab', component: XgslabMxComponent},
         {path: 'proyectos', component: ProyectosMxComponent},
         {path: 'publicaciones', component: PublicacionesMxComponent},
-
+        { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
+        { path: 'vacantes/:slug', component: VacanteInternaMxComponent }
         
     ]},
     

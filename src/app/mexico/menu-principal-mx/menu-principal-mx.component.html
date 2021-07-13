@@ -1,226 +1,195 @@
 <!--Aquí Inicia el Menú Principal Grande-->
 <nav class="navbar navbar-expand-md navbar-light menuPrincipal" #stickyMenu [class.sticky]="sticky">
     <div class="container">
-      <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="/N-1076/#/mexico">
-        <img class="LogoPrincipal" src="assets/images/carousel-principal/logo_1981png.png" alt="Logo">
-      </a>
-      <a class="menuVerticalPrincipal solicitarMenuLateral" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown has-megamenu">
-            <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Servicios
-            </a>
-            <div class="dropdown-menu menuServicio megamenu ">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-megamenu">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a [routerLink]="['estudios-de-sistemas-electricos']">
-                                        <div class="row">
-                                            <div class="col-md-2 my-auto">
-                                                <img class="img-fluid" src="assets/images/usa/electrician.png" alt="imagen1">
-                                            </div>
-                                            <div class="col-md-10">
-                                                <h3 class="tituloItemMenu">Estudios de sistemas eléctricos</h3>
-                                                <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['pruebas-automatizacion-y-control']">
-                                        <div class="row">
-                                            <div class="col-md-2 my-auto">
-                                                <img class="img-fluid" src="assets/images/usa/estudios.png" alt="imagen1">
-                                            </div>
-                                            <div class="col-md-10">
-                                                <h3 class="tituloItemMenu">Pruebas, automatización y control</h3>
-                                                <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                  <a [routerLink]="['planeacion-de-proyectos']">
-                                      <div class="row">
-                                          <div class="col-md-2 my-auto">
-                                              <img class="img-fluid" src="./assets/images/header/proyectosPNG.png" alt="imagen1">
-                                          </div>
-                                          <div class="col-md-10">
-                                              <h3 class="tituloItemMenu">Planeación de Proyectos</h3>
-                                              <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                          </div>
-                                      </div>
-                                  </a>
-                              </li>
-                              <li>
-                                <a [routerLink]="['smart-grids']">
-                                    <div class="row">
-                                        <div class="col-md-2 my-auto">
-                                            <img class="img-fluid" src="./assets/images/header/smart.png" alt="imagen1">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <h3 class="tituloItemMenu">Smart Grids</h3>
-                                            <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            </ul>
+        <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/N-1076/#/mexico">
+            <img class="LogoPrincipal" src="assets/images/carousel-principal/logo_1981png.png" alt="Logo">
+        </a>
+        <a class="menuVerticalPrincipalMexico solicitarMenuLateralMexico" href="#"><span
+                class="lineasMenu">&#9776;</span> Menú</a>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown has-megamenu">
+                    <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Servicios
+                    </a>
+                    <div class="dropdown-menu menuServicio megamenu ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-megamenu">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a [routerLink]="['estudios-de-sistemas-electricos']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid" src="assets/images/servicios/pruebas_automatizacion_control_icon.png"
+                                                            alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Estudios de sistemas eléctricos</h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['pruebas-automatizacion-y-control']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid" src="assets/images/servicios/estudiosPNG.png"
+                                                            alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Pruebas, automatización y control
+                                                        </h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['planeacion-de-proyectos']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid" src="assets/images/servicios/proyectosPNG.png"
+                                                            alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Planeación de proyectos</h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['smart-grids']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid" src="assets/images/servicios/smart-grid.png"
+                                                            alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Smart Grids</h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-megamenu">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a [routerLink]="['analisis-calidad-energia']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid"
+                                                            src="assets/images/servicios/speedometerPNG.png" alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Análisis de Calidad de la Energía
+                                                        </h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['diseno-e-ingenieria']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid"
+                                                            src="assets/images/servicios/diseno-ing.png" alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Diseño e ingeniería</h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['tercerias-y-asesorias']">
+                                                <div class="row">
+                                                    <div class="col-md-2 my-auto">
+                                                        <img class="img-fluid"
+                                                            src="assets/images/servicios/interventoriaPNG.png" alt="imagen1">
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <h3 class="tituloItemMenu">Tercarías y asesorías</h3>
+                                                        <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur
+                                                            adipiscing elit. Cras sit amet ipsum metus.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="col-megamenu">
-                            <ul class="list-unstyled">
-                              <li>
-                                <a [routerLink]="['analisis-calidad-energia']">
-                                    <div class="row">
-                                        <div class="col-md-2 my-auto">
-                                            <img class="img-fluid" src="./assets/images/header/speedometerPNG.png" alt="imagen1">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <h3 class="tituloItemMenu">Análisis de Calidad de la Energía</h3>
-                                            <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                        </div>
-                                    </div>
+                </li>
+                <li class="nav-item dropdown has-megamenu">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Representaciones - Software
+                    </a>
+                    <div class="dropdown-menu menuSoftwareMexico megamenu navbar-center">
+                        <div class="row filaRepresentaciones">
+                            <div class="col-md-4 representacionItem">
+                                <a [routerLink]="['neplan']">
+                                    <img class="imagenMarcaMenu" src="assets/images/usa/neplan.png" alt="Logo Neplan">
+                                    <p class="tituloItemMarcaMenu">Neplan</p>
+                                    <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Cras sit amet ipsum metus.</p>
                                 </a>
-                            </li>
-                                <li>
-                                    <a [routerLink]="['diseno-e-ingenieria']">
-                                        <div class="row">
-                                            <div class="col-md-2 my-auto">
-                                                <img class="img-fluid" src="assets/images/usa/field-services.png" alt="imagen1">
-                                            </div>
-                                            <div class="col-md-10">
-                                                <h3 class="tituloItemMenu">Diseño e ingeniería</h3>
-                                                <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                  <a [routerLink]="['tercerias-y-asesorias']">
-                                      <div class="row">
-                                          <div class="col-md-2 my-auto">
-                                              <img class="img-fluid" src="../../../assets/images/servicios/interventoriaPNG.png" alt="imagen1">
-                                          </div>
-                                          <div class="col-md-10">
-                                              <h3 class="tituloItemMenu">Tercerías y asesorías</h3>
-                                              <p class="textoItemMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                                          </div>
-                                      </div>
-                                  </a>
-                              </li>
-                            </ul>
+                            </div>
+                            <div class="col-md-4 representacionItem">
+                                <a [routerLink]="['beckwith-electronic']">
+                                    <img class="imagenMarcaMenu" src="assets/images/marcas/4beck_marca.png"
+                                        alt="Logo Neplan">
+                                    <p class="tituloItemMarcaMenu text-capitalize">Beckwith electri</p>
+                                    <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Cras sit amet ipsum metus.</p>
+                                </a>
+                            </div>
+                            <div class="col-md-4 representacionItem">
+                                <a [routerLink]="['xgslab']">
+                                    <img class="imagenMarcaMenu" src="assets/images/chile/xgslab/XGS_lab_logo.png"
+                                        alt="Logo Neplan">
+                                    <p class="tituloItemMarcaMenu">XGSLAB</p>
+                                    <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Cras sit amet ipsum metus.</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item dropdown has-megamenu">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Representaciones - Software
-          </a>
-          <div class="dropdown-menu menuSoftwareChile megamenu navbar-center">
-              <div class="row filaRepresentaciones">
-                  <div class="col-md-4 representacionItem">
-                      <a [routerLink]="['neplan']">
-                          <img class="imagenMarcaMenu" src="assets/images/usa/neplan.png" alt="Logo Neplan">
-                          <p class="tituloItemMarcaMenu">Neplan</p>
-                          <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                      </a>
-                  </div>
-                  <div class="col-md-4 representacionItem">
-                    <a [routerLink]="['beckwith-electronic']">
-                        <img class="imagenMarcaMenu" src="./assets/images/marcas/4beck_marca.png" alt="Logo Neplan">
-                        <p class="tituloItemMarcaMenu">Betwidth Electric</p>
-                        <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                    </a>
-                </div>
-                  <div class="col-md-4 representacionItem">
-                    <a [routerLink]="['xgslab']">
-                        <img class="imagenMarcaMenu" src="./assets/images/marcas/3xgs_marca.png" alt="Logo Neplan">
-                        <p class="tituloItemMarcaMenu">XGSLAB</p>
-                        <p class="textoItemMarcaMenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
-                    </a>
-                </div>
-              </div>
-          </div>
-      </li>
-      <li class="nav-item">
-        <a [routerLink]="['proyectos']" class="nav-item nav-link">Proyectos</a>
-      </li>
-      <li class="nav-item">
-          <a [routerLink]="['publicaciones']" class="nav-item nav-link">Publicaciones</a>
-      </li>
-      <li class="nav-item">
-        <a [routerLink]="['contactenos']" class="nav-item nav-link">Contáctenos</a>
-    </li>
-  
-          <!-- <ng-container *ngFor="let menu_parent of menuPrincipal_data; first as isFirst">
-            <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style1'">
-              <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                {{ menu_parent.title }}
-              </a>
-              <div class="dropdown-menu menuServicio megamenu ">
-                
-                <div class="row">
-                  <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                    <div class="col-md-6">
-                      <div class="col-megamenu">
-                        <ul class="list-unstyled">
-                          <li>
-                            <a [routerLink]="[ menu_child.slug ]">
-                              <div class="row">
-                                <div class="col-md-2 my-auto">
-                                  <img class="img-fluid" src="{{ menu_child.thumbnail_src }}" alt="imagen1">
-                                </div>
-                                <div class="col-md-10">
-                                  <h3 class="tituloItemMenu">{{ menu_child.title }}</h3>
-                                  <p class="textoItemMenu">{{ menu_child.description }}</p>
-                                </div>
-                              </div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style2'">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                {{ menu_parent.title }}
-              </a>
-              <div class="dropdown-menu menuRepresentaciones megamenu navbar-center">
-                <div class="row filaRepresentaciones">
-                  <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                    <div class="col-md-4 representacionItem">
-                      <a [routerLink]="[ menu_child.slug ]">
-                        <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo Neplan">
-                        <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>
-                        <p class="textoItemMarcaMenu">{{ menu_child.description }}</p>
-                      </a>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
-              <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
-            </li>
-          </ng-container> -->
-        </ul>
-      </div>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['proyectos']" class="nav-item nav-link">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['publicaciones']" class="nav-item nav-link">Publicaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['contactenos']" class="nav-item nav-link">Contáctenos</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
-  <!--Aquí termina el Menú Principal Grande-->
+</nav>
+
+<!--Aquí termina el Menú Principal Grande-->

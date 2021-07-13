@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare function mainFunction();
 
 @Component({
   selector: 'app-mexico',
@@ -10,6 +11,7 @@ export class MexicoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    mainFunction();
   }
 
 }
