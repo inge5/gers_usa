@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import {VariableGlobalService} from "../../colombia/servicios/variable-global/variable-global.service";
 import {AlertasService} from "../../colombia/servicios/alertas/alertas.service";
-import { MenusService } from '../../services/menus.service';
+import { MenusClService } from '../../services/menus-cl.service';
 
 @Component({
   selector: 'app-menu-principal-chile',
@@ -12,16 +12,21 @@ export class MenuPrincipalChileComponent implements OnInit {
   @ViewChild('stickyMenu') menuElement: ElementRef;
   sticky: boolean = false;
   elementPosition: any;
+  /*
   carrito: any;
   carritoAnterior: any;
   cantidadCarrito: number = 0;
+  */
+  categorias: any[] = [];
+  categoriasTemp: any[] = [];
+  subCategorias: any[] = [];
+  subCategoriasTemp: any[] = [];
+  menuPrincipal_data: any[] = [];
 
-  menuPrincipal_data:any[] = [];
-
-  constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService:MenusService) { }
+  constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService:MenusClService) { }
 
   ngOnInit(): void {
-    this.llamarDatoLocales();
+    //this.llamarDatoLocales();
     this.getMenuPrincipal();
   }
 
@@ -45,8 +50,8 @@ export class MenuPrincipalChileComponent implements OnInit {
     });  
   }
 
+  /*
   llamarDatoLocales() {
-
     this.variableG.currentMessage.subscribe(response => {
       this.carritoAnterior = response;
       // console.log(this.carritoAnterior);
@@ -60,11 +65,8 @@ export class MenuPrincipalChileComponent implements OnInit {
       this.cantidadCarrito = this.carritoAnterior.length;
       // console.log(this.cantidadCarrito);
     }
-
-
-
   }
-
+  */
 
    mostrarProductos(dato) {
 
@@ -73,7 +75,6 @@ export class MenuPrincipalChileComponent implements OnInit {
     } else {
       document.getElementById('mySidenav').style.width = '0';
     }
-
   }
 
 }

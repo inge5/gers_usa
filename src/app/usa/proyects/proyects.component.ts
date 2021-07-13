@@ -8,6 +8,8 @@ import { PagesUsaService } from '../../services/pages-usa.service';
 })
 export class ProyectsComponent implements OnInit {
   FeaturedProyects:any[] = [];
+  titulo_pagina_data: any;
+  
   loader = true;
 
   constructor(private _proyectosusa:PagesUsaService) { }
@@ -18,6 +20,13 @@ export class ProyectsComponent implements OnInit {
       this.loader = false;
       this.FeaturedProyects = res;
     });
+    this._proyectosusa.getProyects()
+    .subscribe((res:any) =>{
+      this.loader = false;
+      this.titulo_pagina_data = res.acf.titulo_pagina;
+    })
+
+
   }
 
 }

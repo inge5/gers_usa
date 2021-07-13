@@ -128,8 +128,8 @@ const APP_ROUTES: Routes = [
     children: [
         { path: '', component: HomeClComponent },
         { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
-        {path: 'capacitaciones', component: CapacitacionChileComponent},
-        {path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
+        { path: 'capacitaciones', component: CapacitacionChileComponent},
+        { path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
         { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
         { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
         { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },

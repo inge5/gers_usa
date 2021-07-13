@@ -159,6 +159,10 @@ import { MenuVerticalMxComponent } from './mexico/menu-vertical-mx/menu-vertical
 import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
 import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
 
+import es from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(es);
+
 @NgModule({
   declarations: [
     CapacitacionComponent,
@@ -270,6 +274,8 @@ import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vaca
     VacanteInternaMxComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     BrowserModule,
     IvyCarouselModule,
@@ -277,8 +283,6 @@ import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vaca
     ToastrModule.forRoot(),
     HttpClientModule,
     AngularPaginatorModule,
-    FormsModule,
-    ReactiveFormsModule,
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,

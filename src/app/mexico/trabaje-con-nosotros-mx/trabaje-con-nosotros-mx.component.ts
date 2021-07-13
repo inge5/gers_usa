@@ -19,7 +19,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
   filtrar: any[];
   vacantes_dataTemp: any;
   horarioVacanteTemp: any[];
-  bandera: boolean;
+  bandera: boolean = false;
 
   constructor(private _router: Router, private _vacantesservice: VacantesMxService) {
     this.usuario = {
@@ -113,6 +113,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
       this.horarioVacante.forEach(filtro => {
         if(filtro.bandera && element.acf.horario_vacante === filtro.horario_vacante){
           if(!this.bandera){
+            console.log("vacio");
             this.filtrar = [];
           }
           this.bandera = true;
@@ -120,11 +121,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
         }
       })
     })
-    if(categoriaSelec.filtro === "horario"){
-      if(!this.bandera && this.filtrar.length > 0){
-        this.bandera = true;
-      }
-    }
+
     if (this.filtrar.length > 0) {
       // console.log(this.filtrar);
       this.vacantes_data = this.filtrar;
@@ -134,7 +131,11 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
 
         this.getVacantes();
       }
-    } else {
+      this.bandera = false;
+    } else  if(this.filtrar.length === 0 && categoriaSelec.bandera){
+      this.vacantes_data = [];
+      this.bandera = false;
+    }else{
       this.vacantes_data = this.vacantes_dataTemp;
       this.bandera = false;
       // console.log(this.eventos);

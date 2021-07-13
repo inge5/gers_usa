@@ -109,7 +109,8 @@
                                     Ingrese un teléfono válido.
                                 </small>
                             </div>
-                            <div class="form-group pt-2 pb-2 mb-0">
+                            <!--
+                               <div class="form-group pt-2 pb-2 mb-0">
                                 <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="ubicacion">Ubicación</label>
                                 <select class="form-control" id="ubicacion" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="usuario.ubicacion" required>
                                     <option value="" disabled>Elija una opción</option>
@@ -121,7 +122,8 @@
                                 <small style="color:#c30000;" *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
                                     Ubicacion es un campo requerido.
                                 </small>
-                            </div>
+                            </div> 
+                            -->
                             <div class="form-group pt-2 pb-2">
                                 <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="categoria">Categoría de la vacante</label>
                                 <select class="form-control" id="categoria" name="categoria" #categoria="ngModel" [(ngModel)]="usuario.categoria" required>
@@ -137,7 +139,7 @@
                             <div class="file-field big-2">
                                 <div class="btn btn-cyan btn-lg float-left w-100">
                                   <span><i class="fas fa-cloud-upload-alt"></i> Adjuntar hoja de vida</span>
-                                  <input type="file" id="archivo" required>
+                                  <input type="file" id="archivo" name="archivo" #archivo="ngModel" [(ngModel)]="usuario.archivo" required>
                                 </div>
                                 <p class="file-name"></p>
                                 <label class="mt-4 size15 text-gray-dark line-height18 text-justify">El archivo adjunto debe estar en formato <b>.PDF o .DOCX</b> y no debe pesar más de <b>1.5 mb</b></label>

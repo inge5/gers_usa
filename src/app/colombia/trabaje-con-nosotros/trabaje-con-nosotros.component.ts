@@ -24,9 +24,10 @@ export class TrabajeConNosotrosComponent implements OnInit {
       apellidos:'',
       email: '',
       telefono:'',
-      ubicacion:'',
+      ubicacion:'Colombia',
       categoria:'',
-      acepto:''
+      archivo: '',
+      acepto:'',
     };
    }
 
@@ -54,7 +55,7 @@ export class TrabajeConNosotrosComponent implements OnInit {
 
   formTrabajeNosotros(form){
     $.ajax({
-      //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-vacantes-general/form-vacantes-general.php',
       type: 'POST',
       data: JSON.stringify(this.usuario),
       dataType:"json",

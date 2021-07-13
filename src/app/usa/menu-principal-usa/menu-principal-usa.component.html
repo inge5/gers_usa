@@ -10,7 +10,66 @@
             <a class="menuVerticalPrincipalUsa solicitarMenuLateralUsa" href="#"><span class="lineasMenu">&#9776;</span> Menú</a>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown has-megamenu">
+                <ng-container *ngFor="let menu_parent of menuPrincipal_data; first as isFirst">
+                    <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style1'">
+                        <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          {{ menu_parent.title }}
+                        </a>
+                        <div class="dropdown-menu menuServicio megamenu ">
+                          <div class="row">
+                            <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
+                              <div class="col-md-6">
+                                <div class="col-megamenu">
+                                  <ul class="list-unstyled">
+                                    <li>
+                                      <a [routerLink]="[ menu_child.slug ]">
+                                        <div class="row">
+                                          <div class="col-md-2 my-auto">
+                                            <img class="img-fluid" src="{{ menu_child.thumbnail_src }}" alt="imagen1">
+                                          </div>
+                                          <div class="col-md-10">
+                                            <h3 class="tituloItemMenu">{{ menu_child.title }}</h3>
+                                            <p class="textoItemMenu">{{ menu_child.description }}</p>
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style2'">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          {{ menu_parent.title }}
+                        </a>
+                        <div class="dropdown-menu menuRepresentaciones chileRepresentaciones megamenu navbar-center">
+                          <div class="row filaRepresentaciones">
+                            <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
+                              <div class="col-md-12 representacionItem">
+                                <a [routerLink]="[ menu_child.slug ]">
+                                  <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo">
+                                  <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>
+                                  <p class="textoItemMarcaMenu">{{ menu_child.description }}</p>
+                                </a>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
+                        <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
+                      </li>
+                      <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+                        <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
+                      </li>
+                </ng-container>
+                <!--
+<li class="nav-item dropdown has-megamenu">
                         <a class="nav-link dropdown-toggle size14" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Services
                         </a>
@@ -118,6 +177,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-item nav-link">Training</a>
                     </li>
+                -->
             </ul>
         </div>
     </div>

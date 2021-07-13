@@ -2777,6 +2777,15 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 
 
 @media (min-width: 768px) {
+    .menuRepresentaciones.chileRepresentaciones  {
+        background-color: #E8ECF4 !important;
+        width: 35rem;
+        margin-top: 0px !important;
+        border: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
     .carousel-control-next, .carousel-control-prev{
         width:10%;
     }
@@ -2787,11 +2796,11 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     .navbar-center {
         position: absolute;
         left: 0;
-        width: 79vw;
+        width: 409%;
         transform: translatex(-43%);
     }
     .dropdown-menu.menuRepresentaciones{
-        transform: translatex(-65%);
+        transform: translatex(-42%);
     }
     .dropdown-menu.menuproductos{
         width: 30rem;
