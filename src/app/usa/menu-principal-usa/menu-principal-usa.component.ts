@@ -7,9 +7,6 @@ import { MenusUsaService } from '../../services/menus-usa.service';
   styleUrls: ['./menu-principal-usa.component.css']
 })
 export class MenuPrincipalUsaComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
 
   menuPrincipal_data: any[] = [];
 
@@ -17,19 +14,6 @@ export class MenuPrincipalUsaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMenuPrincipal();
-  }
-
-  ngAfterViewInit() {
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition && window.screen.width >= 768) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
   }
 
   getMenuPrincipal(){

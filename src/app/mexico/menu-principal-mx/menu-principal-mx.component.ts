@@ -8,28 +8,12 @@ declare var $: any;
   styleUrls: ['./menu-principal-mx.component.css']
 })
 export class MenuPrincipalMxComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
   menuPrincipal_data: any[] = [];
 
   constructor(private _menusService: MenusMxService) { }
 
   ngOnInit(): void {
     this.getMenuPrincipal();
-  }
-
-  ngAfterViewInit() {
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition && window.screen.width >= 768) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
   }
 
   getMenuPrincipal() {

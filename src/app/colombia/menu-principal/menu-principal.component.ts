@@ -14,9 +14,6 @@ declare var $: any;
   styleUrls: ['./menu-principal.component.css']
 })
 export class MenuPrincipalComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
   carrito: any;
   carritoAnterior: any;
   cantidadCarrito: number = 0;
@@ -64,19 +61,6 @@ export class MenuPrincipalComponent implements OnInit {
       })
       this.productoS.setCategoria(this.categorias);
     })
-  }
-
-  ngAfterViewInit() {
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition && window.screen.width >= 768) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
   }
 
   productosCategoria(categoria: number) {

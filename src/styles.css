@@ -2793,6 +2793,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         min-width: 45rem !important;
         transform: translatex(-45%);
     }
+    .topbar-encima{
+        z-index: 1021;
+    }
     .navbar-center {
         position: absolute;
         left: 0;
