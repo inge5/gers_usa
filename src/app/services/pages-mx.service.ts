@@ -22,27 +22,7 @@ export class PagesMxService {
   getPoliticaGestionIntegral(): Observable<any>{
     return this._http.get(`${this.url}/pages/102/`)
   }
-  getPruebasAutomatizacionControl(): Observable<any>{
-    return this._http.get(`${this.url}/pages/115/`)
-  }
-  getSmartGrids(): Observable<any>{
-    return this._http.get(`${this.url}/pages/134/`)
-  }
-  getServiciosEnergeticos(): Observable<any>{
-    return this._http.get(`${this.url}/pages/156/`)
-  }
-  getPlaneacionProyectos(): Observable<any>{
-    return this._http.get(`${this.url}/pages/175/`)
-  }
-  getEstudioSistemasElectricos(): Observable<any>{
-    return this._http.get(`${this.url}/pages/193/`)
-  }
-  getDisenoIngenieria(): Observable<any>{
-    return this._http.get(`${this.url}/pages/220/`)
-  }
-  getInterventoriaAsesoria(): Observable<any>{
-    return this._http.get(`${this.url}/pages/246/`)
-  }
+  
   /**** Representaciones ****/ 
   getNeplan(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/266`)
@@ -53,6 +33,30 @@ export class PagesMxService {
   getXGSLab(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/307`)
   }
+  /***************************/
+  /**** Servicios ****/
+  getEstudioSistemasElectricos(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/371/`)
+  }
+  getServiciosEnergeticos(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/373/`)
+  }
+  getPruebasAutomatizacionControl(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/374/`)
+  }
+  getDisenoIngenieria(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/375/`)
+  }
+  getPlaneacionProyectos(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/376/`)
+  }
+  getInterventoriaAsesoria(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/377/`)
+  }
+  getSmartGrids(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/378/`)
+  }
+  
   /***************************/
   /**** Página Proyectos *****/
   getProyectosPage(): Observable<any>{

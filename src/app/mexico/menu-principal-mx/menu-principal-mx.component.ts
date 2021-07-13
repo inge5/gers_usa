@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { MenusService } from 'src/app/services/menus.service';
+import { MenusMxService } from 'src/app/services/menus-mx.service';
 declare var $: any;
 
 @Component({
@@ -13,7 +13,7 @@ export class MenuPrincipalMxComponent implements OnInit {
   elementPosition: any;
   menuPrincipal_data: any[] = [];
 
-  constructor(private _menusService: MenusService) { }
+  constructor(private _menusService: MenusMxService) { }
 
   ngOnInit(): void {
     this.getMenuPrincipal();

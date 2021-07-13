@@ -22,6 +22,10 @@ export class PagesUsaService {
     return this._http.get(`${this.url}/pages/203`);
   }
 
+  getProyects(): Observable<any>{
+    return this._http.get(`${this.url}/pages/349`);
+  }
+
   /**** Representaciones USA ****/
   getNeplanUsa(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/208`)

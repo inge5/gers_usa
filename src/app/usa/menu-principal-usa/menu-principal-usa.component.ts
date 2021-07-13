@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { MenusUsaService } from '../../services/menus-usa.service';
 
 @Component({
   selector: 'app-menu-principal-usa',
@@ -10,9 +11,12 @@ export class MenuPrincipalUsaComponent implements OnInit {
   sticky: boolean = false;
   elementPosition: any;
 
-  constructor() { }
+  menuPrincipal_data: any[] = [];
+
+  constructor(private _menusService:MenusUsaService) { }
 
   ngOnInit(): void {
+    this.getMenuPrincipal();
   }
 
   ngAfterViewInit() {
@@ -26,6 +30,13 @@ export class MenuPrincipalUsaComponent implements OnInit {
     } else {
       this.sticky = false;
     }
+  }
+
+  getMenuPrincipal(){
+    this._menusService.getMenuPrincipal()
+    .subscribe((res:any) => {
+      this.menuPrincipal_data = res.items;
+    });  
   }
 
 }

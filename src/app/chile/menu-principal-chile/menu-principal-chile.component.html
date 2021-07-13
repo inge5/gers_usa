@@ -49,10 +49,10 @@
                       aria-haspopup="true" aria-expanded="false">
                       {{ menu_parent.title }}
                     </a>
-                    <div class="dropdown-menu menuRepresentaciones megamenu navbar-center">
+                    <div class="dropdown-menu menuRepresentaciones chileRepresentaciones megamenu navbar-center">
                       <div class="row filaRepresentaciones">
                         <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                          <div class="col-md-4 representacionItem">
+                          <div class="col-md-6 representacionItem">
                             <a [routerLink]="[ menu_child.slug ]">
                               <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo">
                               <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>

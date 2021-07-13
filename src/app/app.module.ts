@@ -268,6 +268,8 @@ registerLocaleData(es);
     MenuVerticalClComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     BrowserModule,
     IvyCarouselModule,
@@ -275,8 +277,6 @@ registerLocaleData(es);
     ToastrModule.forRoot(),
     HttpClientModule,
     AngularPaginatorModule,
-    FormsModule,
-    ReactiveFormsModule,
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,
