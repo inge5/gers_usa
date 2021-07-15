@@ -18,4 +18,8 @@ export class HomeClService {
   getHome(): Observable<any>{
     return this._http.get(`${this.base}/pages/8/`);
   }
+
+  getProyects(): Observable<any>{
+    return this._http.get(`${this.url}/proyectos/`);
+  }
 }

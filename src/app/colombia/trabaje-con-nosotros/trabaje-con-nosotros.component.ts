@@ -56,11 +56,9 @@ export class TrabajeConNosotrosComponent implements OnInit {
 
   changeFile(file:File){
     this.usuario.archivo = file[0];
-    console.log(this.usuario.archivo);
   }
 
   formTrabajeNosotros(form){
-    console.log(this.usuario.archivo);
     var paqueteDeDatos = new FormData();
     paqueteDeDatos.append('archivo', this.usuario.archivo);
     paqueteDeDatos.append('nombres', this.usuario.nombres);
@@ -84,19 +82,15 @@ export class TrabajeConNosotrosComponent implements OnInit {
       processData: false,
       cache: false, 
       success: function(data) {
-        if(data.status === 200){
-          Swal.fire({
-            icon: 'success',
-            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
-            showConfirmButton: true
-          }); 
-          //console.log(error);
+        Swal.fire({
+          icon: 'success',
+          title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+          showConfirmButton: true
+        }); 
         form.reset();
-        } else {
-          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
-        }
+        //console.log(error);
       }, error: function(error){
-        
+        Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
       }
     });
    }

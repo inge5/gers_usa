@@ -23,7 +23,7 @@ export class WorkWithUsComponent implements OnInit {
       apellidos:'',
       email: '',
       telefono:'',
-      ubicacion:'',
+      ubicacion:'Estados Unidos',
       categoria:'',
       acepto:''
     };
@@ -50,29 +50,44 @@ export class WorkWithUsComponent implements OnInit {
   verVacantes(slug:string){
     this._router.navigate(['/usa/vacancies', slug]);
   }
+  changeFile(file:File){
+    this.usuarioUsa.archivo = file[0];
+  }
 
   formTrabajeNosotrosUsa(form){
+    var paqueteDeDatos = new FormData();
+    paqueteDeDatos.append('archivo', this.usuarioUsa.archivo);
+    paqueteDeDatos.append('nombres', this.usuarioUsa.nombres);
+    paqueteDeDatos.append('apellidos', this.usuarioUsa.apellidos);
+    paqueteDeDatos.append('email', this.usuarioUsa.email);
+    paqueteDeDatos.append('telefono', this.usuarioUsa.telefono);
+    paqueteDeDatos.append('ubicacion', this.usuarioUsa.ubicacion);
+    paqueteDeDatos.append('categoria', this.usuarioUsa.categoria);
+    paqueteDeDatos.append('acepto', this.usuarioUsa.acepto);
+    var destino = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-vacantes-general/form-vacantes-general.php"; // El script que va a recibir los campos de formulario.
+					/* Se envia el paquete de datos por ajax. */
     $.ajax({
-      //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      url: destino,
       type: 'POST',
+      /*
       data: JSON.stringify(this.usuarioUsa),
       dataType:"json",
+      */
+      contentType: false,
+      data: paqueteDeDatos, // Al atributo data se le asigna el objeto FormData.
+      processData: false,
+      cache: false, 
       success: function(data) {
-        
-      }, error: function(error){
-        if(error.status === 200){
-          Swal.fire({
-            icon: 'success',
-            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
-            showConfirmButton: true
-          }); 
-          //console.log(error);
+        Swal.fire({
+          icon: 'success',
+          title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+          showConfirmButton: true
+        }); 
         form.reset();
-        } else {
-          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
-        }
+        //console.log(error);
+      }, error: function(error){
+        Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
       }
     });
    }
-
 }

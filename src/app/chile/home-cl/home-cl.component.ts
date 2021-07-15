@@ -45,7 +45,7 @@ export class HomeClComponent implements OnInit {
   equipoTrabajo:any[] = [];
   vacantes:any[] = [];
 
-  constructor(private _sanitizer: DomSanitizer, private _homeClService:HomeClService) { }
+  constructor(private _sanitizer: DomSanitizer, private _homeClService:HomeClService, private _proyectosusa:HomeClService) { }
 
   ngOnInit(): void {
     this._homeClService.getHome()
@@ -69,6 +69,11 @@ export class HomeClComponent implements OnInit {
         this.equipoTrabajo = res.acf.equipo_de_trabajo;
         this.vacantes = res.acf.vacantes;
       });
+
+    this._proyectosusa.getProyects()
+    .subscribe((res:any) => {
+      this.FeaturedProyects = res;
+    });
   }
 
 }
