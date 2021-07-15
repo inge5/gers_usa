@@ -58,65 +58,48 @@
   </div>
 
 
-  <div class="row agrupar-inputs" [hidden]="!solicitarCotizacion">
-    <div class="col-12 cotizacion">
-      <span class="flechita" (click)="volverCarrito()">
-           <i class="fa fa-arrow-right"></i>
-      </span>
-      <span>COTIZACIÓN</span>
-    </div>
-    <div class="form-group col-12">
-      <label for="nombre-completo">Nombre completo</label>
-      <input type="text" [(ngModel)]="filtros.nombre" class="form-control" id="nombre-completo" placeholder="Nombre completo">
-    </div>
-    <div class="form-group col-12">
-      <label for="empresa">Empresa</label>
-      <input  [(ngModel)]="filtros.empresa" type="text" class="form-control" id="empresa" placeholder="Empresa">
-    </div>
-    <div class="form-group col-12">
-      <label for="nit">Nit</label>
-      <input [(ngModel)]="filtros.nit" type="number" class="form-control" id="nit" placeholder="Nit">
-    </div>
-    <div class="form-group col-12">
-      <label for="correo-electronico">Correo electrónico</label>
-      <input [(ngModel)]="filtros.email" type="email" class="form-control" id="correo-electronico" placeholder="Correo electrónico">
-    </div>
-    <div class="form-group col-12">
-      <label for="celular">Celular</label>
-      <input [(ngModel)]="filtros.celular" type="number" class="form-control" id="celular" placeholder="Celular">
-    </div>
-
-
-    <div class="col-12">
-      <div class="row botones-funciones">
-        <div class="col-12  col-md-6 col-lg-6">
-          <button type="button" class="btn btn-blue"
-                  [disabled]="
-                  filtros.nombre === ''   ||
-                  filtros.nombre === null ||
-                  filtros.empresa === ''  ||
-                  filtros.empresa === null||
-                  filtros.nit === ''   ||
-                  filtros.nit === null ||
-                  filtros.email === ''   ||
-                  filtros.email === null ||
-                  filtros.celular === ''   ||
-                  filtros.celular === null
-                  " (click)="enviarCorreoCotizacion()">
-            Solicitar cotización
-          </button>
-        </div>
-        <div class="col-12  col-md-6 col-lg-6">
-          <button type="button" class="btn btn-blue" (click)="volverCarrito()">
-            Volver al listado
-          </button>
+  <form (ngSubmit)="enviarForm(formularioCotizacion)" #formularioCotizacion="ngForm" class="row agrupar-inputs" [hidden]="!solicitarCotizacion">
+      <div class="col-12 cotizacion">
+        <span class="flechita" (click)="volverCarrito()">
+            <i class="fa fa-arrow-right"></i>
+        </span>
+        <span>COTIZACIÓN</span>
+      </div>
+      <div class="form-group col-12">
+        <label for="nombre-completo">Nombre completo</label>
+        <input type="text" [(ngModel)]="filtros.nombre" class="form-control" name="nombre" id="nombre-completo" placeholder="Nombre completo">
+      </div>
+      <div class="form-group col-12">
+        <label for="empresa">Empresa</label>
+        <input  [(ngModel)]="filtros.empresa" type="text" class="form-control" name="empresa" id="empresa" placeholder="Empresa">
+      </div>
+      <div class="form-group col-12">
+        <label for="nit">Nit</label>
+        <input [(ngModel)]="filtros.nit" type="number" class="form-control" name="nit" id="nit" placeholder="Nit">
+      </div>
+      <div class="form-group col-12">
+        <label for="correo-electronico">Correo electrónico</label>
+        <input [(ngModel)]="filtros.correo" type="email" class="form-control" name="correo" id="correo-electronico" placeholder="Correo electrónico">
+      </div>
+      <div class="form-group col-12">
+        <label for="celular">Celular</label>
+        <input [(ngModel)]="filtros.celular" type="number" class="form-control" name="celular" id="celular" placeholder="Celular">
+      </div>
+      <div class="col-12">
+        <div class="row botones-funciones">
+          <div class="col-12  col-md-6 col-lg-6">
+            <button type="submit" class="btn btn-blue">
+              Solicitar cotización
+            </button>
+          </div>
+          <div class="col-12  col-md-6 col-lg-6">
+            <button type="button" class="btn btn-blue" (click)="volverCarrito()">
+              Volver al listado
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-
-
-
-  </div>
+  </form>
 
 </div>
 
