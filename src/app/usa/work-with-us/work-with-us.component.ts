@@ -15,7 +15,13 @@ export class WorkWithUsComponent implements OnInit {
   public usuarioUsa: any;
 
   loader = true;
-  vacantes_data:any[] = [];
+  vacantes_data:any[];
+  categorias: any[] = [];
+  horarioVacante: any[];
+  filtrar: any[];
+  vacantes_dataTemp: any;
+  horarioVacanteTemp: any[];
+  bandera: boolean = false;
 
   constructor(private _router:Router, private _vacantesusaservice:VacantesUsaService) { 
     this.usuarioUsa = {
@@ -30,11 +36,113 @@ export class WorkWithUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._vacantesusaservice.getVacancies()
-    .subscribe((res:any) => {
-      this.loader = false;
-      this.vacantes_data = res;
-    });
+    this.getVacantes();
+    this.getCategoriasFiltro();
+  }
+
+  getVacantes() {
+    if (!this.vacantes_data) {
+      this._vacantesusaservice.getVacancies()
+        .subscribe((res: any) => {
+          this.loader = false;
+          this.vacantes_data = res;
+          console.log(res);
+
+          let horarioVacante = [];
+          let horarioVacanteMap = [];
+          res.forEach(element => {
+            horarioVacante.push({
+              horario_vacante: element.acf.horario_vacante,
+              bandera: false
+            })
+          });
+          horarioVacanteMap = horarioVacante.map(item => [item.horario_vacante, item]);
+
+          let horarioVacanteMapArr = new Map(horarioVacanteMap);
+
+          let unicosHorarioVacante = [...horarioVacanteMapArr.values()];
+
+          this.horarioVacante = unicosHorarioVacante;
+
+        })
+    } else {
+      let horarioVacante = [];
+          let horarioVacanteMap = [];
+          this.vacantes_data.forEach(element => {
+            horarioVacante.push({
+              horario_vacante: element.acf.horario_vacante,
+              bandera: false
+            })
+          });
+        horarioVacanteMap = horarioVacante.map(item => [item.horario_vacante, item]);
+
+      let horarioVacanteMapArr = new Map(horarioVacanteMap);
+
+      let unicosHorarioVacante = [...horarioVacanteMapArr.values()];
+
+      this.horarioVacante = unicosHorarioVacante;
+    }
+
+  }
+
+  categoriasFiltro(categoriaSelec: any = null) {
+    this.filtrar = [];
+    if (!this.vacantes_dataTemp || this.vacantes_dataTemp === this.vacantes_data) {
+      this.vacantes_dataTemp = this.vacantes_data;
+    }
+    this.vacantes_dataTemp.forEach(element => {
+      this.categorias.forEach(filtro => {
+        element.categoria_vacancies.filter(filtroCate => {
+          if (filtro.bandera && filtro.id === filtroCate) {
+            this.filtrar.push(element);
+          }
+
+        });
+      })
+    })
+    this.vacantes_dataTemp.forEach(element => {
+      this.horarioVacante.forEach(filtro => {
+        if(filtro.bandera && element.acf.horario_vacante === filtro.horario_vacante){
+          if(!this.bandera){
+            console.log("vacio");
+            this.filtrar = [];
+          }
+          this.bandera = true;
+          this.filtrar.push(element);
+        }
+      })
+    })
+
+    if (this.filtrar.length > 0) {
+      // console.log(this.filtrar);
+      this.vacantes_data = this.filtrar;
+
+      // console.log(this.eventosFiltro);
+      if(!this.bandera){
+
+        this.getVacantes();
+      }
+      this.bandera = false;
+    } else  if(this.filtrar.length === 0 && categoriaSelec.bandera){
+      this.vacantes_data = [];
+      this.bandera = false;
+    }else{
+      this.vacantes_data = this.vacantes_dataTemp;
+      this.bandera = false;
+      // console.log(this.eventos);
+      this.getVacantes();
+    }
+  }
+
+  getCategoriasFiltro() {
+    this._vacantesusaservice.getCategoriasVacantes().subscribe((resp: any) => {
+      // console.log(resp);
+      resp.forEach(element => {
+        element.bandera = false
+      });
+      this.categorias.push(...resp)
+      console.log(this.categorias);
+    })
   }
 
   enviaCurriculum(){

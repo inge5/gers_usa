@@ -7,29 +7,37 @@
             <div class="col-md-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ubicación</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categoría</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Categoría</a>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                            <ng-container *ngFor="let categoria of categorias">
+                                <div class="form-check form-check">
+                                    <label class="form-check-label ml-2 ml-sm-2 ml-md-2 ml-lg-2">
+                                        <input class="form-check-input" type="checkbox" name=""
+                                            (change)="categoriasFiltro({id: categoria.id, bandera: categoria.bandera, filtro: 'categorias'})"
+                                            [(ngModel)]="categoria.bandera"> <span
+                                            class="text-azul">{{categoria.name}}</span>
+                                    </label>
+                                </div>
+                                <!-- <a class="dropdown-item" href="#">{{ categoria.categoria_vacante }}</a> -->
+                            </ng-container>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categoría</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Horario</a>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                            <ng-container *ngFor="let horario of horarioVacante">
+                                <div class="form-check form-check">
+                                    <label class="form-check-label ml-2 ml-sm-2 ml-md-2 ml-lg-2">
+                                        <input class="form-check-input" type="checkbox" name=""
+                                            (change)="categoriasFiltro({id: horario.horario_vacante, bandera: horario.bandera, filtro: 'horario'})"
+                                            [(ngModel)]="horario.bandera"> <span
+                                            class="text-azul">{{horario.horario_vacante}}</span>
+                                    </label>
+                                </div>
+                                <!-- <a class="dropdown-item" href="#">{{ horario.horario_vacante }}</a> -->
+                            </ng-container>
                         </div>
                     </li>
                 </ul>
@@ -74,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="bg-light border-right sobreponer" id="sidebar-wrapper">
         <div class="sidebar-heading size23 text-blue1 font-weight-600"><button id="btnCerrarTrabajemos" (click)="cierraTrabajemos()">x</button> ENVIAR CURRICULUM</div>
         <div class="bodyTrabajemos">
             <div class="container">

@@ -2104,6 +2104,11 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     cursor: default;
     color:#fff;
 }
+.form-vacante input[type="submit" i]:disabled{
+    background-color: #adadad;
+    cursor: default;
+    color:#fff;
+}
 .footFormTrabajemos .enviar{
     background-color: #2C3394;
     color: #FFFFFF;
@@ -2305,6 +2310,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     position: absolute;
     bottom: 35px;
     z-index: 2;
+}
+.sobreponer{
+    z-index: 1022 !important;
 }
 .tituloTarjetaProyectosUsa h3 {
     color: #2C3394;

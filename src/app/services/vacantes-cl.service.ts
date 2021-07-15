@@ -19,6 +19,9 @@ export class VacantesClService {
   getVacantes(): Observable<any>{
     return this._http.get(`${this.url}/vacantes`);
   }
+  getCategoriasVacantes(): Observable<any>{
+    return this._http.get(`${this.url}/categoria_vacantes`);
+  }
   getVacante(slug: string): Observable<any>{
     return this._http.get(`${this.url}/vacantes/?slug=${slug}/`, {
     }).pipe(
