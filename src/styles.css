@@ -1448,7 +1448,7 @@ p.textoItemMenu {
 .tituloTarjetaProyectos {
     background-color: #fff;
     position: absolute;
-    bottom: 35px;
+    bottom: 0px;
     z-index: 2;
 }
 
@@ -1473,12 +1473,12 @@ p.textoItemMenu {
 }
 
 .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 75%;
+    bottom: 30%;
     transition: 1s;
     /*cursor: pointer;*/
 }
 .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 75%;
+    bottom: 30%;
     transition: 1s;
     /*cursor: pointer;*/
 }
@@ -1489,6 +1489,7 @@ p.textoItemMenu {
     bottom: 0;
     z-index: 1;
     display: none;
+    min-height: 112px;
 }
 
 .textoTarjetaProyectos p {
@@ -2206,6 +2207,25 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     border-radius: 12px;
 }
 /* Menu Principal */
+.menuPrincipalUsa {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: #FAFBFF;
+    border-top: 1px solid #2C3394;
+}
+
+.menuPrincipalUsa li a.nav-link {
+    letter-spacing: 0.84px;
+    font-size: 14px;
+    padding: 25px 1rem;
+    color: #2C3394!important;
+}
+
+.menuPrincipalUsa li a.nav-link:hover {
+    background-color: #0089FF;
+    color: #fff!important;
+}
+
 .menuSoftware {
     background-color: #E8ECF4 !important;
     width: 20rem;
@@ -2461,6 +2481,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media (max-width: 767px) {
+    .seccionColombia12 .container-img{
+        margin-top: 0!important;
+    }
     .smart-grid-usa-page .mt-200n {
         margin-top: 20px;
     }
@@ -2770,6 +2793,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 768px){
+    .seccionColombia12 #imagenEquipo{
+        width: 55%!important;
+    } 
     .smart-grid-usa-page .mt-200n {
         margin-top: 0;
     }

@@ -1,5 +1,5 @@
 <!--Aquí Inicia el Menú Principal Grande-->
-<nav class="navbar navbar-expand-md navbar-light menuPrincipal" #stickyMenu [class.sticky]="sticky">
+<nav class="navbar navbar-expand-md navbar-light menuPrincipalUsa" #stickyMenu [class.sticky]="sticky">
     <div class="container">
         <button class="navbar-toggler mt-1 mb-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -65,6 +65,9 @@
                         <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
                       </li>
                       <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+                        <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
+                      </li>
+                      <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style5'">
                         <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
                       </li>
                 </ng-container>
