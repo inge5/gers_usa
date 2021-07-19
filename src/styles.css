@@ -1206,9 +1206,27 @@ p.textoItemMenu {
     border-radius: 0 !important;
 }
 
+.contenedorSubmenu {
+    color: #343434;
+    font-family: Montserrat;
+    font-size: 16px;
+    padding: 7%;
+    margin: 0;
+    letter-spacing: 0.97px;
+    line-height: 19px;
+    font-weight: 500;
+}
+
+.contenedorSubmenu:hover {
+    background-color: #DDE2F6;
+    padding: 7%;
+    margin: 0;
+    border-bottom: 1px solid #cdd1e2;
+}
+
 .representacionItem {
     border-left: 3px solid transparent;
-    padding: 10px;
+    padding: 17px;
 }
 
 .representacionItem:hover {

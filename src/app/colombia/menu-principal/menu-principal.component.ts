@@ -24,13 +24,14 @@ export class MenuPrincipalComponent implements OnInit {
   menuPrincipal_data: any[] = [];
 
   constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService: MenusService,
-    private productoS: PruebaProductosService, private ruta: Router) { }
+    private productoS: PruebaProductosService, private ruta: Router) { 
+    }
+    
 
   ngOnInit(): void {
     this.llamarDatoLocales();
     this.getMenuPrincipal();
     this.getCategorias();
-    
   }
 
   getCategorias(){
@@ -59,18 +60,32 @@ export class MenuPrincipalComponent implements OnInit {
           }
         })
       })
+      console.log(this.categorias);
       this.productoS.setCategoria(this.categorias);
     })
   }
 
   productosCategoria(categoria: number) {
+    
     this.variableG.setCategoria(categoria);
     $('.subCategorias').removeClass("abrir-subCategorias")
     this.ruta.navigateByUrl('/colombia/productos');
   }
 
+  // abrirMenu(){
+  //   $('#productos').addClass('abrir');
+  //   $('#contenedor_productos').addClass('abrir');
+  // }
+
   desplegarSubCategorias(id: number){
+    // $('.representacionItem').click(this.abrirMenu());
+    
     let subCategorias = $('.subCategorias').hasClass('abrir-subCategorias');
+    let cateSeleccionado = $('.categorias').hasClass('seleccionado');
+    if(cateSeleccionado){
+      $('.categorias').removeClass('seleccionado');
+    }
+    $(`.cate${id}`).addClass('seleccionado');
     if(subCategorias){
       $('.subCategorias').removeClass("abrir-subCategorias")
     }
