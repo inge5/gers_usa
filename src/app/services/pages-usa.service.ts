@@ -50,7 +50,7 @@ export class PagesUsaService {
 
   /*** Proyectos USA***/
   getProyectsUsa(): Observable<any>{
-    return this._http.get(`${this.url}/proyectos_usa/`);
+    return this._http.get(`${this.url}/proyectos_usa?per_page=40`);
   }
 
   
