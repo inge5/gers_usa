@@ -1468,7 +1468,9 @@ p.textoItemMenu {
 }
 
 .tarjetaProyectosInterior:hover .textoTarjetaProyectos {
-    display: block;
+    display: flex;
+    align-items: center;
+    width: 100%;
     /*cursor: pointer;*/
 }
 
@@ -1496,7 +1498,7 @@ p.textoItemMenu {
     color: #FFFFFF;
     letter-spacing: 0.49px;
     line-height: 18.75px;
-    padding: 30px 45px 20px;
+    padding: 10px 45px 10px;
     font-weight: 300;
     margin-bottom: 0;
 }
