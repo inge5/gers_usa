@@ -161,6 +161,8 @@ import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vaca
 
 import es from '@angular/common/locales/es';
 import {registerLocaleData} from '@angular/common';
+import { BuscadorComponent } from './colombia/buscador/buscador.component';
+import { FilterPipe } from './pipes/filter.pipe';
 registerLocaleData(es);
 
 @NgModule({
@@ -271,7 +273,9 @@ registerLocaleData(es);
     MenuVerticalClComponent,
     MenuVerticalMxComponent,
     TrabajeConNosotrosMxComponent,
-    VacanteInternaMxComponent
+    VacanteInternaMxComponent,
+    BuscadorComponent,
+    FilterPipe
   ],
   imports: [
     FormsModule,

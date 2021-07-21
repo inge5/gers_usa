@@ -11,8 +11,8 @@ export class HomeMxService {
   public base: string;
   public url: string;
   constructor(public _http: HttpClient){
-      this.base = GLOBAL.base;
-      this.url = GLOBAL.url;
+      this.base = GLOBAL.baseMexico;
+      this.url = GLOBAL.urlMexico;
   }
 
   getHome(): Observable<any>{

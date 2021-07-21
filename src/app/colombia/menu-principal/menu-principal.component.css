@@ -39,7 +39,7 @@
 .seleccionado {
   background-color: #fff;
   border-left: 3px solid #0089FF;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .abrir-subCategorias{

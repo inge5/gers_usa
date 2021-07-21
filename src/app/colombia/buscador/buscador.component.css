@@ -1,0 +1,27 @@
+.scroll-interno{
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.card-job:hover h3{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card-job:hover p{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card-job:active h3{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card-job:active p{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.text-lightgray{
+    color: lightgray;
+}

@@ -104,8 +104,7 @@
                   <div class="row filaRepresentaciones">
                     <div class="col-md-6 col-12 col-lg-6 col-sm-12 categorias representacionItem" [ngClass]="'cate'+categoria.id" *ngIf="categoria.count > 0"
                       (click)="productosCategoria(categoria.id)"
-                      (mouseenter)="desplegarSubCategorias(categoria.id)"
-                      >
+                      (mouseenter)="desplegarSubCategorias(categoria.id)">
                       <img class="imagenMarcaMenu img-fluid" [src]="categoria.image?categoria.image.src:'assets/images/marcas/2dranetz_marca.png'" [title]="categoria.name" [alt]="categoria.name">
                     </div>
                     <div class="col-md-6 col-12 col-lg-6 col-sm-12 subCategorias" [ngClass]="'pp'+categoria.id">
@@ -176,7 +175,7 @@
         <li class="nav-item">
           <div class="form-group">
             <input type="text"
-              class="form-control nav-link border-0 bg-azulClaro rounded my-3" name="buscador" placeholder="Buscador">
+              class="form-control nav-link border-0 bg-azulClaro rounded my-3" (keyup)="buscar()" name="buscador" [(ngModel)]="busqueda" placeholder="Buscador">
           </div>
         </li>
         <!-- <li class="nav-item"><a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a></li> -->

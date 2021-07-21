@@ -86,6 +86,7 @@ import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.compone
 import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicaciones-mx.component';
 import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
 import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
+import { BuscadorComponent } from './colombia/buscador/buscador.component';
 
 
 
@@ -121,6 +122,7 @@ const APP_ROUTES: Routes = [
         {path: 'publicaciones', component: PublicacionesComponent},
         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
+        {path: 'buscador', component: BuscadorComponent}
       ]},
 
     //Rutas de Chile

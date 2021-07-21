@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VariableGlobalService } from "../servicios/variable-global/variable-global.service";
 import { AlertasService } from "../servicios/alertas/alertas.service";
 import { MenusService } from '../../services/menus.service';
@@ -22,7 +22,8 @@ export class MenuPrincipalComponent implements OnInit {
   subCategorias: any[] = [];
   subCategoriasTemp: any[] = [];
   menuPrincipal_data: any[] = [];
-
+  busqueda: string = "";
+  
   constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService: MenusService,
     private productoS: PruebaProductosService, private ruta: Router) { 
     }
@@ -65,17 +66,30 @@ export class MenuPrincipalComponent implements OnInit {
     })
   }
 
-  productosCategoria(categoria: number) {
-    
-    this.variableG.setCategoria(categoria);
-    $('.subCategorias').removeClass("abrir-subCategorias")
-    this.ruta.navigateByUrl('/colombia/productos');
+  buscar(){
+    this.variableG.setBuscador(this.busqueda);
+    this.ruta.navigateByUrl('/colombia/buscador');
   }
 
-  // abrirMenu(){
-  //   $('#productos').addClass('abrir');
-  //   $('#contenedor_productos').addClass('abrir');
-  // }
+  productosCategoria(categoria: number) {
+    
+    if(categoria > 0){
+      console.log(categoria);
+      this.variableG.setCategoria(categoria);
+      Swal.fire('Cargando Productos','Espere un momento','info');
+      Swal.showLoading();
+    }
+    setTimeout(() => {
+      $('.subCategorias').removeClass("abrir-subCategorias")
+      this.ruta.navigateByUrl('/colombia/productos');  
+    }, 1500);
+    
+  }
+
+  abrirMenu(){
+    $('#productos').addClass('abrir');
+    $('#contenedor_productos').addClass('abrir');
+  }
 
   desplegarSubCategorias(id: number){
     // $('.representacionItem').click(this.abrirMenu());
