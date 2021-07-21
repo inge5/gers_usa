@@ -44,7 +44,7 @@ export class PagesClService {
 
   //PROYECTOS
   getProyectos(): Observable<any>{
-    return this._http.get(`${this.url}/proyectos/`);
+    return this._http.get(`${this.url}/proyectos?per_page=40`);
   }
 
   /**** Página Proyectos *****/

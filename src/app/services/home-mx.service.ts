@@ -11,15 +11,15 @@ export class HomeMxService {
   public base: string;
   public url: string;
   constructor(public _http: HttpClient){
-      this.base = GLOBAL.base;
-      this.url = GLOBAL.url;
+      this.base = GLOBAL.baseMexico;
+      this.url = GLOBAL.urlMexico;
   }
 
   getHome(): Observable<any>{
-    return this._http.get(`${this.base}/pages/2/`);
+    return this._http.get(`${this.base}/pages/397/`);
   }
 
   getProyects(): Observable<any>{
-    return this._http.get(`${this.url}/proyectos/`);
+    return this._http.get(`${this.url}/proyectos?per_page=40`);
   }
 }

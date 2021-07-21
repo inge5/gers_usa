@@ -66,8 +66,11 @@
           <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
+          <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+            <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
+          </li>
 
-          <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+          <li class="nav-item dropdown has-megamenu" *ngIf="menu_parent.classes == 'subcontainer_style5'">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Productos
