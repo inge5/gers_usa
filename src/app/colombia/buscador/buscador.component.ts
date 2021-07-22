@@ -153,5 +153,19 @@ export class BuscadorComponent implements OnInit {
         type: 'servicios'
       })
     })
+    this.representaciones.getInterventoriaAsesoria().subscribe(res => {
+      this.data.push({
+        title: res.title.rendered,
+        content: res.acf.seccion_1.texto_principal,
+        type: 'servicios'
+      })
+    })
+    this.representaciones.getPlaneacionProyectos().subscribe(res => {
+      this.data.push({
+        title: res.title.rendered,
+        content: res.acf.seccion_1.texto_principal,
+        type: 'servicios'
+      })
+    })
   }
 }
