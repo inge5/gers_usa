@@ -41,7 +41,8 @@ export class BuscadorComponent implements OnInit {
         this.data.push({
           title: element.title.rendered,
           content: element.content.rendered,
-          type: 'vacantes'
+          type: 'vacantes',
+          slug: element.slug
         })  
       });
     })
@@ -52,7 +53,8 @@ export class BuscadorComponent implements OnInit {
         this.data.push({
           title: element.title.rendered,
           content: element.acf.descripcion_corta,
-          type: 'capacitaciones'
+          type: 'capacitaciones',
+          slug: element.id
         })
       });
     })
@@ -63,19 +65,20 @@ export class BuscadorComponent implements OnInit {
         this.data.push({
           title: element.title.rendered,
           content: element.acf.descripcion,
-          type: element.type
+          type: element.type,
+          slug: element.slug
         })
       });
     })
   }
   getPublicaciones(){
     this.publicacionesservice.getPublicaciones().subscribe(res => {
-      console.log(res);
       res.forEach(element => {
         this.data.push({
           title: element.title.rendered,
           content: element.content.rendered,
-          type: element.type
+          type: element.type,
+          slug: element.slug
         })
       });
     })
@@ -85,35 +88,40 @@ export class BuscadorComponent implements OnInit {
       this.data.push({
         title:res.title.rendered,
         content: res.acf.informacion_general.texto_general,
-        type: res.type
+        type: res.type,
+        slug: res.slug
       })
     })
     this.representaciones.getBeckwithElectronic().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_inicial,
-        type: res.type
+        type: res.type,
+        slug: res.slug
       })
     })
     this.representaciones.getXGSLab().subscribe(res => { 
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_inicial,
-        type: res.type  
+        type: res.type,
+        slug: res.slug 
       })
     })
     this.representaciones.getDranetz().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_inicial,
-        type: res.type
+        type: res.type,
+        slug: res.slug
       })
     })
     this.representaciones.getNdb().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_inicial,
-        type: res.type
+        type: res.type,
+        slug: res.slug
       })
     })
   }
@@ -122,49 +130,56 @@ export class BuscadorComponent implements OnInit {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
     this.representaciones.getDisenoIngenieria().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
     this.representaciones.getSmartGrids().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
     this.representaciones.getEstudioSistemasElectricos().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
     this.representaciones.getServiciosEnergeticos().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
     this.representaciones.getInterventoriaAsesoria().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
     this.representaciones.getPlaneacionProyectos().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
         content: res.acf.seccion_1.texto_principal,
-        type: 'servicios'
+        type: 'servicios',
+        slug: res.slug
       })
     })
   }
