@@ -66,6 +66,9 @@
           <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
+          <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+            <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
+          </li>
 
           <li class="nav-item dropdown has-megamenu" id="productos" *ngIf="menu_parent.classes == 'subcontainer_style4'">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -75,30 +78,6 @@
             <div id="contenedor_productos" class="dropdown-menu menuproductos megamenu navbar-center">
               <div class="row filaRepresentaciones"
                 style="flex-flow: column wrap; align-items:stretch; padding-bottom:4%;">
-                <!--   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                      </div>
-                      <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-                      </div>-->
-
-                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
-                    <li class="nav-item">
-                      <a class="nav-link size13 pt-2 pb-2" [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab"
-                        data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
-                        <img id="banderaColombiana" src="{{ paises.bandera }}" alt="bandera">
-                        {{ paises.pais }}
-                      </a>
-                    </li>
-                  </ng-container>
-                </ul> -->
                 
                 <ng-container *ngFor="let categoria of categorias">
                   <div class="row filaRepresentaciones">
@@ -172,7 +151,7 @@
           <!--<div class="dropdown-menu contenedor-carrito megamenu navbar-center animate fade-up">
                   </div>-->
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="width: 19%;">
           <div class="form-group">
             <input type="text"
               class="form-control nav-link border-0 bg-azulClaro rounded my-3" (keyup)="buscar()" name="buscador" [(ngModel)]="busqueda" placeholder="Buscador">

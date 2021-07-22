@@ -199,16 +199,13 @@
                     <div class="tarjetaProyectosInterior">
                         <div class="tituloTarjetaProyectos">
                             <div class="titulosTarjetaBlanca">
-                                <h3 class="size16 text-uppercase">{{ proyects.acf.titulo }}</h3>
-                                <p class="size13">{{ proyects.acf.extracto }}</p>
+                                <h3 class="size16 text-uppercase">{{ proyects.acf.extracto }}</h3>
+                                <!--<p class="size13">{{ proyects.acf.extracto }}</p>-->
                             </div>
                         </div>
-                        <!--Un comentario prueba-->
-                        <!--
-                           <div class="textoTarjetaProyectos">
+                        <div class="textoTarjetaProyectos">
                             <p class="size13">{{proyects.acf.descripcion}}</p>
                         </div> 
-                        -->
                         <img src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
                     </div>
                 </div>
@@ -299,7 +296,7 @@
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-4 offset-md-1 d-flex align-items-center" style="height: 400px">
-                    <p class="texto-franja-azul size25 font-weight-normal pt-5" [innerHTML]="equipo.descripcion"></p>
+                    <p class="texto-franja-azul montserrat size22 font-weight-300 pt-5" [innerHTML]="equipo.descripcion"></p>
                 </div>
             </div>
         </div>

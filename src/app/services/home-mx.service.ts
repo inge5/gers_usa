@@ -16,10 +16,10 @@ export class HomeMxService {
   }
 
   getHome(): Observable<any>{
-    return this._http.get(`${this.base}/pages/2/`);
+    return this._http.get(`${this.base}/pages/397/`);
   }
 
   getProyects(): Observable<any>{
-    return this._http.get(`${this.url}/proyectos/`);
+    return this._http.get(`${this.url}/proyectos?per_page=40`);
   }
 }

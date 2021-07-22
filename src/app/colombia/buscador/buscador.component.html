@@ -13,7 +13,8 @@
                                 [innerHTML]="busqueda.content"></p>
                             <p *ngIf="busqueda.type === 'proyectos'" class="text-truncate">{{ busqueda.content }}</p>
                             <p *ngIf="busqueda.type === 'publicaciones'" class="text-truncate">{{ busqueda.content }}</p>
-                            <p *ngIf="busqueda.type === 'representaciones'" class="text-truncate">{{ busqueda.content }}</p>
+                            <p *ngIf="busqueda.type === 'representaciones'" [innerHTML]="busqueda.content"></p>
+                                <p *ngIf="busqueda.type === 'servicios'" [innerHTML]="busqueda.content"></p>
                             <div class="form-group d-flex justify-content-between align-items-center mt-3">
                                 <button class="btn btn-primary" type="button">Ver más</button>
                                 <p class="text-muted text-capitalize" style="font-style: italic;">{{ busqueda.type

@@ -651,7 +651,7 @@ li.item-menu-sedes {
     letter-spacing: 0.84px;
     font-size: 14px;
     padding: 25px 1rem;
-    color: #2C3394;
+    color: #2C3394!important;
 }
 
 .menuPrincipal li a.nav-link:hover {
@@ -1486,7 +1486,9 @@ p.textoItemMenu {
 }
 
 .tarjetaProyectosInterior:hover .textoTarjetaProyectos {
-    display: block;
+    display: flex;
+    align-items: center;
+    width: 100%;
     /*cursor: pointer;*/
 }
 
@@ -1514,7 +1516,7 @@ p.textoItemMenu {
     color: #FFFFFF;
     letter-spacing: 0.49px;
     line-height: 18.75px;
-    padding: 30px 45px 20px;
+    padding: 10px 45px 10px;
     font-weight: 300;
     margin-bottom: 0;
 }
@@ -1693,6 +1695,7 @@ p.textoItemMenu {
     background-color: #E8ECF4;
     position: relative;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .logoFooter {
@@ -1749,6 +1752,10 @@ p.textoItemMenu {
 }
 
 .contenedorFooter .contacto4 .certificados img {
+    padding: 0 5px;
+}
+
+.contenedorFooter .contacto4 .redesFooter img {
     padding: 0 5px;
 }
 
@@ -2852,7 +2859,7 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         transform: translatex(-43%);
     }
     .dropdown-menu.menuRepresentaciones{
-        transform: translatex(-42%);
+        transform: translatex(-50%);
     }
     .dropdown-menu.menuproductos{
         width: 30rem;

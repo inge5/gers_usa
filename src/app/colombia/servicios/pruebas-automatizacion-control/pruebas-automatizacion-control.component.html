@@ -41,10 +41,10 @@
     <div *ngIf="!loader" class="bg-blue1 pt-4 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-6 text-center"></div>
+                <div class="col-sm-4 col-md-4 col-lg-5 text-center"></div>
                 <ng-container *ngFor="let transformador of seccion_iconos_data">
                     <div class="col-sm-4 col-md-4 col-lg-2 text-center">
-                        <img src="{{ transformador.icono }}" alt="servicio" class="img-fluid">
+                        <img src="{{ transformador.icono }}" alt="servicio" class="img-fluid mb-3">
                         <p class="text-white m-0 size13">{{ transformador.texto }}</p>
                     </div>    
                 </ng-container>
