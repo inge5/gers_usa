@@ -86,6 +86,11 @@ export class MenuPrincipalComponent implements OnInit {
     
   }
 
+  abrirBuscador(){
+    $('.buscador').toggleClass('abrir-buscador');
+    $('.no-ancho').toggleClass('ancho')
+  }
+
   abrirMenu(){
     $('#productos').addClass('abrir');
     $('#contenedor_productos').addClass('abrir');

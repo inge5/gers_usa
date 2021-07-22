@@ -2562,6 +2562,28 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 */
 
 
+.text-blue{
+    color: #2C3394 !important;
+  }
+  
+  .buscador{
+    display: none !important;
+  }
+  
+  .no-ancho{
+    width: 2.6rem !important;
+  }
+  
+  .ancho{
+    width: 9rem !important;
+  }
+  
+  .abrir-buscador{
+   display: block !important;
+   margin: 0 !important;
+  }
+  
+
 
 /***** RESPONSIVE ******/
 @media (max-width: 575px) {
