@@ -87,6 +87,9 @@ import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicacione
 import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
 import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
 import { BuscadorComponent } from './colombia/buscador/buscador.component';
+import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
+import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
+import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
 
 
 
@@ -144,6 +147,7 @@ const APP_ROUTES: Routes = [
         { path: 'xgslab-cl', component: XgslabClComponent },
         { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
         { path: 'vacantes/:slug', component: VacanteInternaClComponent },
+        {path: 'buscador', component: BuscadorClComponent}
         ]},
 
     //Rutas de USA
@@ -165,7 +169,8 @@ const APP_ROUTES: Routes = [
         { path: 'work-with-us', component: WorkWithUsComponent },
         { path: 'vacancies/:slug', component: InternalVacancyComponent},
         { path: 'insights', component: InsightsComponent },
-        { path: 'insights/:slug', component: InsightsInsideComponent }
+        { path: 'insights/:slug', component: InsightsInsideComponent },
+        {path: 'buscador', component: BuscadorUsaComponent}
     ]},
     {path: 'mexico', component: MexicoComponent, children: [
         {path: '', component: HomeMxComponent},
@@ -187,7 +192,8 @@ const APP_ROUTES: Routes = [
         {path: 'proyectos', component: ProyectosMxComponent},
         {path: 'publicaciones', component: PublicacionesMxComponent},
         { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
-        { path: 'vacantes/:slug', component: VacanteInternaMxComponent }
+        { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
+        {path: 'buscador', component: BuscadorMxComponent}
         
     ]},
     

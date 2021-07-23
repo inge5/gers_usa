@@ -117,6 +117,10 @@
   transition: 0.3s;
 }
 
+.ancho{
+  width: 8rem !important;
+}
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #2C3394;

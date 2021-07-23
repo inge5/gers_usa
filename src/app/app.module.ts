@@ -163,6 +163,9 @@ import es from '@angular/common/locales/es';
 import {registerLocaleData} from '@angular/common';
 import { BuscadorComponent } from './colombia/buscador/buscador.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
+import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
+import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
 registerLocaleData(es);
 
 @NgModule({
@@ -275,7 +278,10 @@ registerLocaleData(es);
     TrabajeConNosotrosMxComponent,
     VacanteInternaMxComponent,
     BuscadorComponent,
-    FilterPipe
+    FilterPipe,
+    BuscadorMxComponent,
+    BuscadorClComponent,
+    BuscadorUsaComponent
   ],
   imports: [
     FormsModule,

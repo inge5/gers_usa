@@ -1,4 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { VariableGlobalService } from 'src/app/colombia/servicios/variable-global/variable-global.service';
 import { MenusMxService } from 'src/app/services/menus-mx.service';
 declare var $: any;
 
@@ -9,8 +11,9 @@ declare var $: any;
 })
 export class MenuPrincipalMxComponent implements OnInit {
   menuPrincipal_data: any[] = [];
+  busqueda: string = "";
 
-  constructor(private _menusService: MenusMxService) { }
+  constructor(private _menusService: MenusMxService, private ruta: Router, private variableG: VariableGlobalService) { }
 
   ngOnInit(): void {
     this.getMenuPrincipal();
@@ -21,5 +24,15 @@ export class MenuPrincipalMxComponent implements OnInit {
       .subscribe((res: any) => {
         this.menuPrincipal_data = res.items;
       });
+  }
+
+  buscar(){
+    this.variableG.setBuscador(this.busqueda);
+    this.ruta.navigateByUrl('/mexico/buscador');
+  }
+
+  abrirBuscador(){
+    $('.buscador').toggleClass('abrir-buscador');
+    $('.no-ancho').toggleClass('ancho')
   }
 }

@@ -2561,6 +2561,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 ===============================
 */
 
+.bg-azulClaro{
+    background-color: #DDE2F6;
+}
 
 .text-blue{
     color: #2C3394 !important;
