@@ -88,7 +88,7 @@ export class BuscadorComponent implements OnInit {
     this.representaciones.getNeplan().subscribe(res => {
       this.data.push({
         title:res.title.rendered,
-        content: res.acf.informacion_general.texto_general,
+        content: res.acf.descripcion,
         type: res.type,
         slug: res.slug
       })
@@ -96,7 +96,7 @@ export class BuscadorComponent implements OnInit {
     this.representaciones.getBeckwithElectronic().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
-        content: res.acf.seccion_1.texto_inicial,
+        content: res.acf.descripcion,
         type: res.type,
         slug: res.slug
       })
@@ -104,7 +104,7 @@ export class BuscadorComponent implements OnInit {
     this.representaciones.getXGSLab().subscribe(res => { 
       this.data.push({
         title: res.title.rendered,
-        content: res.acf.seccion_1.texto_inicial,
+        content: res.acf.descripcion,
         type: res.type,
         slug: res.slug 
       })
@@ -112,7 +112,7 @@ export class BuscadorComponent implements OnInit {
     this.representaciones.getDranetz().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
-        content: res.acf.seccion_1.texto_inicial,
+        content: res.acf.descripcion,
         type: res.type,
         slug: res.slug
       })
@@ -120,7 +120,7 @@ export class BuscadorComponent implements OnInit {
     this.representaciones.getNdb().subscribe(res => {
       this.data.push({
         title: res.title.rendered,
-        content: res.acf.seccion_1.texto_inicial,
+        content: res.acf.descripcion,
         type: res.type,
         slug: res.slug
       })
