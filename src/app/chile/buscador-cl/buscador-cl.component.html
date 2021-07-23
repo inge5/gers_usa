@@ -8,7 +8,7 @@
                             <h3>{{ busqueda.title }}</h3>
                         </div>
                         <div class="col-lg-12">
-                            <p *ngIf="busqueda.type === 'vacantes'" class="text-truncate">{{ busqueda.content }}</p>
+                            <p *ngIf="busqueda.type === 'vacantes'" class="text-truncate" [innerHTML]="busqueda.content"></p>
                             <p *ngIf="busqueda.type === 'capacitaciones'" class="text-truncate"
                                 [innerHTML]="busqueda.content"></p>
                             <p *ngIf="busqueda.type === 'proyectos'" class="text-truncate">{{ busqueda.content }}</p>
@@ -22,10 +22,10 @@
                                 <button class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2" [routerLink]="['../capacitaciones', busqueda.slug]" *ngIf="busqueda.type === 'capacitaciones'" type="button">
                                     Ver más
                                 </button>
-                                <button class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2" [routerLink]="['../proyectos']" *ngIf="busqueda.type === 'proyectos'" type="button">
+                                <button class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2" [routerLink]="['../proyectos-cl']" *ngIf="busqueda.type === 'proyectos'" type="button">
                                     Ver más
                                 </button>
-                                <button class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2" [routerLink]="['../publicaciones', busqueda.slug]" *ngIf="busqueda.type === 'publicaciones'" type="button">
+                                <button class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2" [routerLink]="['../publicaciones-cl', busqueda.slug]" *ngIf="busqueda.type === 'publicaciones'" type="button">
                                     Ver más
                                 </button>
                                 <button class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2" [routerLink]="['../'+busqueda.slug]" *ngIf="busqueda.type === 'representaciones'" type="button">

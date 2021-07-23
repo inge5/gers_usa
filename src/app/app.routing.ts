@@ -165,12 +165,12 @@ const APP_ROUTES: Routes = [
         { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
         { path: 'protection-and-control', component: ProtectionAndControlComponent },
         { path: 'field-services', component: FieldServicesComponent },
-        { path: 'proyects', component: ProyectsComponent },
+        { path: 'projects', component: ProyectsComponent },
         { path: 'work-with-us', component: WorkWithUsComponent },
         { path: 'vacancies/:slug', component: InternalVacancyComponent},
         { path: 'insights', component: InsightsComponent },
         { path: 'insights/:slug', component: InsightsInsideComponent },
-        {path: 'buscador', component: BuscadorUsaComponent}
+        {path: 'searcher', component: BuscadorUsaComponent}
     ]},
     {path: 'mexico', component: MexicoComponent, children: [
         {path: '', component: HomeMxComponent},
@@ -191,13 +191,14 @@ const APP_ROUTES: Routes = [
         {path: 'xgslab', component: XgslabMxComponent},
         {path: 'proyectos', component: ProyectosMxComponent},
         {path: 'publicaciones', component: PublicacionesMxComponent},
+        {path: 'publicaciones/:slug', component: PublicacionesMxComponent},
         { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
         { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
         {path: 'buscador', component: BuscadorMxComponent}
         
     ]},
     
-    {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
+    // {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
     
 ];
 
