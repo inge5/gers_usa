@@ -18,14 +18,14 @@
                             <div *ngIf="!loader" class="media">
                                 <img class="align-self-center mr-3" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Servicios energéticos">
                                 <div class="media-body">
-                                    <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo }}</h4>
+                                    <h4 class="w-50 mb-0 text-blue1 size26 roboto font-weight-bold">{{ seccion_1_data.titulo }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-5">
                             <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
                             <div *ngIf="!loader">
-                                <a href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
+                                <a *ngIf="seccion_1_data.boton_texto_solicitar" href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
                             </div>
                         </div>
                         <div class="col-sm-12 mt-3">
@@ -38,7 +38,7 @@
                                 <ng-container *ngFor="let item of seccion_iconos_data">
                                     <div *ngIf="!loader" class="col-sm-4 text-center">
                                         <img class="align-self-center mb-3 mx-auto d-block" src="{{ item.icono }}" alt="Medición">
-                                        <p>{{ item.texto }}</p>
+                                        <p class="size14 roboto">{{ item.texto }}</p>
                                     </div>
                                 </ng-container>
                             </div>
