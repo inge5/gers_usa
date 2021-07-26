@@ -35,7 +35,7 @@ export class PagesMxService {
   }
   /***************************/
   getProyectos(): Observable<any>{
-    return this._http.get(`${this.url}/proyectos/`);
+    return this._http.get(`${this.url}/proyectos?per_page=40`);
   }
 
   /**** Servicios ****/
@@ -64,7 +64,7 @@ export class PagesMxService {
   /***************************/
   /**** Página Proyectos *****/
   getProyectosPagina(): Observable<any>{
-    return this._http.get(`${this.url}/pages/334W`)
+    return this._http.get(`${this.url}/pages/334`)
   }
   /*************************/
   getAcuerdosInternacionales(): Observable<any>{

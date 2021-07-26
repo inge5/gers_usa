@@ -6,7 +6,7 @@
                 <div *ngIf="!loader" class="media mb-4">
                     <img class="align-self-center mr-3 img-fluid" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Estudios sistemas">
                     <div class="media-body my-auto">
-                        <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo_principal }}</h4>
+                        <h4 class="w-50 mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo_principal }}</h4>
                     </div>
                 </div>
                 <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{ height:'20px' }"></ngx-skeleton-loader>

@@ -6,7 +6,7 @@
                 <div *ngIf="!loader" class="media align-items-center">
                     <img class="align-self-center mr-3 img-fluid" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Smart-Grid">
                     <div class="media-body">
-                        <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo }}</h4>
+                        <h4 class="w-25 mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo }}</h4>
                     </div>
                 </div>
                 <ngx-skeleton-loader count="7" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
