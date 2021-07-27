@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row my-5 scroll-interno" *ngIf="filtro; else noFiltro">
+    <div class="row my-5" *ngIf="filtro; else noFiltro">
         <ng-container *ngFor="let busqueda of data |filter:filtro">
             <div class="card-job col-lg-12 p-3" *ngIf="busqueda != 0; else nofiltro2">
                 <div class="container">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <ng-template #nofiltro2>
-                <div class="container my-3">
+                <div class="container my-5">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
                             <img src="./assets/images/sin_novedad.png" alt="">
@@ -59,7 +59,7 @@
         </ng-container>
     </div>
     <ng-template #noFiltro>
-        <div class="container my-3">
+        <div class="container my-5">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
                     <img src="./assets/images/sin_novedad.png" alt="">

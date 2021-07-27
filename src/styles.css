@@ -2597,7 +2597,11 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     width: 2.6rem !important;
     transition: width .5s;
   }
-  
+
+  .form-control:focus{
+    box-shadow: 0 0 0 0;
+}
+
   .ancho{
     width: 9rem !important;
     transition: width .5s;
