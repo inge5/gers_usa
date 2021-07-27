@@ -63,17 +63,17 @@
               </div>
             </div>
           </li>
-          <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style3'">
+          <li class="nav-item d-sm-none d-xl-block" *ngIf="menu_parent.classes == 'subcontainer_style3'">
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
-          <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+          <li class="nav-item d-sm-none d-xl-block" *ngIf="menu_parent.classes == 'subcontainer_style4'">
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
           <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style5'">
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
         </ng-container>
-        <li class="nav-item d-flex flex-row no-ancho align-items-center">
+        <li class="nav-item d-flex flex-row no-ancho align-items-center mb-3 mb-sm-3 mb-md-0 mb-lg-0">
           <input type="text" class="form-control buscador nav-link border-0 bg-azulClaro buscador-detalles my-3"
             (keyup)="buscar()" name="buscador" placeholder="Buscar" [(ngModel)]="busqueda">
           <a class="btn btn-link bg-azulClaro text-blue" id="buscar" (click)="abrirBuscador()"><i

@@ -2595,10 +2595,12 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
   
   .no-ancho{
     width: 2.6rem !important;
+    transition: width .5s;
   }
   
   .ancho{
     width: 9rem !important;
+    transition: width .5s;
   }
   
   .abrir-buscador{
