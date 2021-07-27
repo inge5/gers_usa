@@ -33,7 +33,7 @@ export class BuscadorComponent implements OnInit {
   getBusqueda(){
     this.variableG.currentBusca.subscribe(resp => {
       this.filtro = resp
-      console.log(this.filtro);
+      // console.log(this.filtro);
     });    
   }
   getVacantes() {
