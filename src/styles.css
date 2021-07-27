@@ -2575,6 +2575,15 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 .bg-azulClaro{
     background-color: #DDE2F6;
 }
+.buscador-detalles{
+    padding: 6% 2%;
+    border-radius: 5px 0 0 5px !important;
+}
+
+.lupa-detalle{
+    padding: 5% 8%;
+    border-radius: 0 5px 5px 0 !important;
+}
 
 .text-blue{
     color: #2C3394 !important;

@@ -14,6 +14,7 @@ import { VariableGlobalService } from '../servicios/variable-global/variable-glo
 export class BuscadorComponent implements OnInit {
   data: any[] = [];
   filtro: string = "";
+  filtrobuscador: any[] = [];
 
   constructor(private variableG: VariableGlobalService, private _vacantesservice: VacantesService,
      private capacitaciones: CapacitacionesService, private proyectoService: HomeService, 
@@ -32,9 +33,9 @@ export class BuscadorComponent implements OnInit {
   getBusqueda(){
     this.variableG.currentBusca.subscribe(resp => {
       this.filtro = resp
-    });
+      console.log(this.filtro);
+    });    
   }
-
   getVacantes() {
     this._vacantesservice.getVacantes().subscribe((res: any) => {
       res.forEach(element => {

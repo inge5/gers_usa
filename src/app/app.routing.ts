@@ -198,7 +198,7 @@ const APP_ROUTES: Routes = [
         
     ]},
     
-    // {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
+    {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
     
 ];
 
