@@ -1239,8 +1239,14 @@ p.textoItemMenu {
 .representacionItem {
     border-left: 3px solid transparent;
     padding: 17px;
+    margin: 8px 0;
 }
-
+.display-none{
+    display: none !important;
+  }
+  .display-block{
+    display: block !important;
+  }
 .representacionItem:hover {
     background-color: #fff;
     border-left: 3px solid #0089FF;

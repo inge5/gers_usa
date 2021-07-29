@@ -123,13 +123,17 @@ export class CarritoComponent implements OnInit {
   }
 
   solicitarCotizacionCarrito() {
-    this.listadoCarrito = false;
-    this.solicitarCotizacion = true;
+    $('#carrito').toggleClass('display-none');
+    $('#cotizador').toggleClass('display-block');
+    // this.listadoCarrito = false;
+    // this.solicitarCotizacion = true;
   }
 
   volverCarrito() {
-    this.listadoCarrito = true;
-    this.solicitarCotizacion = false;
+    $('#carrito').toggleClass('display-none');
+    $('#cotizador').toggleClass('display-block');
+    // this.listadoCarrito = true;
+    // this.solicitarCotizacion = false;
   }
 
 
@@ -174,6 +178,8 @@ export class CarritoComponent implements OnInit {
   */
 
   enviarForm(form) {
+    alert("hola")
+    return;
     const dataInfo = {
       productos: JSON.parse(localStorage.getItem('carrito')),
       filtros: this.filtros

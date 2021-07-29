@@ -1,10 +1,10 @@
 
 <div class="contenedor-total-agregados">
 
-  <div class="row ajustar-productos" [hidden]="!listadoCarrito">
+  <div class="row ajustar-productos" id="carrito">
     <div class="col-12 cotizacion">
       <span class="flechita" *ngIf="carritoAnterior && carritoAnterior.length > 0" (click)="solicitarCotizacionCarrito()">
-          <i class="fa fa-arrow-left"></i>
+          <i class="fa fa-arrow-right"></i>
       </span>
      <span>COTIZACIÓN</span>
     </div>
@@ -58,37 +58,52 @@
   </div>
 
 
-  <form (ngSubmit)="enviarForm(formularioCotizacion)" #formularioCotizacion="ngForm" class="row agrupar-inputs" [hidden]="!solicitarCotizacion">
+  <form (ngSubmit)="enviarForm(formularioCotizacion)" #formularioCotizacion="ngForm" class="row agrupar-inputs display-none" id="cotizador">
       <div class="col-12 cotizacion">
         <span class="flechita" (click)="volverCarrito()">
-            <i class="fa fa-arrow-right"></i>
+            <i class="fa fa-arrow-left"></i>
         </span>
         <span>COTIZACIÓN</span>
       </div>
       <div class="form-group col-12">
         <label for="nombre-completo">Nombre completo</label>
-        <input type="text" [(ngModel)]="filtros.nombre" class="form-control" name="nombre" id="nombre-completo" placeholder="Nombre completo">
+        <input type="text" [(ngModel)]="filtros.nombre" #nombre="ngModel" class="form-control" name="nombre" id="nombre-completo" placeholder="Nombre completo" required>
+        <small style="color:#c30000;" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+          Ingrese nombre completo.
+      </small>
       </div>
       <div class="form-group col-12">
         <label for="empresa">Empresa</label>
-        <input  [(ngModel)]="filtros.empresa" type="text" class="form-control" name="empresa" id="empresa" placeholder="Empresa">
+        <input  [(ngModel)]="filtros.empresa" type="text" #empresa="ngModel" class="form-control" name="empresa" id="empresa" placeholder="Empresa" required>
+        <small style="color:#c30000;" *ngIf="empresa.invalid && (empresa.dirty || empresa.touched)">
+          Ingrese la empresa.
+      </small>
       </div>
       <div class="form-group col-12">
         <label for="nit">Nit</label>
-        <input [(ngModel)]="filtros.nit" type="number" class="form-control" name="nit" id="nit" placeholder="Nit">
+        <input [(ngModel)]="filtros.nit" type="number" #nit="ngModel" class="form-control" name="nit" id="nit" placeholder="Nit" required>
+        <small style="color:#c30000;" *ngIf="nit.invalid && (nit.dirty || nit.touched)">
+          Ingrese el nit.
+      </small>
       </div>
       <div class="form-group col-12">
         <label for="correo-electronico">Correo electrónico</label>
-        <input [(ngModel)]="filtros.correo" type="email" class="form-control" name="correo" id="correo-electronico" placeholder="Correo electrónico">
+        <input [(ngModel)]="filtros.correo" type="email" email="true" #email="ngModel" class="form-control" name="correo" id="correo-electronico" placeholder="Correo electrónico" required>
+        <small style="color:#c30000;" *ngIf="email.invalid && (email.dirty || email.touched)">
+          Ingrese correo electrónico.
+      </small>
       </div>
       <div class="form-group col-12">
         <label for="celular">Celular</label>
-        <input [(ngModel)]="filtros.celular" type="number" class="form-control" name="celular" id="celular" placeholder="Celular">
+        <input [(ngModel)]="filtros.celular" #celular="ngModel" type="number" class="form-control" name="celular" id="celular" placeholder="Celular" required>
+        <small style="color:#c30000;" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+          Ingrese celular.
+      </small>
       </div>
       <div class="col-12">
         <div class="row botones-funciones">
           <div class="col-12  col-md-6 col-lg-6">
-            <button type="submit" class="btn btn-blue">
+            <button type="submit" class="btn btn-blue" [disabled]="formularioCotizacion.invalid">
               Solicitar cotización
             </button>
           </div>
