@@ -69,7 +69,7 @@
                 </span>
               </div>
               <div class="col-12 boton-solicitar-demostracion">
-                <button type="button" class="btn btn-light ">
+                <button type="button" (click)="abrirDemostracion()" class="btn btn-light ">
                   Solicitar demostración
                 </button>
               </div>
@@ -213,6 +213,8 @@
    <ng-container *ngIf="listadoProductosDetalle">
     <app-slider-detalle [relacionados]="listadoProductosDetalle?listadoProductosDetalle.related_ids: ''"></app-slider-detalle>
    </ng-container>
+
+    <app-form-demostracion></app-form-demostracion>
 
 
     </div>

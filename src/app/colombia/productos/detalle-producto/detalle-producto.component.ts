@@ -40,6 +40,11 @@ export class DetalleProductoComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+
+  abrirDemostracion(){
+    $('#demostracion').removeClass('cerrar-formulario');
+  }
+
   pasarImagen(imagen :string) {
     this.imagen_grande = imagen;
   }
