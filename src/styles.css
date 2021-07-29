@@ -259,10 +259,20 @@ p{
 .w-40{
     width:40%;
 }
+.w-35{
+    width:35%;
+}
 .w-70{
     width:70%;
 }
 /*=================*/
+ul li p{
+    line-height: 1.8;
+}
+ul li{
+    line-height: 2;
+}
+
 a:hover{   
   text-decoration: none !important;
 }
@@ -761,7 +771,7 @@ li.item-menu-sedes {
 .open-overviwe {
     background: rgba(0, 0, 0, .5);
     display: block;
-    z-index: 10;
+    z-index: 1022;
 }
 
 .clase-overviwe {
@@ -1394,12 +1404,14 @@ p.textoItemMenu {
 
 
 /*******Título siguiente a las tarjetas*******/
-
+.seccionColombia5 .container .row .col:last-child{
+    border-right: 0 !important;
+}
 
 /****Imagen Full**********/
 
 .img-seccionColombia6 {
-    background-image: url("src/assets/images/seccion4/banner_seccion4.jpg");
+    background-image: url("src/assets/images/seccion4/banner_seccion4.png");
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -1505,12 +1517,12 @@ p.textoItemMenu {
 }
 
 .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 30%;
+    bottom: 33%;
     transition: 1s;
     /*cursor: pointer;*/
 }
 .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
-    bottom: 30%;
+    bottom: 31%;
     transition: 1s;
     /*cursor: pointer;*/
 }
@@ -1854,6 +1866,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .mt-200{
     margin-top: 200px;
+}
+
+.mt-300{
+    margin-top: 300px;
 }
 
 .info-paises ul{
@@ -2625,6 +2641,16 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media (max-width: 767px) {
+    .seccionColombia5 .border-right{
+        border-right: 0!important;
+    }
+
+    .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 13%;
+    }
+    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 21%;
+    }
     .seccionColombia12 .container-img{
         margin-top: 0!important;
     }
@@ -2671,6 +2697,9 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     }
     */
     .w-40{
+        width:100%;
+    }
+    .w-35{
         width:100%;
     }
     #sidebar-wrapper {
@@ -2950,8 +2979,37 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         margin-top: 0;
     }
 }
+@media only screen and (max-width: 991px) and (min-width: 768px){
+    .textoTarjetaProyectos p {
+        padding: 10px;
+    }
+    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 80%;
+    }
+    .menuPrincipal li a.nav-link {
+        font-size: 9px;
+    }
+    .menuVerticalPrincipal {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+    .textoTarjetaProyectos p {
+        padding: 10px 15px 10px;
+    }
+    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 40%;
+    }
+}
 
 @media (min-width: 1920px) {
+    .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 23%;
+    }
+    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 32%;
+    }
     .img-our-company{
         width: 23%;
         left: 20%;

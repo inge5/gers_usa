@@ -8,8 +8,8 @@
                 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px', width:'270px' }"></ngx-skeleton-loader>
                 <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader">
-                    <h4 class="mb-4 text-blue1 font-weight-bold size22">{{ seccion_1_data.titulo }}</h4>
-                    <p [innerHTML]="seccion_1_data.texto_general"></p>
+                    <h4 class="mb-4 text-blue1 font-weight-bold size22 w-35">{{ seccion_1_data.titulo }}</h4>
+                    <p class="roboto size16" [innerHTML]="seccion_1_data.texto_general"></p>
                 </div>
             </div>
             <div class="col-sm-6 pt-5">
