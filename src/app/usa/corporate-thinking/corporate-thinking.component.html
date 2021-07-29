@@ -9,7 +9,7 @@
                 <div class="col-md-7">
                     <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
                     <div *ngIf="!loader">
-                        <h3 class="font-weight-700 text-blue1 size32 line-height33 letter-spacing-0-38">{{seccion1_data.titulo}}</h3>
+                        <h3 class="font-weight-700 text-blue1 size32 line-height33 letter-spacing-0-38 roboto w-30">{{seccion1_data.titulo}}</h3>
                         <p class="size17 line-height23 letter-spacing-0-57" [innerHTML]="seccion1_data.texto_general | safeHtml: 'html'"></p>
                     </div>
                 </div>
