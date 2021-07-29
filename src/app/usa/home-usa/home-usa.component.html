@@ -115,10 +115,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-shadow border-radius-12 pt-4 pr-5 pl-5 pb-4">
-                    <img class="img-fluid mx-auto d-block" src="./assets/images/usa/neplan_home.jpg" alt="Neplan">
-                    <img class="img-fluid img-absolute-neplan" src="./assets/images/usa/neplan_logo_grande.png" alt="Logo Neplan">
-                    <p class="roboto text-black mt-4 mb-4 size16 line-height20 letter-spacing-0-19">NEPLAN 360 is the first fully browser-based power system analysis toll on the market using a client-server architecture that can be used on a network, or locally. NEPLAN is a multiplatform application that does not require installation and offers all the advantages of cloud computing. </p>
-                    <a class="rounded btn-white border-color-blue p-2" href="#">Acquire your software here</a>
+                    <img class="img-fluid mx-auto d-block" src="{{servicio_neplan_data.imagen}}" alt="Neplan">
+                    <img class="img-fluid img-absolute-neplan" src="{{servicio_neplan_data.imagen_logo}}" alt="Logo Neplan">
+                    <p class="roboto text-black mt-4 mb-4 size16 line-height20 letter-spacing-0-19" [innerHTML]="servicio_neplan_data.texto_general"></p>
+                    <a class="rounded btn-white border-color-blue p-2" href="{{servicio_neplan_data.boton_link}}">{{servicio_neplan_data.boton_texto}}</a>
                 </div>
             </div>
         </div>
