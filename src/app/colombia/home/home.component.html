@@ -112,9 +112,9 @@
                     <div class="col-xs-10 col-md-8 offset-md-3 pb-5 mb-3 pt-3">
                         <ngx-skeleton-loader count="10" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
                         <p *ngIf="!loader" class="text-white font-weight-light letter-spacing0-5 size18">
-                            <span class="font-weight-bold" [innerHTML]="ejecucion_de_monitoreo_data.titulo"></span>
-                            <span [innerHTML]="ejecucion_de_monitoreo_data.descripcion"></span>
+                            <span class="font-weight-bold roboto" [innerHTML]="ejecucion_de_monitoreo_data.titulo"></span>
                         </p>
+                        <p class="text-white font-weight-light roboto size18" [innerHTML]="ejecucion_de_monitoreo_data.descripcion"></p> 
                     </div>
                     <p class="text-right pt-3 w-100 m-0 containerLogotrasparente">
                         <img src="assets/images/logo-gers-trasparente.png" alt="" class="img-fluid">
@@ -147,9 +147,9 @@
                             <p>
                                 <img src="{{tab.imagen}}" alt="" class="img-fluid">
                             </p>
-                            <p class="m-0"><strong>{{tab.titulo}}</strong></p>
+                            <p class="m-0 mb-3 mt-3"><strong>{{tab.titulo}}</strong></p>
                             <p [innerHTML]="tab.descripcion"></p>
-                            <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="{{tab.url_del_boton}}">{{tab.texto_del_boton}}</a>
+                            <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline mt-3" href="{{tab.url_del_boton}}">{{tab.texto_del_boton}}</a>
                         </div>
                     </ng-container>
                 </div>
@@ -324,7 +324,7 @@
                 <div class="full-textoshv">
                     <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
                     <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
-                    <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
+                    <a class="linkHoja d-block mt-3" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                 </div>
             </div>
             <div class="col-md-5">
