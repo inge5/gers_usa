@@ -8,16 +8,9 @@
                     <div *ngIf="!loader"> 
                         <h3 class="text-center roboto size15 text-white letter-spacing-0-32">{{ seccion_1_data.texto_general }}</h3>
                         <h2 class="roboto size35 text-center font-weight-700 text-white letter-spacing-0-32">{{ seccion_1_data.titulo_1 }}</h2>
-                        <div class="row mt-5">
-                            <div class="col-md-4">
-                                <div class="pais">
-                                    <img *ngIf="seccion_1_data.bandera" class="banderaPais" src="{{ seccion_1_data.bandera }}" alt="Colombia">
-                                    <h3 class="textoPais size13 text-white">{{ seccion_1_data.titulo_pais }}</h3>
-                                    <a class="linkPais text-white" href="{{ seccion_1_data.link_sitio_web }}">{{ seccion_1_data.texto_sitio_web }} <i class="fas fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
+                        <div class="row text-center mt-5">
                             <ng-container *ngFor="let ciudad of ciudad_principal_data">
-                                <div class="col-md-4">
+                                <div class="col-md-12">
                                     <div class="recuadroCiudadTopHeader">
                                         <p class="dropdown-header-ciudad text-white font-weight-700">{{ciudad.titulo_ciudad}}</p>
                                         <p class="textoCiudad p-0 text-white" [innerHTML]="ciudad.texto_ciudad"></p>

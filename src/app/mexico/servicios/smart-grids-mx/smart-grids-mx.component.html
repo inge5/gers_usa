@@ -9,7 +9,7 @@
                             <div *ngIf="!loader" class="media align-items-center">
                                 <img class="align-self-center mr-3 img-fluid" *ngIf="seccion_1_data.acf.seccion_1.icono" src="{{ seccion_1_data.acf.seccion_1.icono }}" alt="Smart-Grid">
                                 <div class="media-body">
-                                    <h4 class="w-25 mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.acf.seccion_1.titulo }}</h4>
+                                    <h4 class="w-25 mb-0 text-blue1 font-weight-bold roboto">{{ seccion_1_data.acf.seccion_1.titulo }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                                     <ng-container *ngFor="let items of seccion_iconos_data">
                                         <div class="col-sm-4 text-center">
                                             <img class="align-self-center mb-3 mx-auto d-block" src="{{ items.icono }}" alt="Interventoría">
-                                            <p>{{ items.texto }}</p>
+                                            <p class="roboto size14 line-height16">{{ items.texto }}</p>
                                         </div>
                                     </ng-container>
                                 </div>

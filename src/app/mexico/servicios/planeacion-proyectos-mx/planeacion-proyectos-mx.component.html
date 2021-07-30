@@ -8,14 +8,14 @@
                         <div *ngIf="!loader" class="media">
                             <img class="align-self-center mr-3" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Planeación">
                             <div class="media-body">
-                                <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo }}</h4>
+                                <h4 class="mb-0 text-blue1 font-weight-bold roboto size26 line-height26">{{ seccion_1_data.titulo }}</h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
                         <div *ngIf="!loader">
-                            <a href="{{ seccion_1_data.boton_link_solicitar }}" class="d-block btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
+                            <a href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
                         </div>
                     </div>
                     <div class="col-sm-12">
