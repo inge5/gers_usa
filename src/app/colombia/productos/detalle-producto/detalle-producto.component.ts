@@ -21,6 +21,7 @@ export class DetalleProductoComponent implements OnInit {
   imagen_grande: any;
   carritoTemporal = [];
   bandera: boolean;
+  idProducto: number;
 
   constructor(private  productosS: PruebaProductosService,
               private ruta: Router, private activatedRoute: ActivatedRoute,
@@ -50,6 +51,8 @@ export class DetalleProductoComponent implements OnInit {
   }
 
   listarDetalleProductos(codigo: number) {
+
+    this.idProducto = codigo;
 
     this.productosS.getlistarProductoUnicoWP(codigo).then(respuesta => {
       // console.log(respuesta.data);
