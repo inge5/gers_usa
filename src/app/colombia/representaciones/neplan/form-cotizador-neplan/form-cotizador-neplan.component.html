@@ -1,0 +1,103 @@
+<div class="container-fluid position-fixed cerrar-formulario fijar-formulario" id="neplan-cotizador">
+    <div class="row sticky-top bg-grisclaro padding-1-5">
+        <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+            <h4 class="text-uppercase text-center text-blue"><span class="flechita" (click)="volverNeplan()"><i class="fa fa-arrow-left mr-3 "></i></span> añadir al cotizador</h4>
+        </div>
+    </div>
+    <div class="row px-3 mt-5">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h2 class="text-blue">{{ titulo }}</h2>
+            <h3 class="text-blue">{{ subTitulo }}</h3>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 my-4 overflow-y">
+            <p class="font-weight-bold text-uppercase">módulo estándar</p>  
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Flujo de carga</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Simulación en el tiempo con perfiles de carga</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Análisis de cortocircuito</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Análisis de armónicos</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Arranque de motores</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Reducción de redes</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Análisis de sistemas de puesta a tierra (XGSLab)</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+              </ul>
+
+              <p class="font-weight-bold text-uppercase mt-3">módulo de estabilidad</p>
+              <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Estabilidad de voltaje</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Simulador dinámico - RMS / EMT</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Estabilidad de pequeña señal</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                  </li>
+              </ul>
+
+              <p class="font-weight-bold text-uppercase mt-3">módulos avanzados</p>
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Análisis de confiabilidad</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                  </li>
+              </ul>
+        </div>
+    </div>
+</div>

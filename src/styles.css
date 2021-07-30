@@ -1245,6 +1245,16 @@ p.textoItemMenu {
     font-weight: 500;
 }
 
+.bg-grisclaro{
+    background-color: #f1f1f1;
+}
+.cerrar-formulario{
+    width: 0 !important;
+    padding: 0;
+    margin: 0;
+    transition: width .5s;
+}
+
 .contenedorSubmenu:hover {
     background-color: #DDE2F6;
     padding: 7%;
@@ -1255,8 +1265,14 @@ p.textoItemMenu {
 .representacionItem {
     border-left: 3px solid transparent;
     padding: 17px;
+    margin: 8px 0;
 }
-
+.display-none{
+    display: none !important;
+  }
+  .display-block{
+    display: block !important;
+  }
 .representacionItem:hover {
     background-color: #fff;
     border-left: 3px solid #0089FF;
