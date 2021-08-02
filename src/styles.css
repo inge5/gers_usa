@@ -256,8 +256,14 @@ p{
 .width10 {
     width: 10px !important;
 }
+.w-80{
+    width:80%;
+}
 .w-70{
     width:70%;
+}
+.w-65{
+    width:65%;
 }
 .w-40{
     width:40%;
