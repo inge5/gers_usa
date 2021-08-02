@@ -16,6 +16,7 @@ export class HomeUsaComponent implements OnInit {
   titulo_servicios_eficientes_data:any[] = [];
   lets_work_data: any = [];
   servicios_eficientes_data:any[] = [];
+  servicio_neplan_data: any = [];
   tituloproyectos:any[] = [];
   tituloInternacional:any[] = [];
   paisesInternacionales:any[] = [];
@@ -38,6 +39,7 @@ export class HomeUsaComponent implements OnInit {
         this.titulo_servicios_eficientes_data = res.acf.titulo_servicios_eficientes; 
         this.lets_work_data = res.acf.lets_work;
         this.servicios_eficientes_data = res.acf.servicios_eficientes;
+        this.servicio_neplan_data = res.acf.servicio_neplan
         this.tituloproyectos = res.acf.titulo_proyectos;
         this.tituloInternacional = res.acf.titulo_contactos_internacionales;
         this.paisesInternacionales = res.acf.paises_internacionales;

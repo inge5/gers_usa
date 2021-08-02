@@ -142,8 +142,8 @@
                             <p>
                                 <img src="{{tab.imagen}}" alt="" class="img-fluid">
                             </p>
-                            <p class="m-0"><strong>{{tab.titulo}}</strong></p>
-                            <p [innerHTML]="tab.descripcion"></p>
+                            <p class="m-0 mb-3"><strong>{{tab.titulo}}</strong></p>
+                            <p class="mb-3" [innerHTML]="tab.descripcion"></p>
                             <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="{{tab.url_del_boton}}">{{tab.texto_del_boton}}</a>
                         </div>
                     </ng-container>
@@ -316,7 +316,7 @@
                 <div class="full-textoshv">
                     <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
                     <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
-                    <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
+                    <a class="linkHoja mt-3 d-block" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                 </div>
             </div>
             <div class="col-md-5">
