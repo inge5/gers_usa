@@ -90,6 +90,7 @@ import { BuscadorComponent } from './colombia/buscador/buscador.component';
 import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
 import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
 import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
+import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-asesorias-mx/tercerias-asesorias-mx.component';
 
 
 
@@ -185,7 +186,7 @@ const APP_ROUTES: Routes = [
         {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
         {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
         {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
-        {path: 'tercerias-y-asesorias', component: InterventoriasAsesoriasComponent},
+        {path: 'tercerias-y-asesorias', component: TerceriasAsesoriasMxComponent},
         {path: 'neplan', component: NeplanMxComponent},
         {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
         {path: 'xgslab', component: XgslabMxComponent},

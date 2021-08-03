@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PruebaProductosService } from '../../servicios/prueba-productos/prueba-productos.service';
 import Swal from 'sweetalert2';
+import { PagesService } from 'src/app/services/pages.service';
 declare var $: any;
 
 @Component({
@@ -12,18 +13,23 @@ declare var $: any;
 export class FormDemostracionComponent implements OnInit {
 
   @Input() producto: any;
+  @Input() tipoProducto: any;
   nombreProducto
   formDemostracion: FormGroup;
   urlDestino: string = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-demostracion/form-demostracion.php";
 
-  constructor(private fb: FormBuilder, private productoS: PruebaProductosService) { }
+  constructor(private fb: FormBuilder, private productoS: PruebaProductosService, private _neplan:PagesService) { }
 
   ngOnInit(): void {
     this.crearFormulario();
     // setTimeout(() => {
     //   this.formDemostracion.controls['tipo_producto'].setValue(this.producto)
     // }, 3000);
-    this.traerProducto();
+    if(this.tipoProducto === 'Productos'){
+      this.traerProducto();
+    }else{
+      this.traerNeplan();
+    }
   }
 
   traerProducto(){
@@ -31,6 +37,12 @@ export class FormDemostracionComponent implements OnInit {
       console.log(resp);
       this.nombreProducto = resp.data.name;
       this.formDemostracion.controls['tipo_producto'].setValue(this.nombreProducto)
+    })
+  }
+
+  traerNeplan(){
+    this._neplan.getNeplan().subscribe(resp => {
+      this.formDemostracion.controls['tipo_producto'].setValue(resp.title.rendered);
     })
   }
 
@@ -104,7 +116,6 @@ export class FormDemostracionComponent implements OnInit {
       alert('Debes aceptar Terminos y condiciones');
       return;
     }
-    
     let formData = new FormData();
     formData.append('empresa', this.formDemostracion.get('empresa').value);
     formData.append('nit', this.formDemostracion.get('nit').value);
@@ -118,7 +129,7 @@ export class FormDemostracionComponent implements OnInit {
     formData.append('fecha_propuesta', this.formDemostracion.get('fecha_propuesta').value);
 
     console.log(this.formDemostracion.value);
-
+    
     $.ajax({
       url: this.urlDestino,
       type: 'POST',
