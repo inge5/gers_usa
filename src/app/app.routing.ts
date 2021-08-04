@@ -91,6 +91,7 @@ import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
 import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
 import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
 import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-asesorias-mx/tercerias-asesorias-mx.component';
+import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
 
 
 
@@ -192,7 +193,7 @@ const APP_ROUTES: Routes = [
         {path: 'xgslab', component: XgslabMxComponent},
         {path: 'proyectos', component: ProyectosMxComponent},
         {path: 'publicaciones', component: PublicacionesMxComponent},
-        {path: 'publicaciones/:slug', component: PublicacionesMxComponent},
+        {path: 'publicaciones/:slug', component: PublicacionInternaMxComponent},
         { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
         { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
         {path: 'buscador', component: BuscadorMxComponent}

@@ -168,6 +168,7 @@ import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
 import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
 import { FormDemostracionComponent } from './colombia/productos/form-demostracion/form-demostracion.component';
 import { FormCotizadorNeplanComponent } from './colombia/representaciones/neplan/form-cotizador-neplan/form-cotizador-neplan.component';
+import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
 registerLocaleData(es);
 
 @NgModule({
@@ -285,7 +286,8 @@ registerLocaleData(es);
     BuscadorClComponent,
     BuscadorUsaComponent,
     FormDemostracionComponent,
-    FormCotizadorNeplanComponent
+    FormCotizadorNeplanComponent,
+    PublicacionInternaMxComponent
   ],
   imports: [
     FormsModule,
