@@ -52,9 +52,9 @@
             <div class="dropdown-menu menuRepresentaciones megamenu navbar-center">
               <div class="row filaRepresentaciones">
                 <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                  <div class="col-md-4 representacionItem">
-                    <a [routerLink]="[ menu_child.slug ]">
-                      <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo Neplan">
+                  <div class="col-md-4 representacionItem" style="cursor: pointer;" [routerLink]="[ menu_child.slug ]">
+                    <a>
+                      <img class="imagenMarcaMenu img-fluid" src="{{ menu_child.thumbnail_src }}" alt="Logo Neplan">
                       <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>
                       <p class="textoItemMarcaMenu">{{ menu_child.description }}</p>
                     </a>
@@ -70,7 +70,7 @@
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
 
-          <li class="nav-item dropdown has-megamenu" id="productos" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+          <li class="nav-item dropdown has-megamenu d-sm-none d-lg-block" id="productos" *ngIf="menu_parent.classes == 'subcontainer_style4'">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Productos

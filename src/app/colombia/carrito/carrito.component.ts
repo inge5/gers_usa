@@ -178,8 +178,6 @@ export class CarritoComponent implements OnInit {
   */
 
   enviarForm(form) {
-    alert("hola")
-    return;
     const dataInfo = {
       productos: JSON.parse(localStorage.getItem('carrito')),
       filtros: this.filtros

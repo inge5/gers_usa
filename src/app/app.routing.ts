@@ -127,7 +127,8 @@ const APP_ROUTES: Routes = [
         {path: 'publicaciones', component: PublicacionesComponent},
         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
-        {path: 'buscador', component: BuscadorComponent}
+        {path: 'buscador', component: BuscadorComponent},
+        {path: 'gmc-instruments', redirectTo: 'colombia', pathMatch:'full'}
       ]},
 
     //Rutas de Chile

@@ -52,8 +52,8 @@
             <div class="dropdown-menu menuRepresentaciones chileRepresentaciones megamenu navbar-center">
               <div class="row filaRepresentaciones">
                 <ng-container *ngFor="let menu_child of menu_parent.child_items; first as isFirst">
-                  <div class="col-md-12 representacionItem">
-                    <a [routerLink]="[ menu_child.slug ]">
+                  <div class="col-md-12 representacionItem" style="cursor: pointer;" [routerLink]="[ menu_child.slug ]">
+                    <a>
                       <img class="imagenMarcaMenu" src="{{ menu_child.thumbnail_src }}" alt="Logo">
                       <p class="tituloItemMarcaMenu">{{ menu_child.title }}</p>
                       <p class="textoItemMarcaMenu">{{ menu_child.description }}</p>
