@@ -63,13 +63,13 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-item d-sm-none d-xl-block" *ngIf="menu_parent.classes == 'subcontainer_style3'">
+                  <li class="nav-item d-md-none d-xl-block" *ngIf="menu_parent.classes == 'subcontainer_style3'">
                     <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
                   </li>
-                  <li class="nav-item d-sm-none d-xl-block" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+                  <li class="nav-item d-md-none d-xl-block" *ngIf="menu_parent.classes == 'subcontainer_style4'">
                     <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
                   </li>
-                  <li class="nav-item" *ngIf="menu_parent.classes == 'subcontainer_style5'">
+                  <li class="nav-item d-md-none d-lg-block" *ngIf="menu_parent.classes == 'subcontainer_style5'">
                     <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
                   </li>
             </ng-container>

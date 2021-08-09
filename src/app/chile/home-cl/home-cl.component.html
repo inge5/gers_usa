@@ -16,7 +16,7 @@
                     <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px">
                         <div class="container pt-3 pb-3 h-100">
                             <div class="row align-items-center h-100">
-                                <div class="col-sm-8 pt-4 pb-4 my-auto">
+                                <div class="col-12 col-lg-8 pt-4 pb-4 my-auto">
                                     <div class="d-flex mb-2">
                                         <img *ngIf="home.imagen_de_referencia" src="{{ home.imagen_de_referencia }}" alt="" class="img-fluid h-100 my-auto">
                                         <p class="line-height40 mb-0 ml-2 font-weight-bold titulo-banner align-items-center d-flex my-auto" [innerHTML]="home.titulo | safeHtml: 'html'"></p>
@@ -231,7 +231,7 @@
                     <ul *ngIf="!loader" class="nav nav-tabs" id="myTab" role="tablist">
                         <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
                             <li class="nav-item">
-                                <a class="nav-link size13 pt-2 pb-2"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
+                                <a class="nav-link size13 pt-2 pb-2 d-flex d-lg-block justify-content-center flex-column align-items-center h-100"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
                                     <img id="banderaColombiana" src="{{ paises.bandera }}" alt="bandera">
                                     {{ paises.pais }}
                                 </a>
