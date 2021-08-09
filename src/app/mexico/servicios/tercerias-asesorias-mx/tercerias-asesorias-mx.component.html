@@ -21,7 +21,7 @@
                     <div class="col-sm-12">
                         <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{ height:'20px' }"></ngx-skeleton-loader>
                         <div *ngIf="!loader">
-                            <p class="mt-2" [innerHTML]="seccion_1_data.texto_principal"></p>
+                            <p class="mt-2 margin-bottom-33" [innerHTML]="seccion_1_data.texto_principal"></p>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
     <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'100px' }"></ngx-skeleton-loader>
     <div class="bg-blue1 pt-4 pb-4" style="margin-top:-40px">
         <div class="container">
-            <div class="row">
+            <div class="row centrar-md">
                 <ng-container *ngFor="let item of seccion_iconos_data">
                     <div *ngIf="!loader" class="col-sm-3 col-md-3 col-lg-3 text-center">
                         <img src="{{ item.icono }}" alt="control tecnico" class="img-fluid">

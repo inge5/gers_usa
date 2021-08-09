@@ -40,7 +40,7 @@
     <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'100px' }"></ngx-skeleton-loader>
     <div class="bg-blue1 pt-4 pb-4" style="margin-top:-40px">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row centrar-md">
                 <ng-container *ngFor="let item of seccion_iconos_data">
                     <div *ngIf="!loader" class="col-sm-3 col-md-3 col-lg-3 text-center">
                         <img src="{{ item.icono }}" alt="control tecnico" class="img-fluid">

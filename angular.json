@@ -14,7 +14,10 @@
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "allowedCommonJsDependencies": [
-                            "CommonJS"
+                            "ngx-owl-carousel",
+                            "url-parse",
+                            "create-hmac",
+                            "axios"
                          ],
                         "outputPath": "dist/GersWeb",
                         "index": "src/index.html",

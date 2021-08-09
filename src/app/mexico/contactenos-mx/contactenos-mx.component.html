@@ -94,7 +94,7 @@
         <div class="row mt-200 mb-5">
             <ng-container *ngFor="let pais of pais_info_data">
                 <div class="col-sm-4">
-                    <div class="pais">
+                    <div class="pais d-sm-flex d-lg-block flex-column justify-content-center align-items-center">
                         <img *ngIf="pais.bandera" class="banderaPais" src="{{ pais.bandera }}" alt="Colombia">
                         <h3 class="textoPais">{{ pais.titulo_pais }}</h3>
                     </div>

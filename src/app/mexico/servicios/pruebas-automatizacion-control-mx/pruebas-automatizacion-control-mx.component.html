@@ -27,7 +27,7 @@
                     <div class="col-sm-12">
                         <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
                         <div *ngIf="!loader">
-                            <p class="mt-2" [innerHTML]="seccion_1_data.texto_principal"></p>
+                            <p class="mt-2 margin-bottom-33" [innerHTML]="seccion_1_data.texto_principal"></p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
     <div *ngIf="!loader" class="bg-blue1 pt-4 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-5 text-center"></div>
+                <div class="offset-lg-4"></div>
                 <ng-container *ngFor="let transformador of seccion_iconos_data">
                     <div class="col-sm-4 col-md-4 col-lg-2 text-center">
                         <img src="{{ transformador.icono }}" alt="servicio" class="img-fluid">
