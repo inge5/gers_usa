@@ -98,6 +98,7 @@ export class MenuPrincipalComponent implements OnInit {
     this._menusService.getMenuPrincipal()
       .subscribe((res: any) => {
         this.menuPrincipal_data = res.items;
+        console.log(this.menuPrincipal_data);
       });
   }
 

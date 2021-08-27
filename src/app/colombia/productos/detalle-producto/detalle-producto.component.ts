@@ -49,9 +49,10 @@ export class DetalleProductoComponent implements OnInit {
     this.productosS.getlistarProductoUnicoWP(codigo).then(respuesta => {
       // console.log(respuesta.data);
       this.listadoProductosDetalle = respuesta.data;
+      console.log(this.listadoProductosDetalle);
       this.imagen_grande = this.listadoProductosDetalle['images'][0].src;
     }).catch(error => {
-      console.log(error);
+      // console.log(error);
     })
 
     // this.productosS.getlistarProductoUnico(218).then(respuesta => {
@@ -94,14 +95,14 @@ export class DetalleProductoComponent implements OnInit {
       localStorage.setItem('carrito', JSON.stringify(this.carritoTemporal));
       const data = 'Articulo Agregado Correctamente al Carrito';
       this.alertaS.showToasterFull(data);
-      console.log(this.carritoTemporal);
+      // console.log(this.carritoTemporal);
     }else{
       this.listadoProductosDetalle['producto_cantidad'] = 1;
       this.carritoTemporal.push(this.listadoProductosDetalle);
       localStorage.setItem('carrito', JSON.stringify(this.carritoTemporal));
       const data = 'Articulo Agregado Correctamente al Carrito';
       this.alertaS.showToasterFull(data);
-      console.log(this.carritoTemporal);
+      // console.log(this.carritoTemporal);
     }
     this.variableG.changeMessage();
   }
