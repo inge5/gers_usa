@@ -16,7 +16,7 @@
                     <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px">
                         <div class="container pt-3 pb-3 h-100">
                             <div class="row align-items-center h-100">
-                                <div class="col-sm-8 pt-4 pb-4 my-auto">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-8 pt-4 pb-4 my-auto">
                                     <div class="d-flex mb-2">
                                         <img *ngIf="home.imagen_de_referencia" src="{{ home.imagen_de_referencia }}" alt="" class="img-fluid h-100 my-auto">
                                         <p class="line-height40 mb-0 ml-2 font-weight-bold titulo-banner align-items-center d-flex my-auto" [innerHTML]="home.titulo | safeHtml: 'html'"></p>
@@ -91,7 +91,7 @@
             <ng-container *ngFor="let servicio_eficiente of servicios_eficientes_data">
                 <div class="col text-center border-right mt-2 mb-2" *ngIf="servicio_eficiente.titulo != undefined">
                     <img src="{{ servicio_eficiente.imagen }}" alt="Item Pruebas" class="img-fluid pb-4">
-                    <h3 class="text-blue1 size18 font-weight-bold">{{ servicio_eficiente.titulo }}</h3>
+                    <h3 class="text-blue1 size18 font-weight-bold mb-4">{{ servicio_eficiente.titulo }}</h3>
                     <p class="line-height1-2 size15">{{ servicio_eficiente.descripcion }}</p>
                 </div>
             </ng-container>
@@ -142,8 +142,8 @@
                             <p>
                                 <img src="{{tab.imagen}}" alt="" class="img-fluid">
                             </p>
-                            <p class="m-0"><strong>{{tab.titulo}}</strong></p>
-                            <p [innerHTML]="tab.descripcion"></p>
+                            <p class="m-0 mb-3 mt-3"><strong>{{tab.titulo}}</strong></p>
+                            <p class="mb-3" [innerHTML]="tab.descripcion"></p>
                             <a class="btn border-primary rounded pr-5 pl-5 text-blue1 btn-outline" href="{{tab.url_del_boton}}">{{tab.texto_del_boton}}</a>
                         </div>
                     </ng-container>
@@ -199,16 +199,13 @@
                     <div class="tarjetaProyectosInterior">
                         <div class="tituloTarjetaProyectos">
                             <div class="titulosTarjetaBlanca">
-                                <h3 class="size16 text-uppercase">{{ proyects.acf.titulo }}</h3>
-                                <p class="size13">{{ proyects.acf.extracto }}</p>
+                                <h3 class="size16 text-uppercase">{{ proyects.acf.extracto }}</h3>
+                                <!--<p class="size13">{{ proyects.acf.extracto }}</p>-->
                             </div>
                         </div>
-                        <!--Un comentario prueba-->
-                        <!--
-                           <div class="textoTarjetaProyectos">
+                        <div class="textoTarjetaProyectos">
                             <p class="size13">{{proyects.acf.descripcion}}</p>
                         </div> 
-                        -->
                         <img src="{{ proyects.acf.imagen }}" alt="proyecto 1" width="100%">
                     </div>
                 </div>
@@ -234,7 +231,7 @@
                     <ul *ngIf="!loader" class="nav nav-tabs" id="myTab" role="tablist">
                         <ng-container *ngFor="let paises of paisesInternacionales; first as isFirst; index as i">
                             <li class="nav-item">
-                                <a class="nav-link size13 pt-2 pb-2"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
+                                <a class="nav-link size13 pt-2 pb-2 d-flex d-lg-block flex-column justify-content-center align-items-center h-100"  [ngClass]="(isFirst) ? 'active' : ''" id="pais{{i}}-tab" data-toggle="tab" href="#pais{{i}}" role="tab" aria-controls="pais{{i}}">
                                     <img id="banderaColombiana" src="{{ paises.bandera }}" alt="bandera">
                                     {{ paises.pais }}
                                 </a>
@@ -299,7 +296,7 @@
                 <div class="col-md-6">
                 </div>
                 <div class="col-md-4 offset-md-1 d-flex align-items-center" style="height: 400px">
-                    <p class="texto-franja-azul size25 font-weight-normal pt-5" [innerHTML]="equipo.descripcion"></p>
+                    <p class="texto-franja-azul montserrat size22 font-weight-300 pt-5" [innerHTML]="equipo.descripcion"></p>
                 </div>
             </div>
         </div>
@@ -319,7 +316,7 @@
                 <div class="full-textoshv">
                     <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
                     <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
-                    <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
+                    <a class="linkHoja mt-3 d-block" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                 </div>
             </div>
             <div class="col-md-5">

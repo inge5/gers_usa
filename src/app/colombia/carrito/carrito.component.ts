@@ -4,6 +4,11 @@ import {AlertasService} from "../servicios/alertas/alertas.service";
 import {Router} from "@angular/router";
 import {PruebaProductosService} from "../servicios/prueba-productos/prueba-productos.service";
 
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
+
+declare var $ : any; 
+
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -27,6 +32,13 @@ export class CarritoComponent implements OnInit {
     private alertaS: AlertasService,
     private pruebaS:  PruebaProductosService,
     private ruta: Router) {
+      this.filtros = {
+        nombre: '',
+        empresa: '',
+        nit: '',
+        correo: '',
+        celular: '',
+      }
   }
 
   ngOnInit(): void {
@@ -36,14 +48,7 @@ export class CarritoComponent implements OnInit {
 
     this.listadoCarrito = true;
     this.solicitarCotizacion = false;
-
-    this.filtros = {
-      nombre: null,
-      empresa: null,
-      nit: null,
-      email: null,
-      celular: null,
-    }
+    
   }
 
 
@@ -118,13 +123,17 @@ export class CarritoComponent implements OnInit {
   }
 
   solicitarCotizacionCarrito() {
-    this.listadoCarrito = false;
-    this.solicitarCotizacion = true;
+    $('#carrito').toggleClass('display-none');
+    $('#cotizador').toggleClass('display-block');
+    // this.listadoCarrito = false;
+    // this.solicitarCotizacion = true;
   }
 
   volverCarrito() {
-    this.listadoCarrito = true;
-    this.solicitarCotizacion = false;
+    $('#carrito').toggleClass('display-none');
+    $('#cotizador').toggleClass('display-block');
+    // this.listadoCarrito = true;
+    // this.solicitarCotizacion = false;
   }
 
 
@@ -149,24 +158,59 @@ export class CarritoComponent implements OnInit {
     console.log(this.nameProducto)
   }
 
+  /*
   enviarCorreoCotizacion() {
-
    const data = {
           productos: JSON.parse(localStorage.getItem('carrito')),
           filtros: this.filtros
     }
-
     this.pruebaS.enviarCorreos(data).then(respuesta => {
       console.log(respuesta);
       if (respuesta['success']) {
         this.alertaS.showToasterFull('Correo enviado Exitosamente');
       } else {
         this.alertaS.showToasterWarning('Valida que los campos diligenciado esten corectos');
-
       }
     }).catch(error => {
       console.log(error);
     });
   }
+  */
+
+  enviarForm(form) {
+    const dataInfo = {
+      productos: JSON.parse(localStorage.getItem('carrito')),
+      filtros: this.filtros
+    }
+    var paqueteDeDatos = new FormData();
+    paqueteDeDatos.append('productos', localStorage.getItem('carrito'));
+    paqueteDeDatos.append('nombre', this.filtros.nombre);
+    paqueteDeDatos.append('empresa', this.filtros.empresa);
+    paqueteDeDatos.append('nit', this.filtros.nit);
+    paqueteDeDatos.append('correo', this.filtros.correo);
+    paqueteDeDatos.append('celular', this.filtros.celular);
+
+    //console.log(paqueteDeDatos.get('productos'));
+
+    $.ajax({
+      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-solicitar-cotizacion/form-cotizacion.php',
+      type: 'POST',
+      data: paqueteDeDatos,
+      contentType: false,
+      processData: false,
+      cache: false, 
+      success: function(data) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+            showConfirmButton: true
+          }); 
+          //console.log(error);
+        form.reset();
+      }, error: function(error){
+          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
+       }
+    });
+   }
 
 }

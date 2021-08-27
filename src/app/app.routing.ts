@@ -84,6 +84,14 @@ import { BeckwithElectronicMxComponent } from './mexico/representaciones/beckwit
 import { XgslabMxComponent } from './mexico/representaciones/xgslab-mx/xgslab-mx.component';
 import { ProyectosMxComponent } from './mexico/proyectos-mx/proyectos-mx.component';
 import { PublicacionesMxComponent } from './mexico/publicaciones-mx/publicaciones-mx.component';
+import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
+import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
+import { BuscadorComponent } from './colombia/buscador/buscador.component';
+import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
+import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
+import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
+import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-asesorias-mx/tercerias-asesorias-mx.component';
+import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
 
 
 
@@ -119,6 +127,8 @@ const APP_ROUTES: Routes = [
         {path: 'publicaciones', component: PublicacionesComponent},
         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
+        {path: 'buscador', component: BuscadorComponent},
+        {path: 'gmc-instruments', redirectTo: 'colombia', pathMatch:'full'}
       ]},
 
     //Rutas de Chile
@@ -126,8 +136,8 @@ const APP_ROUTES: Routes = [
     children: [
         { path: '', component: HomeClComponent },
         { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
-        {path: 'capacitaciones', component: CapacitacionChileComponent},
-        {path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
+        { path: 'capacitaciones', component: CapacitacionChileComponent},
+        { path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
         { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
         { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
         { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
@@ -140,6 +150,7 @@ const APP_ROUTES: Routes = [
         { path: 'xgslab-cl', component: XgslabClComponent },
         { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
         { path: 'vacantes/:slug', component: VacanteInternaClComponent },
+        {path: 'buscador', component: BuscadorClComponent}
         ]},
 
     //Rutas de USA
@@ -157,11 +168,12 @@ const APP_ROUTES: Routes = [
         { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
         { path: 'protection-and-control', component: ProtectionAndControlComponent },
         { path: 'field-services', component: FieldServicesComponent },
-        { path: 'proyects', component: ProyectsComponent },
+        { path: 'projects', component: ProyectsComponent },
         { path: 'work-with-us', component: WorkWithUsComponent },
         { path: 'vacancies/:slug', component: InternalVacancyComponent},
         { path: 'insights', component: InsightsComponent },
-        { path: 'insights/:slug', component: InsightsInsideComponent }
+        { path: 'insights/:slug', component: InsightsInsideComponent },
+        {path: 'searcher', component: BuscadorUsaComponent}
     ]},
     {path: 'mexico', component: MexicoComponent, children: [
         {path: '', component: HomeMxComponent},
@@ -176,13 +188,16 @@ const APP_ROUTES: Routes = [
         {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
         {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
         {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
-        {path: 'tercerias-y-asesorias', component: InterventoriasAsesoriasComponent},
+        {path: 'tercerias-y-asesorias', component: TerceriasAsesoriasMxComponent},
         {path: 'neplan', component: NeplanMxComponent},
         {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
         {path: 'xgslab', component: XgslabMxComponent},
         {path: 'proyectos', component: ProyectosMxComponent},
         {path: 'publicaciones', component: PublicacionesMxComponent},
-
+        {path: 'publicaciones/:slug', component: PublicacionInternaMxComponent},
+        { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
+        { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
+        {path: 'buscador', component: BuscadorMxComponent}
         
     ]},
     

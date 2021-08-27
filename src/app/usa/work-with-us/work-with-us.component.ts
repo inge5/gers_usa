@@ -15,7 +15,13 @@ export class WorkWithUsComponent implements OnInit {
   public usuarioUsa: any;
 
   loader = true;
-  vacantes_data:any[] = [];
+  vacantes_data:any[];
+  categorias: any[] = [];
+  horarioVacante: any[];
+  filtrar: any[];
+  vacantes_dataTemp: any;
+  horarioVacanteTemp: any[];
+  bandera: boolean = false;
 
   constructor(private _router:Router, private _vacantesusaservice:VacantesUsaService) { 
     this.usuarioUsa = {
@@ -23,18 +29,120 @@ export class WorkWithUsComponent implements OnInit {
       apellidos:'',
       email: '',
       telefono:'',
-      ubicacion:'',
+      ubicacion:'Estados Unidos',
       categoria:'',
       acepto:''
     };
   }
 
   ngOnInit(): void {
-    this._vacantesusaservice.getVacancies()
-    .subscribe((res:any) => {
-      this.loader = false;
-      this.vacantes_data = res;
-    });
+    this.getVacantes();
+    this.getCategoriasFiltro();
+  }
+
+  getVacantes() {
+    if (!this.vacantes_data) {
+      this._vacantesusaservice.getVacancies()
+        .subscribe((res: any) => {
+          this.loader = false;
+          this.vacantes_data = res;
+          console.log(res);
+
+          let horarioVacante = [];
+          let horarioVacanteMap = [];
+          res.forEach(element => {
+            horarioVacante.push({
+              horario_vacante: element.acf.horario_vacante,
+              bandera: false
+            })
+          });
+          horarioVacanteMap = horarioVacante.map(item => [item.horario_vacante, item]);
+
+          let horarioVacanteMapArr = new Map(horarioVacanteMap);
+
+          let unicosHorarioVacante = [...horarioVacanteMapArr.values()];
+
+          this.horarioVacante = unicosHorarioVacante;
+
+        })
+    } else {
+      let horarioVacante = [];
+          let horarioVacanteMap = [];
+          this.vacantes_data.forEach(element => {
+            horarioVacante.push({
+              horario_vacante: element.acf.horario_vacante,
+              bandera: false
+            })
+          });
+        horarioVacanteMap = horarioVacante.map(item => [item.horario_vacante, item]);
+
+      let horarioVacanteMapArr = new Map(horarioVacanteMap);
+
+      let unicosHorarioVacante = [...horarioVacanteMapArr.values()];
+
+      this.horarioVacante = unicosHorarioVacante;
+    }
+
+  }
+
+  categoriasFiltro(categoriaSelec: any = null) {
+    this.filtrar = [];
+    if (!this.vacantes_dataTemp || this.vacantes_dataTemp === this.vacantes_data) {
+      this.vacantes_dataTemp = this.vacantes_data;
+    }
+    this.vacantes_dataTemp.forEach(element => {
+      this.categorias.forEach(filtro => {
+        element.categoria_vacancies.filter(filtroCate => {
+          if (filtro.bandera && filtro.id === filtroCate) {
+            this.filtrar.push(element);
+          }
+
+        });
+      })
+    })
+    this.vacantes_dataTemp.forEach(element => {
+      this.horarioVacante.forEach(filtro => {
+        if(filtro.bandera && element.acf.horario_vacante === filtro.horario_vacante){
+          if(!this.bandera){
+            console.log("vacio");
+            this.filtrar = [];
+          }
+          this.bandera = true;
+          this.filtrar.push(element);
+        }
+      })
+    })
+
+    if (this.filtrar.length > 0) {
+      // console.log(this.filtrar);
+      this.vacantes_data = this.filtrar;
+
+      // console.log(this.eventosFiltro);
+      if(!this.bandera){
+
+        this.getVacantes();
+      }
+      this.bandera = false;
+    } else  if(this.filtrar.length === 0 && categoriaSelec.bandera){
+      this.vacantes_data = [];
+      this.bandera = false;
+    }else{
+      this.vacantes_data = this.vacantes_dataTemp;
+      this.bandera = false;
+      // console.log(this.eventos);
+      this.getVacantes();
+    }
+  }
+
+  getCategoriasFiltro() {
+    this._vacantesusaservice.getCategoriasVacantes().subscribe((resp: any) => {
+      // console.log(resp);
+      resp.forEach(element => {
+        element.bandera = false
+      });
+      this.categorias.push(...resp)
+      console.log(this.categorias);
+    })
   }
 
   enviaCurriculum(){
@@ -50,29 +158,44 @@ export class WorkWithUsComponent implements OnInit {
   verVacantes(slug:string){
     this._router.navigate(['/usa/vacancies', slug]);
   }
+  changeFile(file:File){
+    this.usuarioUsa.archivo = file[0];
+  }
 
   formTrabajeNosotrosUsa(form){
+    var paqueteDeDatos = new FormData();
+    paqueteDeDatos.append('archivo', this.usuarioUsa.archivo);
+    paqueteDeDatos.append('nombres', this.usuarioUsa.nombres);
+    paqueteDeDatos.append('apellidos', this.usuarioUsa.apellidos);
+    paqueteDeDatos.append('email', this.usuarioUsa.email);
+    paqueteDeDatos.append('telefono', this.usuarioUsa.telefono);
+    paqueteDeDatos.append('ubicacion', this.usuarioUsa.ubicacion);
+    paqueteDeDatos.append('categoria', this.usuarioUsa.categoria);
+    paqueteDeDatos.append('acepto', this.usuarioUsa.acepto);
+    var destino = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-vacantes-general/form-vacantes-general.php"; // El script que va a recibir los campos de formulario.
+					/* Se envia el paquete de datos por ajax. */
     $.ajax({
-      //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
+      url: destino,
       type: 'POST',
+      /*
       data: JSON.stringify(this.usuarioUsa),
       dataType:"json",
+      */
+      contentType: false,
+      data: paqueteDeDatos, // Al atributo data se le asigna el objeto FormData.
+      processData: false,
+      cache: false, 
       success: function(data) {
-        
-      }, error: function(error){
-        if(error.status === 200){
-          Swal.fire({
-            icon: 'success',
-            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
-            showConfirmButton: true
-          }); 
-          //console.log(error);
+        Swal.fire({
+          icon: 'success',
+          title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+          showConfirmButton: true
+        }); 
         form.reset();
-        } else {
-          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
-        }
+        //console.log(error);
+      }, error: function(error){
+        Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
       }
     });
    }
-
 }

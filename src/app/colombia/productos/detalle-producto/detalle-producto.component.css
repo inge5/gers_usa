@@ -5,8 +5,8 @@
   margin-bottom: 14px;
   background-color: #FFFFFF;
   border-radius: 6px;
+  /* cursor: pointer; */
   /*box-shadow: 2px 1px 6px 0 rgba(0, 0, 0, 0.2);*/
-  cursor: pointer;
   border-radius: 40px;
 }
 .imagen-grande img {
@@ -15,7 +15,10 @@
   text-align: center;
   margin-top: 20px;
   border-radius: 10px;
-
+}
+.nav-link.active{
+  background-color: #0089FF;
+  color: #FFFFFF;
 }
 .contenedor-imagen {
   width: 100%;

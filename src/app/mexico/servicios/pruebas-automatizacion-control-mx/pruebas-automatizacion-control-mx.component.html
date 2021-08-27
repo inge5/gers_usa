@@ -14,20 +14,20 @@
                         <div *ngIf="!loader" class="media">
                             <img class="align-self-center mr-3" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Pruebas">
                             <div class="media-body">
-                                <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo_principal }}</h4>
+                                <h4 class="mb-0 text-blue1 font-weight-bold roboto size26 line-height26">{{ seccion_1_data.titulo_principal }}</h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
                         <div *ngIf="!loader">
-                            <a href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue d-block font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
+                            <a href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
                         <div *ngIf="!loader">
-                            <p class="mt-2" [innerHTML]="seccion_1_data.texto_principal"></p>
+                            <p class="mt-2 margin-bottom-33" [innerHTML]="seccion_1_data.texto_principal"></p>
                         </div>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
     <div *ngIf="!loader" class="bg-blue1 pt-4 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-6 text-center"></div>
+                <div class="offset-lg-4"></div>
                 <ng-container *ngFor="let transformador of seccion_iconos_data">
                     <div class="col-sm-4 col-md-4 col-lg-2 text-center">
                         <img src="{{ transformador.icono }}" alt="servicio" class="img-fluid">
-                        <p class="text-white m-0 size13">{{ transformador.texto }}</p>
+                        <p class="text-white m-0 size13 roboto line-height20 mt-3">{{ transformador.texto }}</p>
                     </div>    
                 </ng-container>
             </div>

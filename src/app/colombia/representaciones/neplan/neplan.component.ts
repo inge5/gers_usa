@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagesService } from '../../../services/pages.service';
+declare var $: any;
 
 @Component({
   selector: 'app-neplan',
@@ -31,5 +32,12 @@ export class NeplanComponent implements OnInit {
   public selectPill(index:number) {
     this.activePillIndex = index;
     // do some other stuff if necessary...
+   }
+
+   abrirDemostrador(){
+     $('#demostracion').removeClass('cerrar-formulario');
+   }
+   abrirCotizador(){
+     $('#neplan-cotizador').removeClass('cerrar-formulario');
    }
 }

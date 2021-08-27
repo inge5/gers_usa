@@ -2,10 +2,10 @@
    <span class="flecha-izquierda " (click)="pasarIzquierda()" [class.disabled]="deshabilitarIzquierda()">
     <i class="fa fa-arrow-left "></i></span>
   <div class="container" id="contenedor-principal">
-    <div class="contenedor">
+    <div class="contenedor my-3">
       <div *ngFor="let data of listadoProductos; let i = index" class="div-repetir" [id]="'inde-detalle_'+i">
         <div class="contenedor-productos" (click)="detalleProductos(data.id, data.name)">
-          <div class=" filtros-derecha">
+          <div class=" filtros-derecha mb-2">
             <img [src]="data.images?data.images[0].src:''">
           </div>
           <div class="contenedor-nombre">

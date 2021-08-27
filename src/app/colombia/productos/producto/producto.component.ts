@@ -86,8 +86,8 @@ export class ProductoComponent implements OnInit {
     if (!ordenarProductos) {
       this.filtradoProductos();
     } else {
-      Swal.fire('Cargando productos','Espere un momento','info');
-      Swal.showLoading();
+      // Swal.fire('Cargando productos','Espere un momento','info');
+      // Swal.showLoading();
       this.productosS.getListarProductosWP().then(respuesta => {
         // console.log(respuesta.data);
         this.listadoProductos = respuesta.data;

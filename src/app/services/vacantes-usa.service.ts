@@ -20,7 +20,9 @@ export class VacantesUsaService {
    getVacancies(): Observable<any>{
     return this._http.get(`${this.url}/vacancies`);
    }
-
+   getCategoriasVacantes(): Observable<any>{
+    return this._http.get(`${this.url}/categoria_vacancies`);
+  }
    getVacancy(slug: string): Observable<any>{
     return this._http.get(`${this.url}/vacancies/?slug=${slug}/`, {
     }).pipe(

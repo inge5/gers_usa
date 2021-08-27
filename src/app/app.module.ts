@@ -155,6 +155,21 @@ import { XgslabClComponent } from './chile/representaciones/xgslab-cl/xgslab-cl.
 import { TrabajeConNosotrosClComponent } from './chile/trabaje-con-nosotros-cl/trabaje-con-nosotros-cl.component';
 import { VacanteInternaClComponent } from './chile/trabaje-con-nosotros-cl/vacante-interna-cl/vacante-interna-cl.component';
 import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-cl.component';
+import { MenuVerticalMxComponent } from './mexico/menu-vertical-mx/menu-vertical-mx.component';
+import { TrabajeConNosotrosMxComponent } from './mexico/trabaje-con-nosotros-mx/trabaje-con-nosotros-mx.component';
+import { VacanteInternaMxComponent } from './mexico/trabaje-con-nosotros-mx/vacante-interna-mx/vacante-interna-mx.component';
+
+import es from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
+import { BuscadorComponent } from './colombia/buscador/buscador.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
+import { BuscadorClComponent } from './chile/buscador-cl/buscador-cl.component';
+import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
+import { FormDemostracionComponent } from './colombia/productos/form-demostracion/form-demostracion.component';
+import { FormCotizadorNeplanComponent } from './colombia/representaciones/neplan/form-cotizador-neplan/form-cotizador-neplan.component';
+import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
+registerLocaleData(es);
 
 @NgModule({
   declarations: [
@@ -261,9 +276,22 @@ import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-
     XgslabClComponent,
     TrabajeConNosotrosClComponent,
     VacanteInternaClComponent,
-    MenuVerticalClComponent
+    MenuVerticalClComponent,
+    MenuVerticalMxComponent,
+    TrabajeConNosotrosMxComponent,
+    VacanteInternaMxComponent,
+    BuscadorComponent,
+    FilterPipe,
+    BuscadorMxComponent,
+    BuscadorClComponent,
+    BuscadorUsaComponent,
+    FormDemostracionComponent,
+    FormCotizadorNeplanComponent,
+    PublicacionInternaMxComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     BrowserModule,
     IvyCarouselModule,
@@ -271,8 +299,6 @@ import { MenuVerticalClComponent } from './chile/menu-vertical-cl/menu-vertical-
     ToastrModule.forRoot(),
     HttpClientModule,
     AngularPaginatorModule,
-    FormsModule,
-    ReactiveFormsModule,
     NgxSkeletonLoaderModule.forRoot(),
     APP_ROUTING,
     OwlModule,

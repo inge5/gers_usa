@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VariableGlobalService } from "../servicios/variable-global/variable-global.service";
 import { AlertasService } from "../servicios/alertas/alertas.service";
 import { MenusService } from '../../services/menus.service';
@@ -14,9 +14,6 @@ declare var $: any;
   styleUrls: ['./menu-principal.component.css']
 })
 export class MenuPrincipalComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
   carrito: any;
   carritoAnterior: any;
   cantidadCarrito: number = 0;
@@ -25,15 +22,17 @@ export class MenuPrincipalComponent implements OnInit {
   subCategorias: any[] = [];
   subCategoriasTemp: any[] = [];
   menuPrincipal_data: any[] = [];
-
+  busqueda: string = "";
+  
   constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService: MenusService,
-    private productoS: PruebaProductosService, private ruta: Router) { }
+    private productoS: PruebaProductosService, private ruta: Router) { 
+    }
+    
 
   ngOnInit(): void {
     this.llamarDatoLocales();
     this.getMenuPrincipal();
     this.getCategorias();
-    
   }
 
   getCategorias(){
@@ -62,31 +61,51 @@ export class MenuPrincipalComponent implements OnInit {
           }
         })
       })
+      console.log(this.categorias);
       this.productoS.setCategoria(this.categorias);
     })
   }
 
-  ngAfterViewInit() {
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition && window.screen.width >= 768) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
+  buscar(){
+    this.variableG.setBuscador(this.busqueda);
+    this.ruta.navigateByUrl('/colombia/buscador');
   }
 
   productosCategoria(categoria: number) {
-    this.variableG.setCategoria(categoria);
-    $('.subCategorias').removeClass("abrir-subCategorias")
-    this.ruta.navigateByUrl('/colombia/productos');
+    
+    if(categoria > 0){
+      console.log(categoria);
+      this.variableG.setCategoria(categoria);
+      Swal.fire('Cargando Productos','Espere un momento','info');
+      Swal.showLoading();
+    }
+    setTimeout(() => {
+      $('.subCategorias').removeClass("abrir-subCategorias")
+      this.ruta.navigateByUrl('/colombia/productos');  
+    }, 1500);
+    
+  }
+
+  abrirBuscador(){
+    $('.buscador').toggleClass('abrir-buscador');
+    $('.no-ancho').toggleClass('ancho')
+    $('#buscar').toggleClass('lupa-detalle')
+  }
+
+  abrirMenu(){
+    $('#productos').addClass('abrir');
+    $('#contenedor_productos').addClass('abrir');
   }
 
   desplegarSubCategorias(id: number){
+    // $('.representacionItem').click(this.abrirMenu());
+    
     let subCategorias = $('.subCategorias').hasClass('abrir-subCategorias');
+    let cateSeleccionado = $('.categorias').hasClass('seleccionado');
+    if(cateSeleccionado){
+      $('.categorias').removeClass('seleccionado');
+    }
+    $(`.cate${id}`).addClass('seleccionado');
     if(subCategorias){
       $('.subCategorias').removeClass("abrir-subCategorias")
     }

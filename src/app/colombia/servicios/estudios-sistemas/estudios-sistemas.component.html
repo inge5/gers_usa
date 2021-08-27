@@ -4,22 +4,22 @@
 <section class="servicios">
     <div class="estudios-sistemas">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-sm-7 mt-3 pl-100">
                     <div class="row justify-content-center align-items-center">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'40px' }"></ngx-skeleton-loader>
                             <div *ngIf="!loader" class="media">
                                 <img class="align-self-center mr-3 img-fluid" *ngIf="seccion_1_data.icono" src="{{ seccion_1_data.icono }}" alt="Estudios sistemas">
                                 <div class="media-body">
-                                    <h4 class="mb-0 text-blue1 font-weight-bold">{{ seccion_1_data.titulo_principal }}</h4>
+                                    <h4 class="w-70 mb-0 text-blue1 font-weight-bold roboto size26 line-height26">{{ seccion_1_data.titulo_principal }}</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-12 mt-md-3">
                             <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'40px' }"></ngx-skeleton-loader>
                             <div *ngIf="!loader">
-                                <a href="{{ seccion_1_data.boton_link_solicitar }}" class="d-block btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
+                                <a href="{{ seccion_1_data.boton_link_solicitar }}" class="btn btn-blue font-weight-light size13 pt-2 pb-2">{{ seccion_1_data.boton_texto_solicitar }}</a>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -28,7 +28,7 @@
                                 <p class="mt-2" [innerHTML]="seccion_1_data.texto_principal"></p>
                             </div>
                             <ngx-skeleton-loader class="d-flex" count="3" *ngIf="loader" animation="progress" appearance="circle" [theme]="{ 'width':'100%','height':'120px','border-radius': '10px' }"></ngx-skeleton-loader>
-                            <div class="row pt-4">
+                            <div class="row mt-5">
                                 <ng-container *ngFor="let item of seccion_iconos_data">
                                     <div *ngIf="!loader" class="col-sm-4 text-center">
                                         <img class="align-self-center mb-3 mx-auto d-block" *ngIf="item.icono" src="{{ item.icono }}" alt="Cálculo de Ajustes">

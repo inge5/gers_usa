@@ -68,12 +68,14 @@ img {
   margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
+  transition: height .5s;
 }
 img:hover {
   height: 110px;
   margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
+  transition: height .5s;
 }
 .contenedor-productos {
   display: flex;

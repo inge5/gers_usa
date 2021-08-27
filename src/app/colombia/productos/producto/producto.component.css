@@ -14,14 +14,33 @@
 .subCategorias{
   display: none !important;
 }
-
-.filtros-derecha:hover {
+.contenedor-relativo:hover .mostrar-btn{
+  display: block !important;
+}
+.btn-blue{
+  color: #fff;
+  background-color: #2C3394;
+  border: 1px solid transparent;
+}
+.btn-blue:hover{
+  background-color: #fff;
+  color: #2C3394;
+  border: 1px solid #2C3394;
+}
+.contenedor-relativo:hover .filtros-derecha{
   background-color: #FFFFFF;
   border-radius: 6px;
   border: #2C3394 solid 1px;
+  filter: blur(1.5px);
+}
+.filtros-derecha:hover{
   cursor: pointer;
 }
-
+.sombreado-subCate{
+  background-color: #f1f1f1;
+  width: 122%;
+  padding: 3%;
+}
 .row-check {
 
   margin-bottom: 15px;
@@ -62,6 +81,25 @@
   cursor: pointer;
   text-align: center;
   align-items: center;
+  
+}
+.contenedor-relativo{
+  position: relative;
+}
+.btn-absoluto{
+  position: absolute;
+  top: 40%;
+  right: 30%;
+}
+.btn-absoluto-vista2{
+  position: absolute;
+  top: 40%;
+  right: 35%;
+}
+.btn-absoluto-vista3{
+  position: absolute;
+  top: 40%;
+  right: 35%;
 }
 .filtros-derecha img {
   width: 94%;

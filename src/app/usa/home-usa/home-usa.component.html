@@ -13,7 +13,7 @@
         <div class="carousel-inner" *ngIf="sliderprincipal_data">            
             <ng-container *ngFor="let home of sliderprincipal_data; first as isFirst ">
                 <div class="carousel-item" *ngIf="home.imagen_de_fondo" [ngClass]="(isFirst) ? 'active' : ''">
-                    <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px">
+                    <div *ngIf="!loader" style="background:url('{{ home.imagen_de_fondo }}');height:445px;background-position: center;">
                         <div class="container pt-3 pb-3 h-100">
                             <div class="row align-items-center h-100">
                                 <div class="col-sm-8 pt-4 pb-4 my-auto">
@@ -115,10 +115,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-shadow border-radius-12 pt-4 pr-5 pl-5 pb-4">
-                    <img class="img-fluid mx-auto d-block" src="./assets/images/usa/neplan_home.jpg" alt="Neplan">
-                    <img class="img-fluid img-absolute-neplan" src="./assets/images/usa/neplan_logo_grande.png" alt="Logo Neplan">
-                    <p class="roboto text-black mt-4 mb-4 size16 line-height20 letter-spacing-0-19">NEPLAN 360 is the first fully browser-based power system analysis toll on the market using a client-server architecture that can be used on a network, or locally. NEPLAN is a multiplatform application that does not require installation and offers all the advantages of cloud computing. </p>
-                    <a class="rounded btn-white border-color-blue p-2" href="#">Acquire your software here</a>
+                    <img class="img-fluid mx-auto d-block" src="{{servicio_neplan_data.imagen}}" alt="Neplan">
+                    <img class="img-fluid img-absolute-neplan" src="{{servicio_neplan_data.imagen_logo}}" alt="Logo Neplan">
+                    <p class="roboto text-black mt-4 mb-4 size16 line-height20 letter-spacing-0-19" [innerHTML]="servicio_neplan_data.texto_general"></p>
+                    <a class="rounded btn-white border-color-blue p-2" href="{{servicio_neplan_data.boton_link}}">{{servicio_neplan_data.boton_texto}}</a>
                 </div>
             </div>
         </div>
@@ -255,8 +255,9 @@
                 <div class="row">
                     <div class="col-md-6">
                     </div>
-                    <div class="col-md-4 offset-md-1 d-flex align-items-center" style="height: 400px">
-                        <p class="texto-franja-azul size25 font-weight-normal pt-5" [innerHTML]="equipo.descripcion"></p>
+                    <div class="col-md-4 offset-md-1 d-flex flex-column justify-content-center" style="height: 400px">
+                        <img class="alignnone size-full wp-image-115 justify-content-start" src="{{equipo.logo_gers}}" alt="" width="200" height="56" />
+                        <p class="texto-franja-azul letter size22 font-weight-normal pt-3 montserrat">{{equipo.descripcion}}</p>
                     </div>
                 </div>
             </div>
@@ -275,7 +276,7 @@
                     <div class="full-textoshv">
                         <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
                         <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
-                        <a class="linkHoja" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
+                        <a class="linkHoja mt-3 d-block" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                     </div>
                 </div>
                 <div class="col-md-5">

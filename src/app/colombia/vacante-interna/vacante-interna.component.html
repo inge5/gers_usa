@@ -4,7 +4,7 @@
 <div class="trabaje mt-4 mb-5" id="wrapperInterna">
     <div class="container">
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-md-8 col-lg-9">
                 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'35px', width:'150px' }"></ngx-skeleton-loader>
                 <ngx-skeleton-loader count="6" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-4 col-lg-3">
                 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
                 <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader" class="adjunta-hoja p-3">
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-light border-right" id="sidebar-wrapperInterna">
+    <div class="bg-light border-right sobreponer" id="sidebar-wrapperInterna">
         <div class="sidebar-heading size23 text-blue1 font-weight-600"><button id="btnCerrarVacante" (click)="cierraVacante()">x</button> POSTULARTE A LA VACANTE</div>
         <div class="bodyTrabajemos">
             <div class="container">
@@ -80,7 +80,8 @@
                             <div class="file-field big-2 mt-3">
                                 <div class="btn btn-cyan btn-lg float-left w-100">
                                   <span><i class="fas fa-cloud-upload-alt"></i> Adjuntar hoja de vida</span>
-                                  <input type="file" id="archivo" required>
+                                  <input type="file" id="archivo" accept="image/jpeg,image/gif,image/png,application/pdf"
+                                  (change)="onChange($event.target.files)" required>
                                 </div>
                                 <p class="file-name"></p>
                                 <label class="mt-4 size15 text-gray-dark line-height18 text-justify">El archivo adjunto debe estar en formato <b>.PDF o .DOCX</b> y no debe pesar más de <b>1.5 mb</b></label>

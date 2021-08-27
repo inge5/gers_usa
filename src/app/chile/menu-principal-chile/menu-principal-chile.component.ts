@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import {VariableGlobalService} from "../../colombia/servicios/variable-global/variable-global.service";
 import {AlertasService} from "../../colombia/servicios/alertas/alertas.service";
-import { MenusService } from '../../services/menus.service';
+import { MenusClService } from '../../services/menus-cl.service';
+import { Router } from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-menu-principal-chile',
@@ -9,35 +11,15 @@ import { MenusService } from '../../services/menus.service';
   styleUrls: ['./menu-principal-chile.component.css']
 })
 export class MenuPrincipalChileComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
-  carrito: any;
-  carritoAnterior: any;
-  cantidadCarrito: number = 0;
+  menuPrincipal_data: any[] = [];
+  busqueda: string = "";
 
-  menuPrincipal_data:any[] = [];
-
-  constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService:MenusService) { }
+  constructor(private _menusService:MenusClService, private ruta: Router, private variableG: VariableGlobalService) { }
 
   ngOnInit(): void {
-    this.llamarDatoLocales();
+    //this.llamarDatoLocales();
     this.getMenuPrincipal();
   }
-
-  ngAfterViewInit(){
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-  @HostListener('window:scroll', ['$event'])
-    handleScroll(){
-      const windowScroll = window.pageYOffset;
-      if(windowScroll >= this.elementPosition && window.screen.width >= 768){
-        this.sticky = true;
-      } else {
-        this.sticky = false;
-      }
-    }
-  
   getMenuPrincipal(){
     this._menusService.getMenuPrincipal()
     .subscribe((res:any) => {
@@ -45,35 +27,15 @@ export class MenuPrincipalChileComponent implements OnInit {
     });  
   }
 
-  llamarDatoLocales() {
-
-    this.variableG.currentMessage.subscribe(response => {
-      this.carritoAnterior = response;
-      // console.log(this.carritoAnterior);
-      this.miCarritoCompraContador();
-    });
-
+  buscar(){
+    this.variableG.setBuscador(this.busqueda);
+    this.ruta.navigateByUrl('/chile/buscador');
   }
 
-  miCarritoCompraContador() {
-    if (this.carritoAnterior && this.carritoAnterior.length > 0) {
-      this.cantidadCarrito = this.carritoAnterior.length;
-      // console.log(this.cantidadCarrito);
-    }
-
-
-
-  }
-
-
-   mostrarProductos(dato) {
-
-    if (dato === 1) {
-      document.getElementById('mySidenav').style.width = '39vw';
-    } else {
-      document.getElementById('mySidenav').style.width = '0';
-    }
-
+  abrirBuscador(){
+    $('.buscador').toggleClass('abrir-buscador');
+    $('.no-ancho').toggleClass('ancho')
+    $('#buscar').toggleClass('lupa-detalle')
   }
 
 }

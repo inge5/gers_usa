@@ -1,8 +1,8 @@
 <!--Top Bar Color Azul-->
 <nav class="navbar navbar-expand-md topBarAzul">
 	<div class="container">
-		 <div class="collapse navbar-collapse" id="navbarCollapse">
-	        <div class="navbar-nav ml-auto">
+		 <div class="collapse navbar-collapse topbar-encima" id="navbarCollapse">
+	        <div class="navbar-nav ml-auto d-none d-md-flex">
 					<li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				          Nosotros
@@ -21,7 +21,7 @@
 					        							</div>
 					        							<div class="col-md-10">
 					        								<h3 class="tituloItemMenuNosotros">Pensamiento Corporativo</h3>
-					        								<p class="textoItemMenuNosotros">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
+					        								<p class="textoItemMenuNosotros">En GERS somos honestos, correctos y transparentes en todos nuestros acuerdos internos y externos.</p>
 					        							</div>
 					        						</div>
 				        						</a>
@@ -34,7 +34,7 @@
 					        							</div>
 					        							<div class="col-md-10">
 					        								<h3 class="tituloItemMenuNosotros">Política de gestión integral</h3>
-					        								<p class="textoItemMenuNosotros">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet ipsum metus.</p>
+					        								<p class="textoItemMenuNosotros">Somos una empresa de consultoría en ingeniería que presta servicios de diseño, estudios, entre otros.</p>
 					        							</div>
 					        						</div>
 				        						</a>
@@ -56,7 +56,7 @@
 	                            		<h3 class="textoPais">Colombia</h3>
 	                            	</div>
 	                                <ul>
-	                                    <li><a class="linkPais" href="/N-1076/#/colombia">Visitar sitio web</a>
+	                                    <li><a class="linkPais" [routerLink]="['/colombia']">Visitar sitio web <i class="fas fa-long-arrow-alt-right"></i></a>
 	                                    </li>
 	                                    <div class="recuadroCiudadTopHeader primeraCiudad">
 	                                    <li class="dropdown-header-ciudad">Cali</li>
@@ -74,7 +74,7 @@
 	                            		<h3 class="textoPais">Estados Unidos</h3>
 	                            	</div>
 	                                <ul>
-	                                    <li><a class="linkPais" href="/N-1076/#/usa">Visitar sitio web</a>
+	                                    <li><a class="linkPais" [routerLink]="['/usa']">Visitar sitio web <i class="fas fa-long-arrow-alt-right"></i></a>
 	                                    </li>
 	                                    <div class="recuadroCiudadTopHeader primeraCiudad">
 	                                    <li class="dropdown-header-ciudad">Weston</li>
@@ -92,7 +92,7 @@
 	                            		<h3 class="textoPais">México</h3>
 	                            	</div>
 	                                <ul>
-	                                    <li><a class="linkPais" href="/N-1076/#/mexico">Visitar sitio web</a>
+	                                    <li><a class="linkPais" [routerLink]="['/mexico']">Visitar sitio web <i class="fas fa-long-arrow-alt-right"></i></a>
 	                                    </li>
 	                                    <div class="recuadroCiudadTopHeader primeraCiudad">
 	                                    <li class="dropdown-header-ciudad">Ciudad de México</li>
@@ -106,7 +106,7 @@
 	                            		<h3 class="textoPais">Chile</h3>
 	                            	</div>
 	                                <ul>
-	                                    <li><a class="linkPais" href="/N-1076/#/chile">Visitar sitio web</a>
+	                                    <li><a class="linkPais" [routerLink]="['/chile']">Visitar sitio web <i class="fas fa-long-arrow-alt-right"></i></a>
 	                                    </li>
 	                                    <div class="recuadroCiudadTopHeader primeraCiudad">
 	                                    <li class="dropdown-header-ciudad">Santiago de Chile</li>

@@ -4,7 +4,7 @@
             <div class="col-md-12 mt-2">
                 <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader">
-                    <h3 class="font-weight-bold text-blue1 text-center">We believe in development and innovation to achieve the success of all the projects that have been entrusted to us</h3>
+                    <h3 class="font-weight-bold text-blue1 text-center">{{ titulo_pagina_data }}</h3>
                 </div>
             </div>
         </div>

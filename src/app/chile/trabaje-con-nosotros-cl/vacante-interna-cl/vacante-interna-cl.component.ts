@@ -23,13 +23,15 @@ export class VacanteInternaClComponent implements OnInit {
       apellidos:'',
       email: '',
       telefono:'',
-      correo:'',
-      acepto:''
+      acepto:'',
+      vacante: '',
+      ubicacion: 'Chile'
     };
   }
 
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug');
+    this.interesado.vacante = slug;
     this._vacanteservice.getVacante(slug)
       .subscribe(res => {
         this.loader = false;
@@ -39,7 +41,9 @@ export class VacanteInternaClComponent implements OnInit {
         }
       })
   }
-
+  onChange(file: File){
+    this.interesado.archivo = file[0];
+  }
   postularme(){
     $("#wrapperInterna").toggleClass("toggled");
     $('.overlaytrabaja').addClass('active');
@@ -51,27 +55,42 @@ export class VacanteInternaClComponent implements OnInit {
   }
 
   formVacanteInterna(form){
-    $.ajax({
-      //url: 'https://pruebasneuro.co/N-1057backgane/wp-content/themes/gane/suscribirse.php',
-      type: 'POST',
-      data: JSON.stringify(this.interesado),
-      dataType:"json",
-      success: function(data) {
-        
-      }, error: function(error){
-        if(error.status === 200){
+    var paqueteDeDatos = new FormData();
+      paqueteDeDatos.append('archivo', this.interesado.archivo);
+      paqueteDeDatos.append('nombres', this.interesado.nombres);
+      paqueteDeDatos.append('apellidos', this.interesado.apellidos);
+      paqueteDeDatos.append('email', this.interesado.email);
+      paqueteDeDatos.append('telefono', this.interesado.telefono);
+      paqueteDeDatos.append('ubicacion', this.interesado.ubicacion);
+      paqueteDeDatos.append('acepto', this.interesado.acepto);
+      paqueteDeDatos.append('vacante', this.interesado.vacante) ;
+      var destino = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-vacante-interna/form-vacante-interna.php"; // El script que va a recibir los campos de formulario.
+            /* Se envia el paquete de datos por ajax. */
+      $.ajax({
+        url: destino,
+        type: 'POST',
+        /*
+        data: JSON.stringify(this.usuario),
+        dataType:"json",
+        */
+        contentType: false,
+        data: paqueteDeDatos, // Al atributo data se le asigna el objeto FormData.
+        processData: false,
+        cache: false, 
+        success: function(data) {
+          // console.log(data);
           Swal.fire({
             icon: 'success',
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
+          form.reset();
           //console.log(error);
-        form.reset();
-        } else {
+        }, error: function(error){
+          // console.log(error);
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }
-      }
-    });
-   }
+      });
+     }
 
 }

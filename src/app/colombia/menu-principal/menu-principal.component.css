@@ -17,12 +17,36 @@
   left: -90% !important;
 
 }
+.bg-azulClaro{
+  background-color: #DDE2F6;
+}
+.textoItemMarcaMenu{
+  color: #2C3394;
+}
 .subCategorias{
   display: none;
+  background-color: #fff;
+  height: 100%;
+  padding: 0;
+}
+.col-subMenu{
+    padding: 0;
+}
+.abrir{
+  display: block !important;
+}
+
+.seleccionado {
+  background-color: #fff;
+  border-left: 3px solid #0089FF;
+  /* z-index: -1; */
 }
 
 .abrir-subCategorias{
   display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .menuproductos .navbar-center {
@@ -50,9 +74,6 @@
   width: 170px;
 }
 
-.filtro-cantidad-productos {
-
-}
 
 .fila-carrito {
 

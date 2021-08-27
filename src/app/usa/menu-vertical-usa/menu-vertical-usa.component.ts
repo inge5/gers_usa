@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RouterModule} from '@angular/router';
+declare var $: any;
 
 
 @Component({
@@ -12,6 +12,11 @@ export class MenuVerticalUsaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cerrarMenuVertical(){
+    $('#menuverticalUsa').removeClass('switch-cotizador');
+    $('.overviwe').removeClass('open-overviwe');
   }
 
 }

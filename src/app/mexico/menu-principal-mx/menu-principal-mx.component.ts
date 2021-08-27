@@ -1,5 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { MenusService } from 'src/app/services/menus.service';
+import { Router } from '@angular/router';
+import { VariableGlobalService } from 'src/app/colombia/servicios/variable-global/variable-global.service';
+import { MenusMxService } from 'src/app/services/menus-mx.service';
 declare var $: any;
 
 @Component({
@@ -8,28 +10,13 @@ declare var $: any;
   styleUrls: ['./menu-principal-mx.component.css']
 })
 export class MenuPrincipalMxComponent implements OnInit {
-  @ViewChild('stickyMenu') menuElement: ElementRef;
-  sticky: boolean = false;
-  elementPosition: any;
   menuPrincipal_data: any[] = [];
+  busqueda: string = "";
 
-  constructor(private _menusService: MenusService) { }
+  constructor(private _menusService: MenusMxService, private ruta: Router, private variableG: VariableGlobalService) { }
 
   ngOnInit(): void {
     this.getMenuPrincipal();
-  }
-
-  ngAfterViewInit() {
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition && window.screen.width >= 768) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
   }
 
   getMenuPrincipal() {
@@ -37,5 +24,16 @@ export class MenuPrincipalMxComponent implements OnInit {
       .subscribe((res: any) => {
         this.menuPrincipal_data = res.items;
       });
+  }
+
+  buscar(){
+    this.variableG.setBuscador(this.busqueda);
+    this.ruta.navigateByUrl('/mexico/buscador');
+  }
+
+  abrirBuscador(){
+    $('.buscador').toggleClass('abrir-buscador');
+    $('.no-ancho').toggleClass('ancho')
+    $('#buscar').toggleClass('lupa-detalle')
   }
 }

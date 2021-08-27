@@ -19,17 +19,19 @@ export class PagesClService {
   getPoliticaGestionIntegral(): Observable<any>{
     return this._http.get(`${this.url}/pages/142/`)
   }
-  getEstudioSistemasElectricos(): Observable<any>{
-    return this._http.get(`${this.url}/pages/155/`)
-  }
-  getDisenoIngenieria(): Observable<any>{
-    return this._http.get(`${this.url}/pages/182/`)
-  }
-  getPruebasAutomatizacionControl(): Observable<any>{
-    return this._http.get(`${this.url}/pages/206/`)
-  }
   getContactenos(): Observable<any>{
     return this._http.get(`${this.url}/pages/265/`)
+  }
+
+  //SERVICIOS
+  getEstudioSistemasElectricos(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/355/`)
+  }
+  getDisenoIngenieria(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/356/`)
+  }
+  getPruebasAutomatizacionControl(): Observable<any>{
+    return this._http.get(`${this.url}/servicios/357/`)
   }
 
   // REPRESENTACIONES
@@ -42,7 +44,7 @@ export class PagesClService {
 
   //PROYECTOS
   getProyectos(): Observable<any>{
-    return this._http.get(`${this.url}/proyectos/`);
+    return this._http.get(`${this.url}/proyectos?per_page=40`);
   }
 
   /**** Página Proyectos *****/
