@@ -61,7 +61,6 @@ export class MenuPrincipalComponent implements OnInit {
           }
         })
       })
-      console.log(this.categorias);
       this.productoS.setCategoria(this.categorias);
     })
   }
@@ -74,7 +73,6 @@ export class MenuPrincipalComponent implements OnInit {
   productosCategoria(categoria: number) {
     
     if(categoria > 0){
-      console.log(categoria);
       this.variableG.setCategoria(categoria);
       Swal.fire('Cargando Productos','Espere un momento','info');
       Swal.showLoading();
@@ -117,7 +115,6 @@ export class MenuPrincipalComponent implements OnInit {
     this._menusService.getMenuPrincipal()
       .subscribe((res: any) => {
         this.menuPrincipal_data = res.items;
-        console.log(this.menuPrincipal_data);
       });
   }
 
@@ -134,7 +131,6 @@ export class MenuPrincipalComponent implements OnInit {
   miCarritoCompraContador() {
     if (this.carritoAnterior) {
       this.cantidadCarrito = this.carritoAnterior.length;
-      console.log(this.cantidadCarrito);
     }
 
 

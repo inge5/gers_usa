@@ -8,23 +8,16 @@
             <ul class="menuSoluciones">
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Servicios</a>
                     <ul class="menuSolucionesItemServicios">
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['pruebas-automatizacion-y-control']">Pruebas, automatización y control</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['diseno-ingenieria']">Diseño e ingeniería</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['estudios-sistemas']">Estudios de sistemas eléctricos</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['servicios-energeticos']">Servicios energéticos</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['smart-grids']">Smart grids</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['interventorias-asesorias']">Interventoría y asesorías</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['planeacion-proyectos']">Planeación de proyectos</a></li>
+                        <ng-container *ngFor="let service of services.child_items">
+                            <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="[service.slug]">{{ service.title }}</a></li>
+                        </ng-container>
                     </ul>
                 </li>
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Representaciones</a>
                     <ul class="menuSolucionesItemRepresentaciones">
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['neplan']">NEPLAN</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['dranetz']">DRANETZ</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['xgslab']">XGSLAB</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['beckwith-electronic']">BECKWITH ELECTRIC</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['ndb']">NDB</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" href="#">GMC</a></li>
+                        <ng-container *ngFor="let representation of representations.child_items">
+                            <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="[representation.slug]">{{ representation.title }}</a></li>
+                        </ng-container>
                     </ul>
                 </li>
                 <li><a class="itemMenuSolucionesPadre" (click)="cerrarMenuVertical()" [routerLink]="['proyectos']">Proyectos</a></li>
@@ -39,17 +32,7 @@
         <div class="descubreVertical">
             <h3>Descubre</h3>
             <ul class="menuDescubre">
-                <li><a class="itemMenuDescubrePadre" (click)="cerrarMenuVertical()" routerLink="capacitaciones">Capacitaciones</a>
-                    <!--<ul class="menuDescubreItemCapacita">
-                        <li><a class="itemMenuDescubreVertical" href="#">Pruebas, automatización y control</a></li>
-                        <li><a class="itemMenuDescubreVertical" href="#">Diseño e ingeniería</a></li>
-                        <li><a class="itemMenuDescubreVertical" href="#">Estudios de sistemas eléctricos</a></li>
-                        <li><a class="itemMenuDescubreVertical" href="#">Servicios energéticos</a></li>
-                        <li><a class="itemMenuDescubreVertical" href="#">Smart grids</a></li>
-                        <li><a class="itemMenuDescubreVertical" href="#">Interventoría y asesorías</a></li>
-                        <li><a class="itemMenuDescubreVertical" href="#">Planeación de proyectos</a></li>
-                    </ul>-->
-                </li>
+                <li><a class="itemMenuDescubrePadre" (click)="cerrarMenuVertical()" routerLink="capacitaciones">Capacitaciones</a></li>
                 <li><a class="itemMenuDescubrePadre" (click)="cerrarMenuVertical()" [routerLink]="['publicaciones']">Publicaciones</a></li>
             </ul>
         </div>
