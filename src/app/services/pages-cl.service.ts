@@ -41,6 +41,9 @@ export class PagesClService {
   getXgslab(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/319/`)
   }
+  getDranetz(): Observable<any>{
+    return this._http.get(`${this.url}/representaciones/864`)
+  }
 
   //PROYECTOS
   getProyectos(): Observable<any>{

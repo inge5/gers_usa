@@ -92,6 +92,7 @@ import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component'
 import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component';
 import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-asesorias-mx/tercerias-asesorias-mx.component';
 import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
+import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-cl.component';
 
 
 
@@ -148,6 +149,7 @@ const APP_ROUTES: Routes = [
         { path: 'publicaciones-cl', component: PublicacionesClComponent},
         { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent},
         { path: 'xgslab-cl', component: XgslabClComponent },
+        { path: 'dranetz-cl', component: DranetzClComponent },
         { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
         { path: 'vacantes/:slug', component: VacanteInternaClComponent },
         {path: 'buscador', component: BuscadorClComponent}

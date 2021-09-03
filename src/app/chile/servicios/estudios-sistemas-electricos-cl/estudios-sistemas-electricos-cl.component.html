@@ -45,7 +45,31 @@
             </div>
         </div>
         <div class="container tabsCustom mt-5 mb-5">
-            <div class="row tabs-marcas tabs-estudios-page">
+            <div class="row">
+                <div class="col-md-4 mb-4 pr-0">
+                    <ngx-skeleton-loader count="4" *ngIf="loader" animation="progress" [theme]="{height:'35px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <ng-container *ngFor="let item of item_tab_data; let index = index">
+                            <li class="nav-item">
+                                <a class="nav-link rounded-0 p-3 border-left" [attr.id]="'v-pills-tab-'+index" [ngClass]="{'active': index === activePillIndex}" data-toggle="pill" [attr.href]="'#'+'v-pills-'+index" role="tab" aria-selected="true" (click)="selectPill(index)">
+                                    <h5 class="size14 mb-0">{{ item.nombre_item }}</h5>
+                                </a>
+                            </li>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="col-md-8 contenido-tabs">
+                    <ngx-skeleton-loader count="8" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
+                    <div *ngIf="!loader" class="tab-content" id="v-pills-tab">
+                        <ng-container *ngFor="let datos of item_tab_data; let index = index">
+                            <div class="tab-pane fade show" [ngClass]="{'active': index === activePillIndex}" [attr.id]="'#'+'v-pills-'+index" role="tabpanel">
+                                <p [innerHTML]="datos.texto_item"></p>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div> 
+            </div>
+            <!-- <div class="row tabs-marcas tabs-estudios-page">
                     <div class="col-sm-12">
                         <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{ height:'40px' }"></ngx-skeleton-loader>
                         <div *ngIf="!loader" class="nav nav-tabs" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
@@ -64,7 +88,7 @@
                             </ng-container>
                         </div>
                     </div>
-            </div>
+            </div> -->
         </div>
         <div class="bk-diseno" style="background-image: url(assets/images/servicios/background.jpg);">
             <div class="container mt-5">

@@ -128,7 +128,7 @@
                     <ng-container *ngFor="let tab of tabs_data; first as isFirst; index as i">
                         <li class="nav-item">
                             <a class="nav-link rounded-0 p-3 border-left" *ngIf="tab.logo_tab != undefined" [ngClass]="(isFirst) ? 'active' : ''" id="tab{{i}}-tab" data-toggle="tab" href="#tab{{i}}" role="tab" aria-controls="tab{{i}}">
-                                <img src="{{tab.logo_tab}}" alt="logo" width="98" height="auto">
+                                <img src="{{tab.logo_tab}}" alt="logo" class="img-fluid">
                             </a>
                         </li>
                     </ng-container>
