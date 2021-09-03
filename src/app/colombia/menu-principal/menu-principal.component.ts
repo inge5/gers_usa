@@ -37,7 +37,7 @@ export class MenuPrincipalComponent implements OnInit {
 
   getCategorias(){
     this.productoS.getCategoriesWP().then(resp => {
-      // console.log(resp.data);
+ 
       for (const r of resp.data) {
         if (r.count > 0 && r.parent === 0) {
           this.categoriasTemp.push(r);
@@ -49,7 +49,7 @@ export class MenuPrincipalComponent implements OnInit {
       this.categoriasTemp.forEach(element1 => {
         this.subCategoriasTemp.forEach((element2, index) => {
           if (element1.id === element2.parent) {
-            // console.log(element1);
+       
             this.subCategorias.push(element2)
           }
           if(this.subCategoriasTemp.length === (index+1)){
@@ -115,7 +115,6 @@ export class MenuPrincipalComponent implements OnInit {
     this._menusService.getMenuPrincipal()
       .subscribe((res: any) => {
         this.menuPrincipal_data = res.items;
-        console.log(this.menuPrincipal_data);
       });
   }
 
@@ -123,7 +122,7 @@ export class MenuPrincipalComponent implements OnInit {
 
     this.variableG.currentMessage.subscribe(response => {
       this.carritoAnterior = response;
-      // console.log(this.carritoAnterior);
+ 
       this.miCarritoCompraContador();
     });
 
