@@ -8,16 +8,16 @@
             <ul class="menuSoluciones">
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Servicios</a>
                     <ul class="menuSolucionesItemServicios">
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['estudios-sistemas-cl']">Estudios de sistemas eléctricos</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['diseno-ingenieria-cl']">Diseño e ingeniería</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['pruebas-automatizacion-cl']">Pruebas, automatización y control</a></li>
+                        <ng-container *ngFor="let servicio of servicios.child_items">
+                            <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="[ servicio.slug ]">{{ servicio.title }}</a></li>
+                        </ng-container>
                     </ul>
                 </li>
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Representaciones</a>
                     <ul class="menuSolucionesItemRepresentaciones">
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['neplan-cl']">NEPLAN</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['xgslab-cl']">XGSLAB</a></li>
-                        <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="['dranetz-cl']">DRANETZ</a></li>
+                        <ng-container *ngFor="let representacion of representaciones.child_items">
+                            <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="[ representacion.slug ]">{{ representacion.title }}</a></li>
+                        </ng-container>
                     </ul>
                 </li>
                 <li><a class="itemMenuSolucionesPadre" (click)="cerrarMenuVertical()" [routerLink]="['proyectos-cl']">Proyectos</a></li>

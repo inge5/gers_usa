@@ -103,7 +103,7 @@ const APP_ROUTES: Routes = [
     children: [
         {path: '', component: HomeComponent},
         {path: 'neplan', component: NeplanComponent},
-        {path: 'beckwith-electronic', component: BeckwithElectronicComponent},
+        {path: 'beckwith-electric', component: BeckwithElectronicComponent},
         {path: 'xgslab', component: XgslabComponent},
         {path: 'dranetz', component: DranetzComponent},
         {path: 'ndb', component: NdbComponent},

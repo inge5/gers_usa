@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenusClService } from 'src/app/services/menus-cl.service';
 declare var $: any;
 
 @Component({
@@ -7,10 +8,22 @@ declare var $: any;
   styleUrls: ['./menu-vertical-cl.component.css']
 })
 export class MenuVerticalClComponent implements OnInit {
+  representaciones: any;
+  servicios: any;
 
-  constructor() { }
+  constructor(private _menusService:MenusClService) { }
 
   ngOnInit(): void {
+    this.getMenuPrincipal();
+  }
+
+  getMenuPrincipal(){
+    this._menusService.getMenuPrincipal()
+    .subscribe((res:any) => {
+      console.log(res.items);
+      this.representaciones = res.items[0];
+      this.servicios = res.items[1];
+    });  
   }
 
   cerrarMenuVertical(){
