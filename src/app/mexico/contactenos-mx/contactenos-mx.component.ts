@@ -48,7 +48,7 @@ export class ContactenosMxComponent implements OnInit {
       data: JSON.stringify(this.user),
       dataType:"json",
       success: function(data) {
-        console.log(data);
+
        
       }, error: function(error){
         if(error.status === 200){
@@ -57,7 +57,7 @@ export class ContactenosMxComponent implements OnInit {
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
-          console.log(error);
+  
         form.reset();
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')

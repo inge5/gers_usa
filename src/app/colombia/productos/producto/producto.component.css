@@ -39,7 +39,8 @@
 .sombreado-subCate{
   background-color: #f1f1f1;
   width: 122%;
-  padding: 3%;
+  padding: 1%;
+  font-size: 14px;
 }
 .row-check {
 

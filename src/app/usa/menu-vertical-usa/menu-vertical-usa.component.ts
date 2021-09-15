@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenusUsaService } from 'src/app/services/menus-usa.service';
 declare var $: any;
 
 
@@ -8,10 +9,21 @@ declare var $: any;
   styleUrls: ['./menu-vertical-usa.component.css']
 })
 export class MenuVerticalUsaComponent implements OnInit {
+  representaciones: any;
+  servicios: any;
 
-  constructor() { }
+  constructor(private _menusService:MenusUsaService) { }
 
   ngOnInit(): void {
+    this.getMenuPrincipal();
+  }
+
+  getMenuPrincipal(){
+    this._menusService.getMenuPrincipal()
+    .subscribe((res:any) => {
+      this.servicios = res.items[0];
+      this.representaciones = res.items[1];
+    });  
   }
 
   cerrarMenuVertical(){

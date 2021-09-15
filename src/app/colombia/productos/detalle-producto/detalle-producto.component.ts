@@ -28,13 +28,13 @@ export class DetalleProductoComponent implements OnInit {
               private variableG: VariableGlobalService,
               private alertaS: AlertasService) {
                 this.activatedRoute.params.subscribe(resp => {
-                  // console.log(resp.codigo);
+            
                   this.productoUrl = resp.codigo;   
                   if (this.productoUrl) {
                     this.listarDetalleProductos(this.productoUrl);
                 }
                 })
-              // this.productoUrl = this.activatedRoute.snapshot.params.codigo;
+              
 
               
 
@@ -55,21 +55,13 @@ export class DetalleProductoComponent implements OnInit {
     this.idProducto = codigo;
 
     this.productosS.getlistarProductoUnicoWP(codigo).then(respuesta => {
-      // console.log(respuesta.data);
+     
       this.listadoProductosDetalle = respuesta.data;
-      console.log(this.listadoProductosDetalle);
+   
       this.imagen_grande = this.listadoProductosDetalle['images'][0].src;
     }).catch(error => {
-      // console.log(error);
+      
     })
-
-    // this.productosS.getlistarProductoUnico(218).then(respuesta => {
-    //   console.log(respuesta);
-      // this.listadoProductosDetalle = respuesta['productos'][0];
-      // console.log(this.listadoProductosDetalle);
-    // }).catch(error => {
-    //   console.log(error);
-    // })
 
   }
 
@@ -81,12 +73,12 @@ export class DetalleProductoComponent implements OnInit {
       if(this.carritoTemporal.length > 0){
         this.carritoTemporal.forEach(element => {
           if(id === element.id){
-            console.log("Existe");
+         
             element.producto_cantidad += 1;
             this.bandera = true;
           }else{
             if(!this.bandera){
-              console.log("No existe");
+         
               this.listadoProductosDetalle['producto_cantidad'] = 1;
               this.bandera = false;
             }
@@ -103,14 +95,14 @@ export class DetalleProductoComponent implements OnInit {
       localStorage.setItem('carrito', JSON.stringify(this.carritoTemporal));
       const data = 'Articulo Agregado Correctamente al Carrito';
       this.alertaS.showToasterFull(data);
-      // console.log(this.carritoTemporal);
+  
     }else{
       this.listadoProductosDetalle['producto_cantidad'] = 1;
       this.carritoTemporal.push(this.listadoProductosDetalle);
       localStorage.setItem('carrito', JSON.stringify(this.carritoTemporal));
       const data = 'Articulo Agregado Correctamente al Carrito';
       this.alertaS.showToasterFull(data);
-      // console.log(this.carritoTemporal);
+   
     }
     this.variableG.changeMessage();
   }

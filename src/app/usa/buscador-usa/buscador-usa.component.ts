@@ -85,7 +85,7 @@ export class BuscadorUsaComponent implements OnInit {
     }
     getRepresentaciones(){
       this.representaciones.getNeplanUsa().subscribe(res => {
-        // console.log(res);
+
         this.data.push({
           title:res.title.rendered,
           content: res.acf.descripcion,

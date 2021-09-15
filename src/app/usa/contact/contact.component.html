@@ -74,7 +74,7 @@
                             </div>
                               <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="acepto" name="acepto" #acepto="ngModel" [(ngModel)]="user_usa.acepto" required>
-                                <label class="form-check-label" for="acepto">I have read and accept the <strong>data treatment policy</strong></label>
+                                <label class="form-check-label" for="acepto">I have read and accept the <strong><a [routerLink]="['../data-protection-policy']">Data Protection Policy</a></strong></label>
                                 <small style="color:#c30000;" *ngIf="acepto.invalid && (acepto.dirty || acepto.touched)">
                                     You must accept the conditions.
                                 </small>

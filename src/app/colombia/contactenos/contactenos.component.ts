@@ -63,7 +63,7 @@ export class ContactenosComponent implements OnInit {
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
-          //console.log(error);
+        
         form.reset();
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')

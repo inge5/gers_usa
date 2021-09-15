@@ -20,8 +20,8 @@ export class MenuVerticalMxComponent implements OnInit {
   getMenuPrincipal() {
     this._menusService.getMenuPrincipal()
       .subscribe((res: any) => {
-        this.representaciones = res.items[0];
-        this.servicios = res.items[1];
+        this.servicios = res.items[0];
+        this.representaciones = res.items[1];
       });
   }
   cerrarMenuVertical(){

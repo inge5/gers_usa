@@ -33,7 +33,7 @@ export class BuscadorComponent implements OnInit {
   getBusqueda(){
     this.variableG.currentBusca.subscribe(resp => {
       this.filtro = resp
-      // console.log(this.filtro);
+
     });    
   }
   getVacantes() {
@@ -74,7 +74,6 @@ export class BuscadorComponent implements OnInit {
   }
   getPublicaciones(){
     this.publicacionesservice.getPublicaciones().subscribe(res => {
-      console.log(res);
       res.forEach(element => {
         this.data.push({
           title: element.title.rendered,

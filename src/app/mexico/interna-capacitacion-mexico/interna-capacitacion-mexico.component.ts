@@ -34,7 +34,7 @@ export class InternaCapacitacionMexicoComponent implements OnInit {
   ngOnInit(): void {
     moment.locale('es');
     this.capacitacionesS.getCapacitacionesIdMexico(parseInt(this.id)).subscribe((resp: any) => {
-      console.log(resp);
+
       this.capacitacion = resp;
       this.capacitacion.fecha = moment(resp.acf.fecha_inicio+' '+resp.acf.hora_inicio).format('DD MMMM YYYY hh:mm:ss a');
       let categorias = [];
@@ -66,16 +66,16 @@ export class InternaCapacitacionMexicoComponent implements OnInit {
       data: JSON.stringify(this.usuario),
       dataType:"json",
       success: function(data) {
-        console.log(data);
+
       }, error: function(error){
-        console.log(error);
+
         if(error.status === 200){
           Swal.fire({
             icon: 'success',
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
-          //console.log(error);
+    
         form.reset();
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')

@@ -35,7 +35,7 @@ export class InternalTrainingsComponent implements OnInit {
    ngOnInit(): void {
     moment.locale('en');
     this.capacitacionesS.getCapacitacionesIdUsa(parseInt(this.id)).subscribe((resp: any) => {
-      console.log(resp);
+
       this.capacitacion = resp;
       this.capacitacion.fecha = moment(resp.acf.fecha_inicio+' '+resp.acf.hora_inicio).format('DD MMMM YYYY hh:mm:ss a');
       let categorias = [];
@@ -67,16 +67,16 @@ export class InternalTrainingsComponent implements OnInit {
       data: JSON.stringify(this.usuario),
       dataType:"json",
       success: function(data) {
-        console.log(data);
+
       }, error: function(error){
-        console.log(error);
+  
         if(error.status === 200){
           Swal.fire({
             icon: 'success',
             title: 'Thank you for giving us your data. We will communicate with you.',
             showConfirmButton: true
           }); 
-          //console.log(error);
+      
         form.reset();
         } else {
           Swal.fire('Oops...', 'Something happened. Correct the errors, please!', 'error')

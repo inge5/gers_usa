@@ -44,7 +44,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
         .subscribe((res: any) => {
           this.loader = false;
           this.vacantes_data = res;
-          console.log(res);
+
 
           let horarioVacante = [];
           let horarioVacanteMap = [];
@@ -85,12 +85,12 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
 
   getCategoriasFiltro() {
     this._vacantesservice.getCategoriasVacantes().subscribe((resp: any) => {
-      // console.log(resp);
+
       resp.forEach(element => {
         element.bandera = false
       });
       this.categorias.push(...resp)
-      console.log(this.categorias);
+   
     })
   }
 
@@ -113,7 +113,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
       this.horarioVacante.forEach(filtro => {
         if(filtro.bandera && element.acf.horario_vacante === filtro.horario_vacante){
           if(!this.bandera){
-            console.log("vacio");
+
             this.filtrar = [];
           }
           this.bandera = true;
@@ -123,10 +123,10 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
     })
 
     if (this.filtrar.length > 0) {
-      // console.log(this.filtrar);
+
       this.vacantes_data = this.filtrar;
 
-      // console.log(this.eventosFiltro);
+   
       if(!this.bandera){
 
         this.getVacantes();
@@ -138,7 +138,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
     }else{
       this.vacantes_data = this.vacantes_dataTemp;
       this.bandera = false;
-      // console.log(this.eventos);
+
       this.getVacantes();
     }
   }
@@ -172,7 +172,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           });
-          //console.log(error);
+
           form.reset();
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')

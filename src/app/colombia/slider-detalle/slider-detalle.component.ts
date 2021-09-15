@@ -27,7 +27,7 @@ export class SliderDetalleComponent implements OnInit {
               private alertaS: AlertasService) { }
 
   ngOnInit(): void {
-    console.log(this.relacionados);
+
     for (const relacionado of this.relacionados) {
       this.listarProductosWP(relacionado);
     }
@@ -35,10 +35,10 @@ export class SliderDetalleComponent implements OnInit {
 
   listarProductosWP(codigo: number){
     this.productosS.getlistarProductoUnicoWP(codigo).then(respuesta => {
-      // console.log(respuesta.data);
+
       this.listadoProductos.push(respuesta.data);
     }).catch(error => {
-      console.log(error);
+
     })
 
   }
@@ -50,11 +50,11 @@ export class SliderDetalleComponent implements OnInit {
   }
 
   pasarDerecha(){
-    console.log(this.contadorIndices);
+  
     this.contadorIndices++;
     let element = document.getElementById("inde-detalle_" + this.contadorIndices);
     let contenedor = document.getElementById('contenedor-principal');
-    console.log(contenedor.scrollLeft , element.offsetLeft);
+ 
 
     contenedor.scrollTo({
       top: 0,
@@ -64,11 +64,11 @@ export class SliderDetalleComponent implements OnInit {
 
   }
   pasarIzquierda(){
-    console.log(this.contadorIndices);
+
     this.contadorIndices--;
     let element = document.getElementById("inde-detalle_" + this.contadorIndices);
     let contenedor = document.getElementById('contenedor-principal');
-    console.log(contenedor.scrollLeft , element.offsetLeft);
+ 
 
 
     contenedor.scrollTo({

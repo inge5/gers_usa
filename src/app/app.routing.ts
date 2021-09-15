@@ -93,6 +93,7 @@ import { BuscadorMxComponent } from './mexico/buscador-mx/buscador-mx.component'
 import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-asesorias-mx/tercerias-asesorias-mx.component';
 import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
 import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-cl.component';
+import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
 
 
 
@@ -162,8 +163,8 @@ const APP_ROUTES: Routes = [
         { path: '', component: HomeUsaComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'corporate-thinking', component: CorporateThinkingComponent },
-        {path: 'trainings' , component: TrainingsComponent},
-        {path: 'trainings/:id' , component: InternalTrainingsComponent},
+        { path: 'trainings' , component: TrainingsComponent },
+        { path: 'trainings/:id' , component: InternalTrainingsComponent },
         { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
         { path: 'neplan-usa', component: NeplanUsaComponent },
         { path: 'power-system-studies', component: PowerSystemStudiesComponent },
@@ -175,7 +176,8 @@ const APP_ROUTES: Routes = [
         { path: 'vacancies/:slug', component: InternalVacancyComponent},
         { path: 'insights', component: InsightsComponent },
         { path: 'insights/:slug', component: InsightsInsideComponent },
-        {path: 'searcher', component: BuscadorUsaComponent}
+        { path: 'searcher', component: BuscadorUsaComponent },
+        { path: 'data-protection-policy', component: DataProtectionPolicyComponent}
     ]},
     {path: 'mexico', component: MexicoComponent, children: [
         {path: '', component: HomeMxComponent},

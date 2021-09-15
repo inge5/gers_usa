@@ -47,7 +47,6 @@ export class TrabajeConNosotrosClComponent implements OnInit {
         .subscribe((res: any) => {
           this.loader = false;
           this.vacantes_data = res;
-          console.log(res);
 
           let horarioVacante = [];
           let horarioVacanteMap = [];
@@ -105,7 +104,6 @@ export class TrabajeConNosotrosClComponent implements OnInit {
       this.horarioVacante.forEach(filtro => {
         if(filtro.bandera && element.acf.horario_vacante === filtro.horario_vacante){
           if(!this.bandera){
-            console.log("vacio");
             this.filtrar = [];
           }
           this.bandera = true;
@@ -115,10 +113,8 @@ export class TrabajeConNosotrosClComponent implements OnInit {
     })
 
     if (this.filtrar.length > 0) {
-      // console.log(this.filtrar);
       this.vacantes_data = this.filtrar;
 
-      // console.log(this.eventosFiltro);
       if(!this.bandera){
 
         this.getVacantes();
@@ -130,19 +126,16 @@ export class TrabajeConNosotrosClComponent implements OnInit {
     }else{
       this.vacantes_data = this.vacantes_dataTemp;
       this.bandera = false;
-      // console.log(this.eventos);
       this.getVacantes();
     }
   }
 
   getCategoriasFiltro() {
     this._vacantesservice.getCategoriasVacantes().subscribe((resp: any) => {
-      // console.log(resp);
       resp.forEach(element => {
         element.bandera = false
       });
       this.categorias.push(...resp)
-      console.log(this.categorias);
     })
   }
 
@@ -193,7 +186,6 @@ export class TrabajeConNosotrosClComponent implements OnInit {
           showConfirmButton: true
         }); 
         form.reset();
-        //console.log(error);
       }, error: function(error){
         Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
       }

@@ -21,7 +21,7 @@ export var GLOBAL = {
   baseChile: 'https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/acf/v3',
   urlChile:  'https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/wp/v2',
   menuChile: 'https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/menus/v1',
-  //URL's CHILE
+  //URL's MEXICO
   baseMexico: 'https://pruebasneuro.co/N-1003backWordpress/mexico/wp-json/acf/v3',
   urlMexico:  'https://pruebasneuro.co/N-1003backWordpress/mexico/wp-json/wp/v2',
   menuMexico: 'https://pruebasneuro.co/N-1003backWordpress/mexico/wp-json/menus/v1'

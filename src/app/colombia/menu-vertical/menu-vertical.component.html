@@ -8,14 +8,14 @@
             <ul class="menuSoluciones">
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Servicios</a>
                     <ul class="menuSolucionesItemServicios">
-                        <ng-container *ngFor="let service of services.child_items">
+                        <ng-container *ngFor="let service of services?services.child_items:''">
                             <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="[service.slug]">{{ service.title }}</a></li>
                         </ng-container>
                     </ul>
                 </li>
                 <li><a class="itemMenuSolucionesPadre con-submenu" href="#">Representaciones</a>
                     <ul class="menuSolucionesItemRepresentaciones">
-                        <ng-container *ngFor="let representation of representations.child_items">
+                        <ng-container *ngFor="let representation of representations?representations.child_items:''">
                             <li><a class="itemMenuSolucionesVertical" (click)="cerrarMenuVertical()" [routerLink]="[representation.slug]">{{ representation.title }}</a></li>
                         </ng-container>
                     </ul>

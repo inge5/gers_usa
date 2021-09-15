@@ -20,9 +20,8 @@ export class MenuVerticalClComponent implements OnInit {
   getMenuPrincipal(){
     this._menusService.getMenuPrincipal()
     .subscribe((res:any) => {
-      console.log(res.items);
-      this.representaciones = res.items[0];
-      this.servicios = res.items[1];
+      this.servicios = res.items[0];
+      this.representaciones = res.items[1];
     });  
   }
 

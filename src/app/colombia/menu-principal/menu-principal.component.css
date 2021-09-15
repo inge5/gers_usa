@@ -49,6 +49,19 @@
   right: 0;
 }
 
+.abrir-subsubCategorias{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 46%;
+}
+@media (max-width: 992px){
+  .abrir-subCategorias{
+    display: none;
+  }
+}
+
+
 .menuproductos .navbar-center {
   position: absolute !important;
   left: -18% !important;

@@ -75,7 +75,7 @@ export class ProductoComponent implements OnInit {
   getCategoria() {
     this.variableG.currentCategory.subscribe(resp => {
       this.categoria = resp;
-      console.log(this.categoria);
+  
       this.paginas();
     })
   }
@@ -89,7 +89,7 @@ export class ProductoComponent implements OnInit {
       // Swal.fire('Cargando productos','Espere un momento','info');
       // Swal.showLoading();
       this.productosS.getListarProductosWP().then(respuesta => {
-        // console.log(respuesta.data);
+      
         this.listadoProductos = respuesta.data;
         Swal.close();
         let categorias = [];
@@ -110,9 +110,9 @@ export class ProductoComponent implements OnInit {
                 if(element1.id === element2.parent){
                   element1.subCategorias = subCategorias;
                 }
-                console.log("Entró");
+   
               }else{
-                console.log("Entró false");
+      
                 subCategorias.push({
                   ...element2,
                   bandera: false
@@ -140,19 +140,12 @@ export class ProductoComponent implements OnInit {
             }
           });
         }
-        console.log(this.filtros);
+
 
       }).catch(error => {
-        console.log(error);
+ 
       });
     }
-
-    // this.productosS.getListarProductos().then(respuesta => {
-    //   console.log(respuesta);
-    //   this.listadoProductos = respuesta['productos'];
-    // }).catch(error => {
-
-    // });
 
   }
 
@@ -161,7 +154,7 @@ export class ProductoComponent implements OnInit {
   }
 
   filtradoOrdenar(valor){
-    console.log(valor);
+  
    if(valor == 1){
       this.listadoProductos.sort(function(a,b){
         if(a.name > b.name){
@@ -172,7 +165,7 @@ export class ProductoComponent implements OnInit {
         }
         return 0;
       })
-      console.log(this.listadoProductos);
+
     }else if(valor == 2){
       this.listadoProductos.sort(function(a , b){
         if(a.date_created > b.date_created){
@@ -183,7 +176,6 @@ export class ProductoComponent implements OnInit {
         }
         return 0
       })
-      console.log(this.listadoProductos);
     }else if(valor == 3){
       this.listadoProductos.sort(function(a , b){
         if(a.date_created > b.date_created){
@@ -194,7 +186,6 @@ export class ProductoComponent implements OnInit {
         }
         return 0
       })
-      console.log(this.listadoProductos);
     }
   }
 
@@ -202,11 +193,11 @@ export class ProductoComponent implements OnInit {
     $(`#${id}`).toggleClass('subCategorias');
     let claseExiste = $(`#flecha${id}`).hasClass('fa-sort-up');
     if(claseExiste){
-      console.log("existe");
+  
       $(`#flecha${id}`).removeClass('fa-sort-up')
       $(`#flecha${id}`).addClass('fa-sort-down')
     }else{
-      console.log("no existe");
+  
       $(`#flecha${id}`).removeClass('fa-sort-down')
       $(`#flecha${id}`).addClass('fa-sort-up')
     }
@@ -218,7 +209,7 @@ export class ProductoComponent implements OnInit {
       this.listadoProductosTemp = this.listadoProductos;
     }
     this.listadoProductosTemp.forEach(element1 => {
-      // console.log(this.filtros);
+
       this.filtros.forEach(filtro => {
         element1.categories.filter(marca => {
           if (filtro.bandera && filtro.id === marca.id) {
@@ -228,7 +219,7 @@ export class ProductoComponent implements OnInit {
         filtro.subCategorias.forEach(subFiltro => {
           element1.categories.filter(marca => {
             if(subFiltro.bandera && subFiltro.id === marca.id){
-              console.log(subFiltro);
+    
               this.filtrar.push(element1);
             }
           })
@@ -236,26 +227,14 @@ export class ProductoComponent implements OnInit {
       });
     });
     if (this.filtrar.length > 0) {
-      console.log(this.filtrar);
+   
       this.listadoProductos = this.filtrar;
-      // this.calcularPaginas();
+   
     } else {
       this.listadoProductos = this.listadoProductosTemp;
-      // this.calcularPaginas();
-      console.log(this.listadoProductos);
+   
+ 
     }
-    // if (this.filtros.gossen ||
-    //   this.filtros.beckwith ||
-    //   this.filtros.dranetz ||
-    //   this.filtros.gmc ||
-    //   this.filtros.ndb ||
-    //   this.filtros.ordenar ||
-    //   this.filtros.paginas){
-    //   this.productosS.postListarProductos(this.filtros).then(respuesta => {
-    //     this.listadoProductos = respuesta['productos'];
-    //   }).catch(error => {
-    //     console.log(error);
-    //   });
   }
 
   detalleProductos(producto, codigo) {
@@ -265,8 +244,6 @@ export class ProductoComponent implements OnInit {
 
     this.nameProducto = this.nameProducto.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
     this.ruta.navigateByUrl(`/colombia/detalle-productos/${codigo}/${this.nameProducto}`);
-    // this.ruta.navigate(['/detalle-productos/' + codigo + '/' + this.nameProducto])
-    console.log(this.nameProducto)
   }
 
   listarForma1() {

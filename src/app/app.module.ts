@@ -170,6 +170,7 @@ import { FormDemostracionComponent } from './colombia/productos/form-demostracio
 import { FormCotizadorNeplanComponent } from './colombia/representaciones/neplan/form-cotizador-neplan/form-cotizador-neplan.component';
 import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
 import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-cl.component';
+import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
 registerLocaleData(es);
 
 @NgModule({
@@ -289,7 +290,8 @@ registerLocaleData(es);
     FormDemostracionComponent,
     FormCotizadorNeplanComponent,
     PublicacionInternaMxComponent,
-    DranetzClComponent
+    DranetzClComponent,
+    DataProtectionPolicyComponent
   ],
   imports: [
     FormsModule,

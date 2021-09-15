@@ -73,7 +73,7 @@ export class BuscadorMxComponent implements OnInit {
     }
     getPublicaciones(){
       this.publicacionesservice.getPublicaciones().subscribe(res => {
-        console.log(res);
+
         res.forEach(element => {
           this.data.push({
             title: element.title.rendered,

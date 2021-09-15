@@ -85,9 +85,9 @@ export class CarritoComponent implements OnInit {
     if (this.carritoAnterior) {
       this.carritoAnterior.forEach(respuesta => {
         this.cantidadCarrito += 1;
-        // console.log(this.cantidadCarrito);
+ 
       });
-      //console.log(this.cantidadCarrito);
+ 
     } else {
       this.cantidadCarrito = null;
     }
@@ -155,27 +155,8 @@ export class CarritoComponent implements OnInit {
 
     this.nameProducto = this.nameProducto.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
     this.ruta.navigate(['/detalle-productos/' + codigo + '/' + this.nameProducto])
-    console.log(this.nameProducto)
+   
   }
-
-  /*
-  enviarCorreoCotizacion() {
-   const data = {
-          productos: JSON.parse(localStorage.getItem('carrito')),
-          filtros: this.filtros
-    }
-    this.pruebaS.enviarCorreos(data).then(respuesta => {
-      console.log(respuesta);
-      if (respuesta['success']) {
-        this.alertaS.showToasterFull('Correo enviado Exitosamente');
-      } else {
-        this.alertaS.showToasterWarning('Valida que los campos diligenciado esten corectos');
-      }
-    }).catch(error => {
-      console.log(error);
-    });
-  }
-  */
 
   enviarForm(form) {
     const dataInfo = {
@@ -190,7 +171,7 @@ export class CarritoComponent implements OnInit {
     paqueteDeDatos.append('correo', this.filtros.correo);
     paqueteDeDatos.append('celular', this.filtros.celular);
 
-    //console.log(paqueteDeDatos.get('productos'));
+  
 
     $.ajax({
       url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-solicitar-cotizacion/form-cotizacion.php',
@@ -205,7 +186,7 @@ export class CarritoComponent implements OnInit {
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
-          //console.log(error);
+      
         form.reset();
       }, error: function(error){
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')

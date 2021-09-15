@@ -34,7 +34,7 @@ export class FormDemostracionComponent implements OnInit {
 
   traerProducto(){
     this.productoS.getlistarProductoUnicoWP(this.producto).then(resp => {
-      console.log(resp);
+
       this.nombreProducto = resp.data.name;
       this.formDemostracion.controls['tipo_producto'].setValue(this.nombreProducto)
     })
@@ -112,6 +112,12 @@ export class FormDemostracionComponent implements OnInit {
       });
     }
 
+    if(this.formDemostracion.invalid){
+      return Object.values( this.formDemostracion.controls ).forEach(control => {
+        control.markAsTouched();
+      });
+    }
+
     if(!this.formDemostracion.get('acepto').value){
       alert('Debes aceptar Terminos y condiciones');
       return;
@@ -128,7 +134,7 @@ export class FormDemostracionComponent implements OnInit {
     formData.append('tipo_producto', this.formDemostracion.get('tipo_producto').value);
     formData.append('fecha_propuesta', this.formDemostracion.get('fecha_propuesta').value);
 
-    console.log(this.formDemostracion.value);
+
     
     $.ajax({
       url: this.urlDestino,
@@ -147,7 +153,7 @@ export class FormDemostracionComponent implements OnInit {
           title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
           showConfirmButton: true
         });
-        //console.log(error);
+  
       }, error: function(error){
         Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
       }

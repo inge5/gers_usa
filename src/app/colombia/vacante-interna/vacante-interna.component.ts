@@ -80,16 +80,16 @@ export class VacanteInternaComponent implements OnInit {
         processData: false,
         cache: false, 
         success: function(data) {
-          // console.log(data);
+     
           Swal.fire({
             icon: 'success',
             title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
             showConfirmButton: true
           }); 
           form.reset();
-          //console.log(error);
+      
         }, error: function(error){
-          // console.log(error);
+      
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }
       });

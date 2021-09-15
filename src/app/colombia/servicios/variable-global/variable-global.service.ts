@@ -25,7 +25,7 @@ export class VariableGlobalService {
 
   setCategoria(categoria){
     this.cate.next(categoria);
-    // console.log(this.cate);
+
   }
 
   setBuscador(busqueda: string){
@@ -34,7 +34,6 @@ export class VariableGlobalService {
 
   consultarDatosLocales() {
     this.data.next(JSON.parse(localStorage.getItem('carrito'))) ;
-    // console.log(this.data);
   }
 
 }

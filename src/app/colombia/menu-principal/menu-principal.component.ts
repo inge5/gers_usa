@@ -37,7 +37,9 @@ export class MenuPrincipalComponent implements OnInit {
 
   getCategorias(){
     this.productoS.getCategoriesWP().then(resp => {
- 
+      
+      console.log(resp);
+
       for (const r of resp.data) {
         if (r.count > 0 && r.parent === 0) {
           this.categoriasTemp.push(r);
@@ -99,6 +101,7 @@ export class MenuPrincipalComponent implements OnInit {
     // $('.representacionItem').click(this.abrirMenu());
     
     let subCategorias = $('.subCategorias').hasClass('abrir-subCategorias');
+    let subsubCategorias = $('.subCategorias').hasClass('abrir-subsubCategorias');
     let cateSeleccionado = $('.categorias').hasClass('seleccionado');
     if(cateSeleccionado){
       $('.categorias').removeClass('seleccionado');
@@ -108,7 +111,10 @@ export class MenuPrincipalComponent implements OnInit {
       $('.subCategorias').removeClass("abrir-subCategorias")
     }
     $(`.pp${id}`).addClass("abrir-subCategorias")
-    // $(`.pp${id}`).on( "mouseenter mouseleave", "abrir-subCategorias" );
+    // if(subsubCategorias){
+    //   $('.subCategorias').removeClass('abrir-subsubCategorias');
+    // }
+    // $(`.subsubCategoria${id}`).addClass('abrir-subsubCategorias');
   }
 
   getMenuPrincipal() {

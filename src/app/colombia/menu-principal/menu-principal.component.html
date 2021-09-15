@@ -70,31 +70,44 @@
             <a [routerLink]="[ menu_parent.slug ]" class="nav-item nav-link">{{ menu_parent.title }}</a>
           </li>
 
-          <li class="nav-item dropdown has-megamenu d-md-none d-lg-block" id="productos" *ngIf="menu_parent.classes == 'subcontainer_style4'">
+          <li class="nav-item dropdown has-megamenu d-md-none d-lg-block" id="productos"
+            *ngIf="menu_parent.classes == 'subcontainer_style4'">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Productos
             </a>
             <div id="contenedor_productos" class="dropdown-menu menuproductos megamenu navbar-center">
               <div class="row filaRepresentaciones"
-                style="flex-flow: column wrap; align-items:stretch; padding-bottom:4%;">
-                
+                style="flex-flow: column wrap; align-items:stretch; padding-bottom:4%; height: 430px;">
+
                 <ng-container *ngFor="let categoria of categorias">
                   <div class="row filaRepresentaciones">
-                    <div class="col-md-6 col-12 col-lg-6 col-sm-12 categorias representacionItem" [ngClass]="'cate'+categoria.id" *ngIf="categoria.count > 0"
-                      (click)="productosCategoria(categoria.id)"
-                      (mouseenter)="desplegarSubCategorias(categoria.id)">
-                      <img class="imagenMarcaMenu img-fluid" [src]="categoria.image?categoria.image.src:'assets/images/marcas/2dranetz_marca.png'" [title]="categoria.name" [alt]="categoria.name">
+                    <div class="col-md-12 col-12 col-lg-12 col-xl-6 col-sm-12 text-center categorias representacionItem"
+                      [ngClass]="'cate'+categoria.id" *ngIf="categoria.count > 0"
+                      (click)="productosCategoria(categoria.id)" (mouseenter)="desplegarSubCategorias(categoria.id)">
+                      <img class="imagenMarcaMenu img-fluid"
+                        [src]="categoria.image?categoria.image.src:'assets/images/marcas/2dranetz_marca.png'"
+                        [title]="categoria.name" [alt]="categoria.name">
                     </div>
-                    <div class="col-md-6 col-12 col-lg-6 col-sm-12 subCategorias" [ngClass]="'pp'+categoria.id">
-                    <ng-container *ngFor="let subCategoria of categoria.subCategorias">
+               
+                      <div class="col-md-12 col-12 col-lg-12 col-xl-6 col-sm-12 subCategorias" [ngClass]="'pp'+categoria.id">
+                        <ng-container *ngFor="let subCategoria of categoria.subCategorias">
                         <div class="row contenedorSubmenu">
-                          <div class="col-md-12 col-subMenu" *ngIf="subCategoria.count > 0" (click)="productosCategoria(subCategoria.id)">
+                          <div class="col-md-12 col-subMenu" (click)="productosCategoria(subCategoria.id)">
                             <p class="textoItemMarcaMenu text-center font-weight-bold">{{subCategoria.name}}</p>
                           </div>
                         </div>
-                    </ng-container>
-                  </div>
+                      </ng-container>
+                      </div>
+                      <!-- <div class="col-md-4 col-12 col-lg-4 col-sm-12 subCategorias abrir-subsubCategorias">
+                        <div class="row contenedorSubmenu">
+                          <div class="col-md-12 col-subMenu">
+                            <p class="textoItemMarcaMenu text-center font-weight-bold">SubSubCategoria</p>
+                          </div>
+                        </div>
+                      </div> -->
+         
+
                   </div>
                 </ng-container>
               </div>
@@ -110,9 +123,10 @@
           </a>
         </li>
         <li class="nav-item d-flex flex-row no-ancho align-items-center mb-3 mb-sm-3 mb-md-0 mb-lg-0">
-            <input type="text"
-              class="form-control buscador nav-link border-0 bg-azulClaro buscador-detalles my-3" (keyup)="buscar()" name="buscador" placeholder="Buscar" [(ngModel)]="busqueda">
-          <a class="btn btn-link bg-azulClaro text-blue" id="buscar" (click)="abrirBuscador()"><i class="fas fa-search"></i></a>
+          <input type="text" class="form-control buscador nav-link border-0 bg-azulClaro buscador-detalles my-3"
+            (keyup)="buscar()" name="buscador" placeholder="Buscar" [(ngModel)]="busqueda">
+          <a class="btn btn-link bg-azulClaro text-blue" id="buscar" (click)="abrirBuscador()"><i
+              class="fas fa-search"></i></a>
         </li>
       </ul>
       <!-- <ul class="navbar-nav">
