@@ -94,6 +94,7 @@ import { TerceriasAsesoriasMxComponent } from './mexico/servicios/tercerias-ases
 import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publicacion-interna-mx/publicacion-interna-mx.component';
 import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-cl.component';
 import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
+import { GossenMetrawattComponent } from './colombia/representaciones/gossen-metrawatt/gossen-metrawatt.component';
 
 
 
@@ -130,7 +131,8 @@ const APP_ROUTES: Routes = [
         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
         {path: 'buscador', component: BuscadorComponent},
-        {path: 'gmc-instruments', redirectTo: 'colombia', pathMatch:'full'}
+        {path: 'gossen-metrawatt', component: GossenMetrawattComponent},
+        {path: '**', redirectTo: 'colombia', pathMatch:'full'}
       ]},
 
     //Rutas de Chile

@@ -59,6 +59,9 @@ export class PagesService {
   getNdb(): Observable<any>{
     return this._http.get(`${this.url}/representaciones/270`)
   }
+  getGossenMetrawatt(): Observable<any>{
+    return this._http.get(`${this.url}/representaciones/271`)
+  }
   /***************************/
   /**** Página Proyectos *****/
   getProyectosPage(): Observable<any>{
