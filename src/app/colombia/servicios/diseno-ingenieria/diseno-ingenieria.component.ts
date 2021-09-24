@@ -12,6 +12,7 @@ export class DisenoIngenieriaComponent implements OnInit {
   seccion_1_data: any = {};
   seccion_iconos_data: any[] = [];
   item_tab_data: any[] = [];
+  texto_columna_0_data: any = {};
   texto_columna_1_data:any = {};
   texto_columna_2_data:any = {};
   public activePillIndex:number = 0;
@@ -25,6 +26,7 @@ export class DisenoIngenieriaComponent implements OnInit {
         this.seccion_1_data = res.acf.seccion_1;
         this.seccion_iconos_data = res.acf.seccion_iconos;
         this.item_tab_data = res.acf.item_tab;
+        this.texto_columna_0_data = res.acf.fondo;
         this.texto_columna_1_data = res.acf.texto_columna_1;
         this.texto_columna_2_data = res.acf.texto_columna_2;
       });
