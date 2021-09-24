@@ -189,6 +189,9 @@ export class ProductoComponent implements OnInit {
     }
   }
 
+  openCloseSubSubCategorias(id: number){
+    $(`#${id}`).toggleClass('subsubCategorias');
+  }
   openCloseSubCategorias(id: number){
     $(`#${id}`).toggleClass('subCategorias');
     let claseExiste = $(`#flecha${id}`).hasClass('fa-sort-up');
@@ -219,10 +222,19 @@ export class ProductoComponent implements OnInit {
         filtro.subCategorias.forEach(subFiltro => {
           element1.categories.filter(marca => {
             if(subFiltro.bandera && subFiltro.id === marca.id){
-    
+              
               this.filtrar.push(element1);
             }
           })
+          subFiltro.subsubCategorias.forEach(subsubFiltro => {
+            element1.categories.filter(marca => {
+              if(subsubFiltro.bandera && subsubFiltro.id === marca.id){
+                console.log(element1);
+                console.log(subsubFiltro.bandera);
+                this.filtrar.push(element1);
+              }
+            })
+          });
         });
       });
     });

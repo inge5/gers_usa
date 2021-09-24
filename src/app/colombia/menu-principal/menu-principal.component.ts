@@ -23,6 +23,7 @@ export class MenuPrincipalComponent implements OnInit {
   subCategoriasTemp: any[] = [];
   menuPrincipal_data: any[] = [];
   busqueda: string = "";
+  subsubCategoriasTemp: any[] = [];
   
   constructor(private variableG: VariableGlobalService, private alertaS: AlertasService, private _menusService: MenusService,
     private productoS: PruebaProductosService, private ruta: Router) { 
@@ -37,8 +38,6 @@ export class MenuPrincipalComponent implements OnInit {
 
   getCategorias(){
     this.productoS.getCategoriesWP().then(resp => {
-      
-      console.log(resp);
 
       for (const r of resp.data) {
         if (r.count > 0 && r.parent === 0) {
@@ -48,6 +47,20 @@ export class MenuPrincipalComponent implements OnInit {
           this.subCategoriasTemp.push(r);
         }
       }
+  
+        this.subCategoriasTemp.forEach((element2, index) => {
+          for (const r of resp.data) {
+            if(element2.id === r.parent){
+              this.subsubCategoriasTemp.push({
+                ...r,
+                bandera: false
+              })
+            }
+          }
+            element2.subsubCategorias = this.subsubCategoriasTemp;
+            this.subsubCategoriasTemp = [];
+      })
+      
       this.categoriasTemp.forEach(element1 => {
         this.subCategoriasTemp.forEach((element2, index) => {
           if (element1.id === element2.parent) {
@@ -63,6 +76,7 @@ export class MenuPrincipalComponent implements OnInit {
           }
         })
       })
+      console.log(this.categorias);
       this.productoS.setCategoria(this.categorias);
     })
   }

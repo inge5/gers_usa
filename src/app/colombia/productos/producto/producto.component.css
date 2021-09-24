@@ -14,6 +14,10 @@
 .subCategorias{
   display: none !important;
 }
+.subsubCategorias{
+  display: none !important;
+}
+
 .contenedor-relativo:hover .mostrar-btn{
   display: block !important;
 }
@@ -38,6 +42,12 @@
 }
 .sombreado-subCate{
   background-color: #f1f1f1;
+  width: 122%;
+  padding: 1%;
+  font-size: 14px;
+}
+.sombreado-subsubCate{
+  background-color: rgb(210 210 210);
   width: 122%;
   padding: 1%;
   font-size: 14px;

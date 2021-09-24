@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { MenusService } from '../../services/menus.service';
 
 declare var $:any;
@@ -11,7 +13,7 @@ declare var $:any;
 export class MenuVerticalComponent implements OnInit{
   services:any = [];
   representations:any = [];
-  constructor(private _menuServices:MenusService) { }
+  constructor(private _menuServices:MenusService, private ruta: Router) { }
 
   ngOnInit(): void {
     this._menuServices.getMenuPrincipal()
@@ -22,6 +24,9 @@ export class MenuVerticalComponent implements OnInit{
   }
 
   cerrarMenuVertical(){
+    Swal.fire('Cargando Productos','Espere un momento','info');
+    Swal.showLoading();
+    this.ruta.navigateByUrl('/colombia/productos');  
     $('#menuvertical').removeClass('switch-cotizador');
     $('.overviwe').removeClass('open-overviwe');
   }
