@@ -11,6 +11,9 @@
   margin-bottom: 15px;
   margin-top: 15px;
 }
+.filtros-izquierda .btn-link{
+  padding: 0;
+}
 .subCategorias{
   display: none !important;
 }

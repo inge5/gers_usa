@@ -35,7 +35,9 @@ small {
 p{
     margin-bottom: 0;
 }
-
+.hide{
+    display: none;
+}
 .roboto{
     font-family: 'Roboto', sans-serif;
 }
@@ -348,7 +350,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .btn-outline:hover {
     background: #2C3394;
-    color: #fff;
+    color: #fff !important;
     border-color: #2C3394;
 }
 .btn {
@@ -1772,10 +1774,18 @@ p.textoItemMenu {
     padding: 10px 0;
 }
 
-.contenedorFooter .listaItemsFooter li a {
+.contenedorFooter .listaItemsFooter li a{
     color: #2C3394;
 }
-
+.wlistaItemsFooter a{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;
+    padding: 10px 0;
+    display: block;
+}
 .contenedorFooter .contacto3 h4 {
     color: #2C3394;
     letter-spacing: 0.84px;
@@ -1790,7 +1800,8 @@ p.textoItemMenu {
     line-height: 17.07px;
 }
 
-.contenedorFooter .contacto3 .sedeFooter a {
+.contenedorFooter .contacto3 .sedeFooter a ,
+.contenedorFooter .contacto3 .sedeFooter{
     color: #2C3394;
     letter-spacing: 0.3px;
     line-height: 17.07px;
@@ -1805,7 +1816,7 @@ p.textoItemMenu {
 }
 
 .contenedorFooter .contacto4 .certificados img {
-    padding: 0 5px;
+    padding: 10px 3px;
 }
 
 .contenedorFooter .contacto4 .redesFooter img {
@@ -2405,10 +2416,7 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 /* Proyects Usa */
-.tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa {
-    bottom: 30%;
-    transition: 1s;
-}
+
 .tituloTarjetaProyectosUsa {
     background-color: #fff;
     position: absolute;
@@ -2447,16 +2455,6 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
     display: none;
     min-height: 112px;
 }
-
-.textoTarjetaProyectosUsa p {
-    color: #FFFFFF;
-    letter-spacing: 0.49px;
-    line-height: 18.75px;
-    padding: 10px 45px 10px;
-    font-weight: 300;
-    margin-bottom: 0;
-}
-
 
 /** Menú Vertical USA **/
 .menuVerticalPrincipalUsa {
@@ -2663,15 +2661,35 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 
 
 /***** RESPONSIVE ******/
+
+
 @media (max-width: 575px) {
     .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos{
         bottom: 130px;
     }
-    .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa{
-        bottom: 130px;
+    
+}
+@media (min-width: 320px){
+    .textoTarjetaProyectosUsa p {
+        color: #FFFFFF;
+        letter-spacing: 0.49px;
+        line-height: 18.75px;
+        padding: 10px 10px 10px;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+    
+    .tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa {
+        bottom: 33%;
+        transition: 1s;
+    }
+    .contenedorFooter .contacto4 .certificados img {
+        width: 18% !important;
+    }
+    .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 27% !important;
     }
 }
-
 @media (max-width: 767px) {
     .seccionColombia5 .border-right{
         border-right: 0!important;
@@ -2948,6 +2966,13 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 
 
 @media (min-width: 768px) {
+    .textoTarjetaProyectosUsa p {
+        padding: 10px 30px 10px;
+    }
+    .tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa {
+        bottom: 75%;
+        transition: 1s;
+    }
     .menuRepresentaciones.chileRepresentaciones  {
         background-color: #E8ECF4 !important;
         width: 35rem;
@@ -3042,6 +3067,10 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 }
 
 @media (min-width: 1920px) {
+    .tarjetaProyectosInterior:hover .tituloTarjetaProyectosUsa {
+        bottom: 33%;
+        transition: 1s;
+    }
     .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
         bottom: 23%;
     }
