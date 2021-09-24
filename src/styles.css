@@ -35,7 +35,9 @@ small {
 p{
     margin-bottom: 0;
 }
-
+.hide{
+    display: none;
+}
 .roboto{
     font-family: 'Roboto', sans-serif;
 }
@@ -1770,10 +1772,18 @@ p.textoItemMenu {
     padding: 10px 0;
 }
 
-.contenedorFooter .listaItemsFooter li a {
+.contenedorFooter .listaItemsFooter li a{
     color: #2C3394;
 }
-
+.wlistaItemsFooter a{
+    color: #2C3394;
+    font-family: Montserrat;
+    font-size: 14px;
+    letter-spacing: 0.84px;
+    line-height: 17.07px;
+    padding: 10px 0;
+    display: block;
+}
 .contenedorFooter .contacto3 h4 {
     color: #2C3394;
     letter-spacing: 0.84px;
@@ -1788,7 +1798,8 @@ p.textoItemMenu {
     line-height: 17.07px;
 }
 
-.contenedorFooter .contacto3 .sedeFooter a {
+.contenedorFooter .contacto3 .sedeFooter a ,
+.contenedorFooter .contacto3 .sedeFooter{
     color: #2C3394;
     letter-spacing: 0.3px;
     line-height: 17.07px;
@@ -1803,7 +1814,7 @@ p.textoItemMenu {
 }
 
 .contenedorFooter .contacto4 .certificados img {
-    padding: 0 5px;
+    padding: 10px 3px;
 }
 
 .contenedorFooter .contacto4 .redesFooter img {
@@ -2661,6 +2672,8 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 
 
 /***** RESPONSIVE ******/
+
+
 @media (max-width: 575px) {
     .proyectsPage .tarjetaProyectosInterior:hover .tituloTarjetaProyectos{
         bottom: 130px;
@@ -2669,7 +2682,14 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
         bottom: 130px;
     }
 }
-
+@media (min-width: 320px){
+    .contenedorFooter .contacto4 .certificados img {
+        width: 18% !important;
+    }
+    .homeProyects .tarjetaProyectosInterior:hover .tituloTarjetaProyectos {
+        bottom: 27% !important;
+    }
+}
 @media (max-width: 767px) {
     .seccionColombia5 .border-right{
         border-right: 0!important;
