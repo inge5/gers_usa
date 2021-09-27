@@ -81,13 +81,13 @@ export class ProductoComponent implements OnInit {
   }
 
 
-  listarProductos(cantidad: number = 5, ordenarProductos: boolean = true) {
+  listarProductos(cantidad: number = 25, ordenarProductos: boolean = true) {
     this.per_page = cantidad;
     if (!ordenarProductos) {
       this.filtradoProductos();
     } else {
-      // Swal.fire('Cargando productos','Espere un momento','info');
-      // Swal.showLoading();
+      Swal.fire('Cargando productos','Espere un momento','info');
+      Swal.showLoading();
       this.productosS.getListarProductosWP().then(respuesta => {
       
         this.listadoProductos = respuesta.data;
@@ -130,6 +130,7 @@ export class ProductoComponent implements OnInit {
           }
         })
         this.filtros = categorias;
+
         for (const filtro of this.filtros) {
           if(filtro.bandera){
             this.filtradoProductos();
@@ -208,6 +209,7 @@ export class ProductoComponent implements OnInit {
 
   filtradoProductos() {
     this.filtrar = [];
+    let validarSiExiste: boolean = false;
     if (!this.listadoProductosTemp || this.listadoProductosTemp === this.listadoProductos) {
       this.listadoProductosTemp = this.listadoProductos;
     }
@@ -215,12 +217,19 @@ export class ProductoComponent implements OnInit {
 
       this.filtros.forEach(filtro => {
         element1.categories.filter(marca => {
+          if(filtro.bandera){
+            validarSiExiste = true;
+          }
           if (filtro.bandera && filtro.id === marca.id) {
+            
             this.filtrar.push(element1);
           }
         });
         filtro.subCategorias.forEach(subFiltro => {
           element1.categories.filter(marca => {
+            if(subFiltro.bandera){
+              validarSiExiste = true;
+            }
             if(subFiltro.bandera && subFiltro.id === marca.id){
               
               this.filtrar.push(element1);
@@ -228,9 +237,11 @@ export class ProductoComponent implements OnInit {
           })
           subFiltro.subsubCategorias.forEach(subsubFiltro => {
             element1.categories.filter(marca => {
+              if(subsubFiltro.bandera){
+                validarSiExiste = true;
+              }
               if(subsubFiltro.bandera && subsubFiltro.id === marca.id){
-                console.log(element1);
-                console.log(subsubFiltro.bandera);
+                
                 this.filtrar.push(element1);
               }
             })
@@ -240,8 +251,17 @@ export class ProductoComponent implements OnInit {
     });
     if (this.filtrar.length > 0) {
    
-      this.listadoProductos = this.filtrar;
-   
+      // this.listadoProductos = this.filtrar;
+      let filtrarMap = [];
+      filtrarMap = this.filtrar.map(item => [item.id, item]);
+
+        let filtrarMapArr = new Map(filtrarMap);
+        
+        let unicos = [...filtrarMapArr.values()];
+
+        this.listadoProductos = unicos;
+    } else if(this.filtrar.length === 0 && validarSiExiste){
+      this.listadoProductos = [];
     } else {
       this.listadoProductos = this.listadoProductosTemp;
    

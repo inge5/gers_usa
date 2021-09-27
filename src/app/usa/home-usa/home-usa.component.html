@@ -80,7 +80,7 @@
                 <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'25px' }"></ngx-skeleton-loader>
                 <p *ngIf="!loader" class="font-weight-bold text-white text-center montserrat size22 line-height26 letter-spacing-0-47" [innerHTML]="lets_work_data.texto_general"></p>
                 <div class="text-center">
-                    <a class="text-blue1 font-weight-600 size19 line-height23 letter-spacing-0-47 btn-white mt-2 rounded p-3 d-inline-block mx-auto" href="{{ lets_work_data.boton_url }}">{{ lets_work_data.boton_texto }}</a>
+                    <a class="text-blue1 font-weight-600 size19 line-height23 letter-spacing-0-47 btn-white mt-2 rounded p-3 d-inline-block mx-auto" [routerLink]="[lets_work_data.boton_url]">{{ lets_work_data.boton_texto }}</a>
                 </div>
             </div>
         </div>

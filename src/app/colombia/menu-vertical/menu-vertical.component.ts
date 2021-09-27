@@ -24,9 +24,9 @@ export class MenuVerticalComponent implements OnInit{
   }
 
   cerrarMenuVertical(){
-    Swal.fire('Cargando Productos','Espere un momento','info');
-    Swal.showLoading();
-    this.ruta.navigateByUrl('/colombia/productos');  
+    // Swal.fire('Cargando Productos','Espere un momento','info');
+    // Swal.showLoading();
+    // this.ruta.navigateByUrl('/colombia/productos');  
     $('#menuvertical').removeClass('switch-cotizador');
     $('.overviwe').removeClass('open-overviwe');
   }
