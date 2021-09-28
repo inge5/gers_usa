@@ -16,4 +16,13 @@ export class MenusClService {
   getMenuPrincipal(): Observable<any>{
     return this._http.get(`${this.menu}/menus/menu-principal`);
   }
+  getFooter(): Observable<any>{
+    return this._http.get(`${this.menu}/menus/24`);
+  }
+  getFooterContacto(): Observable<any>{
+    return this._http.get(`${this.menu}/menus/25`);
+  }
+  getFooterCertificados(): Observable<any>{
+    return this._http.get(`${this.menu}/menus/26`);
+  }
 }

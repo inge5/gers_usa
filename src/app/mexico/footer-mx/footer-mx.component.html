@@ -8,30 +8,54 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 contacto2 mb-3">
                 <ul class="listaItemsFooter">
-                    <li><a [routerLink]="['pensamiento-corporativo']">Pensamiento Corporativo</a></li>
-                    <li><a [routerLink]="['politica-gestion-integral']">Política de Gestion integral</a></li>
+                    <li *ngFor="let dato of datos">
+                        <a [routerLink]="[dato.slug]">{{dato.title}}</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 contacto3">
-                <ul class="listaItemsFooter">
-                    <li><a href="#">Otras Políticas</a></li>
+                <ul class="listaItemsFooter"> 
+                    <li *ngFor="let dato of datos2">
+                        <ng-container *ngIf="!dato.slug else esRuta">
+                            <a [href]="dato.url">{{ dato.title }}</a>
+                        </ng-container>
+                        <ng-template #esRuta>
+                            <div class="sedeFooter">
+                                <a class="font-weight-500" [routerLink]="[dato.slug]">{{ dato.title }} <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </ng-template>
+                    </li>
                 </ul>
-                <div class="sedeFooter">
-                    <a class="font-weight-500" [routerLink]="['contactenos']">Nuestras sedes <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 contacto4">
-                <div class="info-Oficina text-blue1">
-                    <h4 class="size14 font-weight-700">Oficina Principal</h4>
-                    <p class="size14">Calle 3A # 65-118 <br> +57 2-489 7000 <br> gers@gers.com.co
-                    </p>
-                </div>
-                <div class="redesFooter mt-4">
-                    <p class="mb-3 text-blue1 size14">Nuestras redes sociales</p>
-                    <a href="https://www.facebook.com/gerscali" target="_blank"><img src="assets/images/footer/facebook.png" alt="certificado 1"></a>
-                    <a href="https://twitter.com/gers_sa" target="_blank"><img src="assets/images/footer/twitter.png" alt="certificado 2"></a>
-                    <a href="https://www.linkedin.com/company/gers-s-a/" target="_blank"><img src="assets/images/footer/linkedin.png" alt="certificado 3"></a>
-                </div>
+                <ng-container *ngFor="let contacto of menuContactenos">
+                    <ng-container *ngIf="contacto.url === '#' && contacto.title_position != 'hide' else linkeable">
+                            <div class="info-Oficina text-blue1">
+                                <h4 class="size14 font-weight-700">{{ contacto.title }}</h4>
+                                <ng-container *ngFor="let contactoHijo of contacto.child_items">
+                                    <ng-container *ngIf="contactoHijo.title_position != 'hide' else numeroContacto">
+                                        <p class="size14">
+                                            {{ contactoHijo.post_content }}
+                                        </p>
+                                    </ng-container>
+                                    <ng-template #numeroContacto>
+                                        <p class="size14">
+                                            {{ contactoHijo.title }}
+                                        </p>
+                                    </ng-template>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+                    <ng-template #linkeable>
+                        <div class="redesFooter mt-4">
+                            <p class="mb-3 text-blue1 size14">{{ contacto.title }}</p>
+                            <ng-container *ngFor="let redesSociales of contacto.child_items">
+                                <a [href]="redesSociales.url" target="_blank"><img [src]="redesSociales.thumbnail_src" [alt]="redesSociales.title"></a>
+                            </ng-container>
+                        </div>
+                    </ng-template>
+                </ng-container>
+               
             </div>
         </div>
     </div>

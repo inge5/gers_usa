@@ -38,11 +38,11 @@ export class FooterComponent implements OnInit {
       this._menuService.getMenuFooterContacto()
       .subscribe((res:any) => {
         this.dataContacto = res;
+        console.log(this.dataContacto);
       });
       this._menuService.getMenuFooterCertificados()
       .subscribe((res:any) => {
         this.dataCertificados = res;
-        console.log(this.dataCertificados);
       });
     }
 }

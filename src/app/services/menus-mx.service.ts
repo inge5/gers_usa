@@ -16,4 +16,14 @@ export class MenusMxService {
   getMenuPrincipal(): Observable<any>{
     return this._http.get(`${this.menu}/menus/menu-principal`);
   }
+
+  getMenuFooter(): Observable<any>{
+    return this._http.get(`${this.menu}/menus/26`);
+  }
+  getMenuFooterContactenos(): Observable<any>{
+    return this._http.get(`${this.menu}/menus/27`);
+  }
+  getMenuFooter2(): Observable<any>{
+    return this._http.get(`${this.menu}/menus/28`);
+  }
 }
