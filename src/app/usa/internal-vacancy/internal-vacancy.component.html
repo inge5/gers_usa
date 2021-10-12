@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="horario">
-                                <p class="text-right font-weight-500 text-black"><i class="far fa-clock"></i> {{ vacante_data.acf.fecha_de_publicacion }}</p>
+                                <!-- <p class="text-right font-weight-500 text-black"><i class="far fa-clock"></i> {{ vacante_data.acf.fecha_de_publicacion }}</p> -->
                             </div>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                             <p><strong>Location:</strong> {{ vacante_data.acf.ubicacion_vacante }}</p>
                             <p><strong>Schedule:</strong> {{ vacante_data.acf.horario_vacante }}</p>
                             <p><strong>Salary approx:</strong> {{ vacante_data.acf.salario_aproximado_vacante }}</p>
-                            <p class="mt-5 mb-3 text-blue1"><strong>{{ vacante_data.acf.ubicacion_vacante }}</strong></p>
+                            <p class="mt-5 mb-3 text-blue1"><strong> USA </strong></p>
                             <p [innerHTML]="vacante_data.content.rendered"></p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                 <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px' }"></ngx-skeleton-loader>
                 <ngx-skeleton-loader count="2" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
                 <div *ngIf="!loader" class="adjunta-hoja p-3">
-                    <button class="mb-3 d-block w-100 btn btn-blue postular-ahora" id="postular-curriculum" (click)="postularme()">¡Postularte ahora!</button>
+                    <button class="mb-3 d-block w-100 btn btn-blue postular-ahora" id="postular-curriculum" (click)="postularme()">Send resume!</button>
                     <p class="mb-0 text-black text-center"><strong>Category:</strong> {{ vacante_data.acf.categoria_vacante }}</p>
                     <p class="text-black text-center"><strong>Schedule:</strong> {{ vacante_data.acf.horario_vacante }}</p>
                 </div>
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="bg-light border-right sobreponer" id="sidebar-wrapperInterna">
-        <div class="sidebar-heading size23 text-blue1 font-weight-600"><button id="btnCerrarVacante" (click)="cierraVacante()">x</button> POSTULARTE A LA VACANTE</div>
+        <div class="sidebar-heading size23 text-blue1 font-weight-600"><button id="btnCerrarVacante" (click)="cierraVacante()">x</button> APPLY FOR THE VACANCY</div>
         <div class="bodyTrabajemos">
             <div class="container">
                 <div class="row">

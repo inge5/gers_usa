@@ -273,7 +273,7 @@
                     <div class="full-textoshv">
                         <p class="tituloHojadeVida m-0">{{vacante_content.titulo}}</p>
                         <p class="textoHojadeVida" [innerHTML]="vacante_content.descripcion"></p>
-                        <a class="linkHoja mt-3 d-block" href={{vacante_content.url_boton}}>{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
+                        <a class="linkHoja mt-3 d-block" [routerLink]="[vacante_content.url_boton]">{{vacante_content.texto_boton}} <i class="fas fa-long-arrow-alt-right ml-2" style="vertical-align: -.25em;"></i></a>
                     </div>
                 </div>
                 <div class="col-md-5">
