@@ -52,72 +52,19 @@
             </div>
         </div> 
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'50px', width:'500px', marginLeft:'30%', marginTop:'3rem', marginBottom:'1rem' }"></ngx-skeleton-loader>
-            <h2 *ngIf="!loader" class="text-blue mt-5 text-center mb-3">REQUEST QUOTE /  DEMO</h2>
-            <form [formGroup]="formularioCotizacion" (ngSubmit)="enviarFormularioCotizacion()">
-                <div class="row">
-                <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="name" [class.is-invalid]="Name" formControlName="name" placeholder="Name*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="email" [class.is-invalid]="Email" formControlName="email" placeholder="E-mail*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="phoneNumber" [class.is-invalid]="PhoneNumber" formControlName="phoneNumber" placeholder="Phone number*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="company" [class.is-invalid]="Company" formControlName="company" placeholder="Company*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="title" [class.is-invalid]="Title" formControlName="title" placeholder="Title*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="industry" [class.is-invalid]="Industry" formControlName="industry" placeholder="Industry*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <input *ngIf="!loader" type="text" name="numberLicenses" [class.is-invalid]="NumberLicenses" formControlName="numberLicenses" placeholder="Number of licenses*" class="form-control">
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <select *ngIf="!loader" name="nodesLimit" [class.is-invalid]="NodesLimit" formControlName="nodesLimit" class="custom-select">
-                        <option selected value="">Nodes Limit</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                        <option value="300">300</option>
-                        <option value="unlimited">Unlimited</option>
-                    </select>
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-6 col-lg-6">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'100%', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <select *ngIf="!loader" name="modules" [class.is-invalid]="Modules" formControlName="modules" class="custom-select">
-                        <option selected value="">Modules</option>
-                        <option value="Standard Modules">Standard Modules</option>
-                        <option value="Optimization and Security Modules">Optimization and Security Modules</option>
-                        <option value="Stability Modules">Stability Modules</option>
-                        <option value="Protection Modules">Protection Modules</option>
-                        <option value="Advanced Modules">Advanced Modules</option>
-                        <option value="Neplan As Tool For Research">Neplan As Tool For Research</option>
-                    </select>
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'100%', height:'175px', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <textarea *ngIf="!loader" name="comments" [class.is-invalid]="Comments" formControlName="comments" id="" cols="30" rows="10" class="form-control" placeholder="Comments*"></textarea>
-                </div>
-                <div class="form-group col-12 col-sm-12 col-md-4 col-lg-4">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{width:'47%', height:'50px', marginTop:'1rem' }"></ngx-skeleton-loader>
-                    <button *ngIf="!loader" class="btn btn-azulOscuro btn-formulario">SEND</button>
-                </div>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" *ngIf="info_data.imagen_logo" src="{{ info_data.imagen_logo }}" alt="Neplan">
             </div>
-            </form>
+            <div class="col-md-8">
+                <h2 class="mb-0 size28 font-weight-600 text-blue1 letter-spacing-1-69 line-height34">{{ info_data.titulo }}</h2>
+                <h3 class="size28 font-weight-400 text-blue1 letter-spacing-1-69 line-height34">{{ info_data.subtitulo }}</h3>
+                <p class="size18 letter-spacing-1-09 line-height22 text-blue1">{{ info_data.texto_general }}</p>
+                <p class="mt-3 size13 letter-spacing-0-04 line-height16 text-blue1 mb-0">{{ info_data.texto_adicionar_al_carrito }}</p>
+                <a class="btn btn-azulOscuro mt-2 mb-4 size13 letter-spacing-0-04 line-height16 w-40" (click)="abrirCotizador()">Añadir al cotizador</a>
+            </div>
         </div>
-    </div>
+    </div> 
+    <app-form-cotizador-neplan-usa [titulo]="info_data.titulo" [subTitulo]="info_data.subtitulo"></app-form-cotizador-neplan-usa>
 </div>

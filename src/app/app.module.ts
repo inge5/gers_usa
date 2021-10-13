@@ -172,6 +172,7 @@ import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publica
 import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-cl.component';
 import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
 import { GossenMetrawattComponent } from './colombia/representaciones/gossen-metrawatt/gossen-metrawatt.component';
+import { FormCotizadorNeplanUsaComponent } from './usa/representaciones/neplan-usa/form-cotizador-neplan-usa/form-cotizador-neplan-usa.component';
 registerLocaleData(es);
 
 @NgModule({
@@ -293,7 +294,8 @@ registerLocaleData(es);
     PublicacionInternaMxComponent,
     DranetzClComponent,
     DataProtectionPolicyComponent,
-    GossenMetrawattComponent
+    GossenMetrawattComponent,
+    FormCotizadorNeplanUsaComponent
   ],
   imports: [
     FormsModule,
