@@ -2657,6 +2657,10 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
    display: block !important;
    margin: 0 !important;
   }
+.sombra-cotizador{
+    border-left: 1px solid #f1f1f1;
+    box-shadow: -1px 0 9px -4px #000;
+  }
   
 
 
