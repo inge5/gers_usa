@@ -61,7 +61,7 @@ export class InternaCapacitacionChileComponent implements OnInit {
   formTrabajeNosotros(form){
     this.usuario.capacitacion = this.capacitacion.title.rendered;
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1003backWordpress/chile/wp-content/themes/gers/inscripcion.php',
+      url: 'https://gers.com.co/backend/chile/wp-content/themes/gers/inscripcion.php',
       type: 'POST',
       data: JSON.stringify(this.usuario),
       dataType:"json",

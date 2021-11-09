@@ -5,7 +5,7 @@ import api from "@woocommerce/woocommerce-rest-api";
 })
 export class PruebaProductosService {
 
-  url = 'https://pruebasneuro.co/N-1003backWordpress';
+  url = 'https://gers.com.co/backend';
 
   por_page: number;
   categoria: any[] = [];

@@ -50,7 +50,7 @@ export class FormCotizadorNeplanComponent implements OnInit {
     paqueteDeDatos.append('celular', this.filtros.celular);
 
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-cotizador-neplan-colombia/form-cotizador-neplan-colombia.php',
+      url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-cotizador-neplan-colombia/form-cotizador-neplan-colombia.php',
       type: 'POST',
       data: paqueteDeDatos,
       contentType: false,

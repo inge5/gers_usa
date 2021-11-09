@@ -16,7 +16,7 @@ export class FormDemostracionComponent implements OnInit {
   @Input() tipoProducto: any;
   nombreProducto
   formDemostracion: FormGroup;
-  urlDestino: string = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-demostracion/form-demostracion.php";
+  urlDestino: string = "https://gers.com.co/backend/wp-content/themes/gers/formulario-demostracion/form-demostracion.php";
 
   constructor(private fb: FormBuilder, private productoS: PruebaProductosService, private _neplan:PagesService) { }
 

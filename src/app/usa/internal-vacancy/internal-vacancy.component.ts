@@ -66,7 +66,7 @@ export class InternalVacancyComponent implements OnInit {
       paqueteDeDatos.append('ubicacion', this.interesado.ubicacion);
       paqueteDeDatos.append('acepto', this.interesado.acepto);
       paqueteDeDatos.append('vacante', this.interesado.vacante) ;
-      var destino = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-vacante-interna/form-vacante-interna.php"; // El script que va a recibir los campos de formulario.
+      var destino = "https://gers.com.co/backend/wp-content/themes/gers/formulario-vacante-interna/form-vacante-interna.php"; // El script que va a recibir los campos de formulario.
             /* Se envia el paquete de datos por ajax. */
       $.ajax({
         url: destino,

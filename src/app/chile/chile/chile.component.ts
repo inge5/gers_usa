@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 declare function mainFunction();
 
 
@@ -10,9 +10,10 @@ declare function mainFunction();
 })
 export class ChileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.cambiarTitulo('GERS - Chile');
     mainFunction();
   }
 

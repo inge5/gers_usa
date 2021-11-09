@@ -156,7 +156,7 @@ export class WorkWithUsComponent implements OnInit {
   }
 
   verVacantes(slug:string){
-    this._router.navigate(['/usa/vacancies', slug]);
+    this._router.navigate(['/vacancies', slug]);
   }
   changeFile(file:File){
     this.usuarioUsa.archivo = file[0];
@@ -172,7 +172,7 @@ export class WorkWithUsComponent implements OnInit {
     paqueteDeDatos.append('ubicacion', this.usuarioUsa.ubicacion);
     paqueteDeDatos.append('categoria', this.usuarioUsa.categoria);
     paqueteDeDatos.append('acepto', this.usuarioUsa.acepto);
-    var destino = "https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-vacantes-general/form-vacantes-general.php"; // El script que va a recibir los campos de formulario.
+    var destino = "https://gers.com.co/backend/wp-content/themes/gers/formulario-vacantes-general/form-vacantes-general.php"; // El script que va a recibir los campos de formulario.
 					/* Se envia el paquete de datos por ajax. */
     $.ajax({
       url: destino,

@@ -200,7 +200,7 @@ export class CapacitacionMexicoComponent implements OnInit {
   }
 
   enviarInterna(capacitacion) {
-    this.router.navigateByUrl(`/mexico/capacitaciones/${capacitacion.id}`);
+    this.router.navigateByUrl(`/capacitaciones/${capacitacion.id}`);
   
   }
 

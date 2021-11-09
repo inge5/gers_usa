@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CapacitacionesService {
 
-  url: string = "https://pruebasneuro.co/N-1003backWordpress/wp-json/wp/v2";
-  url_usa: string = "https://pruebasneuro.co/N-1003backWordpress/usa/wp-json/wp/v2";
-  url_chile: string = "https://pruebasneuro.co/N-1003backWordpress/chile/wp-json/wp/v2";
-  url_mexico: string = "https://pruebasneuro.co/N-1003backWordpress/mexico/wp-json/wp/v2";
+  url: string = "https://gers.com.co/backend/wp-json/wp/v2";
+  url_usa: string = "https://gers.com.co/backend/usa/wp-json/wp/v2";
+  url_chile: string = "https://gers.com.co/backend/chile/wp-json/wp/v2";
+  url_mexico: string = "https://gers.com.co/backend/mexico/wp-json/wp/v2";
 
   constructor(private http: HttpClient) {
    }

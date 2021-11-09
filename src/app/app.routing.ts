@@ -95,124 +95,261 @@ import { PublicacionInternaMxComponent } from './mexico/publicaciones-mx/publica
 import { DranetzClComponent } from './chile/representaciones/dranetz-cl/dranetz-cl.component';
 import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
 import { GossenMetrawattComponent } from './colombia/representaciones/gossen-metrawatt/gossen-metrawatt.component';
+import { environment } from '../environments/environment';
 
 
+let APP_ROUTES: Routes = [];
+// const APP_ROUTES: Routes = [
 
-const APP_ROUTES: Routes = [
-    // {path: '', component: ColombiaComponent},
-    // {path: 'home', component: HomeComponent},
-    {path: 'colombia', component: ColombiaComponent,
-    children: [
-        {path: '', component: HomeComponent},
-        {path: 'neplan', component: NeplanComponent},
-        {path: 'beckwith-electric', component: BeckwithElectronicComponent},
-        {path: 'xgslab', component: XgslabComponent},
-        {path: 'dranetz', component: DranetzComponent},
-        {path: 'ndb', component: NdbComponent},
-        {path: 'capacitaciones', component: CapacitacionComponent},
-        {path: 'capacitaciones/:id', component: InternaCapacitacionComponent},
-        {path: 'proyectos', component: ProyectosComponent},
-        {path: 'productos', component: ProductoComponent},
-        {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
-        {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasComponent},
-        {path: 'smart-grids', component: SmartGridsComponent},
-        {path: 'diseno-e-ingenieria', component: DisenoIngenieriaComponent},
-        {path: 'servicios-energeticos', component: ServiciosEnergeticosComponent},
-        {path: 'interventoria-y-asesoria', component: InterventoriasAsesoriasComponent},
-        {path: 'planeacion-de-proyectos', component: PlaneacionProyectosComponent},
-        {path: 'contactenos', component: ContactenosComponent},
-        {path: 'pensamiento-corporativo', component: PensamientoCorporativoComponent},
-        {path: 'politica-gestion-integral', component: PoliticaGestionIntegralComponent},
-        {path: 'acuerdos-internacionales', component: AcuerdosInternacionalesComponent},
-        {path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent},
-        {path: 'vacante-interna', component: VacanteInternaComponent},
-        {path: 'vacantes/:slug', component: VacanteInternaComponent},
-        {path: 'publicaciones', component: PublicacionesComponent},
-        {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
-        {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
-        {path: 'buscador', component: BuscadorComponent},
-        {path: 'gossen-metrawatt', component: GossenMetrawattComponent},
-        {path: '**', redirectTo: 'colombia', pathMatch:'full'}
-      ]},
+//     {path: 'colombia', component: ColombiaComponent,
+//     children: [
+//         {path: '', component: HomeComponent},
+//         {path: 'neplan', component: NeplanComponent},
+//         {path: 'beckwith-electric', component: BeckwithElectronicComponent},
+//         {path: 'xgslab', component: XgslabComponent},
+//         {path: 'dranetz', component: DranetzComponent},
+//         {path: 'ndb', component: NdbComponent},
+//         {path: 'capacitaciones', component: CapacitacionComponent},
+//         {path: 'capacitaciones/:id', component: InternaCapacitacionComponent},
+//         {path: 'proyectos', component: ProyectosComponent},
+//         {path: 'productos', component: ProductoComponent},
+//         {path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent},
+//         {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasComponent},
+//         {path: 'smart-grids', component: SmartGridsComponent},
+//         {path: 'diseno-e-ingenieria', component: DisenoIngenieriaComponent},
+//         {path: 'servicios-energeticos', component: ServiciosEnergeticosComponent},
+//         {path: 'interventoria-y-asesoria', component: InterventoriasAsesoriasComponent},
+//         {path: 'planeacion-de-proyectos', component: PlaneacionProyectosComponent},
+//         {path: 'contactenos', component: ContactenosComponent},
+//         {path: 'pensamiento-corporativo', component: PensamientoCorporativoComponent},
+//         {path: 'politica-gestion-integral', component: PoliticaGestionIntegralComponent},
+//         {path: 'acuerdos-internacionales', component: AcuerdosInternacionalesComponent},
+//         {path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent},
+//         {path: 'vacante-interna', component: VacanteInternaComponent},
+//         {path: 'vacantes/:slug', component: VacanteInternaComponent},
+//         {path: 'publicaciones', component: PublicacionesComponent},
+//         {path: 'publicaciones/:slug', component: PublicacionInternaComponent},
+//         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent},
+//         {path: 'buscador', component: BuscadorComponent},
+//         {path: 'gossen-metrawatt', component: GossenMetrawattComponent},
+//         {path: '**', redirectTo: 'colombia', pathMatch:'full'}
+//       ]},
 
-    //Rutas de Chile
-    {path: 'chile', component: ChileComponent,
-    children: [
-        { path: '', component: HomeClComponent },
-        { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
-        { path: 'capacitaciones', component: CapacitacionChileComponent},
-        { path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
-        { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
-        { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
-        { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
-        { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
-        { path: 'neplan-cl', component: NeplanClComponent },
-        { path: 'contactenos-cl', component: ContactenosClComponent },
-        { path: 'proyectos-cl', component: ProyectosClComponent },
-        { path: 'publicaciones-cl', component: PublicacionesClComponent},
-        { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent},
-        { path: 'xgslab-cl', component: XgslabClComponent },
-        { path: 'dranetz-cl', component: DranetzClComponent },
-        { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
-        { path: 'vacantes/:slug', component: VacanteInternaClComponent },
-        {path: 'buscador', component: BuscadorClComponent}
-        ]},
+//     //Rutas de Chile
+//     {path: 'chile', component: ChileComponent,
+//     children: [
+//         { path: '', component: HomeClComponent },
+//         { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
+//         { path: 'capacitaciones', component: CapacitacionChileComponent},
+//         { path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent},
+//         { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
+//         { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
+//         { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
+//         { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
+//         { path: 'neplan-cl', component: NeplanClComponent },
+//         { path: 'contactenos-cl', component: ContactenosClComponent },
+//         { path: 'proyectos-cl', component: ProyectosClComponent },
+//         { path: 'publicaciones-cl', component: PublicacionesClComponent},
+//         { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent},
+//         { path: 'xgslab-cl', component: XgslabClComponent },
+//         { path: 'dranetz-cl', component: DranetzClComponent },
+//         { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
+//         { path: 'vacantes/:slug', component: VacanteInternaClComponent },
+//         {path: 'buscador', component: BuscadorClComponent},
+//         {path: '**', redirectTo: 'chile', pathMatch:'full'}
+//         ]},
 
-    //Rutas de USA
-    // {path: 'home-usa', component: HomeUsaComponent},
-    {path: 'usa', component: UsaComponent,
-    children: [
-        { path: '', component: HomeUsaComponent },
-        { path: 'contact', component: ContactComponent },
-        { path: 'corporate-thinking', component: CorporateThinkingComponent },
-        { path: 'trainings' , component: TrainingsComponent },
-        { path: 'trainings/:id' , component: InternalTrainingsComponent },
-        { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
-        { path: 'neplan-usa', component: NeplanUsaComponent },
-        { path: 'power-system-studies', component: PowerSystemStudiesComponent },
-        { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
-        { path: 'protection-and-control', component: ProtectionAndControlComponent },
-        { path: 'field-services', component: FieldServicesComponent },
-        { path: 'projects', component: ProyectsComponent },
-        { path: 'work-with-us', component: WorkWithUsComponent },
-        { path: 'vacancies/:slug', component: InternalVacancyComponent},
-        { path: 'insights', component: InsightsComponent },
-        { path: 'insights/:slug', component: InsightsInsideComponent },
-        { path: 'searcher', component: BuscadorUsaComponent },
-        { path: 'data-protection-policy', component: DataProtectionPolicyComponent}
-    ]},
-    {path: 'mexico', component: MexicoComponent, children: [
-        {path: '', component: HomeMxComponent},
-        {path: 'capacitaciones', component: CapacitacionMexicoComponent},
-        {path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent},
-        {path: 'contactenos', component: ContactenosMxComponent},
-        {path: 'pensamiento-corporativo', component: PensamientoCorporativoMxComponent},
-        {path: 'politica-gestion-integral', component: PoliticaGestionIntegralMxComponent},
-        {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlMxComponent},
-        {path: 'smart-grids', component: SmartGridsMxComponent},
-        {path: 'analisis-calidad-energia', component: AnalisisCalidadEnergiaMxComponent},
-        {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
-        {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
-        {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
-        {path: 'tercerias-y-asesorias', component: TerceriasAsesoriasMxComponent},
-        {path: 'neplan', component: NeplanMxComponent},
-        {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
-        {path: 'xgslab', component: XgslabMxComponent},
-        {path: 'proyectos', component: ProyectosMxComponent},
-        {path: 'publicaciones', component: PublicacionesMxComponent},
-        {path: 'publicaciones/:slug', component: PublicacionInternaMxComponent},
-        { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
-        { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
-        {path: 'buscador', component: BuscadorMxComponent}
-        
-    ]},
-    
-    {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
-    
-];
+//     // //Rutas de USA
+//     // {path: 'home-usa', component: HomeUsaComponent},
+//     {path: 'usa', component: UsaComponent,
+//     children: [
+//         { path: '', component: HomeUsaComponent },
+//         { path: 'contact', component: ContactComponent },
+//         { path: 'corporate-thinking', component: CorporateThinkingComponent },
+//         { path: 'trainings' , component: TrainingsComponent },
+//         { path: 'trainings/:id' , component: InternalTrainingsComponent },
+//         { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
+//         { path: 'neplan-usa', component: NeplanUsaComponent },
+//         { path: 'power-system-studies', component: PowerSystemStudiesComponent },
+//         { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
+//         { path: 'protection-and-control', component: ProtectionAndControlComponent },
+//         { path: 'field-services', component: FieldServicesComponent },
+//         { path: 'projects', component: ProyectsComponent },
+//         { path: 'work-with-us', component: WorkWithUsComponent },
+//         { path: 'vacancies/:slug', component: InternalVacancyComponent},
+//         { path: 'insights', component: InsightsComponent },
+//         { path: 'insights/:slug', component: InsightsInsideComponent },
+//         { path: 'searcher', component: BuscadorUsaComponent },
+//         { path: 'data-protection-policy', component: DataProtectionPolicyComponent},
+//         {path: '**', redirectTo: 'usa', pathMatch:'full'}
+//     ]},
+//     {path: 'mexico', component: MexicoComponent, children: [
+//         {path: '', component: HomeMxComponent},
+//         {path: 'capacitaciones', component: CapacitacionMexicoComponent},
+//         {path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent},
+//         {path: 'contactenos', component: ContactenosMxComponent},
+//         {path: 'pensamiento-corporativo', component: PensamientoCorporativoMxComponent},
+//         {path: 'politica-gestion-integral', component: PoliticaGestionIntegralMxComponent},
+//         {path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlMxComponent},
+//         {path: 'smart-grids', component: SmartGridsMxComponent},
+//         {path: 'analisis-calidad-energia', component: AnalisisCalidadEnergiaMxComponent},
+//         {path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent},
+//         {path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent},
+//         {path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent},
+//         {path: 'tercerias-y-asesorias', component: TerceriasAsesoriasMxComponent},
+//         {path: 'neplan', component: NeplanMxComponent},
+//         {path: 'beckwith-electronic', component: BeckwithElectronicMxComponent},
+//         {path: 'xgslab', component: XgslabMxComponent},
+//         {path: 'proyectos', component: ProyectosMxComponent},
+//         {path: 'publicaciones', component: PublicacionesMxComponent},
+//         {path: 'publicaciones/:slug', component: PublicacionInternaMxComponent},
+//         { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent},
+//         { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
+//         {path: 'buscador', component: BuscadorMxComponent},
+//         {path: '**', redirectTo: 'mexico', pathMatch:'full'}
+
+//     ]},
+
+//     // {path: '**', pathMatch: 'full', redirectTo: '/colombia'}
+
+// ];
+
+if (window.location.host === environment.colombiaLocal) {
+    APP_ROUTES = [
+        {
+            path: '', component: ColombiaComponent,
+            children: [
+                { path: '', component: HomeComponent },
+                { path: 'neplan', component: NeplanComponent },
+                { path: 'beckwith-electric', component: BeckwithElectronicComponent },
+                { path: 'xgslab', component: XgslabComponent },
+                { path: 'dranetz', component: DranetzComponent },
+                { path: 'ndb', component: NdbComponent },
+                { path: 'capacitaciones', component: CapacitacionComponent },
+                { path: 'capacitaciones/:id', component: InternaCapacitacionComponent },
+                { path: 'proyectos', component: ProyectosComponent },
+                { path: 'productos', component: ProductoComponent },
+                { path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent },
+                { path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasComponent },
+                { path: 'smart-grids', component: SmartGridsComponent },
+                { path: 'diseno-e-ingenieria', component: DisenoIngenieriaComponent },
+                { path: 'servicios-energeticos', component: ServiciosEnergeticosComponent },
+                { path: 'interventoria-y-asesoria', component: InterventoriasAsesoriasComponent },
+                { path: 'planeacion-de-proyectos', component: PlaneacionProyectosComponent },
+                { path: 'contactenos', component: ContactenosComponent },
+                { path: 'pensamiento-corporativo', component: PensamientoCorporativoComponent },
+                { path: 'politica-gestion-integral', component: PoliticaGestionIntegralComponent },
+                { path: 'acuerdos-internacionales', component: AcuerdosInternacionalesComponent },
+                { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent },
+                { path: 'vacante-interna', component: VacanteInternaComponent },
+                { path: 'vacantes/:slug', component: VacanteInternaComponent },
+                { path: 'publicaciones', component: PublicacionesComponent },
+                { path: 'publicaciones/:slug', component: PublicacionInternaComponent },
+                { path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent },
+                { path: 'buscador', component: BuscadorComponent },
+                { path: 'gossen-metrawatt', component: GossenMetrawattComponent },
+                { path: '**', redirectTo: '', pathMatch: 'full' }
+            ]
+        },
+        { path: '**', redirectTo: '', pathMatch: 'full' }
+    ]
+}
+if (window.location.host === environment.mexicoLocal) {
+    APP_ROUTES = [
+        {
+            path: '', component: MexicoComponent, children: [
+                { path: '', component: HomeMxComponent },
+                { path: 'capacitaciones', component: CapacitacionMexicoComponent },
+                { path: 'capacitaciones/:id', component: InternaCapacitacionMexicoComponent },
+                { path: 'contactenos', component: ContactenosMxComponent },
+                { path: 'pensamiento-corporativo', component: PensamientoCorporativoMxComponent },
+                { path: 'politica-gestion-integral', component: PoliticaGestionIntegralMxComponent },
+                { path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlMxComponent },
+                { path: 'smart-grids', component: SmartGridsMxComponent },
+                { path: 'analisis-calidad-energia', component: AnalisisCalidadEnergiaMxComponent },
+                { path: 'planeacion-de-proyectos', component: PlaneacionProyectosMxComponent },
+                { path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasMxComponent },
+                { path: 'diseno-e-ingenieria', component: DisenoIngenieriaMxComponent },
+                { path: 'tercerias-y-asesorias', component: TerceriasAsesoriasMxComponent },
+                { path: 'neplan', component: NeplanMxComponent },
+                { path: 'beckwith-electronic', component: BeckwithElectronicMxComponent },
+                { path: 'xgslab', component: XgslabMxComponent },
+                { path: 'proyectos', component: ProyectosMxComponent },
+                { path: 'publicaciones', component: PublicacionesMxComponent },
+                { path: 'publicaciones/:slug', component: PublicacionInternaMxComponent },
+                { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosMxComponent },
+                { path: 'vacantes/:slug', component: VacanteInternaMxComponent },
+                { path: 'buscador', component: BuscadorMxComponent },
+                { path: '**', redirectTo: '', pathMatch: 'full' }
+
+            ]
+        },
+        { path: '**', pathMatch: 'full', redirectTo: '' }
+    ]
+}
+if (window.location.host === environment.chileLocal) {
+    APP_ROUTES = [
+        {
+            path: '', component: ChileComponent,
+            children: [
+                { path: '', component: HomeClComponent },
+                { path: 'pensamiento-corporativo-cl', component: PensamientoCorporativoClComponent },
+                { path: 'capacitaciones', component: CapacitacionChileComponent },
+                { path: 'capacitaciones/:id', component: InternaCapacitacionChileComponent },
+                { path: 'politica-gestion-integral-cl', component: PoliticaGestionIntegralClComponent },
+                { path: 'estudios-sistemas-cl', component: EstudiosSistemasElectricosClComponent },
+                { path: 'diseno-ingenieria-cl', component: DisenoEIngenieriaClComponent },
+                { path: 'pruebas-automatizacion-cl', component: PruebasAutomatizacionControlClComponent },
+                { path: 'neplan-cl', component: NeplanClComponent },
+                { path: 'contactenos-cl', component: ContactenosClComponent },
+                { path: 'proyectos-cl', component: ProyectosClComponent },
+                { path: 'publicaciones-cl', component: PublicacionesClComponent },
+                { path: 'publicaciones-cl/:slug', component: PublicacionInternaClComponent },
+                { path: 'xgslab-cl', component: XgslabClComponent },
+                { path: 'dranetz-cl', component: DranetzClComponent },
+                { path: 'trabaje-con-nosotros-cl', component: TrabajeConNosotrosClComponent },
+                { path: 'vacantes/:slug', component: VacanteInternaClComponent },
+                { path: 'buscador', component: BuscadorClComponent },
+                { path: '**', redirectTo: '', pathMatch: 'full' }
+            ]
+        },
+        { path: '**', pathMatch: 'full', redirectTo: '' }
+    ]
+}
+if (window.location.host === environment.usaLocal) {
+    APP_ROUTES = [
+        {
+            path: '', component: UsaComponent,
+            children: [
+                { path: '', component: HomeUsaComponent },
+                { path: 'contact', component: ContactComponent },
+                { path: 'corporate-thinking', component: CorporateThinkingComponent },
+                { path: 'trainings', component: TrainingsComponent },
+                { path: 'trainings/:id', component: InternalTrainingsComponent },
+                { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
+                { path: 'neplan-usa', component: NeplanUsaComponent },
+                { path: 'power-system-studies', component: PowerSystemStudiesComponent },
+                { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
+                { path: 'protection-and-control', component: ProtectionAndControlComponent },
+                { path: 'field-services', component: FieldServicesComponent },
+                { path: 'projects', component: ProyectsComponent },
+                { path: 'work-with-us', component: WorkWithUsComponent },
+                { path: 'vacancies/:slug', component: InternalVacancyComponent },
+                { path: 'insights', component: InsightsComponent },
+                { path: 'insights/:slug', component: InsightsInsideComponent },
+                { path: 'searcher', component: BuscadorUsaComponent },
+                { path: 'data-protection-policy', component: DataProtectionPolicyComponent },
+                { path: '**', redirectTo: '', pathMatch: 'full' }
+            ]
+        },
+        { path: '**', pathMatch: 'full', redirectTo: '' }
+    ]
+}
+
+
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {
-    useHash: true,
+    // useHash: true,
     onSameUrlNavigation: "ignore",
     anchorScrolling: 'enabled',
     scrollPositionRestoration: 'enabled'

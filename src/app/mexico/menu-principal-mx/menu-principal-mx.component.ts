@@ -28,7 +28,7 @@ export class MenuPrincipalMxComponent implements OnInit {
 
   buscar(){
     this.variableG.setBuscador(this.busqueda);
-    this.ruta.navigateByUrl('/mexico/buscador');
+    this.ruta.navigateByUrl('/buscador');
   }
 
   abrirBuscador(){

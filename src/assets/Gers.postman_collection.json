@@ -268,7 +268,7 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/acf/v3/pages/2",
+					"raw": "https://gers.com.co/backend/wp-json/acf/v3/pages/2",
 					"protocol": "https",
 					"host": [
 						"pruebasneuro",
@@ -418,7 +418,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products",
+					"raw": "https://gers.com.co/backend/wp-json/wc/v3/products",
 					"protocol": "https",
 					"host": [
 						"pruebasneuro",
@@ -476,7 +476,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/11/variations",
+					"raw": "https://gers.com.co/backend/wp-json/wc/v3/products/11/variations",
 					"protocol": "https",
 					"host": [
 						"pruebasneuro",
@@ -536,7 +536,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/attributes",
+					"raw": "https://gers.com.co/backend/wp-json/wc/v3/products/attributes",
 					"protocol": "https",
 					"host": [
 						"pruebasneuro",
@@ -595,7 +595,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/categories",
+					"raw": "https://gers.com.co/backend/wp-json/wc/v3/products/categories",
 					"protocol": "https",
 					"host": [
 						"pruebasneuro",
@@ -654,7 +654,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://pruebasneuro.co/N-1003backWordpress/wp-json/wc/v3/products/tags",
+					"raw": "https://gers.com.co/backend/wp-json/wc/v3/products/tags",
 					"protocol": "https",
 					"host": [
 						"pruebasneuro",

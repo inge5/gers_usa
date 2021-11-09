@@ -25,7 +25,7 @@ export class PublicacionesClComponent implements OnInit {
   }
 
   verPublicaciones(slug:string){
-    this._router.navigate(['/chile/publicaciones-cl', slug]);
+    this._router.navigate(['/publicaciones-cl', slug]);
   }
   
 }

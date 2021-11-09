@@ -23,7 +23,7 @@ export class PublicacionesMxComponent implements OnInit {
   }
 
   verPublicaciones(slug:string){
-    this._router.navigate(['/mexico/publicaciones', slug]);
+    this._router.navigate(['/publicaciones', slug]);
   }
 
 }

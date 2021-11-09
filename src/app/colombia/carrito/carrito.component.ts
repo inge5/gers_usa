@@ -174,7 +174,7 @@ export class CarritoComponent implements OnInit {
   
 
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-solicitar-cotizacion/form-cotizacion.php',
+      url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-solicitar-cotizacion/form-cotizacion.php',
       type: 'POST',
       data: paqueteDeDatos,
       contentType: false,

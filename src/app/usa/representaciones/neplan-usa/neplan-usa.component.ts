@@ -102,7 +102,7 @@ export class NeplanUsaComponent implements OnInit {
   //   paqueteDeDatos.append('modules', this.formularioCotizacion.get('modules').value);
   //   paqueteDeDatos.append('comments', this.formularioCotizacion.get('comments').value);
   //   $.ajax({
-  //     url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-cotizador-neplan-usa/form-cotizador-neplan-usa.php',
+  //     url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-cotizador-neplan-usa/form-cotizador-neplan-usa.php',
   //     type: 'POST',
   //     data: paqueteDeDatos,
   //     contentType: false,

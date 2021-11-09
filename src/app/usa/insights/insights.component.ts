@@ -23,7 +23,7 @@ export class InsightsComponent implements OnInit {
   }
 
   verPublicaciones(slug:string){
-    this._router.navigate(['/usa/insights', slug]);
+    this._router.navigate(['/insights', slug]);
   }
 
 }

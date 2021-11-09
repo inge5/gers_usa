@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
   
   enviarForm_usa(form) {
     $.ajax({
-      url: 'https://pruebasneuro.co/N-1003backWordpress/wp-content/themes/gers/formulario-contacto/form-contactenos.php',
+      url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-contacto/form-contactenos.php',
       type: 'POST',
       data: JSON.stringify(this.user_usa),
       dataType:"json",

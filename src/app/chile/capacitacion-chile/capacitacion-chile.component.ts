@@ -184,7 +184,7 @@ export class CapacitacionChileComponent implements OnInit {
   }
 
   enviarInterna(capacitacion) {
-    this.router.navigateByUrl(`/chile/capacitaciones/${capacitacion.id}`);
+    this.router.navigateByUrl(`/capacitaciones/${capacitacion.id}`);
   }
 
   resetCardCapacitacion(){

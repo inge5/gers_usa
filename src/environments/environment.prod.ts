@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  colombiaLocal: 'gers.com.co',
+  mexicoLocal: 'gers.com.mx',
+  chileLocal: 'gers.cl',
+  usaLocal: 'gersusa.com'
 };

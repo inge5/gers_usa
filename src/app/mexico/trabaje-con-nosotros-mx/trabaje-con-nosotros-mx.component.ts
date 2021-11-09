@@ -154,7 +154,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
   }
 
   verVacantes(slug: string) {
-    this._router.navigate(['/mexico/vacantes', slug]);
+    this._router.navigate(['/vacantes', slug]);
   }
 
   formTrabajeNosotros(form) {

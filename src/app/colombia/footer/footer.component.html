@@ -10,7 +10,7 @@
                 <div class="wlistaItemsFooter">
                     <ng-container *ngFor="let menu of data.items">
                         <div *ngIf="menu.slug else url">
-                            <a href="#/colombia/{{ menu.slug }}">{{ menu.title }}</a>
+                            <a href="#/{{ menu.slug }}">{{ menu.title }}</a>
                         </div>
                         <ng-template #url>
                             <a href="{{ menu.url }}" target="{{ menu.target }}">{{ menu.title }}</a>
@@ -25,7 +25,7 @@
                         <ng-container *ngFor="let child_item of info.child_items">
                             <ng-container *ngIf="child_item.url != '#' else not">
                                 <div *ngIf="child_item.title_position != 'hide' else not2">
-                                    <a class="d-block py-3 size14 sedeFooter" [class]="child_item.title_position" href="#/colombia{{child_item.url}}" [target]="child_item.target">{{ child_item.title }} <i class="fas fa-long-arrow-alt-right"></i></a>
+                                    <a class="d-block py-3 size14 sedeFooter" [class]="child_item.title_position" href="#{{child_item.url}}" [target]="child_item.target">{{ child_item.title }} <i class="fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                                 <ng-template #not2>
                                     <a class="mr-2 size14" [href]="child_item.url" [target]="child_item.target">

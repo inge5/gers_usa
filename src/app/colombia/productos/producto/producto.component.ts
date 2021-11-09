@@ -275,7 +275,7 @@ export class ProductoComponent implements OnInit {
     this.nameProducto = this.nameProducto.toLowerCase();
 
     this.nameProducto = this.nameProducto.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
-    this.ruta.navigateByUrl(`/colombia/detalle-productos/${codigo}/${this.nameProducto}`);
+    this.ruta.navigateByUrl(`/detalle-productos/${codigo}/${this.nameProducto}`);
   }
 
   listarForma1() {

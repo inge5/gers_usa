@@ -83,7 +83,7 @@ export class MenuPrincipalComponent implements OnInit {
 
   buscar(){
     this.variableG.setBuscador(this.busqueda);
-    this.ruta.navigateByUrl('/colombia/buscador');
+    this.ruta.navigateByUrl('/buscador');
   }
 
   productosCategoria(categoria: number) {
@@ -95,7 +95,7 @@ export class MenuPrincipalComponent implements OnInit {
     }
     setTimeout(() => {
       $('.subCategorias').removeClass("abrir-subCategorias")
-      this.ruta.navigateByUrl('/colombia/productos');  
+      this.ruta.navigateByUrl('/productos');  
     }, 1500);
     
   }

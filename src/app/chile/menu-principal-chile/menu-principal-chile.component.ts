@@ -29,7 +29,7 @@ export class MenuPrincipalChileComponent implements OnInit {
 
   buscar(){
     this.variableG.setBuscador(this.busqueda);
-    this.ruta.navigateByUrl('/chile/buscador');
+    this.ruta.navigateByUrl('/buscador');
   }
 
   abrirBuscador(){

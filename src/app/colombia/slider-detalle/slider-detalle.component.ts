@@ -46,7 +46,7 @@ export class SliderDetalleComponent implements OnInit {
   detalleProductos(codigo, producto){
     let nameProducto = producto.replace(/ /gi, '-');
     nameProducto = nameProducto.toLowerCase();
-    this.ruta.navigateByUrl(`/colombia/detalle-productos/${codigo}/${nameProducto}`)
+    this.ruta.navigateByUrl(`/detalle-productos/${codigo}/${nameProducto}`)
   }
 
   pasarDerecha(){
