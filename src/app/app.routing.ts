@@ -349,7 +349,7 @@ if (window.location.host === environment.usaLocal) {
 
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {
-    // useHash: true,
+    useHash: true,
     onSameUrlNavigation: "ignore",
     anchorScrolling: 'enabled',
     scrollPositionRestoration: 'enabled'

@@ -29,7 +29,7 @@ export class WorkWithUsComponent implements OnInit {
       apellidos:'',
       email: '',
       telefono:'',
-      ubicacion:'Estados Unidos',
+      ubicacion:'USA',
       categoria:'',
       acepto:''
     };

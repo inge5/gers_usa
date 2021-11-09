@@ -27,7 +27,7 @@ export class TrabajeConNosotrosMxComponent implements OnInit {
       apellidos: '',
       email: '',
       telefono: '',
-      ubicacion: '',
+      ubicacion: 'México',
       categoria: '',
       acepto: ''
     };
