@@ -48,7 +48,7 @@ export class InternalTrainingsComponent implements OnInit {
     })
   }
   returnCapacitaciones(){
-    this.router.navigateByUrl('usa/trainings')
+    this.router.navigateByUrl('/trainings')
   }
   enviarInscripcion(){
     $("#wrapper").toggleClass("toggled");

@@ -85,6 +85,7 @@ export class TrainingsComponent implements OnInit {
       return 0;
     })
     this.capacitacionesFiltro = capacitacion;
+    console.log(this.capacitacionesFiltro);
     if(!this.capacitacionesFiltroTemp || this.capacitacionesFiltroTemp === this.capacitacionesFiltro){
       this.capacitacionesFiltroTemp = this.capacitacionesFiltro;
     }
