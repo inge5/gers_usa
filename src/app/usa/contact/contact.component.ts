@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { PagesService } from '../../services/pages.service';
 import { PagesUsaService } from '../../services/pages-usa.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -58,13 +56,13 @@ export class ContactComponent implements OnInit {
         if(error.status === 200){
           Swal.fire({
             icon: 'success',
-            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+            title: 'Thank you for giving us your data. We will communicate with you.',
             showConfirmButton: true
           }); 
  
         form.reset();
         } else {
-          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
+          Swal.fire('Oops...', 'Something happened. Correct the errors, please!', 'error')
         }
       }
     });

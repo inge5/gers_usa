@@ -83,14 +83,14 @@ export class InternalVacancyComponent implements OnInit {
     
           Swal.fire({
             icon: 'success',
-            title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
+            title: 'Thank you for giving us your data. We will communicate with you.',
             showConfirmButton: true
           }); 
           form.reset();
 
         }, error: function(error){
 
-          Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
+          Swal.fire('Oops...', 'Something happened. Correct the errors, please!', 'error')
         }
       });
    }
