@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  colombiaLocal: 'gers.com.co',
-  mexicoLocal: 'gers.com.mx',
-  chileLocal: 'gers.cl',
-  usaLocal: 'gersusa.com'
+  baseUsa: 'https://gers.com.co/backend/usa/wp-json/acf/v3',
+  urlUsa:  'https://gers.com.co/backend/usa/wp-json/wp/v2',
+  menuUsa: 'https://gers.com.co/backend/usa/wp-json/menus/v1',
+  domain: 'https://gers.com.co/backend'
 };

@@ -78,12 +78,12 @@
 }
 .btn-outline-azul{
     background-color: #fff;
-    color: #0089FF;
+    color: #0089FF !important;
     border: 1px solid #0089FF;
 }
 .btn-outline-azul:hover{
     background-color: #0089FF;
-    color: #fff;
+    color: #fff !important;
 }
 .back-arrow{
      font-size: 15px;

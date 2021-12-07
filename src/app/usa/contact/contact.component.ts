@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PagesUsaService } from '../../services/pages-usa.service';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { environment } from 'src/environments/environment';
 
 declare var $ : any; 
 
@@ -46,7 +47,7 @@ export class ContactComponent implements OnInit {
   
   enviarForm_usa(form) {
     $.ajax({
-      url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-contacto/form-contactenos.php',
+      url: `${environment.domain}/wp-content/themes/gers/formulario-contacto-usa/form-contactenos-usa.php`,
       type: 'POST',
       data: JSON.stringify(this.user_usa),
       dataType:"json",

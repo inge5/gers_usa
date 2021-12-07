@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  colombiaLocal: 'localhost:4200',
-  mexicoLocal: 'localhost:4300',
-  chileLocal: 'localhost:4400',
-  usaLocal: 'localhost:4500'
+  baseUsa: 'http://localhost/gers-wordpress/usa/wp-json/acf/v3',
+  urlUsa:  'http://localhost/gers-wordpress/usa/wp-json/wp/v2',
+  menuUsa: 'http://localhost/gers-wordpress/usa/wp-json/menus/v1',
+  domain: 'http://localhost/gers-wordpress'
 };
 
 /*

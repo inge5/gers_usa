@@ -1,6 +1,7 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { PagesUsaService } from '../../../services/pages-usa.service';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Pipe({ name: 'safeHtml'})
 export class SafeHtmlPipe implements PipeTransform  {
@@ -29,9 +30,10 @@ export class SmartGridsUsaComponent implements OnInit {
   seccion_1_data: any = {};
   seccion_2_data: any = {};
 
-  constructor(private _sanitizer: DomSanitizer, private _smartgridusa:PagesUsaService) { }
+  constructor(private _sanitizer: DomSanitizer, private _smartgridusa:PagesUsaService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaSmartGrid();
     this._smartgridusa.getSmartGridsUsa()
     .subscribe((res:any) => {
       this.loader = false;

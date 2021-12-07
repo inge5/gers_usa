@@ -329,11 +329,11 @@
               </small>
             </div>
             <div class="form-group col-12">
-              <label for="nit">Nit</label>
+              <label for="nit">Tax ID</label>
               <input [(ngModel)]="filtros.nit" type="number" #nit="ngModel" class="form-control" name="nit" id="nit"
-                placeholder="Nit" required>
+                placeholder="Tax ID" required>
               <small style="color:#c30000;" *ngIf="nit.invalid && (nit.dirty || nit.touched)">
-                Enter the nit.
+                Enter the Tax ID.
               </small>
             </div>
             <div class="form-group col-12">

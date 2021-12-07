@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GLOBAL } from './global';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class MenusUsaService {
   public menu: string;
 
   constructor(public _http: HttpClient) { 
-    this.menu = GLOBAL.menuUsa;
+    this.menu = environment.menuUsa;
   }
 
   getMenuPrincipal(): Observable<any>{

@@ -1,5 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+import { SeoService } from 'src/app/services/seo.service';
 import { HomeUsaService } from '../../services/home-usa.service';
 import { PagesUsaService } from '../../services/pages-usa.service';
 
@@ -44,9 +45,10 @@ export class HomeUsaComponent implements OnInit {
 
   FeaturedProyects:any[] = [];
 
-  constructor(private _homeUsaService:HomeUsaService, private _proyectosusa:PagesUsaService) { }
+  constructor(private _homeUsaService:HomeUsaService, private _proyectosusa:PagesUsaService, private seo: SeoService) { }
 
     ngOnInit(): void {
+      this.seo.paginaInicio();
       this._homeUsaService.getHomeUsa()
       .subscribe((res:any) => {
         this.loader = false;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesUsaService } from '../../services/pages-usa.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class ProyectsComponent implements OnInit {
   
   loader = true;
 
-  constructor(private _proyectosusa:PagesUsaService) { }
+  constructor(private _proyectosusa:PagesUsaService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaProyectos();
     this._proyectosusa.getProyectsUsa()
     .subscribe((res:any) => {
       this.loader = false;

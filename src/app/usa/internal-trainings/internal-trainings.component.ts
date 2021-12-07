@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -37,6 +38,7 @@ export class InternalTrainingsComponent implements OnInit {
     this.capacitacionesS.getCapacitacionesIdUsa(parseInt(this.id)).subscribe((resp: any) => {
 
       this.capacitacion = resp;
+      console.log(this.capacitacion);
       this.capacitacion.fecha = moment(resp.acf.fecha_inicio+' '+resp.acf.hora_inicio).format('DD MMMM YYYY hh:mm:ss a');
       let categorias = [];
       resp.categorias_capacitaciones.forEach(element => {
@@ -62,7 +64,7 @@ export class InternalTrainingsComponent implements OnInit {
   formTrabajeNosotros(form){
     this.usuario.capacitacion = this.capacitacion.title.rendered;
     $.ajax({
-      url: 'https://gers.com.co/backend/wp-content/themes/gers/inscripcion.php',
+      url: `${environment.domain}/wp-content/themes/gers/formulario-inscripcion-usa/inscripcion-usa.php`,
       type: 'POST',
       data: JSON.stringify(this.usuario),
       dataType:"json",

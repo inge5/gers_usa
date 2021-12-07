@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesUsaService } from '../../../services/pages-usa.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class ProtectionAndControlComponent implements OnInit {
   item_tab_data: any[] = [];
   public activePillIndex:number = 0;
 
-  constructor(private _protectionandcontrol:PagesUsaService) { }
+  constructor(private _protectionandcontrol:PagesUsaService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaPruebaAutomatizacion();
     this._protectionandcontrol.getProtectionAndControl()
     .subscribe((res:any) => {
       this.loader = false;

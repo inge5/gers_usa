@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GLOBAL } from './global';
+import { HttpClient, HttpHeaders } from '@angular/common/http';;
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class HomeUsaService {
   public urlUsa: string;
 
   constructor(public _http: HttpClient) { 
-    this.baseUsa = GLOBAL.baseUsa;
-    this.urlUsa = GLOBAL.urlUsa;
+    this.baseUsa = environment.baseUsa;
+    this.urlUsa = environment.urlUsa;
   }
 
   getHomeUsa(): Observable<any>{

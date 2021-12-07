@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 declare function mainFunction();
 
@@ -9,13 +10,11 @@ declare function mainFunction();
 })
 export class UsaComponent implements OnInit {
 
-  constructor(private seo: SeoService) { }
+  constructor(private seo: SeoService, @Inject(PLATFORM_ID) private platformid) { }
 
   ngOnInit(): void {
-    this.seo.cambiarTitulo('GERS - USA');
-    mainFunction();
-    if(!localStorage.getItem('carrito')){
-      localStorage.setItem('carrito', JSON.stringify([]));
+    if(isPlatformBrowser(this.platformid)){
+      mainFunction();
     }
   }
 

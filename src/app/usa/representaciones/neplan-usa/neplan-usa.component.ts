@@ -85,41 +85,6 @@ export class NeplanUsaComponent implements OnInit {
     this.activePillIndex = index;
     // do some other stuff if necessary...
    }
-  //  enviarFormularioCotizacion(){
-    
-  //   if(this.formularioCotizacion.invalid){
-  //     return Object.values( this.formularioCotizacion.controls ).forEach(control => control.markAsTouched());
-  //   }
-  //   var paqueteDeDatos = new FormData();
-  //   paqueteDeDatos.append('name', this.formularioCotizacion.get('name').value);
-  //   paqueteDeDatos.append('email', this.formularioCotizacion.get('email').value);
-  //   paqueteDeDatos.append('phone_number', this.formularioCotizacion.get('phoneNumber').value);
-  //   paqueteDeDatos.append('company', this.formularioCotizacion.get('company').value);
-  //   paqueteDeDatos.append('title', this.formularioCotizacion.get('title').value);
-  //   paqueteDeDatos.append('industry', this.formularioCotizacion.get('industry').value);
-  //   paqueteDeDatos.append('number_licenses', this.formularioCotizacion.get('numberLicenses').value);
-  //   paqueteDeDatos.append('nodes_limit', this.formularioCotizacion.get('nodesLimit').value);
-  //   paqueteDeDatos.append('modules', this.formularioCotizacion.get('modules').value);
-  //   paqueteDeDatos.append('comments', this.formularioCotizacion.get('comments').value);
-  //   $.ajax({
-  //     url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-cotizador-neplan-usa/form-cotizador-neplan-usa.php',
-  //     type: 'POST',
-  //     data: paqueteDeDatos,
-  //     contentType: false,
-  //     processData: false,
-  //     cache: false, 
-  //     success: function(data) {
-  //         Swal.fire({
-  //           icon: 'success',
-  //           title: 'Gracias por regalarnos tus datos. Nos comunicaremos contigo.',
-  //           showConfirmButton: true
-  //         });
-  //     }, error: function(error){
-  //         Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
-  //      }
-  //   });
-  //   this.formularioCotizacion.reset();
-  //  }
    abrirCotizador(){
     $('#neplan-cotizador').removeClass('cerrar-formulario');
   }

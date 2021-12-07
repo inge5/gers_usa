@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CalendarOptions, FullCalendarComponent } from '@fullcalendar/angular';
 import * as moment from 'moment';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-trainings',
@@ -22,9 +23,10 @@ export class TrainingsComponent implements OnInit {
   eventosFiltro: any[];
   capacitacionesFiltroTemp: any[];
 
-  constructor(private capacitacionesS: CapacitacionesService, private router: Router) { }
+  constructor(private capacitacionesS: CapacitacionesService, private router: Router, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaCapacitaion();
     this.asignarEventos();
     this.getCategoriasFiltro();
     moment.locale('en');

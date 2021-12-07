@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class VariableGlobalService {
     this.consultarDatosLocales();
   }
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformid) {
     this.consultarDatosLocales();
   }
 
@@ -33,7 +34,9 @@ export class VariableGlobalService {
   }
 
   consultarDatosLocales() {
-    this.data.next(JSON.parse(localStorage.getItem('carrito'))) ;
+    if(isPlatformBrowser(this.platformid)){
+      this.data.next(JSON.parse(localStorage.getItem('carrito'))) ;
+    }
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesUsaService } from '../../../services/pages-usa.service';
 
 
@@ -13,9 +14,10 @@ export class PowerSystemStudiesComponent implements OnInit {
   item_tab_data: any[] = [];
   public activePillIndex:number = 0;
 
-  constructor(private _powersystemstudies:PagesUsaService) { }
+  constructor(private _powersystemstudies:PagesUsaService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaEstudiosSistemas();
     this._powersystemstudies.getPowerSystemStudies()
     .subscribe((res:any)=>{
       this.loader = false;

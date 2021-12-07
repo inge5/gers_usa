@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesUsaService } from '../../../services/pages-usa.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class FieldServicesComponent implements OnInit {
   item_tab_data: any[] = [];
   public activePillIndex:number = 0;
 
-  constructor(private _fieldservices:PagesUsaService) { }
+  constructor(private _fieldservices:PagesUsaService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaDisenoIng();
     this._fieldservices.getFieldServices()
     .subscribe((res:any) => {
       this.loader = false;

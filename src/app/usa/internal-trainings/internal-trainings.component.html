@@ -47,12 +47,12 @@
             </div>
             <div class="row mt-4 mt-sm-4 mt-md-4 mt-lg-4 mb-3 mb-sm-3 mb-md-3 mb-lg-3">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                    <button class="btn btn-outline-azul sin-border-radius" (click)="enviarInscripcion()">Enroll in this course <i class="fas fa-check size-2"></i></button>
+                    <a class="btn btn-outline-azul sin-border-radius" [href]="capacitacion?capacitacion.acf.url:''" target="_blank">Enroll in this course <i class="fas fa-check size-2"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="bg-light border-right sobreponer" id="sidebar-wrapper">
+    <!-- <div class="bg-light border-right sobreponer" id="sidebar-wrapper">
         <div class="sidebar-heading size23 text-blue1 font-weight-600 d-flex align-items-center text-capitalize"><button id="btnCerrarTrabajemos" (click)="cierraInscripcion()">x</button> send registration</div>
         <div class="bodyTrabajemos">
             <div class="container">
@@ -90,39 +90,6 @@
                             <div class="form-row">
                                 <input type="text" [(ngModel)]="capacitacion.title.rendered" name="capacitacion" hidden>
                             </div>
-                            <!-- <div class="form-group pt-2 pb-2 mb-0">
-                                <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="ubicacion">Ubicación</label>
-                                <select class="form-control" id="ubicacion" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="usuario.ubicacion" required>
-                                    <option value="" disabled>Elija una opción</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="Estados Unidos">Estados Unidos</option>
-                                    <option value="Alemania">Alemania</option>
-                                    <option value="Ecuador">Ecuador</option>
-                                </select>
-                                <small style="color:#c30000;" *ngIf="ubicacion.invalid && (ubicacion.dirty || ubicacion.touched)">
-                                    Ubicacion es un campo requerido.
-                                </small>
-                            </div>
-                            <div class="form-group pt-2 pb-2">
-                                <label class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500" for="categoria">Categoría de la vacante</label>
-                                <select class="form-control" id="categoria" name="categoria" #categoria="ngModel" [(ngModel)]="usuario.categoria" required>
-                                    <option value="" disabled>Elija una opción</option>
-                                    <option value="Ingeniería">Ingeniería</option>
-                                    <option value="Jardinería">Jardinería</option>
-                                    <option value="Cafetería">Cafetería</option>
-                                </select>
-                                <small style="color:#c30000;" *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)">
-                                    Categoria es un campo requerido.
-                                </small>
-                            </div>
-                            <div class="file-field big-2">
-                                <div class="btn btn-cyan btn-lg float-left w-100">
-                                  <span><i class="fas fa-cloud-upload-alt"></i> Adjuntar hoja de vida</span>
-                                  <input type="file" id="archivo" required>
-                                </div>
-                                <p class="file-name"></p>
-                                <label class="mt-4 size15 text-gray-dark line-height18 text-justify">El archivo adjunto debe estar en formato <b>.PDF o .DOCX</b> y no debe pesar más de <b>1.5 mb</b></label>
-                            </div> -->
                             <div class="form-row pt-2 pb-2">
                                 <ngx-recaptcha2 [siteKey]="siteKey" [ngModel]="usuario.recaptcha" name="recaptcha" required>
                                 </ngx-recaptcha2>    
@@ -151,7 +118,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="container">
     <div class="row mb-5 mb-sm-5 mb-md-5 mb-lg-5">
