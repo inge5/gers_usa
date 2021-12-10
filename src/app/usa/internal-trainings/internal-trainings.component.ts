@@ -80,6 +80,7 @@ export class InternalTrainingsComponent implements OnInit {
           }); 
       
         form.reset();
+        this.usuario.pais = "USA";
         } else {
           Swal.fire('Oops...', 'Something happened. Correct the errors, please!', 'error')
         }

@@ -62,6 +62,7 @@ export class ContactComponent implements OnInit {
           }); 
  
         form.reset();
+        this.user_usa.pais = "Estados Unidos";
         } else {
           Swal.fire('Oops...', 'Something happened. Correct the errors, please!', 'error')
         }
