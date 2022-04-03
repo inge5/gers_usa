@@ -7,31 +7,31 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { APP_ROUTING } from './app.routing';
 
-
 //Services Estados Unidos
 import { HomeUsaService } from './services/home-usa.service';
 import { PagesUsaService } from './services/pages-usa.service';
 import { VacantesUsaService } from './services/vacantes-usa.service';
 import { PublicacionesUsaService } from './services/publicaciones-usa.service';
 
-
 import { AppComponent } from './app.component';
 
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularPaginatorModule } from 'angular-paginator';
 
 import { OwlModule } from 'ngx-owl-carousel';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 //USA COMPONENTS
 import { UsaComponent } from './usa/usa/usa.component';
 import { MenuPrincipalUsaComponent } from './usa/menu-principal-usa/menu-principal-usa.component';
 import { TopbarComponent } from './usa/topbar/topbar.component';
-import { HomeUsaComponent, SafeHtmlPipe } from './usa/home-usa/home-usa.component';
+import {
+  HomeUsaComponent,
+  SafeHtmlPipe,
+} from './usa/home-usa/home-usa.component';
 import { CorporateThinkingComponent } from './usa/corporate-thinking/corporate-thinking.component';
 import { FooterUsaComponent } from './usa/footer-usa/footer-usa.component';
 import { ContactComponent } from './usa/contact/contact.component';
@@ -51,29 +51,30 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // must go before pl
 
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
-import timeGridPlugin from '@fullcalendar/timegrid';// a plugin!
+import timeGridPlugin from '@fullcalendar/timegrid'; // a plugin!
 import listPlugin from '@fullcalendar/list';
 import { CharPipe } from './pipes/char.pipe';
 
-FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
   timeGridPlugin,
-  listPlugin
+  listPlugin,
 ]);
 
-// Componentes Chile
+// Componentes Usa
 
 import { TrainingsComponent } from './usa/trainings/trainings.component';
 import { InternalTrainingsComponent } from './usa/internal-trainings/internal-trainings.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
-import es from '@angular/common/locales/es';
-import {registerLocaleData} from '@angular/common';
+import en from '@angular/common/locales/en';
+import { registerLocaleData } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
 import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
 import { FormCotizadorNeplanUsaComponent } from './usa/representaciones/neplan-usa/form-cotizador-neplan-usa/form-cotizador-neplan-usa.component';
-registerLocaleData(es);
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -104,7 +105,7 @@ registerLocaleData(es);
     FilterPipe,
     BuscadorUsaComponent,
     DataProtectionPolicyComponent,
-    FormCotizadorNeplanUsaComponent
+    FormCotizadorNeplanUsaComponent,
   ],
   imports: [
     FormsModule,
@@ -121,17 +122,17 @@ registerLocaleData(es);
     OwlModule,
     NgxPaginationModule,
     FullCalendarModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
   ],
   exports: [RouterModule],
   providers: [
-    { provide: LOCALE_ID, useValue: 'es' },
+    { provide: LOCALE_ID, useValue: 'en' },
     //ESTADOS UNIDOS
     HomeUsaService,
     PagesUsaService,
     VacantesUsaService,
     PublicacionesUsaService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
