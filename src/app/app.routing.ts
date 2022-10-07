@@ -1,7 +1,4 @@
-
 import { Routes, RouterModule } from '@angular/router';
-
-
 
 /* USA */
 import { UsaComponent } from './usa/usa/usa.component';
@@ -24,43 +21,50 @@ import { InternalTrainingsComponent } from './usa/internal-trainings/internal-tr
 import { BuscadorUsaComponent } from './usa/buscador-usa/buscador-usa.component';
 import { DataProtectionPolicyComponent } from './usa/contact/data-protection-policy/data-protection-policy.component';
 
-
 let APP_ROUTES: Routes = [];
 
-    APP_ROUTES = [
-        {
-            path: '', component: UsaComponent,
-            children: [
-                { path: '', component: HomeUsaComponent },
-                { path: 'contact', component: ContactComponent },
-                { path: 'corporate-thinking', component: CorporateThinkingComponent },
-                { path: 'trainings', component: TrainingsComponent },
-                { path: 'trainings/:id', component: InternalTrainingsComponent },
-                { path: 'integral-management-policies', component: IntegralManagementPoliciesComponent },
-                { path: 'neplan-usa', component: NeplanUsaComponent },
-                { path: 'power-system-studies', component: PowerSystemStudiesComponent },
-                { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
-                { path: 'protection-and-control', component: ProtectionAndControlComponent },
-                { path: 'field-services', component: FieldServicesComponent },
-                { path: 'projects', component: ProyectsComponent },
-                { path: 'work-with-us', component: WorkWithUsComponent },
-                { path: 'vacancies/:slug', component: InternalVacancyComponent },
-                { path: 'insights', component: InsightsComponent },
-                { path: 'insights/:slug', component: InsightsInsideComponent },
-                { path: 'searcher', component: BuscadorUsaComponent },
-                { path: 'data-protection-policy', component: DataProtectionPolicyComponent },
-                { path: '**', redirectTo: '', pathMatch: 'full' }
-            ]
-        },
-        { path: '**', pathMatch: 'full', redirectTo: '' }
-    ]
-
-
+APP_ROUTES = [
+  {
+    path: '',
+    component: UsaComponent,
+    children: [
+      { path: '', component: HomeUsaComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'corporate-thinking', component: CorporateThinkingComponent },
+      { path: 'trainings', component: TrainingsComponent },
+      { path: 'trainings/:id', component: InternalTrainingsComponent },
+      {
+        path: 'integral-management-policies',
+        component: IntegralManagementPoliciesComponent,
+      },
+      { path: 'neplan-usa', component: NeplanUsaComponent },
+      { path: 'power-system-studies', component: PowerSystemStudiesComponent },
+      { path: 'smart-grids-usa', component: SmartGridsUsaComponent },
+      {
+        path: 'protection-and-control',
+        component: ProtectionAndControlComponent,
+      },
+      { path: 'field-services', component: FieldServicesComponent },
+      { path: 'projects', component: ProyectsComponent },
+      { path: 'work-with-us', component: WorkWithUsComponent },
+      { path: 'vacancies/:slug', component: InternalVacancyComponent },
+      { path: 'insights', component: InsightsComponent },
+      { path: 'insights/:slug', component: InsightsInsideComponent },
+      { path: 'searcher', component: BuscadorUsaComponent },
+      {
+        path: 'data-protection-policy',
+        component: DataProtectionPolicyComponent,
+      },
+      { path: '**', redirectTo: '', pathMatch: 'full' },
+    ],
+  },
+  { path: '**', pathMatch: 'full', redirectTo: '' },
+];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {
-    useHash: true,
-    onSameUrlNavigation: "ignore",
-    anchorScrolling: 'enabled',
-    scrollPositionRestoration: 'enabled',
-    initialNavigation: 'enabled'
+  useHash: false,
+  onSameUrlNavigation: 'ignore',
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'enabled',
+  initialNavigation: 'enabled',
 });
