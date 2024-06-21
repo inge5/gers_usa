@@ -112,53 +112,30 @@
                   Full name is a required field.
                 </small>
               </div>
+
               <div class="form-row pt-2 pb-2">
                 <label
                   class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500"
-                  for="telefono"
-                  >Cell phone</label
-                >
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="telefono"
-                  name="telefono"
-                  #telefono="ngModel"
-                  [(ngModel)]="user_usa.telefono"
-                  pattern="^\d+$"
-                  required
-                />
-                <small
-                  style="color: #c30000"
-                  *ngIf="
-                    telefono.invalid && (telefono.dirty || telefono.touched)
-                  "
-                >
-                  Enter a valid phone.
-                </small>
-              </div>
-              <div class="form-row pt-2 pb-2">
-                <label
-                  class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500"
-                  for="ciudad"
-                  >City</label
+                  for="email"
+                  >Email</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="ciudad"
-                  name="ciudad"
-                  #ciudad="ngModel"
-                  [(ngModel)]="user_usa.ciudad"
+                  id="email"
+                  name="email"
+                  #email="ngModel"
+                  [(ngModel)]="user_usa.email"
                   required
                 />
                 <small
                   style="color: #c30000"
-                  *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)"
+                  *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
                 >
-                  City is a required field.
+                  Full name is a required field.
                 </small>
               </div>
+
               <div class="form-row pt-2 pb-2">
                 <label
                   class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500"

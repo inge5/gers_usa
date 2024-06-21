@@ -1,36 +1,22 @@
-.whatsapp-buble {
+.contact-us-buble {
     position: fixed;
     top: 77%;
     right: 0px;
     padding: 5px 12px;
-    background-color: #37b627;
-    color: #fff;
+    background-color: #fff;
     border-radius: 9px 0 0 9px;
+    border: 1px solid #d8dfe5;
     z-index: 30;
     text-decoration:none!important;
 }
-.whatsapp-buble:hover{
-    color:#37b627;
-		background-color: #fff;
-		border: 1px solid #37b627;
-    text-decoration:none!important;
+.contact-us-buble:hover{
+    transition: transform .2s;
+    transform: scale(1.2);
+    border-radius: 9px 0 0 9px;
+    background-color: #0056b3;
+    color: #fff;
 }
 
-.whatsapp-buble-text {
-    position: fixed;
-    top: 78.3%;
-    right: 42px;
-    color: #fff;
-    border-radius: 9px 0 0 9px;
-    background-repeat: no-repeat;
-    line-height: 16px;
-    z-index: 30;
-}
-.whatsapp-buble-text {
-    animation-duration: 3s;
-    animation-name: bounceIn;
-    animation-iteration-count: infinite;
-}
 
 .content-social-bar {
     position: fixed;
