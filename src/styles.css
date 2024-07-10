@@ -35,6 +35,18 @@ small {
 p{
     margin-bottom: 0;
 }
+.btn-contact{
+    display: block;
+    letter-spacing: 0.84px;
+    font-size: 14px;
+    padding: 25px 1rem;
+    color: #fff !important;
+    background-color: #0089FF;
+    font-weight: bold;
+}
+.btn-contact:hover{
+    background-color: #2C3394;
+}
 .hide{
     display: none;
 }
@@ -2358,6 +2370,8 @@ box-shadow: 17px 25px 0px 0px rgba(44,51,148,1);
 .topBar-usa .nav-item a.nav-link.inicioSesion:hover {
     background-color: #12164E;
 }
+
+
 
 /* Home Page */
 .seccionUsa4{
